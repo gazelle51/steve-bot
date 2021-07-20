@@ -1,0 +1,24 @@
+{
+  "name": "discord-bot",
+  "version": "1.0.0",
+  "description": "Create venv\r ```\r python3 -m venv env\r ```",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gazelle51/discord-bot.git"
+  },
+  "author": "Sarah Gazelle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gazelle51/discord-bot/issues"
+  },
+  "homepage": "https://github.com/gazelle51/discord-bot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0"
+  }
+}

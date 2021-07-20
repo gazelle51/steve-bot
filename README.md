@@ -1,17 +1,14 @@
 # discord-bot
 
-Create venv
+Install
 ```
-python3 -m venv env
-```
-
-
-Mac/Linux
-```
-source env/bin/activate
+npm install
 ```
 
-Windows
+
+Run in production mode
 ```
-env\Scripts\activate.bat
+npm start
 ```
+
+url = "https://www.voicy.network/Content/Clips/Sound/eebf53ed-bd6a-479e-b158-39d7ac0b7c4b.mp3"

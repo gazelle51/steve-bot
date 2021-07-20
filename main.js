@@ -18,10 +18,7 @@ client.on('message', (msg) => {
     msg.reply('pong');
   }
 
-  print(message.author);
-  print(message.author.id);
-  print(message.author.name);
-  print(message.author.discriminator);
+  console.log(msg.author);
 });
 
 client.login(process.env.TOKEN);

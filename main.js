@@ -9,16 +9,30 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on('message', (msg) => {
+client.on('message', async (message) => {
   // Do nothing if the message was from the bot
-  if (msg.author === client.user) return;
+  if (message.author === client.user) return;
 
   // Ping message
-  if (msg.content === 'ping') {
-    msg.reply('pong');
+  if (message.content === 'ping') {
+    message.reply('pong');
   }
 
-  console.log(msg.author);
+  // Join voice
+  if (message.content === 'join') {
+    // Voice only works in guilds, if the message does not come from a guild, we ignore it
+    if (!message.guild) return;
+
+    // Only try to join the sender's voice channel if they are in one themselves
+    if (message.member.voice.channel) {
+      const connection = await message.member.voice.channel.join();
+      connection.play('./forgetMeToo.mp3');
+    } else {
+      message.reply('You need to join a voice channel first!');
+    }
+  }
+
+  console.log(message.author);
 });
 
 client.login(process.env.TOKEN);

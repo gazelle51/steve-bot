@@ -18,6 +18,9 @@
     "url": "https://github.com/gazelle51/discord-bot/issues"
   },
   "homepage": "https://github.com/gazelle51/discord-bot#readme",
+  "engines": {
+    "node": ">=14.x"
+  },
   "dependencies": {
     "@discordjs/opus": "^0.5.3",
     "discord.js": "^12.5.3",

@@ -29,12 +29,12 @@ client.on('message', async (message) => {
   if (message.author === client.user) return;
 
   // Ping message
-  if (message.content === 'ping') {
-    message.reply('pong');
+  if (message.content === '~ping') {
+    message.channel.send('pong');
   }
 
   // Join voice
-  if (message.content === 'join') {
+  if (message.content === '~join') {
     const connection = await voice.join(message);
 
     if (!connection) return;

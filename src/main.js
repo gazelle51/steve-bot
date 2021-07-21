@@ -7,8 +7,8 @@ require('dotenv').config();
  * Also need to check that permission is enabled for bot in developer portal.
  */
 
-const borat = require('./src/borat');
-const voice = require('./src/voice');
+const borat = require('./borat');
+const voice = require('./voice');
 const { Client } = require('discord.js');
 
 // Create Discord client

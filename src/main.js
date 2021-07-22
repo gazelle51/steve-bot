@@ -42,16 +42,19 @@ client.on('message', async (message) => {
 
   // Extract command and arguments
   const args = message.content.slice(prefix.length).trim().split(/ +/);
-  const command = args.shift().toLowerCase();
+  const commandName = args.shift().toLowerCase();
 
   // Check command is defined
-  if (!client.commands.has(command)) return;
+  if (!client.commands.has(commandName)) return;
 
   console.log(`Executing ${message.content}`);
 
+  // Get command
+  const command = client.commands.get(commandName);
+
   // Execute the command
   try {
-    client.commands.get(command).execute(message, args);
+    command.execute(message, args);
   } catch (error) {
     console.error(error);
     message.reply('there was an error trying to execute that command!');

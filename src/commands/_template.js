@@ -8,5 +8,6 @@ function execute(message, args) {}
 module.exports = {
   name: '',
   description: '',
+  args: false,
   execute,
 };

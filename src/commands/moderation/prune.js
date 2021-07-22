@@ -24,5 +24,6 @@ function execute(message, args) {
 module.exports = {
   name: 'prune',
   description: 'Delete / prune the last X messages',
+  args: true,
   execute,
 };

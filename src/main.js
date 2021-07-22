@@ -60,6 +60,10 @@ client.on('message', async (message) => {
   // Get command
   const command = client.commands.get(commandName);
 
+  // Check if arguments are required
+  if (command.args && !args.length)
+    return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
+
   // Execute the command
   try {
     command.execute(message, args);

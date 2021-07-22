@@ -15,14 +15,14 @@ const client = new Client();
 client.commands = new Collection();
 client.cooldowns = new Collection();
 
-// Load command folders and ignore template file
+// Load command folders
 const commandFolders = fs
   .readdirSync('./src/commands')
   .filter((folder) => folder !== '_template.js');
 
 // Load command files
 for (const folder of commandFolders) {
-  // Get js files
+  // Get command files
   const commandFiles = fs
     .readdirSync(`./src/commands/${folder}`)
     .filter((file) => file.endsWith('.js'));
@@ -34,12 +34,12 @@ for (const folder of commandFolders) {
   }
 }
 
-// Load event files
+// Get event files
 const eventFiles = fs
   .readdirSync('./src/events')
   .filter((file) => file.endsWith('.js') && !file.startsWith('_'));
 
-// Configure events
+// Load and configure events
 for (const file of eventFiles) {
   const event = require(`./events/${file}`);
   if (event.once) {

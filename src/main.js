@@ -82,8 +82,6 @@ client.on('message', async (message) => {
     message.channel.send(`You wanted to kick: ${taggedUser.username}`);
   }
 
-  //TODO https://discordjs.guide/creating-your-bot/commands-with-user-input.html#number-ranges
-
   // Display avatar of user
   else if (command === 'avatar') {
     if (!message.mentions.users.size) {
@@ -103,6 +101,8 @@ client.on('message', async (message) => {
     // By default, discord.js will `.join()` the array with `\n`
     message.channel.send(avatarList);
   }
+
+  //TODO https://discordjs.guide/creating-your-bot/commands-with-user-input.html#number-ranges
 });
 
 client.login(process.env.TOKEN);

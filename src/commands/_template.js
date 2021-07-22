@@ -10,5 +10,6 @@ module.exports = {
   description: '',
   args: false,
   usage: '',
+  guildOnly: false,
   execute,
 };

@@ -20,5 +20,6 @@ async function execute(message, args) {
 module.exports = {
   name: 'join',
   description: 'Join voice channel',
+  guildOnly: true,
   execute,
 };

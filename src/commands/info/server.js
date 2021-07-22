@@ -4,9 +4,6 @@
  * @param {*} args
  */
 function execute(message, args) {
-  // Stop processing if not in a guild
-  if (!message.guild) return;
-
   // Send server details
   message.channel.send(
     `Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}\nCreated on: ${message.guild.createdAt}\nRegion: ${message.guild.region}`
@@ -16,5 +13,6 @@ function execute(message, args) {
 module.exports = {
   name: 'server',
   description: 'Get server details',
+  guildOnly: true,
   execute,
 };

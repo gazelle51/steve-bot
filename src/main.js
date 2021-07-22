@@ -60,6 +60,11 @@ client.on('message', async (message) => {
   // Get command
   const command = client.commands.get(commandName);
 
+  // Check if command can only be used in a guild
+  if (command.guildOnly && message.channel.type === 'dm') {
+    return message.reply("I can't execute that command inside DMs!");
+  }
+
   // Check if arguments are required
   if (command.args && !args.length) {
     let reply = `You didn't provide any arguments, ${message.author}!`;

@@ -26,5 +26,6 @@ module.exports = {
   description: 'Delete / prune the last X messages',
   args: true,
   usage: '<number of messages to delete>',
+  guildOnly: true,
   execute,
 };

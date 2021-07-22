@@ -19,5 +19,6 @@ function execute(message, args) {
 module.exports = {
   name: 'kick',
   description: 'Kick mentioned user',
+  guildOnly: true,
   execute,
 };

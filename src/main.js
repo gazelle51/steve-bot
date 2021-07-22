@@ -34,7 +34,7 @@ client.on('message', async (message) => {
   }
 
   // Join voice
-  if (message.content === '~join') {
+  if (message.content === '~join' || message.content === 'hi steve') {
     const connection = await voice.join(message);
 
     if (!connection) return;

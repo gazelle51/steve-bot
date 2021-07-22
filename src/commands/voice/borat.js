@@ -13,11 +13,15 @@ async function execute(message, args) {
   // Check connection was successful
   if (!connection) return;
 
-  const boratSounds = Object.keys(borat);
-  const randomBoratSound = boratSounds[Math.floor(Math.random() * boratSounds.length)];
+  // Say a Borat line
+  if (args[0] === 'steve') {
+    connection.play(borat.peopleCallMeSteve);
+  } else {
+    const boratSounds = Object.keys(borat);
+    const randomBoratSound = boratSounds[Math.floor(Math.random() * boratSounds.length)];
 
-  // Say hello
-  connection.play(borat[randomBoratSound]);
+    connection.play(borat[randomBoratSound]);
+  }
 }
 
 module.exports = {

@@ -1,15 +1,4 @@
 module.exports = {
-  // youWouldLikeVeryMuchMySister:
-  //   'https://www.voicy.network/Content/Clips/Sound/63b3638d-8ffa-4287-ab26-ac00a42e6d33.mp3',
-  // yes1: 'https://www.voicy.network/Content/Clips/Sound/e011d2ae-9cfc-4a9c-8512-9d67cf9bc813.mp3',
-  // yes2: 'https://www.voicy.network/Content/Clips/Sound/8942a247-0ccd-459a-9100-a48473418a09.mp3',
-  // wowoweewah1:
-  //   'https://www.voicy.network/Content/Clips/Sound/ad93a723-7404-42ae-a0c5-500d2a5b2c28.mp3',
-
-  // wowoweewah2:
-  //   'https://www.voicy.network/Content/Clips/Sound/5a0be8b9-ebdf-4938-9695-3a49cb6469ae.mp3',
-  // sexyTime:
-  //   'https://www.voicy.network/Content/Clips/Sound/0a172b85-5707-4d9b-b252-e561953bc834.mp3',
   helloNiceToMeetYou:
     'https://www.voicy.network/Content/Clips/Sound/5ba25722-babc-492c-ba26-9f9fd8a3c7fa.mp3',
   veryNice:
@@ -25,4 +14,6 @@ module.exports = {
     'https://www.voicy.network/Content/Clips/Sound/b0f34cd0-dc70-4add-8636-8f8a36889e04.mp3',
   thereIsASmell:
     'https://www.voicy.network/Content/Clips/Sound/c22aae86-6017-43fc-bb5c-f2eb5a7a2d96.mp3',
+  peopleCallMeSteve:
+    'https://www.voicy.network/Content/Clips/Sound/e2e19b5e-b81b-41ef-868e-c95c16b5b247.mp3',
 };

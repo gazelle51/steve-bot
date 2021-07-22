@@ -82,7 +82,7 @@ client.on('message', async (message) => {
     message.channel.send(`You wanted to kick: ${taggedUser.username}`);
   }
 
-  //TODO https://discordjs.guide/creating-your-bot/commands-with-user-input.html#working-with-multiple-mentions
+  //TODO https://discordjs.guide/creating-your-bot/commands-with-user-input.html#number-ranges
 
   // Display avatar of user
   else if (command === 'avatar') {
@@ -92,12 +92,16 @@ client.on('message', async (message) => {
       );
     }
 
-    // Grab the "first" mentioned user from the message
-    const taggedUser = message.mentions.users.first();
+    const avatarList = message.mentions.users.map((user) => {
+      return `${user.username}'s avatar: <${user.displayAvatarURL({
+        format: 'png',
+        dynamic: true,
+      })}>`;
+    });
 
-    return message.channel.send(
-      `Avatar: <${taggedUser.displayAvatarURL({ format: 'png', dynamic: true })}>`
-    );
+    // Send the entire array of strings as a message
+    // By default, discord.js will `.join()` the array with `\n`
+    message.channel.send(avatarList);
   }
 });
 

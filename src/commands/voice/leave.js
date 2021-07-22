@@ -1,4 +1,4 @@
-const voice = require('../../voice');
+const voice = require('../../utils/voice');
 
 /**
  * Execute leave command.

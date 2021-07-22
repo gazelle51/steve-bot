@@ -1,5 +1,5 @@
 const borat = require('../../borat');
-const voice = require('../../voice');
+const voice = require('../../utils/voice');
 
 /**
  * Execute borat command.

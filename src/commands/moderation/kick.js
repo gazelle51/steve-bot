@@ -13,12 +13,13 @@ function execute(message, args) {
   const taggedUser = message.mentions.users.first();
 
   // Send a message
-  message.channel.send(`You wanted to kick: ${taggedUser.username}`);
+  message.channel.send(`You wanted to kick ${taggedUser.username}`);
 }
 
 module.exports = {
   name: 'kick',
-  description: 'Kick mentioned user',
+  description: 'Kick a user from the server',
   guildOnly: true,
+  permissions: 'KICK_MEMBERS',
   execute,
 };

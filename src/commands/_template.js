@@ -13,5 +13,6 @@ module.exports = {
   guildOnly: false,
   cooldown: 1,
   aliases: [],
+  permissions: '',
   execute,
 };

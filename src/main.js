@@ -15,15 +15,23 @@ const { Client, Collection } = require('discord.js');
 const client = new Client();
 client.commands = new Collection();
 
-// Load command files
-const commandFiles = fs
+// Load command folders and ignore template file
+const commandFolders = fs
   .readdirSync('./src/commands')
-  .filter((file) => file.endsWith('.js') && !file.startsWith('_'));
+  .filter((folder) => folder !== '_template.js');
 
-for (const file of commandFiles) {
-  const command = require(`./commands/${file}`);
-  // Set a new item in the Collection with the key as the command name and the value as the exported module
-  client.commands.set(command.name, command);
+// Load command files
+for (const folder of commandFolders) {
+  // Get js files
+  const commandFiles = fs
+    .readdirSync(`./src/commands/${folder}`)
+    .filter((file) => file.endsWith('.js'));
+
+  // Add to client command Collection
+  for (const file of commandFiles) {
+    const command = require(`./commands/${folder}/${file}`);
+    client.commands.set(command.name, command);
+  }
 }
 
 /**

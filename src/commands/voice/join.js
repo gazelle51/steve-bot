@@ -1,5 +1,5 @@
-const borat = require('../borat');
-const voice = require('../voice');
+const borat = require('../../borat');
+const voice = require('../../voice');
 
 /**
  * Execute join command.

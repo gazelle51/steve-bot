@@ -53,13 +53,15 @@ client.on('message', async (message) => {
   const args = message.content.slice(prefix.length).trim().split(/ +/);
   const commandName = args.shift().toLowerCase();
 
+  // Get command, also check aliases
+  const command =
+    client.commands.get(commandName) ||
+    client.commands.find((cmd) => cmd.aliases && cmd.aliases.includes(commandName));
+
   // Check command is defined
-  if (!client.commands.has(commandName)) return;
+  if (!command) return;
 
   console.log(`Executing ${message.content}`);
-
-  // Get command
-  const command = client.commands.get(commandName);
 
   // Check if command can only be used in a guild
   if (command.guildOnly && message.channel.type === 'dm') {

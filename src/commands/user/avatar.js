@@ -22,5 +22,6 @@ function execute(message, args) {
 module.exports = {
   name: 'avatar',
   description: 'Display avatar of user',
+  aliases: ['icon'],
   execute,
 };

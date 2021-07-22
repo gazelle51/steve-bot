@@ -13,4 +13,9 @@ module.exports = {
     'https://www.voicy.network/Content/Clips/Sound/0a172b85-5707-4d9b-b252-e561953bc834.mp3',
   ohLaLa: 'https://www.voicy.network/Content/Clips/Sound/9a4a6d4a-32e1-4d3a-b7df-f33a1c1b1b9d.mp3',
   helloNiceToMeetYou: './src/sounds/helloNiceToMeetYou.mp3',
+  helloNiceToMeetYou2:
+    'https://www.voicy.network/Content/Clips/Sound/5ba25722-babc-492c-ba26-9f9fd8a3c7fa.mp3',
+  veryNice: './src/sounds/helloNiceToMeetYou.mp3',
+  veryNice2:
+    'https://www.voicy.network/Content/Clips/Sound/fb2caf68-f315-4153-b710-a43501361181.mp3',
 };

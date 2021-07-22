@@ -34,12 +34,12 @@ client.on('message', async (message) => {
   const command = args.shift().toLowerCase();
 
   // Ping
-  if (message.content === `${prefix}ping`) {
+  if (command === `ping`) {
     message.channel.send('pong');
   }
 
   // Join voice channel
-  else if (message.content === `${prefix}join` || message.content === 'hi steve') {
+  else if (command === `join` || message.content === 'hi steve') {
     const connection = await voice.join(message);
 
     if (!connection) return;
@@ -48,7 +48,7 @@ client.on('message', async (message) => {
   }
 
   // Get server details
-  else if (message.content === `${prefix}server`) {
+  else if (command === `server`) {
     if (!message.guild) return;
     message.channel.send(
       `Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}\nCreated on: ${message.guild.createdAt}\nRegion: ${message.guild.region}`
@@ -56,7 +56,7 @@ client.on('message', async (message) => {
   }
 
   // Get user info
-  else if (message.content === `${prefix}user-info`) {
+  else if (command === `user-info`) {
     message.channel.send(
       `Your username: ${message.author.username}\nYour ID: ${message.author.id}`
     );
@@ -102,7 +102,21 @@ client.on('message', async (message) => {
     message.channel.send(avatarList);
   }
 
-  //TODO https://discordjs.guide/creating-your-bot/commands-with-user-input.html#number-ranges
+  // Delete / prune the last X messages
+  else if (command === 'prune') {
+    const amount = parseInt(args[0]) + 1;
+
+    if (isNaN(amount)) {
+      return message.reply("that doesn't seem to be a valid number.");
+    } else if (amount < 2 || amount > 100) {
+      return message.reply('you need to input a number between 1 and 99.');
+    }
+
+    message.channel.bulkDelete(amount, true).catch((err) => {
+      console.error(err);
+      message.channel.send('there was an error trying to prune messages in this channel!');
+    });
+  }
 });
 
 client.login(process.env.TOKEN);

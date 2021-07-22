@@ -9,5 +9,6 @@ module.exports = {
   name: '',
   description: '',
   args: false,
+  usage: '',
   execute,
 };

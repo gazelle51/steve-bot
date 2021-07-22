@@ -11,5 +11,6 @@ module.exports = {
   name: 'args-info',
   description: 'Extract arguments from a command',
   args: true,
+  usage: '<arg1> <arg2> <arg3> ...',
   execute,
 };

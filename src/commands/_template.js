@@ -11,5 +11,6 @@ module.exports = {
   args: false,
   usage: '',
   guildOnly: false,
+  cooldown: 1,
   execute,
 };

@@ -8,7 +8,12 @@ const { Collection } = require('discord.js');
  */
 async function execute(message, client) {
   // Do nothing if the message does not start with prefix or was from a bot
-  if (!message.content.startsWith(prefix) || message.author.bot) return;
+  if (
+    !message.content.startsWith(prefix) ||
+    message.author.bot ||
+    message.author.id === process.env.ADAMO // Ignore M
+  )
+    return;
 
   // Extract command and arguments
   const args = message.content.slice(prefix.length).trim().split(/ +/);

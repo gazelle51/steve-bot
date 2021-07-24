@@ -1,4 +1,4 @@
-const csgo = require('../../csgo');
+const csgo = require('../../sounds/csgo');
 const voice = require('../../utils/voice');
 
 /**

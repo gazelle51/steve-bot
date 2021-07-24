@@ -1,4 +1,4 @@
-const borat = require('../../borat');
+const borat = require('../../sounds/borat');
 const voice = require('../../utils/voice');
 
 /**

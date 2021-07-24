@@ -1,4 +1,4 @@
-const drdisrespect = require('../../drdisrespect');
+const drdisrespect = require('../../sounds/drdisrespect');
 const voice = require('../../utils/voice');
 
 /**

@@ -1,4 +1,4 @@
-const egirl = require('../../egirl');
+const egirl = require('../../sounds/egirl');
 const voice = require('../../utils/voice');
 
 /**

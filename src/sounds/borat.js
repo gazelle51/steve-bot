@@ -20,4 +20,18 @@ module.exports = {
     'https://www.voicy.network/Content/Clips/Sound/f343b698-3dd4-47b6-ad73-e454925e3d83.mp3',
   myNameBorat:
     'https://www.voicy.network/Content/Clips/Sound/7c30f1b8-9fe6-4d9c-ac6d-8b1ba37471d8.mp3',
+  pauseNot:
+    'https://www.voicy.network/Content/Clips/Sound/f74b67aa-1136-4a44-ba20-3f77f238cdeb.mp3',
+  womanNotEqualToMen:
+    'https://www.voicy.network/Content/Clips/Sound/8efa779f-7e5e-4ca5-9e94-54446ec285cf.mp3',
+  kingInTheCastle:
+    'https://www.voicy.network/Content/Clips/Sound/348059ca-bc38-437e-be90-cad23caa4b20.mp3',
+  highFive:
+    'https://www.voicy.network/Content/Clips/Sound/7e4a2a26-87e0-493b-b016-dc1e17cebbe2.mp3',
+  heIsYourSlave:
+    'https://www.voicy.network/Content/Clips/Sound/f6a97921-f458-4a2e-87d2-e624f7808aca.mp3',
+  canIBuyYou:
+    'https://www.voicy.network/Content/Clips/Sound/7f8d6c2a-c25b-48e8-ae6c-1602fd439b08.mp3',
+  aVeryNice:
+    'https://www.voicy.network/Content/Clips/Sound/4c562494-94b2-4366-8b7f-1db663520bb3.mp3',
 };

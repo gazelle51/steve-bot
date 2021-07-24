@@ -16,4 +16,8 @@ module.exports = {
     'https://www.voicy.network/Content/Clips/Sound/c22aae86-6017-43fc-bb5c-f2eb5a7a2d96.mp3',
   peopleCallMeSteve:
     'https://www.voicy.network/Content/Clips/Sound/e2e19b5e-b81b-41ef-868e-c95c16b5b247.mp3',
+  whatIsBestWayToDefendFromAJew:
+    'https://www.voicy.network/Content/Clips/Sound/f343b698-3dd4-47b6-ad73-e454925e3d83.mp3',
+  myNameBorat:
+    'https://www.voicy.network/Content/Clips/Sound/7c30f1b8-9fe6-4d9c-ac6d-8b1ba37471d8.mp3',
 };

@@ -27,7 +27,9 @@ async function execute(message, client) {
   // Check command is defined
   if (!command) return;
 
-  console.log(`Executing '${message.content}', called by ${message.author.username}`);
+  console.log(
+    `Executing '${message.content}', called by ${message.author.username} (${message.author.id})`
+  );
 
   // Check if command can only be used in a guild
   if (command.guildOnly && message.channel.type === 'dm') {

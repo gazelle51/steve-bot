@@ -27,4 +27,7 @@ module.exports = {
   im18: 'https://www.voicy.network/Content/Clips/Sound/ec0d6b25-ac0b-42bf-8706-734878ed8845.mp3',
   justPlayingFortnite:
     'https://www.voicy.network/Content/Clips/Sound/84d9c704-f5eb-4633-bdad-bee3ed8c48de.mp3',
+  whatsUp: 'https://www.voicy.network/Content/Clips/Sound/5ee012cf-e180-444d-944a-63679ce7f87a.mp3',
+  youHeardMe:
+    'https://www.voicy.network/Content/Clips/Sound/bfbfbe7d-fd15-440b-ac0b-77deec168247.mp3',
 };

@@ -11,6 +11,15 @@ async function execute(oldState, newState, client) {
   // Check if user started streaming
   if (!oldState.streaming && newState.streaming) {
     channel.send(`${newState.member.user.username} started streaming`);
+
+    // Check if user is playing CS GO
+    if (
+      newState.member.user.presence.activities.filter(
+        (activity) =>
+          activity.type === 'PLAYING' && activity.name === 'Counter-Strike: Global Offensive'
+      ).length
+    )
+      channel.send(`${newState.member.user.username} is opening cases!!!!!!!!`);
   }
 }
 

@@ -10,7 +10,7 @@ function execute(oldMember, newMember, client) {
   console.log(oldMember.user.username);
   console.log(oldMember._roles);
   console.log('');
-  console.log(newMember.user.username);
+
   console.log('newMember');
   // console.log(newMember);
   console.log(newMember.user.username);

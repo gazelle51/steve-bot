@@ -28,7 +28,9 @@ async function execute(message, client) {
   if (!command) return;
 
   console.log(
-    `Executing '${message.content}', called by ${message.author.username} (${message.author.id})`
+    `Executing '${message.content}'; command: ${command.name}; args: ${args.join(
+      ', '
+    )}; called by ${message.author.username} (${message.author.id})`
   );
 
   // Check if command can only be used in a guild

@@ -30,4 +30,6 @@ module.exports = {
   whatsUp: 'https://www.voicy.network/Content/Clips/Sound/5ee012cf-e180-444d-944a-63679ce7f87a.mp3',
   youHeardMe:
     'https://www.voicy.network/Content/Clips/Sound/bfbfbe7d-fd15-440b-ac0b-77deec168247.mp3',
+  whatAreYouDoingStepBro:
+    'https://www.voicy.network/Content/Clips/Sound/adfe9fc0-5c79-4742-8575-96469a6ec53e.mp3',
 };

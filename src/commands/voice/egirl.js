@@ -14,8 +14,8 @@ async function execute(message, args) {
   if (!connection) return;
 
   // Say an e-girl line
-  if (args[0] === 'zzz') {
-    connection.play(egirl.yeah);
+  if (args[0] === 'stepbro') {
+    connection.play(egirl.whatAreYouDoingStepBro);
   } else {
     const egirlSounds = Object.keys(egirl);
     const randomEgirlSound = egirlSounds[Math.floor(Math.random() * egirlSounds.length)];

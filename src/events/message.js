@@ -66,7 +66,7 @@ async function execute(message, client) {
 
   const now = Date.now();
   const timestamps = cooldowns.get(command.name);
-  const cooldownAmount = (command.cooldown || 3) * 1000;
+  const cooldownAmount = (command.cooldown || 0.1) * 1000; // Default is 0.1 seconds
 
   if (timestamps.has(message.author.id)) {
     const expirationTime = timestamps.get(message.author.id) + cooldownAmount;

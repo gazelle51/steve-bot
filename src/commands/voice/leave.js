@@ -4,8 +4,9 @@ const voice = require('../../utils/voice');
  * Execute leave command.
  * @param {Object} message - Received message
  * @param {string[]} args
+ * @param {Object} client - Discord client
  */
-async function execute(message, args) {
+async function execute(message, args, client) {
   await voice.leave(message);
 }
 

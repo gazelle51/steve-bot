@@ -14,6 +14,7 @@ const { Client, Collection } = require('discord.js');
 const client = new Client();
 client.commands = new Collection();
 client.cooldowns = new Collection();
+client.queue = new Map();
 
 // Load command folders
 const commandFolders = fs

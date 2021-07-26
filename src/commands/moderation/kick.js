@@ -2,8 +2,9 @@
  * Execute kick command.
  * @param {Object} message - Received message
  * @param {string[]} args
+ * @param {Object} client - Discord client
  */
-function execute(message, args) {
+function execute(message, args, client) {
   // Check a user was mentioned
   if (!message.mentions.users.size) {
     return message.reply('you need to tag a user in order to kick them!');

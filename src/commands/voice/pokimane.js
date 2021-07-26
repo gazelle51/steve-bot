@@ -5,8 +5,9 @@ const voice = require('../../utils/voice');
  * Execute pokimane command.
  * @param {Object} message - Received message
  * @param {string[]} args
+ * @param {Object} client - Discord client
  */
-async function execute(message, args) {
+async function execute(message, args, client) {
   message.channel.send('', {
     files: [
       'https://www.theloadout.com/wp-content/uploads/2021/01/rust-twitch-drops-pokimane-900x506.jpg',

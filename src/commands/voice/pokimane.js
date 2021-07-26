@@ -33,6 +33,5 @@ module.exports = {
   name: 'pokimane',
   description: 'Say a random Pokimane sound and show the garage door',
   guildOnly: true,
-  cooldown: 0.5,
   execute,
 };

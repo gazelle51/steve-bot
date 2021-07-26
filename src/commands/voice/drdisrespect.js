@@ -25,7 +25,6 @@ module.exports = {
   name: 'drdisrespect',
   description: 'Say a random Dr DisRespect line',
   guildOnly: true,
-  cooldown: 0.5,
   aliases: ['disrespect'],
   execute,
 };

@@ -27,6 +27,5 @@ module.exports = {
   name: 'borat',
   description: 'Say a random Borat line',
   guildOnly: true,
-  cooldown: 0.5,
   execute,
 };

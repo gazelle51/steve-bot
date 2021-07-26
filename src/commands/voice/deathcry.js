@@ -19,6 +19,5 @@ module.exports = {
   name: 'deathcry',
   description: 'CSGO death cry',
   guildOnly: true,
-  cooldown: 0.5,
   execute,
 };

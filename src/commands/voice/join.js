@@ -19,6 +19,5 @@ module.exports = {
   name: 'join',
   description: 'Join voice channel',
   guildOnly: true,
-  cooldown: 0.5,
   execute,
 };

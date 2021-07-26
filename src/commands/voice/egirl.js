@@ -27,6 +27,5 @@ module.exports = {
   name: 'egirl',
   description: 'Say a random e-girl line',
   guildOnly: true,
-  cooldown: 0.5,
   execute,
 };

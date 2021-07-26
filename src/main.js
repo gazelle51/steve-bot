@@ -11,6 +11,7 @@ const fs = require('fs');
 const { Client, Collection } = require('discord.js');
 
 // Create Discord client
+/** @type {import('./typedefs/discord').DiscordClient}} */
 const client = new Client();
 client.commands = new Collection();
 client.cooldowns = new Collection();

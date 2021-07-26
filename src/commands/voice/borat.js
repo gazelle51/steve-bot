@@ -1,5 +1,5 @@
 const borat = require('../../sounds/borat');
-const voice = require('../../utils/voice');
+const queue = require('../../utils/audioQueue');
 
 /**
  * Execute borat command.
@@ -8,27 +8,25 @@ const voice = require('../../utils/voice');
  * @param {Object} client - Discord client
  */
 async function execute(message, args, client) {
-  // Join voice channel
-  const connection = await voice.join(message);
+  let audio;
 
-  // Check connection was successful
-  if (!connection) return;
-
-  // Say a Borat line
+  // Get random Borat line
   if (args[0] === 'steve') {
-    connection.play(borat.peopleCallMeSteve);
+    audio = queue.formatAudio('borat.peopleCallMeSteve', borat.peopleCallMeSteve);
   } else {
     const boratSounds = Object.keys(borat);
     const randomBoratSound = boratSounds[Math.floor(Math.random() * boratSounds.length)];
-
-    connection.play(borat[randomBoratSound]);
+    audio = queue.formatAudio(`borat.${randomBoratSound}`, borat[randomBoratSound]);
   }
+
+  // Add to queue
+  queue.addAudio(client, message, audio);
 }
 
 module.exports = {
   name: 'borat',
   description: 'Say a random Borat line',
   guildOnly: true,
-  cooldown: 2,
+  cooldown: 0.5,
   execute,
 };

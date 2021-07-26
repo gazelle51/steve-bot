@@ -1,11 +1,18 @@
 const voice = require('./voice');
 
 /**
+ * Audio to play.
+ * @typedef {Object} Audio
+ * @property {string} title - Audio title
+ * @property {string} url - Audio URL
+ */
+
+/**
  * Create an audio queue for the specified server.
  * @param {Object} client - Discord client
  * @param {Object} message - Received message
  * @param {Object} voiceConnection - Voice channel connection
- * @param {{title: string, url: string}} audio - Audio to add to queue
+ * @param {Audio} audio - Audio to add to queue
  */
 function createServerQueue(client, message, voiceConnection, audio) {
   const queueConstruct = {
@@ -23,7 +30,7 @@ function createServerQueue(client, message, voiceConnection, audio) {
  * Disconnect if the queue is finished.
  * @param {Object} client - Discord client
  * @param {Object} guild - Discord guild
- * @param {{title: string, url: string}} audio - Audio to play
+ * @param {Audio} audio - Audio to play
  * @returns
  */
 function play(client, guild, audio) {
@@ -52,7 +59,7 @@ function play(client, guild, audio) {
  * If a queue doesn't exist, one will be created.
  * @param {Object} client - Discord client
  * @param {Object} message - Received message
- * @param {{title: string, url: string}} audio - Audio to add to queue
+ * @param {Audio} audio - Audio to add to queue
  * @returns
  */
 async function addAudio(client, message, audio) {
@@ -76,4 +83,14 @@ async function addAudio(client, message, audio) {
   }
 }
 
-module.exports = { createServerQueue, play, addAudio };
+/**
+ * Format an audio object.
+ * @param {string} title - Audio title
+ * @param {string} url - Audio URL
+ * @returns {Audio}
+ */
+function formatAudio(title, url) {
+  return { title: title, url: url };
+}
+
+module.exports = { createServerQueue, play, addAudio, formatAudio };

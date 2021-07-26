@@ -1,7 +1,7 @@
 /**
  * Execute args-info command.
  * @param {Object} message - Received message
- * @param {*} args
+ * @param {string[]} args
  */
 function execute(message, args) {
   message.channel.send(`Arguments are: ${args.join(', ')}`);

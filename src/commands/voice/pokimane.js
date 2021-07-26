@@ -4,7 +4,7 @@ const voice = require('../../utils/voice');
 /**
  * Execute pokimane command.
  * @param {Object} message - Received message
- * @param {*} args
+ * @param {string[]} args
  */
 async function execute(message, args) {
   message.channel.send('', {

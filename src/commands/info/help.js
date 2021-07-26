@@ -3,7 +3,7 @@ const { prefix } = require('../../config.json');
 /**
  * Execute help command.
  * @param {Object} message - Received message
- * @param {*} args
+ * @param {string[]} args
  */
 function execute(message, args) {
   const data = [];

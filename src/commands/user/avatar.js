@@ -1,7 +1,7 @@
 /**
  * Execute avatar command.
  * @param {Object} message - Received message
- * @param {*} args
+ * @param {string[]} args
  */
 function execute(message, args) {
   // Check if a user was mentioned, if not display sender's avatar

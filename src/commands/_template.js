@@ -1,7 +1,7 @@
 /**
  * Execute _template command.
  * @param {Object} message - Received message
- * @param {*} args
+ * @param {string[]} args
  */
 function execute(message, args) {}
 

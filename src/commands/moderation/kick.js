@@ -1,7 +1,7 @@
 /**
  * Execute kick command.
  * @param {Object} message - Received message
- * @param {*} args
+ * @param {string[]} args
  */
 function execute(message, args) {
   // Check a user was mentioned

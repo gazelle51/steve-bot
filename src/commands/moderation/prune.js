@@ -1,7 +1,7 @@
 /**
  * Execute prune command.
  * @param {Object} message - Received message
- * @param {*} args
+ * @param {string[]} args
  */
 function execute(message, args) {
   // Number of messages to delete

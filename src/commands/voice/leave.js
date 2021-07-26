@@ -3,7 +3,7 @@ const voice = require('../../utils/voice');
 /**
  * Execute leave command.
  * @param {Object} message - Received message
- * @param {*} args
+ * @param {string[]} args
  */
 async function execute(message, args) {
   await voice.leave(message);

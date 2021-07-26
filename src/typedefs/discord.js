@@ -1,5 +1,7 @@
 const { Client, Collection } = require('discord.js');
 
+// TODO: update maps and collections
+
 /**
  * Discord client
  * @typedef {Object} ClientExtension

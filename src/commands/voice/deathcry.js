@@ -1,5 +1,5 @@
 const csgo = require('../../sounds/csgo');
-const voice = require('../../utils/voice');
+const queue = require('../../utils/audioQueue');
 
 /**
  * Execute deathcry command.
@@ -8,20 +8,17 @@ const voice = require('../../utils/voice');
  * @param {Object} client - Discord client
  */
 async function execute(message, args, client) {
-  // Join voice channel
-  const connection = await voice.join(message);
+  // Format audio
+  const audio = queue.formatAudio('deathcry', csgo.deathcry);
 
-  // Check connection was successful
-  if (!connection) return;
-
-  // Say hello
-  connection.play(csgo.deathcry);
+  // Add to queue
+  queue.addAudio(client, message, audio);
 }
 
 module.exports = {
   name: 'deathcry',
   description: 'CSGO death cry',
   guildOnly: true,
-  cooldown: 2,
+  cooldown: 0.5,
   execute,
 };

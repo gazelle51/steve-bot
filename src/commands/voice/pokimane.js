@@ -1,5 +1,5 @@
 const pokimane = require('../../sounds/pokimane');
-const voice = require('../../utils/voice');
+const queue = require('../../utils/audioQueue');
 
 /**
  * Execute pokimane command.
@@ -14,27 +14,25 @@ async function execute(message, args, client) {
     ],
   });
 
-  // Join voice channel
-  const connection = await voice.join(message);
+  let audio;
 
-  // Check connection was successful
-  if (!connection) return;
-
-  // Say a pokimane line
+  // Get random Pokimane line
   if (args[0] === 'steve') {
-    connection.play(pokimane.niggaYouAintFunny);
+    audio = queue.formatAudio('pokimane.niggaYouAintFunny', pokimane.niggaYouAintFunny);
   } else {
     const pokimaneSounds = Object.keys(pokimane);
     const randomPokimaneSound = pokimaneSounds[Math.floor(Math.random() * pokimaneSounds.length)];
-
-    connection.play(pokimane[randomPokimaneSound]);
+    audio = queue.formatAudio(`pokimane.${randomPokimaneSound}`, pokimane[randomPokimaneSound]);
   }
+
+  // Add to queue
+  queue.addAudio(client, message, audio);
 }
 
 module.exports = {
   name: 'pokimane',
   description: 'Say a random Pokimane sound and show the garage door',
   guildOnly: true,
-  cooldown: 2,
+  cooldown: 0.5,
   execute,
 };

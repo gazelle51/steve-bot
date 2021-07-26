@@ -1,5 +1,5 @@
 const borat = require('../../sounds/borat');
-const voice = require('../../utils/voice');
+const queue = require('../../utils/audioQueue');
 
 /**
  * Execute join command.
@@ -8,20 +8,17 @@ const voice = require('../../utils/voice');
  * @param {Object} client - Discord client
  */
 async function execute(message, args, client) {
-  // Join voice channel
-  const connection = await voice.join(message);
+  // Format audio
+  const audio = queue.formatAudio('borat.helloNiceToMeetYou', borat.helloNiceToMeetYou);
 
-  // Check connection was successful
-  if (!connection) return;
-
-  // Say hello
-  connection.play(borat.helloNiceToMeetYou);
+  // Add to queue
+  queue.addAudio(client, message, audio);
 }
 
 module.exports = {
   name: 'join',
   description: 'Join voice channel',
   guildOnly: true,
-  cooldown: 2,
+  cooldown: 0.5,
   execute,
 };

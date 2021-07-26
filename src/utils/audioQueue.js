@@ -1,3 +1,5 @@
+const voice = require('./voice');
+
 /**
  * Create an audio queue for the specified server.
  * @param {Object} client - Discord client
@@ -45,4 +47,33 @@ function play(client, guild, audio) {
     .on('error', (error) => console.error(error));
 }
 
-module.exports = { createServerQueue, play };
+/**
+ * Add audio to queue and start playing.
+ * If a queue doesn't exist, one will be created.
+ * @param {Object} client - Discord client
+ * @param {Object} message - Received message
+ * @param {{title: string, url: string}} audio - Audio to add to queue
+ * @returns
+ */
+async function addAudio(client, message, audio) {
+  // Get queue for the server
+  const serverQueue = client.queue.get(message.guild.id);
+
+  if (!serverQueue) {
+    // If there is no queue, join voice channel
+    const connection = await voice.join(message);
+
+    // Check connection was successful before continuing
+    if (!connection) return;
+
+    // Create queue and start playing
+    createServerQueue(client, message, connection, audio);
+    play(client, message.guild, audio);
+  } else {
+    // If there is a queue, add to it
+    serverQueue.audioQueue.push(audio);
+    console.log(`${audio.title} has been added to the queue`);
+  }
+}
+
+module.exports = { createServerQueue, play, addAudio };

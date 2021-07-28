@@ -1,5 +1,5 @@
 const { Message } = require('discord.js');
-const { prefix } = require('../../config.json');
+const { defaultCooldown, prefix } = require('../../config.json');
 
 /**
  * Execute help command.
@@ -9,7 +9,7 @@ const { prefix } = require('../../config.json');
  */
 function execute(message, args, client) {
   const data = [];
-  const { commands } = message.client;
+  const commands = client.commands;
 
   // Check if generic help was requested
   if (!args.length) {
@@ -43,7 +43,7 @@ function execute(message, args, client) {
   if (command.description) data.push(`**Description:** ${command.description}`);
   if (command.usage) data.push(`**Usage:** ${prefix}${command.name} ${command.usage}`);
 
-  data.push(`**Cooldown:** ${command.cooldown || 3} second(s)`);
+  data.push(`**Cooldown:** ${command.cooldown || defaultCooldown} second(s)`);
 
   message.channel.send(data, { split: true });
 }

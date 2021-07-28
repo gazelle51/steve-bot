@@ -1,3 +1,4 @@
 {
-	"prefix": "~"
+  "prefix": "!",
+  "defaultCooldown": 0.1
 }

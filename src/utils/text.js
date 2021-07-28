@@ -1,11 +1,12 @@
-const { Guild } = require('discord.js');
+const { Guild, TextChannel, GuildChannel } = require('discord.js');
 
 /**
  * Find the first channel in the guild.
  * @param {Guild} guild - Guild to find channel in
- * @returns Channel
+ * @returns {TextChannel}
  */
 function findTextChannel(guild) {
+  // @ts-ignore
   return guild.channels.cache.filter((channel) => channel.type === 'text').first();
 }
 

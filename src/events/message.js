@@ -39,7 +39,7 @@ async function execute(message, client) {
   }
 
   // Check if user has server permissions
-  if (command.permissions) {
+  if (command.permissions && message.channel.type !== 'dm') {
     const authorPerms = message.channel.permissionsFor(message.author);
     if (!authorPerms || !authorPerms.has(command.permissions)) {
       return message.reply('You can not do this!');

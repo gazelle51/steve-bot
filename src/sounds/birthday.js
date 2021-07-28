@@ -1,4 +1,4 @@
 module.exports = {
-  music: 'https://www.voicy.network/Content/Clips/Sound/2ee87f67-1caa-46b5-9d7f-d518d660fb10.mp3',
-  bdayBoy: 'https://www.voicy.network/Content/Clips/Sound/2585f9ab-4af2-41a6-919d-fb5557e81fae.mp3',
+  music: 'https://www.voicy.network/Content/Clips/Sound/b8c7b683-acb9-41bd-ae19-a3bb496ecaff.mp3',
+  bdayBoy: 'https://www.voicy.network/Content/Clips/Sound/27ac7405-7500-4ee8-8a9e-85fca286a29b.mp3',
 };

@@ -1,11 +1,12 @@
+const { Message } = require('discord.js');
 const borat = require('../../sounds/borat');
 const queue = require('../../utils/audioQueue');
 
 /**
  * Execute borat command.
- * @param {Object} message - Received message
+ * @param {Message} message - Received message
  * @param {string[]} args
- * @param {Object} client - Discord client
+ * @param {import('../../typedefs/discord').DiscordClient} client - Discord client
  */
 async function execute(message, args, client) {
   let audio;

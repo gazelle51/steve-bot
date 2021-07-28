@@ -1,10 +1,11 @@
+const { Guild, Message, VoiceConnection } = require('discord.js');
 const voice = require('./voice');
 
 /**
  * Create an audio queue for the specified server.
- * @param {Object} client - Discord client
- * @param {Object} message - Received message
- * @param {Object} voiceConnection - Voice channel connection
+ * @param {import('../typedefs/discord').DiscordClient} client - Discord client
+ * @param {Message} message - Received message
+ * @param {VoiceConnection} voiceConnection - Voice channel connection
  * @param {import('../typedefs/audio').Audio} audio - Audio to add to queue
  */
 function createServerQueue(client, message, voiceConnection, audio) {
@@ -22,8 +23,8 @@ function createServerQueue(client, message, voiceConnection, audio) {
 /**
  * Play the next audio in the queue.
  * Disconnect if the queue is finished.
- * @param {Object} client - Discord client
- * @param {Object} guild - Discord guild
+ * @param {import('../typedefs/discord').DiscordClient} client - Discord client
+ * @param {Guild} guild - Discord guild
  * @param {import('../typedefs/audio').Audio} audio - Audio to play
  * @returns
  */
@@ -66,8 +67,8 @@ function play(client, guild, audio) {
  * Add audio to queue and start playing.
  * If queue is inactive, it will be resumed.
  * If a queue doesn't exist, one will be created.
- * @param {Object} client - Discord client
- * @param {Object} message - Received message
+ * @param {import('../typedefs/discord').DiscordClient} client - Discord client
+ * @param {Message} message - Received message
  * @param {import('../typedefs/audio').Audio} audio - Audio to add to queue
  * @returns
  */

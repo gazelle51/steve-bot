@@ -1,11 +1,12 @@
+const { Message } = require('discord.js');
 const egirl = require('../../sounds/egirl');
 const queue = require('../../utils/audioQueue');
 
 /**
  * Execute egirl command.
- * @param {Object} message - Received message
+ * @param {Message} message - Received message
  * @param {string[]} args
- * @param {Object} client - Discord client
+ * @param {import('../../typedefs/discord').DiscordClient} client - Discord client
  */
 async function execute(message, args, client) {
   let audio;

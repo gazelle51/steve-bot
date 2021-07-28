@@ -1,8 +1,10 @@
+const { Message } = require('discord.js');
+
 /**
  * Execute avatar command.
- * @param {Object} message - Received message
+ * @param {Message} message - Received message
  * @param {string[]} args
- * @param {Object} client - Discord client
+ * @param {import("../../typedefs/discord").DiscordClient} client - Discord client
  */
 function execute(message, args, client) {
   // Check if a user was mentioned, if not display sender's avatar

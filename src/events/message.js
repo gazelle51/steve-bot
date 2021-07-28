@@ -1,10 +1,10 @@
+const { Collection, Message } = require('discord.js');
 const { prefix } = require('../config.json');
-const { Collection } = require('discord.js');
 
 /**
  * Execute when the message event fires.
- * @param {Object} message - Received message
- * @param {Object} client - Discord client
+ * @param {Message} message - Received message
+ * @param {import('../typedefs/discord').DiscordClient} client - Discord client
  */
 async function execute(message, client) {
   // Do nothing if the message does not start with prefix or was from a bot

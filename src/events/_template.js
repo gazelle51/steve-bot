@@ -1,6 +1,6 @@
 /**
  * Execute when the _template event fires.
- * @param {Object} client - Discord client
+ * @param {import("../typedefs/discord").DiscordClient} client - Discord client
  */
 function execute(client) {}
 

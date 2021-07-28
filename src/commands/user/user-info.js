@@ -1,8 +1,10 @@
+const { Message } = require('discord.js');
+
 /**
  * Execute user-info command.
- * @param {Object} message - Received message
+ * @param {Message} message - Received message
  * @param {string[]} args
- * @param {Object} client - Discord client
+ * @param {import("../../typedefs/discord").DiscordClient} client - Discord client
  */
 function execute(message, args, client) {
   // Send user info

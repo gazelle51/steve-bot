@@ -1,11 +1,12 @@
+const { GuildMember } = require('discord.js');
 const _ = require('lodash');
 const text = require('../utils/text');
 
 /**
  * Execute when the guildMemberUpdate event fires.
- * @param {*} oldMember - The member before the update
- * @param {*} newMember - The member after the update
- * @param {Object} client - Discord client
+ * @param {GuildMember} oldMember - The member before the update
+ * @param {GuildMember} newMember - The member after the update
+ * @param {import('../typedefs/discord').DiscordClient} client - Discord client
  */
 function execute(oldMember, newMember, client) {
   // Get a channel

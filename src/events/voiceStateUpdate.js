@@ -2,7 +2,7 @@ const text = require('../utils/text');
 
 /**
  * Execute when the voiceStateUpdate event fires.
- * @param {Object} client - Discord client
+ * @param {import('../typedefs/discord').DiscordClient} client - Discord client
  */
 async function execute(oldState, newState, client) {
   // Get a channel

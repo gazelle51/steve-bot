@@ -1,8 +1,10 @@
+const { Message } = require('discord.js');
+
 /**
  * Join a voice channel. The channel that is joined will be the same channel
  * the incoming message's author is connected to. If they are not connected
  * to a voice channel the bot will not join a voice channel.
- * @param {Object} message - Incoming message received in Discord
+ * @param {Message} message - Incoming message received in Discord
  * @returns Voice connection or undefined
  */
 async function join(message) {
@@ -23,7 +25,7 @@ async function join(message) {
  * Leave a voice channel. The channel that is left will be the same channel
  * the incoming message's author is connected to. If they are not connected
  * to a voice channel the bot will not leave a voice channel.
- * @param {Object} message - Incoming message received in Discord
+ * @param {Message} message - Incoming message received in Discord
  * @returns
  */
 async function leave(message) {

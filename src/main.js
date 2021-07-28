@@ -7,8 +7,8 @@ require('dotenv').config();
  * Also need to check that permission is enabled for bot in developer portal.
  */
 
-const fs = require('fs');
 const { Client, Collection } = require('discord.js');
+const fs = require('fs');
 
 // Create Discord client
 /** @type {import('./typedefs/discord').DiscordClient}} */

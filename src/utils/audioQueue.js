@@ -130,13 +130,13 @@ async function addAudio(client, message, audio) {
   } else if (serverQueue && serverQueue.playing === false) {
     // If there is a queue that is not playing, add to it and start again
     serverQueue.audioQueue.push(audio);
-    console.log(`${audio.title} has been added to the queue`);
     play(client, message.guild, audio);
   } else {
     // If there is a queue that is playing, add to it
     serverQueue.audioQueue.push(audio);
-    console.log(`${audio.title} has been added to the queue`);
   }
+
+  console.log(`${audio.title} has been added to the queue`);
 }
 
 /**

@@ -12,6 +12,8 @@ async function execute(message, args, client) {
   // Search Youtube
   const youtubeResult = await yts(args.join(' '));
 
+  // TODO: no search results
+
   // Format audio
   const audio = queue.formatAudio(youtubeResult.videos[0].title, youtubeResult.videos[0].url);
 

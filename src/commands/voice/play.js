@@ -1,5 +1,6 @@
 const { Message } = require('discord.js');
 const queue = require('../../utils/audioQueue');
+const yts = require('yt-search');
 
 /**
  * Execute skip command.
@@ -8,8 +9,11 @@ const queue = require('../../utils/audioQueue');
  * @param {import('../../typedefs/discord').DiscordClient} client - Discord client
  */
 async function execute(message, args, client) {
+  // Search Youtube
+  const youtubeResult = await yts(args.join(' '));
+
   // Format audio
-  const audio = queue.formatAudio(args[0], args[0]);
+  const audio = queue.formatAudio(youtubeResult.videos[0].title, youtubeResult.videos[0].url);
 
   // Add to queue
   queue.addAudio(client, message, audio);

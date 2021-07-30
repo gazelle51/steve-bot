@@ -25,7 +25,7 @@ module.exports = {
   name: 'play',
   description: 'Play a song from Youtube',
   args: true,
-  usage: '<youtube URL>',
+  usage: '<Name of audio to play>',
   guildOnly: true,
   execute,
 };

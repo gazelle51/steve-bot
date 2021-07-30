@@ -105,6 +105,24 @@ function stop(client, message) {
 }
 
 /**
+ * Get the current queue.
+ * @param {import('../typedefs/discord').DiscordClient} client - Discord client
+ * @param {Message} message - Discord message
+ * @returns
+ */
+function getQueue(client, message) {
+  if (!message.member.voice.channel)
+    return message.channel.send('You have to be in a voice channel to see the music!');
+
+  // Get server queue
+  const serverQueue = client.queue.get(message.guild.id);
+
+  if (!serverQueue) return message.channel.send('The queue is empty!');
+
+  return serverQueue.audioQueue;
+}
+
+/**
  * Add audio to queue and start playing.
  * If queue is inactive, it will be resumed.
  * If a queue doesn't exist, one will be created.
@@ -149,4 +167,4 @@ function formatAudio(title, url) {
   return { title: title, url: url };
 }
 
-module.exports = { createServerQueue, play, skip, stop, addAudio, formatAudio };
+module.exports = { createServerQueue, play, skip, stop, getQueue, addAudio, formatAudio };

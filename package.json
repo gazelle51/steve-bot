@@ -26,7 +26,8 @@
     "discord.js": "^12.5.3",
     "dotenv": "^10.0.0",
     "ffmpeg-static": "^4.4.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "ytdl-core": "^4.9.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"

@@ -1,5 +1,6 @@
 const { Guild, Message, VoiceConnection } = require('discord.js');
 const voice = require('./voice');
+const ytdl = require('ytdl-core');
 
 /**
  * Create an audio queue for the specified server.
@@ -53,9 +54,12 @@ function play(client, guild, audio) {
     console.log('Could not clear inactivity timeout');
   }
 
+  // Get audio to play
+  const url = audio.url.includes('youtube') ? ytdl(audio.url) : audio.url;
+
   // Dispatcher
   serverQueue.voiceConnection
-    .play(audio.url)
+    .play(url)
     .on('finish', () => {
       serverQueue.audioQueue.shift();
       play(client, guild, serverQueue.audioQueue[0]);

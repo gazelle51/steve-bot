@@ -8,18 +8,21 @@ async function execute(oldState, newState, client) {
   // Get a channel
   const channel = text.findTextChannel(newState.guild);
 
-  // Check if user started streaming
-  if (!oldState.streaming && newState.streaming) {
-    channel.send(`${newState.member.user.username} started streaming`);
+  // Check if user started streaming and is playing CS-GO
+  if (
+    !oldState.streaming &&
+    newState.streaming &&
+    newState.member.user.presence.activities.filter(
+      (activity) =>
+        activity.type === 'PLAYING' && activity.name === 'Counter-Strike: Global Offensive'
+    ).length
+  ) {
+    channel.send(`${newState.member.user.username} is opening cases!!!!!!!!`);
+  }
 
-    // Check if user is playing CS GO
-    if (
-      newState.member.user.presence.activities.filter(
-        (activity) =>
-          activity.type === 'PLAYING' && activity.name === 'Counter-Strike: Global Offensive'
-      ).length
-    )
-      channel.send(`${newState.member.user.username} is opening cases!!!!!!!!`);
+  // Check if user started streaming
+  else if (!oldState.streaming && newState.streaming) {
+    channel.send(`${newState.member.user.username} started streaming`);
   }
 }
 

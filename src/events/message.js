@@ -38,7 +38,7 @@ async function execute(message, client) {
     return message.reply("I can't execute that command inside DMs!");
   }
 
-  // Check if user has server permissions
+  // Check if user has command permissions
   if (command.permissions && message.channel.type !== 'dm') {
     const authorPerms = message.channel.permissionsFor(message.author);
     if (!authorPerms || !authorPerms.has(command.permissions)) {
@@ -86,7 +86,7 @@ async function execute(message, client) {
 
   // Execute the command
   try {
-    command.execute(message, args, client);
+    await command.execute(message, args, client);
   } catch (error) {
     console.error(error);
     message.reply('there was an error trying to execute that command!');

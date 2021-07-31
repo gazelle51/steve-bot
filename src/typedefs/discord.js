@@ -1,4 +1,11 @@
-const { Client, Collection, TextChannel, VoiceChannel, VoiceConnection } = require('discord.js');
+const {
+  Client,
+  Collection,
+  Permissions,
+  TextChannel,
+  VoiceChannel,
+  VoiceConnection,
+} = require('discord.js');
 
 // TODO: update maps and collections
 
@@ -12,7 +19,7 @@ const { Client, Collection, TextChannel, VoiceChannel, VoiceConnection } = requi
  * @property {boolean} [guildOnly] - if true, command cannot be used in DMs
  * @property {number} [cooldown] - command cooldown, if different from the default
  * @property {string[]} [aliases] - other command names that can be used to execute command
- * @property {string} [permissions] - permission needed to execute the command
+ * @property {Permissions} [permissions] - permission needed to execute the command
  * @property {Function} execute - function that is called whent the command is executed
  */
 

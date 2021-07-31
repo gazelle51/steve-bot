@@ -3,7 +3,7 @@ const queue = require('../../utils/audioQueue');
 const yts = require('yt-search');
 
 /**
- * Execute skip command.
+ * Execute play command.
  * @param {Message} message - Received message
  * @param {string[]} args
  * @param {import('../../typedefs/discord').DiscordClient} client - Discord client

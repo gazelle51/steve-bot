@@ -7,6 +7,7 @@ require('dotenv').config();
  * Also need to check that permission is enabled for bot in developer portal.
  */
 
+const { disabledCommands, disabledEvents } = require('./config.json');
 const { Client, Collection } = require('discord.js');
 const fs = require('fs');
 
@@ -29,10 +30,10 @@ for (const folder of commandFolders) {
     .readdirSync(`./src/commands/${folder}`)
     .filter((file) => file.endsWith('.js'));
 
-  // Add to client command Collection
+  // Add to client command Collection if not disabled
   for (const file of commandFiles) {
     const command = require(`./commands/${folder}/${file}`);
-    client.commands.set(command.name, command);
+    if (!disabledCommands.includes(command.name)) client.commands.set(command.name, command);
   }
 }
 
@@ -44,7 +45,10 @@ const eventFiles = fs
 // Load and configure events
 for (const file of eventFiles) {
   const event = require(`./events/${file}`);
-  if (event.once) {
+
+  // Continue if event is disabled
+  if (disabledEvents.includes(event.name)) continue;
+  else if (event.once) {
     client.once(event.name, (...args) => event.execute(...args, client));
   } else {
     client.on(event.name, (...args) => event.execute(...args, client));
@@ -52,3 +56,6 @@ for (const file of eventFiles) {
 }
 
 client.login(process.env.TOKEN);
+
+console.log(`Disabled events are: ${disabledEvents.join(', ')}`);
+console.log(`Disabled commands are: ${disabledCommands.join(', ')}`);

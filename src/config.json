@@ -1,4 +1,6 @@
 {
   "prefix": "~",
-  "defaultCooldown": 0.1
+  "defaultCooldown": 0.1,
+  "disabledCommands": [],
+  "disabledEvents": []
 }

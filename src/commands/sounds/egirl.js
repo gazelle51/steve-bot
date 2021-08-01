@@ -12,7 +12,7 @@ const sound = require('../../utils/sound');
 async function execute(message, args, client) {
   let audio;
 
-  // Get random e-girl line
+  // Get random E-Girl line
   if (args[0] === 'stepbro') {
     audio = queue.formatAudio('egirl.whatAreYouDoingStepBro', egirl.whatAreYouDoingStepBro);
   } else {
@@ -26,7 +26,7 @@ async function execute(message, args, client) {
 
 module.exports = {
   name: 'egirl',
-  description: 'Say a random e-girl line',
+  description: 'Say a random E-Girl line',
   guildOnly: true,
   execute,
 };

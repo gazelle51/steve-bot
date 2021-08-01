@@ -108,16 +108,13 @@ function stop(client, message) {
  * Get the current queue.
  * @param {import('../typedefs/discord').DiscordClient} client - Discord client
  * @param {Message} message - Discord message
- * @returns
+ * @returns {import('../typedefs/audio').Audio[]}
  */
 function getQueue(client, message) {
-  if (!message.member.voice.channel)
-    return message.channel.send('You have to be in a voice channel to see the music!');
-
   // Get server queue
   const serverQueue = client.queue.get(message.guild.id);
 
-  if (!serverQueue) return message.channel.send('The queue is empty!');
+  if (!serverQueue) return [];
 
   return serverQueue.audioQueue;
 }

@@ -1,6 +1,7 @@
 const { Message } = require('discord.js');
 const birthday = require('../../sounds/birthday');
 const queue = require('../../utils/audioQueue');
+const sound = require('../../utils/sound');
 
 /**
  * Execute birthday command.
@@ -17,9 +18,8 @@ async function execute(message, args, client) {
   } else if (args[0] === 'boy') {
     audio = queue.formatAudio('birthday.bdayBoy', birthday.bdayBoy);
   } else {
-    const bdaySounds = Object.keys(birthday);
-    const randomBdaySound = bdaySounds[Math.floor(Math.random() * bdaySounds.length)];
-    audio = queue.formatAudio(`birthday.${randomBdaySound}`, birthday[randomBdaySound]);
+    const randomSound = sound.getNameOfRandomSound(birthday);
+    audio = queue.formatAudio(`birthday.${randomSound}`, birthday[randomSound]);
   }
 
   // Add to queue

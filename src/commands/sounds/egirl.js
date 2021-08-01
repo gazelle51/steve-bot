@@ -1,6 +1,7 @@
 const { Message } = require('discord.js');
 const egirl = require('../../sounds/egirl');
 const queue = require('../../utils/audioQueue');
+const sound = require('../../utils/sound');
 
 /**
  * Execute egirl command.
@@ -15,9 +16,8 @@ async function execute(message, args, client) {
   if (args[0] === 'stepbro') {
     audio = queue.formatAudio('egirl.whatAreYouDoingStepBro', egirl.whatAreYouDoingStepBro);
   } else {
-    const egirlSounds = Object.keys(egirl);
-    const randomEgirlSound = egirlSounds[Math.floor(Math.random() * egirlSounds.length)];
-    audio = queue.formatAudio(`egirl.${randomEgirlSound}`, egirl[randomEgirlSound]);
+    const randomSound = sound.getNameOfRandomSound(egirl);
+    audio = queue.formatAudio(`egirl.${randomSound}`, egirl[randomSound]);
   }
 
   // Add to queue

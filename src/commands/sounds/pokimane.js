@@ -1,6 +1,7 @@
 const { Message } = require('discord.js');
 const pokimane = require('../../sounds/pokimane');
 const queue = require('../../utils/audioQueue');
+const sound = require('../../utils/sound');
 
 /**
  * Execute pokimane command.
@@ -15,16 +16,9 @@ async function execute(message, args, client) {
     ],
   });
 
-  let audio;
-
   // Get random Pokimane line
-  if (args[0] === 'steve') {
-    audio = queue.formatAudio('pokimane.niggaYouAintFunny', pokimane.niggaYouAintFunny);
-  } else {
-    const pokimaneSounds = Object.keys(pokimane);
-    const randomPokimaneSound = pokimaneSounds[Math.floor(Math.random() * pokimaneSounds.length)];
-    audio = queue.formatAudio(`pokimane.${randomPokimaneSound}`, pokimane[randomPokimaneSound]);
-  }
+  const randomSound = sound.getNameOfRandomSound(pokimane);
+  const audio = queue.formatAudio(`pokimane.${randomSound}`, pokimane[randomSound]);
 
   // Add to queue
   queue.addAudio(client, message, audio);

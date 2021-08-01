@@ -1,6 +1,7 @@
 const { Message } = require('discord.js');
 const borat = require('../../sounds/borat');
 const queue = require('../../utils/audioQueue');
+const sound = require('../../utils/sound');
 
 /**
  * Execute borat command.
@@ -15,9 +16,8 @@ async function execute(message, args, client) {
   if (args[0] === 'steve') {
     audio = queue.formatAudio('borat.peopleCallMeSteve', borat.peopleCallMeSteve);
   } else {
-    const boratSounds = Object.keys(borat);
-    const randomBoratSound = boratSounds[Math.floor(Math.random() * boratSounds.length)];
-    audio = queue.formatAudio(`borat.${randomBoratSound}`, borat[randomBoratSound]);
+    const randomSound = sound.getNameOfRandomSound(borat);
+    audio = queue.formatAudio(`borat.${randomSound}`, borat[randomSound]);
   }
 
   // Add to queue

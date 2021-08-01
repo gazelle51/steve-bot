@@ -1,6 +1,7 @@
 const { Message } = require('discord.js');
 const drdisrespect = require('../../sounds/drdisrespect');
 const queue = require('../../utils/audioQueue');
+const sound = require('../../utils/sound');
 
 /**
  * Execute drdisrespect command.
@@ -10,13 +11,8 @@ const queue = require('../../utils/audioQueue');
  */
 async function execute(message, args, client) {
   // Get random Dr DisRespect line
-  const drdisrespectSounds = Object.keys(drdisrespect);
-  const randomDrdisrespectSound =
-    drdisrespectSounds[Math.floor(Math.random() * drdisrespectSounds.length)];
-  const audio = queue.formatAudio(
-    `drdisrespect.${randomDrdisrespectSound}`,
-    drdisrespect[randomDrdisrespectSound]
-  );
+  const randomSound = sound.getNameOfRandomSound(drdisrespect);
+  const audio = queue.formatAudio(`drdisrespect.${randomSound}`, drdisrespect[randomSound]);
 
   // Add to queue
   queue.addAudio(client, message, audio);

@@ -19,11 +19,6 @@ async function execute(oldState, newState, client) {
   ) {
     channel.send(`${newState.member.user.username} is opening cases!!!!!!!!`);
   }
-
-  // Check if user started streaming
-  else if (!oldState.streaming && newState.streaming) {
-    channel.send(`${newState.member.user.username} started streaming`);
-  }
 }
 
 module.exports = {

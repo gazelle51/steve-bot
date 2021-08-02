@@ -10,7 +10,12 @@ const queue = require('../../utils/audioQueue');
  */
 async function execute(message, args, client) {
   // Format audio
-  const audio = queue.formatAudio('borat.helloNiceToMeetYou', borat.helloNiceToMeetYou);
+  const audio = queue.formatAudio(
+    'borat.helloNiceToMeetYou',
+    borat.helloNiceToMeetYou,
+    '?',
+    message.author.username
+  );
 
   // Add to queue
   queue.addAudio(client, message, audio);

@@ -19,7 +19,11 @@ async function execute(message, args, client) {
   if (!audioQueue.length) return message.channel.send('The queue is empty!');
 
   // Display results in text channel
-  message.channel.send(audioQueue.map((audio, i) => `${i}. ${audio.title}`));
+  message.channel.send(
+    audioQueue.map(
+      (audio, i) => `${i}. ${audio.title} (${audio.length}), added by ${audio.addedBy}`
+    )
+  );
 }
 
 module.exports = {

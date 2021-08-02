@@ -14,12 +14,17 @@ async function execute(message, args, client) {
 
   // Get random birthday line
   if (args[0] === 'song' || args[0] === 'music') {
-    audio = queue.formatAudio('birthday.music', birthday.music);
+    audio = queue.formatAudio('birthday.music', birthday.music, '?', message.author.username);
   } else if (args[0] === 'boy') {
-    audio = queue.formatAudio('birthday.bdayBoy', birthday.bdayBoy);
+    audio = queue.formatAudio('birthday.bdayBoy', birthday.bdayBoy, '?', message.author.username);
   } else {
     const randomSound = sound.getNameOfRandomSound(birthday);
-    audio = queue.formatAudio(`birthday.${randomSound}`, birthday[randomSound]);
+    audio = queue.formatAudio(
+      `birthday.${randomSound}`,
+      birthday[randomSound],
+      '?',
+      message.author.username
+    );
   }
 
   // Add to queue

@@ -14,10 +14,20 @@ async function execute(message, args, client) {
 
   // Get random E-Girl line
   if (args[0] === 'stepbro') {
-    audio = queue.formatAudio('egirl.whatAreYouDoingStepBro', egirl.whatAreYouDoingStepBro);
+    audio = queue.formatAudio(
+      'egirl.whatAreYouDoingStepBro',
+      egirl.whatAreYouDoingStepBro,
+      '?',
+      message.author.username
+    );
   } else {
     const randomSound = sound.getNameOfRandomSound(egirl);
-    audio = queue.formatAudio(`egirl.${randomSound}`, egirl[randomSound]);
+    audio = queue.formatAudio(
+      `egirl.${randomSound}`,
+      egirl[randomSound],
+      '?',
+      message.author.username
+    );
   }
 
   // Add to queue

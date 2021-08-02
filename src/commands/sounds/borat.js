@@ -14,10 +14,20 @@ async function execute(message, args, client) {
 
   // Get random Borat line
   if (args[0] === 'steve') {
-    audio = queue.formatAudio('borat.peopleCallMeSteve', borat.peopleCallMeSteve);
+    audio = queue.formatAudio(
+      'borat.peopleCallMeSteve',
+      borat.peopleCallMeSteve,
+      '?',
+      message.author.username
+    );
   } else {
     const randomSound = sound.getNameOfRandomSound(borat);
-    audio = queue.formatAudio(`borat.${randomSound}`, borat[randomSound]);
+    audio = queue.formatAudio(
+      `borat.${randomSound}`,
+      borat[randomSound],
+      '?',
+      message.author.username
+    );
   }
 
   // Add to queue

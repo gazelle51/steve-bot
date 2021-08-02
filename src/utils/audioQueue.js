@@ -158,10 +158,12 @@ async function addAudio(client, message, audio) {
  * Format an audio object.
  * @param {string} title - Audio title
  * @param {string} url - Audio URL
+ * @param {string} length - Audio length
+ * @param {string} addedBy - User who added audio to queue
  * @returns {import('../typedefs/audio').Audio}
  */
-function formatAudio(title, url) {
-  return { title: title, url: url };
+function formatAudio(title, url, length, addedBy) {
+  return { title: title, url: url, length: length, addedBy: addedBy };
 }
 
 module.exports = { createServerQueue, play, skip, stop, getQueue, addAudio, formatAudio };

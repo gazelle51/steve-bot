@@ -19,7 +19,12 @@ async function execute(message, args, client) {
   }
 
   // Format audio
-  const audio = queue.formatAudio(youtubeResult.videos[0].title, youtubeResult.videos[0].url);
+  const audio = queue.formatAudio(
+    youtubeResult.videos[0].title,
+    youtubeResult.videos[0].url,
+    youtubeResult.videos[0].duration.toString(),
+    message.author.username
+  );
 
   // Add to queue
   queue.addAudio(client, message, audio);

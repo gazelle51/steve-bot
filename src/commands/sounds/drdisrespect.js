@@ -12,7 +12,12 @@ const sound = require('../../utils/sound');
 async function execute(message, args, client) {
   // Get random Dr DisRespect line
   const randomSound = sound.getNameOfRandomSound(drdisrespect);
-  const audio = queue.formatAudio(`drdisrespect.${randomSound}`, drdisrespect[randomSound]);
+  const audio = queue.formatAudio(
+    `drdisrespect.${randomSound}`,
+    drdisrespect[randomSound],
+    '?',
+    message.author.username
+  );
 
   // Add to queue
   queue.addAudio(client, message, audio);

@@ -10,7 +10,7 @@ const queue = require('../../utils/audioQueue');
  */
 async function execute(message, args, client) {
   // Format audio
-  const audio = queue.formatAudio('deathcry', csgo.deathcry);
+  const audio = queue.formatAudio('deathcry', csgo.deathcry, '?', message.author.username);
 
   // Add to queue
   queue.addAudio(client, message, audio);

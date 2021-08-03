@@ -18,12 +18,19 @@ async function execute(message, args, client) {
   // Check if the queue is empty
   if (!audioQueue.length) return message.channel.send('The queue is empty!');
 
+  // Get audio now playing
+  const nowPlaying = audioQueue.shift();
+
+  // Format string to send
+  let displayString = `**Now playing:** ${nowPlaying.title} (${nowPlaying.length}), added by ${nowPlaying.addedBy}\n\n**Up next:**\n`;
+  for (const [i, audio] of audioQueue.entries()) {
+    displayString = displayString.concat(
+      `${i}. ${audio.title} (${audio.length}), added by ${audio.addedBy}\n`
+    );
+  }
+
   // Display results in text channel
-  message.channel.send(
-    audioQueue.map(
-      (audio, i) => `${i}. ${audio.title} (${audio.length}), added by ${audio.addedBy}`
-    )
-  );
+  message.channel.send(displayString);
 }
 
 module.exports = {

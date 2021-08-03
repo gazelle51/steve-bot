@@ -108,7 +108,7 @@ function stop(client, message) {
  * Get the current queue.
  * @param {import('../typedefs/discord').DiscordClient} client - Discord client
  * @param {Message} message - Discord message
- * @returns {import('../typedefs/audio').Audio[]}
+ * @returns {import('../typedefs/audio').Audio[]} Copy of the queue array
  */
 function getQueue(client, message) {
   // Get server queue
@@ -116,7 +116,7 @@ function getQueue(client, message) {
 
   if (!serverQueue) return [];
 
-  return serverQueue.audioQueue;
+  return [...serverQueue.audioQueue];
 }
 
 /**

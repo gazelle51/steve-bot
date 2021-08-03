@@ -22,10 +22,10 @@ async function execute(message, args, client) {
   const nowPlaying = audioQueue.shift();
 
   // Format string to send
-  let displayString = `**Now playing:** ${nowPlaying.title} (${nowPlaying.length}), added by ${nowPlaying.addedBy}\n\n**Up next:**\n`;
+  let displayString = `**Now playing:** \`${nowPlaying.title}\` (${nowPlaying.length}), added by ${nowPlaying.addedBy}\n\n**Up next:**\n`;
   for (const [i, audio] of audioQueue.entries()) {
     displayString = displayString.concat(
-      `${i}. ${audio.title} (${audio.length}), added by ${audio.addedBy}\n`
+      `${i + 1}. \`${audio.title}\` (${audio.length}), added by ${audio.addedBy}\n`
     );
   }
 

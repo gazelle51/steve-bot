@@ -59,7 +59,7 @@ function play(client, guild, audio) {
 
   // Dispatcher
   serverQueue.voiceConnection
-    .play(url)
+    .play(url, { volume: audio.volume ? audio.volume : 1 })
     .on('finish', () => {
       serverQueue.audioQueue.shift();
       play(client, guild, serverQueue.audioQueue[0]);
@@ -160,10 +160,11 @@ async function addAudio(client, message, audio) {
  * @param {string} url - Audio URL
  * @param {string} length - Audio length
  * @param {string} addedBy - User who added audio to queue
+ * @param {number} [volume=undefined] - Volume to play audio at
  * @returns {import('../typedefs/audio').Audio}
  */
-function formatAudio(title, url, length, addedBy) {
-  return { title: title, url: url, length: length, addedBy: addedBy };
+function formatAudio(title, url, length, addedBy, volume = undefined) {
+  return { title: title, url: url, length: length, addedBy: addedBy, volume: volume };
 }
 
 module.exports = { createServerQueue, play, skip, stop, getQueue, addAudio, formatAudio };

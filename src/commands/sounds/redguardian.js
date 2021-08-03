@@ -14,7 +14,8 @@ async function execute(message, args, client) {
     'redGuardian',
     redGuardian.iHaveALotOfEnergy,
     '?',
-    message.author.username
+    message.author.username,
+    2
   );
 
   // Add to queue

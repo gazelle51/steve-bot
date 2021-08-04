@@ -12,43 +12,46 @@ async function execute(message, args, client) {
   if (!message.member.voice.channel)
     return message.channel.send('You have to be in a voice channel to see the music!');
 
-  // https://v12.discordjs.guide/popular-topics/embeds.html#embed-preview
-  const exampleEmbed = new MessageEmbed()
+  // Set up embed
+  const queueEmbed = new MessageEmbed()
     .setColor('#23E5D6')
     .setTitle('✨🎵 Music Queue 🎵✨')
-    .addFields(
-      {
-        name: 'Now playing',
-        value: 'Some value here',
-      },
-      {
-        name: 'Up next',
-        value: '1. Some value here\n2. Some value here\n3. Some value here\n\nx songs, y length',
-      }
-    )
     .setTimestamp()
     .setFooter('Page 1/1');
-  message.channel.send(exampleEmbed);
 
   // Get queue
   const audioQueue = queue.getQueue(client, message);
 
   // Check if the queue is empty
-  if (!audioQueue.length) return message.channel.send('The queue is empty!');
+  if (!audioQueue.length) {
+    queueEmbed.addField(
+      "There's nothing here",
+      '​No music is being played 😭! Add some music to the queue using the `play` command.​'
+    );
+    return message.channel.send(queueEmbed);
+  }
 
   // Get audio now playing
   const nowPlaying = audioQueue.shift();
 
-  // Format string to send
-  let displayString = `**Now playing:** \`${nowPlaying.title}\` (${nowPlaying.length}), added by \`${nowPlaying.addedBy}\`\n\n**Up next:**\n`;
-  for (const [i, audio] of audioQueue.entries()) {
-    displayString = displayString.concat(
-      `${i + 1}. \`${audio.title}\` (${audio.length}), added by \`${audio.addedBy}\`\n`
-    );
-  }
+  // Add now playing to the embed
+  queueEmbed.addField(
+    'Now playing',
+    `${nowPlaying.title} (${nowPlaying.length}), added by \`${nowPlaying.addedBy}\`\n`
+  );
+
+  // Add up next to the embed
+  const upNext = audioQueue.length
+    ? audioQueue.reduce(
+        (finalStr, audio, i) =>
+          finalStr + `${i + 1}. ${audio.title} (${audio.length}), added by \`${audio.addedBy}\`\n`,
+        ''
+      )
+    : `No more songs in the queue`;
+  queueEmbed.addField('Up next', `${upNext}\n**Songs in queue:** ${audioQueue.length}\n`);
 
   // Display results in text channel
-  message.channel.send(displayString);
+  message.channel.send(queueEmbed);
 }
 
 module.exports = {

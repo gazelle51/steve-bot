@@ -8,12 +8,15 @@ const { defaultCooldown, prefix } = require('../config.json');
  */
 async function execute(message, client) {
   // Do nothing if the message does not start with prefix or was from a bot
-  if (
-    !message.content.startsWith(prefix) ||
-    message.author.bot ||
-    message.author.id === process.env.ADAMO // Ignore M
-  )
+  if (!message.content.startsWith(prefix) || message.author.bot) return;
+
+  // Do nothing if a blocked user tried to interact with bot
+  if (JSON.parse(process.env.BLOCKED_USERS).includes(message.author.id)) {
+    console.log(
+      `${message.author.username} (${message.author.id}) tried to execute '${message.content}' but is blocked`
+    );
     return;
+  }
 
   // Extract command and arguments
   const args = message.content.slice(prefix.length).trim().split(/ +/);

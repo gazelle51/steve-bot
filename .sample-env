@@ -1,4 +1,5 @@
+# Discord bot token
 TOKEN=
 
 # User IDs
-ADAMO=
+BLOCKED_USERS=[]

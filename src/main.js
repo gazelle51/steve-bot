@@ -11,6 +11,20 @@ const { disabledCommands, disabledEvents } = require('./config.json');
 const { Client, Collection } = require('discord.js');
 const fs = require('fs');
 
+// Check blocked users parses correctly
+try {
+  const blockedUsers = JSON.parse(process.env.BLOCKED_USERS);
+
+  if (typeof blockedUsers !== 'object') throw new Error('BLOCKED_USERS is not an object/array');
+  if (blockedUsers.length === undefined) throw new Error('BLOCKED_USERS is not an array');
+} catch (err) {
+  console.error(
+    'Error when parsing BLOCKED_USERS env variable, ensure the variable is a stringified JSON array'
+  );
+  console.error(err);
+  process.env.BLOCKED_USERS = '[]';
+}
+
 // Create Discord client
 /** @type {import('./typedefs/discord').DiscordClient}} */
 const client = new Client();

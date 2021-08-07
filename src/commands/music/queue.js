@@ -33,7 +33,7 @@ async function execute(message, args, client) {
   // Add now playing to the embed
   queueEmbed.addField(
     'Now playing',
-    `${nowPlaying.title} (${nowPlaying.length}), added by \`${nowPlaying.addedBy}\`\n`
+    `[${nowPlaying.title}](${nowPlaying.url}) (${nowPlaying.length}), added by \`${nowPlaying.addedBy}\`\n`
   );
 
   // Add up next to the embed

@@ -12,15 +12,11 @@ async function execute(message, args, client) {
   if (!message.member.voice.channel)
     return message.channel.send('You have to be in a voice channel to see the music!');
 
-  // Set up embed
-  const queueEmbed = new MessageEmbed()
-    .setColor('#23E5D6')
-    .setTitle('✨🎵 Music Queue 🎵✨')
-    .setTimestamp()
-    .setFooter('Page 1/1');
-
   // Get queue
   const audioQueue = queue.getQueue(client, message);
+
+  // Create embed
+  const queueEmbed = createQueueEmbed();
 
   // Check if the queue is empty
   if (!audioQueue.length) {
@@ -42,16 +38,28 @@ async function execute(message, args, client) {
 
   // Add up next to the embed
   const upNext = audioQueue.length
-    ? audioQueue.reduce(
-        (finalStr, audio, i) =>
-          finalStr + `${i + 1}. ${audio.title} (${audio.length}), added by \`${audio.addedBy}\`\n`,
-        ''
-      )
+    ? audioQueue
+        .map(
+          (audio, i) =>
+            `${i + 1}. [${audio.title}](${audio.url}) (${audio.length}), added by \`${
+              audio.addedBy
+            }\``
+        )
+        .join('\n')
     : `No more songs in the queue`;
-  queueEmbed.addField('Up next', `${upNext}\n**Songs in queue:** ${audioQueue.length}\n`);
+  queueEmbed.addField('Up next', `${upNext}\n\n**Songs in queue:** ${audioQueue.length}\n`);
 
   // Display results in text channel
   message.channel.send(queueEmbed);
+}
+
+function createQueueEmbed() {
+  // Set up embed
+  return new MessageEmbed()
+    .setColor('#23E5D6')
+    .setTitle('✨🎵 Music Queue 🎵✨')
+    .setTimestamp()
+    .setFooter('Page 1/1');
 }
 
 module.exports = {

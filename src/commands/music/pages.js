@@ -1,5 +1,6 @@
 const { Message, MessageEmbed } = require('discord.js');
-const queue = require('../../utils/audioQueue');
+
+// TODO: make arrow keys not need to be pressed twice
 
 /**
  * Execute skip command.

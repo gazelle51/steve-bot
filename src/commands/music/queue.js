@@ -2,9 +2,6 @@ const _ = require('lodash');
 const { Message, MessageEmbed, MessageReaction, User, TextChannel } = require('discord.js');
 const queue = require('../../utils/audioQueue');
 
-// TODO no arrows if only 1 page
-// TODO cut num chars for a song name to X chars
-
 /**
  * Execute skip command.
  * @param {Message} message - Received message
@@ -87,7 +84,7 @@ async function createAndSendEmbed(nowPlaying, audioQueue, authorId, channel) {
       return `${itemNum}. [${audio.title}](${audio.url}) (${audio.length}), added by \`${audio.addedBy}\``;
     });
 
-    // Set description (limit 4096 chars)
+    // Set description (limit 4096 chars, title is 19 chars, 10 songs is approx 1678 chars, footer is 17 chars)
     const description =
       '**Now playing**\n' +
       `[${nowPlaying.title}](${nowPlaying.url}) (${nowPlaying.length}), added by \`${nowPlaying.addedBy}\`\n\n` +
@@ -136,13 +133,16 @@ async function createAndSendEmbed(nowPlaying, audioQueue, authorId, channel) {
 
   // Initialise
   let page = 0;
-  const itemsPerPage = 5;
+  const itemsPerPage = 10;
   const pages = _.chunk(audioQueue, itemsPerPage);
   const reactionTime = 120000;
 
   // Create and send initial embed
   const embed = createQueueEmbed(pages[0]);
   const embedMessage = await channel.send(embed);
+
+  // If there is only 1 page do not set up buttons
+  if (pages.length === 1) return;
   await Promise.all([embedMessage.react('⬅️'), embedMessage.react('➡️')]);
 
   // Reaction filters

@@ -1,5 +1,8 @@
+const _ = require('lodash');
 const { Message, MessageEmbed, MessageReaction, User, TextChannel } = require('discord.js');
 const queue = require('../../utils/audioQueue');
+
+// TODO no arrows if only 1 page
 
 /**
  * Execute skip command.
@@ -23,8 +26,7 @@ async function execute(message, args, client) {
   // Get audio now playing
   const nowPlaying = audioQueue.shift();
 
-  // Display results in text channel
-  message.channel.send(queueEmbed(nowPlaying, audioQueue));
+  createAndSendEmbed(nowPlaying, audioQueue, message.author.id, message.channel);
 }
 
 function baseEmbed() {
@@ -40,26 +42,13 @@ function emptyQueueEmbed() {
   return embed;
 }
 
-function queueEmbed(nowPlaying, upNext) {
+function nowPlayingOnlyEmbed(nowPlaying) {
   const embed = baseEmbed();
-
   embed.addField(
     'Now playing',
     `[${nowPlaying.title}](${nowPlaying.url}) (${nowPlaying.length}), added by \`${nowPlaying.addedBy}\`\n`
   );
-
-  const upNextData = upNext.length
-    ? upNext
-        .map(
-          (audio, i) =>
-            `${i + 1}. [${audio.title}](${audio.url}) (${audio.length}), added by \`${
-              audio.addedBy
-            }\``
-        )
-        .join('\n')
-    : `No more songs in the queue`;
-  embed.addField('Up next', `${upNextData}\n\n**Songs in queue:** ${upNext.length}\n`);
-
+  embed.addField('Up next', `No more songs in the queue`);
   return embed;
 }
 
@@ -70,19 +59,33 @@ function queueEmbed(nowPlaying, upNext) {
  * @param {TextChannel} channel - Discord channel queue is to be sent to
  * @returns {Promise<void>}
  */
-async function createAndSendEmbed(pages, authorId, channel) {
+async function createAndSendEmbed(nowPlaying, audioQueue, authorId, channel) {
   /**
    * Create a queue message embed.
    * @param {Object} pageData - page data to display
    * @returns {MessageEmbed}
    */
   function createQueueEmbed(pageData) {
-    return new MessageEmbed()
-      .setColor('#23E5D6')
-      .setTitle('✨🎵 Music Embed 🎵✨')
-      .setDescription(pageData)
-      .setTimestamp()
-      .setFooter(`Page ${page} of ${pages.length}`);
+    const embed = baseEmbed();
+
+    embed.addField(
+      'Now playing',
+      `[${nowPlaying.title}](${nowPlaying.url}) (${nowPlaying.length}), added by \`${nowPlaying.addedBy}\`\n`
+    );
+
+    const upNextData = pageData
+      .map(
+        (audio, i) =>
+          `${page * itemsPerPage + i + 1}. [${audio.title}](${audio.url}) (${
+            audio.length
+          }), added by \`${audio.addedBy}\``
+      )
+      .join('\n');
+    embed.addField('Up next', `${upNextData}\n\n**Songs in queue:** ${upNext.length}\n`);
+
+    embed.setFooter(`Page ${page + 1} of ${audioQueue.length}`);
+
+    return embed;
   }
 
   /**
@@ -93,9 +96,9 @@ async function createAndSendEmbed(pages, authorId, channel) {
    * @returns {void}
    */
   const backwardHandler = (reaction, user) => {
-    if (page === 1) return;
+    if (page === 0) return;
     page--;
-    embedMessage.edit(createQueueEmbed(pages[page - 1]));
+    embedMessage.edit(createQueueEmbed(upNext[page]));
   };
 
   /**
@@ -106,17 +109,25 @@ async function createAndSendEmbed(pages, authorId, channel) {
    * @returns {void}
    */
   const forwardHandler = (reaction, user) => {
-    if (page === pages.length) return;
+    if (page === upNext.length - 1) return;
     page++;
-    embedMessage.edit(createQueueEmbed(pages[page - 1]));
+    embedMessage.edit(createQueueEmbed(upNext[page]));
   };
 
+  // If no more songs in queue, send a simple embed only
+  if (!audioQueue.length) {
+    channel.send(nowPlayingOnlyEmbed(nowPlaying));
+    return;
+  }
+
   // Initialise
-  let page = 1;
+  let page = 0;
+  const itemsPerPage = 5;
+  const upNext = _.chunk(audioQueue, itemsPerPage);
   const reactionTime = 120000;
 
   // Create and send initial embed
-  const embed = createQueueEmbed(pages[0]);
+  const embed = createQueueEmbed(upNext[0]);
   const embedMessage = await channel.send(embed);
   await Promise.all([embedMessage.react('⬅️'), embedMessage.react('➡️')]);
 

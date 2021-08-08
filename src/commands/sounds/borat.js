@@ -14,24 +14,14 @@ async function execute(message, args, client) {
 
   // Get random Borat line
   if (args[0] === 'steve') {
-    audio = queue.formatAudio(
-      'borat.peopleCallMeSteve',
-      borat.peopleCallMeSteve,
-      '?',
-      message.author.username
-    );
+    audio = borat.peopleCallMeSteve;
   } else {
     const randomSound = sound.getNameOfRandomSound(borat);
-    audio = queue.formatAudio(
-      `borat.${randomSound}`,
-      borat[randomSound],
-      '?',
-      message.author.username
-    );
+    audio = borat[randomSound];
   }
 
   // Add to queue
-  queue.addAudio(client, message, audio);
+  queue.addAudio(client, message, { ...audio, addedBy: message.author.tag });
 }
 
 module.exports = {

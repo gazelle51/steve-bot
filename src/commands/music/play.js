@@ -19,12 +19,12 @@ async function execute(message, args, client) {
   }
 
   // Format audio
-  const audio = queue.formatAudio(
-    youtubeResult.videos[0].title,
-    youtubeResult.videos[0].url,
-    secondsToTime(youtubeResult.videos[0].duration.seconds),
-    message.author.username
-  );
+  const audio = {
+    title: youtubeResult.videos[0].title,
+    url: youtubeResult.videos[0].url,
+    length: secondsToTime(youtubeResult.videos[0].duration.seconds),
+    addedBy: message.author.tag,
+  };
 
   // Add to queue
   queue.addAudio(client, message, audio);
@@ -46,7 +46,7 @@ function secondsToTime(e) {
       .toString()
       .padStart(2, '0');
 
-  if (h == '00' && m == '00') return s;
+  if (h == '00' && m == '00') return `0:${s}`;
   else if (h == '00') return `${m}:${s}`;
   else return `${h}:${m}:${s}`;
 }

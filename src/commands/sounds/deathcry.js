@@ -9,11 +9,8 @@ const queue = require('../../utils/audioQueue');
  * @param {import('../../typedefs/discord').DiscordClient} client - Discord client
  */
 async function execute(message, args, client) {
-  // Format audio
-  const audio = queue.formatAudio('deathcry', csgo.deathcry, '?', message.author.username);
-
   // Add to queue
-  queue.addAudio(client, message, audio);
+  queue.addAudio(client, message, { ...csgo.deathcry, addedBy: message.author.tag });
 }
 
 module.exports = {

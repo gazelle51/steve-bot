@@ -9,17 +9,11 @@ const queue = require('../../utils/audioQueue');
  * @param {import('../../typedefs/discord').DiscordClient} client - Discord client
  */
 async function execute(message, args, client) {
-  // Format audio
-  const audio = queue.formatAudio(
-    'redGuardian',
-    redGuardian.iHaveALotOfEnergy,
-    '?',
-    message.author.username,
-    2
-  );
-
   // Add to queue
-  queue.addAudio(client, message, audio);
+  queue.addAudio(client, message, {
+    ...redGuardian.iHaveALotOfEnergy,
+    addedBy: message.author.tag,
+  });
 }
 
 module.exports = {

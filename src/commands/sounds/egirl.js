@@ -14,24 +14,14 @@ async function execute(message, args, client) {
 
   // Get random E-Girl line
   if (args[0] === 'stepbro') {
-    audio = queue.formatAudio(
-      'egirl.whatAreYouDoingStepBro',
-      egirl.whatAreYouDoingStepBro,
-      '?',
-      message.author.username
-    );
+    audio = egirl.whatAreYouDoingStepBro;
   } else {
     const randomSound = sound.getNameOfRandomSound(egirl);
-    audio = queue.formatAudio(
-      `egirl.${randomSound}`,
-      egirl[randomSound],
-      '?',
-      message.author.username
-    );
+    audio = egirl[randomSound];
   }
 
   // Add to queue
-  queue.addAudio(client, message, audio);
+  queue.addAudio(client, message, { ...audio, addedBy: message.author.tag });
 }
 
 module.exports = {

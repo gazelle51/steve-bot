@@ -18,15 +18,10 @@ async function execute(message, args, client) {
 
   // Get random Pokimane line
   const randomSound = sound.getNameOfRandomSound(pokimane);
-  const audio = queue.formatAudio(
-    `pokimane.${randomSound}`,
-    pokimane[randomSound],
-    '?',
-    message.author.username
-  );
+  const audio = pokimane[randomSound];
 
   // Add to queue
-  queue.addAudio(client, message, audio);
+  queue.addAudio(client, message, { ...audio, addedBy: message.author.tag });
 }
 
 module.exports = {

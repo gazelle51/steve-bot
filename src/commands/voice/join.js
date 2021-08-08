@@ -9,16 +9,8 @@ const queue = require('../../utils/audioQueue');
  * @param {import('../../typedefs/discord').DiscordClient} client - Discord client
  */
 async function execute(message, args, client) {
-  // Format audio
-  const audio = queue.formatAudio(
-    'borat.helloNiceToMeetYou',
-    borat.helloNiceToMeetYou,
-    '?',
-    message.author.username
-  );
-
   // Add to queue
-  queue.addAudio(client, message, audio);
+  queue.addAudio(client, message, { ...borat.helloNiceToMeetYou, addedBy: message.author.tag });
 }
 
 module.exports = {

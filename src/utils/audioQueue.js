@@ -154,17 +154,4 @@ async function addAudio(client, message, audio) {
   console.log(`${audio.title} has been added to the queue`);
 }
 
-/**
- * Format an audio object.
- * @param {string} title - Audio title
- * @param {string} url - Audio URL
- * @param {string} length - Audio length
- * @param {string} addedBy - User who added audio to queue
- * @param {number} [volume=undefined] - Volume to play audio at
- * @returns {import('../typedefs/audio').Audio}
- */
-function formatAudio(title, url, length, addedBy, volume = undefined) {
-  return { title: title, url: url, length: length, addedBy: addedBy, volume: volume };
-}
-
-module.exports = { createServerQueue, play, skip, stop, getQueue, addAudio, formatAudio };
+module.exports = { createServerQueue, play, skip, stop, getQueue, addAudio };

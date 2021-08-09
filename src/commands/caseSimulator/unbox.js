@@ -11,7 +11,7 @@ const unbox = require('../../caseSimulator/unbox').unbox;
 function execute(message, args, client) {
   const weapon = unbox('operationbravo');
 
-  message.channel.send(embeds.weapon(weapon));
+  message.channel.send(embeds.weapon(weapon, message.author));
 }
 
 /** @type {import('../../typedefs/discord').Command}} */

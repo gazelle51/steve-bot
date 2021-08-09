@@ -13,6 +13,7 @@
     "minimalWear": 0.2468,
     "factoryNew": 0.1471
   },
+  "stattrakThreshold": 0.1,
   "cases": [
     {
       "name": "Operation Bravo Case",

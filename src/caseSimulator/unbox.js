@@ -1,21 +1,41 @@
 const _ = require('lodash');
 const caseData = require('./data.json');
 
+/*
+https://csgostash.com/
+TODO
+- more knives
+- numbers
+*/
+
+/**
+ * Unbox a CS-GO case.
+ * @param {string} caseName - name of case to unbox
+ * @returns {import('../typedefs/case').CaseWeapon}
+ */
 function unbox(caseName) {
   const data = caseData.cases[0];
 
   console.log(`Unboxing: ${data.name}`);
 
   const colour = weaponColour();
-  const wear = weaponWear();
-  const caseWeapon = weapon(data[colour]);
+  const weaponData = weapon(data[colour]);
 
-  caseWeapon.colour = colour;
-  caseWeapon.wear = wear;
+  const caseWeapon = {
+    ...weaponData,
+    colour: colour,
+    wear: weaponWear(),
+    stattrak: stattrak(),
+    caseName: 'Operation Bravo Case',
+  };
 
   return caseWeapon;
 }
 
+/**
+ * Generate a weapon colour based on the grade odds.
+ * @returns {string}
+ */
 function weaponColour() {
   const randomNumber = Math.random();
   const blueThreshold = caseData.gradeOdds.blue;
@@ -32,10 +52,19 @@ function weaponColour() {
   return colour;
 }
 
+/**
+ * Pick a random weapon from the proided weapon list.
+ * @param {import('../typedefs/case').WeaponData[]} possibleWeapons
+ * @returns {import('../typedefs/case').WeaponData}
+ */
 function weapon(possibleWeapons) {
   return _.sample(possibleWeapons);
 }
 
+/**
+ * Generate a weapon wear based on the wear odds.
+ * @returns {string}
+ */
 function weaponWear() {
   const randomNumber = Math.random();
   const wellWornThreshold = caseData.wearOdds.wellWorn;
@@ -50,6 +79,14 @@ function weaponWear() {
   else if (randomNumber <= minimalWearThreshold) wear = 'Minimal Wear';
 
   return wear;
+}
+
+/**
+ * Generate a StatTrak true or false flag based on the StatTrak threshold.
+ * @returns {boolean}
+ */
+function stattrak() {
+  return Math.random() <= caseData.stattrakThreshold ? true : false;
 }
 
 module.exports = { unbox };

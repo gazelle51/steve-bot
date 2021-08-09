@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+const { MessageEmbed, User } = require('discord.js');
 const { embedColour, emoji } = require('../config.json');
 
 /**
@@ -59,10 +59,11 @@ function queueNowPlayingOnly(nowPlaying) {
 
 /**
  * Display the result of a case unboxing.
- * @param {Object} weapon - weapon object
+ * @param {import('../typedefs/case').CaseWeapon} weapon - case weapon object
+ * @param {User} author - user who opened case
  * @returns {MessageEmbed}
  */
-function caseWeapon(weapon) {
+function caseWeapon(weapon, author) {
   const colours = {
     blue: '#4b69cd',
     purple: '#8847ff',
@@ -71,11 +72,16 @@ function caseWeapon(weapon) {
     yellow: '#ffcc00',
   };
 
+  let description = '';
+  if (weapon.stattrak) description = description + '```arm\nStatTrak™\n```\n';
+  description = description + `\`\`\`\n${weapon.wear}\n\`\`\``;
+
   return new MessageEmbed()
     .setColor(colours[weapon.colour])
     .setTitle(weapon.name)
-    .setDescription(`Wear: ${weapon.wear}`)
-    .setImage(weapon.image);
+    .setDescription(description)
+    .setImage(weapon.image)
+    .setFooter(`${author.tag} | ${weapon.caseName}`, author.avatarURL());
 }
 
 module.exports = {

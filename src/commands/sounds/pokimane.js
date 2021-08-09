@@ -24,6 +24,7 @@ async function execute(message, args, client) {
   queue.addAudio(client, message, { ...audio, addedBy: message.author.tag });
 }
 
+/** @type {import('../../typedefs/discord').Command}} */
 module.exports = {
   name: 'pokimane',
   description: 'Say a random Pokimane sound and show the garage door',

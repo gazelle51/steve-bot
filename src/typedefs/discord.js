@@ -7,8 +7,6 @@ const {
   VoiceConnection,
 } = require('discord.js');
 
-// TODO: update maps and collections
-
 /**
  * Discord command
  * @typedef {Object} Command

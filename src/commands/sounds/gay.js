@@ -13,6 +13,7 @@ async function execute(message, args, client) {
   queue.addAudio(client, message, { ...memes.whyAreYouGay, addedBy: message.author.tag });
 }
 
+/** @type {import('../../typedefs/discord').Command}} */
 module.exports = {
   name: 'gay',
   description: 'Why are you gay?',

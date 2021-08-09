@@ -11,6 +11,7 @@ async function execute(message, args, client) {
   await voice.leave(message);
 }
 
+/** @type {import('../../typedefs/discord').Command}} */
 module.exports = {
   name: 'leave',
   description: 'Leave voice channel',

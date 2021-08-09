@@ -11,6 +11,7 @@ async function execute(message, args, client) {
   queue.stop(client, message);
 }
 
+/** @type {import('../../typedefs/discord').Command}} */
 module.exports = {
   name: 'stop',
   description: 'Stop the currently playing audio and clear the queue',

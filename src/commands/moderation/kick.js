@@ -19,6 +19,7 @@ function execute(message, args, client) {
   message.channel.send(`You wanted to kick ${taggedUser.username}`);
 }
 
+/** @type {import('../../typedefs/discord').Command}} */
 module.exports = {
   name: 'kick',
   description: 'Kick a user from the server',

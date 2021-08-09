@@ -24,6 +24,7 @@ function execute(message, args, client) {
   });
 }
 
+/** @type {import('../../typedefs/discord').Command}} */
 module.exports = {
   name: 'prune',
   description: 'Delete / prune the last X messages',

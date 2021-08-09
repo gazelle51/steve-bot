@@ -22,6 +22,7 @@ function execute(message, args, client) {
   });
 }
 
+/** @type {import('../../typedefs/discord').Command}} */
 module.exports = {
   name: 'avatar',
   description: 'Display avatar of user',

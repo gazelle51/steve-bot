@@ -17,6 +17,7 @@ async function execute(message, args, client) {
   queue.addAudio(client, message, { ...drdisrespect[randomSound], addedBy: message.author.tag });
 }
 
+/** @type {import('../../typedefs/discord').Command}} */
 module.exports = {
   name: 'drdisrespect',
   description: 'Say a random Dr DisRespect line',

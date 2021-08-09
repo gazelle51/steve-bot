@@ -11,6 +11,7 @@ async function execute(message, args, client) {
   queue.skip(client, message);
 }
 
+/** @type {import('../../typedefs/discord').Command}} */
 module.exports = {
   name: 'skip',
   description: 'Skip the currently playing audio',

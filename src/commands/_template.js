@@ -8,6 +8,7 @@ const { Message } = require('discord.js');
  */
 function execute(message, args, client) {}
 
+/** @type {import('../typedefs/discord').Command}} */
 module.exports = {
   name: '',
   description: '',

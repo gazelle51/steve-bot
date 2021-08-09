@@ -13,6 +13,7 @@ async function execute(message, args, client) {
   queue.addAudio(client, message, { ...borat.helloNiceToMeetYou, addedBy: message.author.tag });
 }
 
+/** @type {import('../../typedefs/discord').Command}} */
 module.exports = {
   name: 'join',
   description: 'Join voice channel',

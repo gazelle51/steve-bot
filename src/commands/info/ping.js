@@ -10,6 +10,7 @@ function execute(message, args, client) {
   message.channel.send('pong');
 }
 
+/** @type {import('../../typedefs/discord').Command}} */
 module.exports = {
   name: 'ping',
   description: 'Ping the bot',

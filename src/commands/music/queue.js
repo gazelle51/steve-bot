@@ -166,6 +166,7 @@ async function createAndSendEmbed(nowPlaying, audioQueue, authorId, channel) {
   forwards.on('remove', forwardHandler);
 }
 
+/** @type {import('../../typedefs/discord').Command}} */
 module.exports = {
   name: 'queue',
   description: 'View of queue and currently playing audio',

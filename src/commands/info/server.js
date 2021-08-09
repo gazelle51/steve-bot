@@ -13,6 +13,7 @@ function execute(message, args, client) {
   );
 }
 
+/** @type {import('../../typedefs/discord').Command}} */
 module.exports = {
   name: 'server',
   description: 'Get server details',

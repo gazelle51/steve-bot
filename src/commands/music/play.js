@@ -51,6 +51,7 @@ function secondsToTime(e) {
   else return `${h}:${m}:${s}`;
 }
 
+/** @type {import('../../typedefs/discord').Command}} */
 module.exports = {
   name: 'play',
   description: 'Play a song from Youtube',

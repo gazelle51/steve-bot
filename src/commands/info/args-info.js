@@ -10,6 +10,7 @@ function execute(message, args, client) {
   message.channel.send(`Arguments are: ${args.join(', ')}`);
 }
 
+/** @type {import('../../typedefs/discord').Command}} */
 module.exports = {
   name: 'args-info',
   description: 'Extract arguments from a command',

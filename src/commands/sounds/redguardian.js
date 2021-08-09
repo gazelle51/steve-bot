@@ -16,6 +16,7 @@ async function execute(message, args, client) {
   });
 }
 
+/** @type {import('../../typedefs/discord').Command}} */
 module.exports = {
   name: 'redguardian',
   description: 'Red Guardian has a lot of energy',

@@ -167,9 +167,11 @@ async function createAndSendEmbed(nowPlaying, audioQueue, authorId, channel) {
 }
 
 /** @type {import('../../typedefs/discord').Command}} */
-module.exports = {
+const handler = {
   name: 'queue',
   description: 'View of queue and currently playing audio',
   guildOnly: true,
   execute,
 };
+
+module.exports = handler;

@@ -14,9 +14,11 @@ async function execute(message, args, client) {
 }
 
 /** @type {import('../../typedefs/discord').Command}} */
-module.exports = {
+const handler = {
   name: 'gay',
   description: 'Why are you gay?',
   guildOnly: true,
   execute,
 };
+
+module.exports = handler;

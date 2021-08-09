@@ -9,14 +9,16 @@ const { Message } = require('discord.js');
 function execute(message, args, client) {}
 
 /** @type {import('../typedefs/discord').Command}} */
-module.exports = {
+const handler = {
   name: '',
   description: '',
-  args: false,
-  usage: '',
-  guildOnly: false,
-  cooldown: 1,
-  aliases: [],
-  permissions: '',
+  args: undefined,
+  usage: undefined,
+  guildOnly: undefined,
+  cooldown: undefined,
+  aliases: undefined,
+  permissions: undefined,
   execute,
 };
+
+module.exports = handler;

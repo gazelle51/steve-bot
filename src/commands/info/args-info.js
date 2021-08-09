@@ -11,10 +11,12 @@ function execute(message, args, client) {
 }
 
 /** @type {import('../../typedefs/discord').Command}} */
-module.exports = {
+const handler = {
   name: 'args-info',
   description: 'Extract arguments from a command',
   args: true,
   usage: '<arg1> <arg2> <arg3> ...',
   execute,
 };
+
+module.exports = handler;

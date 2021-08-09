@@ -12,8 +12,10 @@ function execute(message, args, client) {
 }
 
 /** @type {import('../../typedefs/discord').Command}} */
-module.exports = {
+const handler = {
   name: 'user-info',
   description: 'Get user info',
   execute,
 };
+
+module.exports = handler;

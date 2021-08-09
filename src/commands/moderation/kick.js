@@ -20,10 +20,12 @@ function execute(message, args, client) {
 }
 
 /** @type {import('../../typedefs/discord').Command}} */
-module.exports = {
+const handler = {
   name: 'kick',
   description: 'Kick a user from the server',
   guildOnly: true,
   permissions: 'KICK_MEMBERS',
   execute,
 };
+
+module.exports = handler;

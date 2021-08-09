@@ -27,10 +27,12 @@ async function execute(message, args, client) {
 }
 
 /** @type {import('../../typedefs/discord').Command}} */
-module.exports = {
+const handler = {
   name: 'birthday',
   description: 'Say Happy Birthday!',
   guildOnly: true,
   aliases: ['bday'],
   execute,
 };
+
+module.exports = handler;

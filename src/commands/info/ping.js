@@ -11,8 +11,10 @@ function execute(message, args, client) {
 }
 
 /** @type {import('../../typedefs/discord').Command}} */
-module.exports = {
+const handler = {
   name: 'ping',
   description: 'Ping the bot',
   execute,
 };
+
+module.exports = handler;

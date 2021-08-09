@@ -25,9 +25,11 @@ async function execute(message, args, client) {
 }
 
 /** @type {import('../../typedefs/discord').Command}} */
-module.exports = {
+const handler = {
   name: 'pokimane',
   description: 'Say a random Pokimane sound and show the garage door',
   guildOnly: true,
   execute,
 };
+
+module.exports = handler;

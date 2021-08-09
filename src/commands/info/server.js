@@ -14,9 +14,11 @@ function execute(message, args, client) {
 }
 
 /** @type {import('../../typedefs/discord').Command}} */
-module.exports = {
+const handler = {
   name: 'server',
   description: 'Get server details',
   guildOnly: true,
   execute,
 };
+
+module.exports = handler;

@@ -14,9 +14,11 @@ async function execute(message, args, client) {
 }
 
 /** @type {import('../../typedefs/discord').Command}} */
-module.exports = {
+const handler = {
   name: 'join',
   description: 'Join voice channel',
   guildOnly: true,
   execute,
 };
+
+module.exports = handler;

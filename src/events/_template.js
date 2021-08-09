@@ -7,7 +7,7 @@ function execute(client) {}
 /** @type {import('../typedefs/discord').Event}} */
 const handler = {
   name: '',
-  once: false,
+  once: undefined,
   execute,
 };
 

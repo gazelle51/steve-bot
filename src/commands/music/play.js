@@ -52,7 +52,7 @@ function secondsToTime(e) {
 }
 
 /** @type {import('../../typedefs/discord').Command}} */
-module.exports = {
+const handler = {
   name: 'play',
   description: 'Play a song from Youtube',
   args: true,
@@ -60,3 +60,5 @@ module.exports = {
   guildOnly: true,
   execute,
 };
+
+module.exports = handler;

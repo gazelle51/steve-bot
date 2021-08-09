@@ -25,7 +25,7 @@ function execute(message, args, client) {
 }
 
 /** @type {import('../../typedefs/discord').Command}} */
-module.exports = {
+const handler = {
   name: 'prune',
   description: 'Delete / prune the last X messages',
   args: true,
@@ -33,3 +33,5 @@ module.exports = {
   guildOnly: true,
   execute,
 };
+
+module.exports = handler;

@@ -23,9 +23,11 @@ function execute(message, args, client) {
 }
 
 /** @type {import('../../typedefs/discord').Command}} */
-module.exports = {
+const handler = {
   name: 'avatar',
   description: 'Display avatar of user',
   aliases: ['icon'],
   execute,
 };
+
+module.exports = handler;

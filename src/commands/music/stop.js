@@ -12,9 +12,11 @@ async function execute(message, args, client) {
 }
 
 /** @type {import('../../typedefs/discord').Command}} */
-module.exports = {
+const handler = {
   name: 'stop',
   description: 'Stop the currently playing audio and clear the queue',
   guildOnly: true,
   execute,
 };
+
+module.exports = handler;

@@ -18,10 +18,12 @@ async function execute(message, args, client) {
 }
 
 /** @type {import('../../typedefs/discord').Command}} */
-module.exports = {
+const handler = {
   name: 'drdisrespect',
   description: 'Say a random Dr DisRespect line',
   guildOnly: true,
   aliases: ['disrespect'],
   execute,
 };
+
+module.exports = handler;

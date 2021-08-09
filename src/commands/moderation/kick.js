@@ -19,10 +19,13 @@ function execute(message, args, client) {
   message.channel.send(`You wanted to kick ${taggedUser.username}`);
 }
 
-module.exports = {
+/** @type {import('../../typedefs/discord').Command}} */
+const handler = {
   name: 'kick',
   description: 'Kick a user from the server',
   guildOnly: true,
   permissions: 'KICK_MEMBERS',
   execute,
 };
+
+module.exports = handler;

@@ -1,4 +1,5 @@
 const { Guild, Message, VoiceConnection } = require('discord.js');
+const embeds = require('./embeds').queue;
 const voice = require('./voice');
 const ytdl = require('ytdl-core');
 
@@ -151,6 +152,7 @@ async function addAudio(client, message, audio) {
     serverQueue.audioQueue.push(audio);
   }
 
+  message.channel.send(embeds.songAdded(audio));
   console.log(`${audio.title} has been added to the queue`);
 }
 

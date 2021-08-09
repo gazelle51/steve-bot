@@ -11,9 +11,12 @@ async function execute(message, args, client) {
   queue.skip(client, message);
 }
 
-module.exports = {
+/** @type {import('../../typedefs/discord').Command}} */
+const handler = {
   name: 'skip',
   description: 'Skip the currently playing audio',
   guildOnly: true,
   execute,
 };
+
+module.exports = handler;

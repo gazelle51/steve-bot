@@ -13,9 +13,12 @@ async function execute(message, args, client) {
   queue.addAudio(client, message, { ...borat.helloNiceToMeetYou, addedBy: message.author.tag });
 }
 
-module.exports = {
+/** @type {import('../../typedefs/discord').Command}} */
+const handler = {
   name: 'join',
   description: 'Join voice channel',
   guildOnly: true,
   execute,
 };
+
+module.exports = handler;

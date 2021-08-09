@@ -48,10 +48,13 @@ function execute(message, args, client) {
   message.channel.send(data, { split: true });
 }
 
-module.exports = {
+/** @type {import('../../typedefs/discord').Command}} */
+const handler = {
   name: 'help',
   description: 'List all commands or info about a specific command',
   usage: '<command name>',
   aliases: ['commands'],
   execute,
 };
+
+module.exports = handler;

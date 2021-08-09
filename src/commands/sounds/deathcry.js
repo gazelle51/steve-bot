@@ -13,9 +13,12 @@ async function execute(message, args, client) {
   queue.addAudio(client, message, { ...csgo.deathcry, addedBy: message.author.tag });
 }
 
-module.exports = {
+/** @type {import('../../typedefs/discord').Command}} */
+const handler = {
   name: 'deathcry',
   description: 'CSGO death cry',
   guildOnly: true,
   execute,
 };
+
+module.exports = handler;

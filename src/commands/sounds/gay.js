@@ -13,9 +13,12 @@ async function execute(message, args, client) {
   queue.addAudio(client, message, { ...memes.whyAreYouGay, addedBy: message.author.tag });
 }
 
-module.exports = {
+/** @type {import('../../typedefs/discord').Command}} */
+const handler = {
   name: 'gay',
   description: 'Why are you gay?',
   guildOnly: true,
   execute,
 };
+
+module.exports = handler;

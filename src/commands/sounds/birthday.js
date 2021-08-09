@@ -26,10 +26,13 @@ async function execute(message, args, client) {
   queue.addAudio(client, message, { ...audio, addedBy: message.author.tag });
 }
 
-module.exports = {
+/** @type {import('../../typedefs/discord').Command}} */
+const handler = {
   name: 'birthday',
   description: 'Say Happy Birthday!',
   guildOnly: true,
   aliases: ['bday'],
   execute,
 };
+
+module.exports = handler;

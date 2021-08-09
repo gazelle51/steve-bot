@@ -17,10 +17,13 @@ async function execute(message, args, client) {
   queue.addAudio(client, message, { ...drdisrespect[randomSound], addedBy: message.author.tag });
 }
 
-module.exports = {
+/** @type {import('../../typedefs/discord').Command}} */
+const handler = {
   name: 'drdisrespect',
   description: 'Say a random Dr DisRespect line',
   guildOnly: true,
   aliases: ['disrespect'],
   execute,
 };
+
+module.exports = handler;

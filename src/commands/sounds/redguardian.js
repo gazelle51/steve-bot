@@ -16,10 +16,13 @@ async function execute(message, args, client) {
   });
 }
 
-module.exports = {
+/** @type {import('../../typedefs/discord').Command}} */
+const handler = {
   name: 'redguardian',
   description: 'Red Guardian has a lot of energy',
   guildOnly: true,
   aliases: ['energy', 'alexi'],
   execute,
 };
+
+module.exports = handler;

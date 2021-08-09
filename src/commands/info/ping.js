@@ -10,8 +10,11 @@ function execute(message, args, client) {
   message.channel.send('pong');
 }
 
-module.exports = {
+/** @type {import('../../typedefs/discord').Command}} */
+const handler = {
   name: 'ping',
   description: 'Ping the bot',
   execute,
 };
+
+module.exports = handler;

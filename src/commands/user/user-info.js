@@ -11,8 +11,11 @@ function execute(message, args, client) {
   message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
 }
 
-module.exports = {
+/** @type {import('../../typedefs/discord').Command}} */
+const handler = {
   name: 'user-info',
   description: 'Get user info',
   execute,
 };
+
+module.exports = handler;

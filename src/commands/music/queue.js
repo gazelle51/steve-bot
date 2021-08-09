@@ -1,5 +1,7 @@
 const _ = require('lodash');
+const { emoji } = require('../../config.json');
 const { Message, MessageEmbed, MessageReaction, User, TextChannel } = require('discord.js');
+const embeds = require('../../utils/embeds').queue;
 const queue = require('../../utils/audioQueue');
 
 /**
@@ -18,46 +20,13 @@ async function execute(message, args, client) {
 
   // Check if the queue is empty
   if (!audioQueue.length) {
-    return message.channel.send(emptyQueueEmbed());
+    return message.channel.send(embeds.empty());
   }
 
   // Get audio now playing
   const nowPlaying = audioQueue.shift();
 
   createAndSendEmbed(nowPlaying, audioQueue, message.author.id, message.channel);
-}
-
-function baseEmbed() {
-  return new MessageEmbed().setColor('#23E5D6').setTitle('✨🎵 Music Queue 🎵✨');
-}
-
-/**
- * Create an embed containing details of an empty queue.
- * @returns {MessageEmbed}
- */
-function emptyQueueEmbed() {
-  const embed = baseEmbed();
-  embed.addField(
-    "There's nothing here",
-    '​No music is being played 😭! Add some music to the queue using the `play` command.​'
-  );
-  return embed;
-}
-
-/**
- * Create an embed containing details of the current queue when there is a song
- * playing and no more songs in the queue.
- * @param {import('../../typedefs/audio').Audio} nowPlaying - Audio now playing
- * @returns {MessageEmbed}
- */
-function nowPlayingOnlyEmbed(nowPlaying) {
-  const embed = baseEmbed();
-  embed.addField(
-    'Now playing',
-    `[${nowPlaying.title}](${nowPlaying.url}) (${nowPlaying.length}), added by \`${nowPlaying.addedBy}\`\n`
-  );
-  embed.addField('Up next', `No more songs in the queue`);
-  return embed;
 }
 
 /**
@@ -76,7 +45,7 @@ async function createAndSendEmbed(nowPlaying, audioQueue, authorId, channel) {
    * @returns {MessageEmbed}
    */
   function createQueueEmbed(pageData) {
-    const embed = baseEmbed();
+    const embed = embeds.base();
 
     // Format data for up next
     const upNextData = pageData.map((audio, i) => {
@@ -127,7 +96,7 @@ async function createAndSendEmbed(nowPlaying, audioQueue, authorId, channel) {
 
   // If no more songs in queue, send a simple embed only
   if (!audioQueue.length) {
-    channel.send(nowPlayingOnlyEmbed(nowPlaying));
+    channel.send(embeds.nowPlayingOnly(nowPlaying));
     return;
   }
 
@@ -143,11 +112,13 @@ async function createAndSendEmbed(nowPlaying, audioQueue, authorId, channel) {
 
   // If there is only 1 page do not set up buttons
   if (pages.length === 1) return;
-  await Promise.all([embedMessage.react('⬅️'), embedMessage.react('➡️')]);
+  await Promise.all([embedMessage.react(emoji.leftArrow), embedMessage.react(emoji.rightArrow)]);
 
   // Reaction filters
-  const backwardFilter = (reaction, user) => reaction.emoji.name === '⬅️' && user.id === authorId;
-  const forwardFilter = (reaction, user) => reaction.emoji.name === '➡️' && user.id === authorId;
+  const backwardFilter = (reaction, user) =>
+    reaction.emoji.name === emoji.leftArrow && user.id === authorId;
+  const forwardFilter = (reaction, user) =>
+    reaction.emoji.name === emoji.rightArrow && user.id === authorId;
 
   // Reaction collectors
   const backwards = embedMessage.createReactionCollector(backwardFilter, {
@@ -166,9 +137,12 @@ async function createAndSendEmbed(nowPlaying, audioQueue, authorId, channel) {
   forwards.on('remove', forwardHandler);
 }
 
-module.exports = {
+/** @type {import('../../typedefs/discord').Command}} */
+const handler = {
   name: 'queue',
   description: 'View of queue and currently playing audio',
   guildOnly: true,
   execute,
 };
+
+module.exports = handler;

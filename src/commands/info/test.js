@@ -1,23 +1,27 @@
 const { Message } = require('discord.js');
+const embeds = require('../../utils/embeds');
 
 /**
- * Execute server command.
+ * Execute test command.
  * @param {Message} message - Received message
  * @param {string[]} args
  * @param {import("../../typedefs/discord").DiscordClient} client - Discord client
  */
 function execute(message, args, client) {
-  // Send server details
   message.channel.send(
-    `Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}\nCreated on: ${message.guild.createdAt}\nRegion: ${message.guild.region}`
+    embeds.queue.songAdded({
+      title: 'Skyrim - Music & Ambience',
+      url: 'https://www.youtube.com/watch?v=nRe3xFeyhVY&ab_channel=Everness',
+      length: '2:29:00',
+      addedBy: 'gazelle51#0006',
+    })
   );
 }
 
 /** @type {import('../../typedefs/discord').Command}} */
 const handler = {
-  name: 'server',
-  description: 'Get server details',
-  guildOnly: true,
+  name: 'test',
+  description: 'Execute a test feature',
   execute,
 };
 

@@ -11,9 +11,12 @@ async function execute(message, args, client) {
   await voice.leave(message);
 }
 
-module.exports = {
+/** @type {import('../../typedefs/discord').Command}} */
+const handler = {
   name: 'leave',
   description: 'Leave voice channel',
   guildOnly: true,
   execute,
 };
+
+module.exports = handler;

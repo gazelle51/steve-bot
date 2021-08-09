@@ -1,0 +1,96 @@
+{
+  "gradeOdds": {
+    "blue": 0.7992328,
+    "purple": 0.1598465,
+    "pink": 0.0319693,
+    "red": 0.0063939,
+    "yellow": 0.0025575
+  },
+  "wearOdds": {
+    "wellWorn": 0.0792,
+    "battleScarred": 0.0993,
+    "fieldTested": 0.4318,
+    "minimalWear": 0.2468,
+    "factoryNew": 0.1471
+  },
+  "cases": [
+    {
+      "name": "Operation Bravo Case",
+      "image": "https://www.csgodatabase.com/images/containers/webp/Operation_Bravo_Case.webp",
+      "blue": [
+        {
+          "name": "G3SG1 | Demeter",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_g3sg1_hy_bluepolygon_bravo_light_large.6638623a4979512bb048fa22f9ec06a5c1172c7e.png"
+        },
+        {
+          "name": "Galil AR | Shattered",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_galilar_hy_crumple_bravo_light_large.fcf25827c0ef88bac7e5b0567ecd5a7dbee01791.png"
+        },
+        {
+          "name": "SG 553 | Wave Spray",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sg556_sp_spray_waves_bravo_light_large.5d4e0e3977bf9f1fa8dd1576b5576b429546f98d.png"
+        },
+        {
+          "name": "UMP-45 | Bone Pile",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ump45_sp_skull_diagram_bravo_light_large.f3bf563f6e0274f55377e4fe0422905586a3d19b.png"
+        },
+        {
+          "name": "Dual Berettas | Black Limba",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_elite_cu_season_elites_bravo_light_large.03b5f4afcbffb80f73ce009da240f4aa1455c15f.png"
+        },
+        {
+          "name": "Nova | Tempest",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_nova_hy_seaside_bravo_light_large.bad13bb67e67ee02b782a574376df5e7e4ff766d.png"
+        }
+      ],
+      "purple": [
+        {
+          "name": "USP-S | Overgrowth",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_usp_silencer_hy_siege_bravo_light_large.517b89e78bfe8bad7ca1aab7edf1d02a56b2da26.png"
+        },
+        {
+          "name": "MAC-10 | Graven",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mac10_aq_etched_mac10_bravo_light_large.ec4cf2f7748ac5318292630c8c7e3c2d016723e3.png"
+        },
+        {
+          "name": "M4A4 | Zirka",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m4a1_sp_star_bravo_light_large.d4a56abe885a1a03ea173a6aaeb4f10bcec6a0c2.png"
+        },
+        {
+          "name": "M4A1-S | Bright Water",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m4a1_silencer_hy_ocean_bravo_light_large.7a942449926153575269af174733edc7bed5faeb.png"
+        }
+      ],
+      "pink": [
+        {
+          "name": "AWP | Graphite",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_awp_am_crumple_bravo_light_large.5f59de227d280f3c3b39fae7e49ac143338ca5b2.png"
+        },
+        {
+          "name": "P2000 | Ocean Foam",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_hkp2000_am_ossify_blue_p2000_bravo_light_large.91f225635f7e4a986b51e09bba106ca6a4bf7dbb.png"
+        },
+        {
+          "name": "P90 | Emerald Dragon",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p90_cu_dragon_p90_bravo_light_large.200ef513ae29ae7651ad3f31e68b5b186279572f.png"
+        }
+      ],
+      "red": [
+        {
+          "name": "AK-47 | Fire Serpent",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ak47_cu_fireserpent_ak47_bravo_light_large.9390e7fd091ea8a0434fd2143e0acf0d5d1bbc97.png"
+        },
+        {
+          "name": "Desert Eagle | Golden Koi",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_deagle_am_scales_bravo_light_large.6cba46695e74a8bee932ea90cea24e146cbef5e7.png"
+        }
+      ],
+      "yellow": [
+        {
+          "name": "Bayonet | Case Hardened",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_aq_oiled_light_large.920866e2a1f17fda7702e0b4cb95f45a8a8c0070.png"
+        }
+      ]
+    }
+  ]
+}

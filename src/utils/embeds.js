@@ -57,6 +57,27 @@ function queueNowPlayingOnly(nowPlaying) {
   return embed;
 }
 
+/**
+ * Display the result of a case unboxing.
+ * @param {Object} weapon - weapon object
+ * @returns {MessageEmbed}
+ */
+function caseWeapon(weapon) {
+  const colours = {
+    blue: '#4b69cd',
+    purple: '#8847ff',
+    pink: '#d32ce6',
+    red: '#eb4b4b',
+    yellow: '#ffcc00',
+  };
+
+  return new MessageEmbed()
+    .setColor(colours[weapon.colour])
+    .setTitle(weapon.name)
+    .setDescription(`Wear: ${weapon.wear}`)
+    .setImage(weapon.image);
+}
+
 module.exports = {
   queue: {
     base: queueBase,
@@ -64,4 +85,5 @@ module.exports = {
     nowPlayingOnly: queueNowPlayingOnly,
     songAdded: queueSongAdded,
   },
+  case: { weapon: caseWeapon },
 };

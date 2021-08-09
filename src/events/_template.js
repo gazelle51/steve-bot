@@ -4,8 +4,11 @@
  */
 function execute(client) {}
 
-module.exports = {
+/** @type {import('../typedefs/discord').Event}} */
+const handler = {
   name: '',
   once: false,
   execute,
 };
+
+module.exports = handler;

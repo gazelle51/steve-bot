@@ -8,7 +8,7 @@ const {
 } = require('discord.js');
 
 /**
- * Discord command
+ * Discord command handler
  * @typedef {Object} Command
  * @property {string} name - command name used to call the command
  * @property {string} description - command description
@@ -19,6 +19,14 @@ const {
  * @property {string[]} [aliases] - other command names that can be used to execute command
  * @property {Permissions} [permissions] - permission needed to execute the command
  * @property {Function} execute - function that is called whent the command is executed
+ */
+
+/**
+ * Discord event handler
+ * @typedef {Object} Event
+ * @property {string} name - event name
+ * @property {boolean} [once] - if true, this event will only be handled once
+ * @property {Function} execute - function that is called when the event occurs
  */
 
 /**

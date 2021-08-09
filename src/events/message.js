@@ -96,7 +96,10 @@ async function execute(message, client) {
   }
 }
 
-module.exports = {
+/** @type {import('../typedefs/discord').Event}} */
+const handler = {
   name: 'message',
   execute,
 };
+
+module.exports = handler;

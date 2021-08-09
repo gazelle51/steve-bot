@@ -31,7 +31,10 @@ function execute(oldMember, newMember, client) {
     );
 }
 
-module.exports = {
+/** @type {import('../typedefs/discord').Event}} */
+const handler = {
   name: 'guildMemberUpdate',
   execute,
 };
+
+module.exports = handler;

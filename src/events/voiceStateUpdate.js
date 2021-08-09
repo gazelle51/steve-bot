@@ -21,7 +21,10 @@ async function execute(oldState, newState, client) {
   }
 }
 
-module.exports = {
+/** @type {import('../typedefs/discord').Event}} */
+const handler = {
   name: 'voiceStateUpdate',
   execute,
 };
+
+module.exports = handler;

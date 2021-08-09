@@ -6,8 +6,11 @@ function execute(client) {
   console.log(`Logged in as ${client.user.tag}!`);
 }
 
-module.exports = {
+/** @type {import('../typedefs/discord').Event}} */
+const handler = {
   name: 'ready',
   once: true,
   execute,
 };
+
+module.exports = handler;

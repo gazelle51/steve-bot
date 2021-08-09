@@ -71,10 +71,14 @@ function caseWeapon(weapon) {
     yellow: '#ffcc00',
   };
 
+  let description = '';
+  if (weapon.stattrak) description = description + '```arm\nStatTrak™\n```\n';
+  description = description + `\`\`\`\n${weapon.wear}\n\`\`\``;
+
   return new MessageEmbed()
     .setColor(colours[weapon.colour])
     .setTitle(weapon.name)
-    .setDescription(`Wear: ${weapon.wear}`)
+    .setDescription(description)
     .setImage(weapon.image);
 }
 

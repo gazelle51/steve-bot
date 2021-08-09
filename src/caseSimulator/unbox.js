@@ -25,6 +25,7 @@ function unbox(caseName) {
 
   caseWeapon.colour = colour;
   caseWeapon.wear = weaponWear();
+  caseWeapon.stattrak = stattrak();
 
   return caseWeapon;
 }
@@ -76,6 +77,14 @@ function weaponWear() {
   else if (randomNumber <= minimalWearThreshold) wear = 'Minimal Wear';
 
   return wear;
+}
+
+/**
+ * Generate a StatTrak true or false flag based on the StatTrak threshold.
+ * @returns {boolean}
+ */
+function stattrak() {
+  return Math.random() <= caseData.stattrakThreshold ? true : false;
 }
 
 module.exports = { unbox };

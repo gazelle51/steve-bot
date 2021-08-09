@@ -5,15 +5,13 @@ const caseData = require('./data.json');
 https://csgostash.com/
 TODO
 - more knives
-- statrak
 - numbers
-- embed with requesting user
 */
 
 /**
  * Unbox a CS-GO case.
  * @param {string} caseName - name of case to unbox
- * @returns {Object}
+ * @returns {import('../typedefs/case').CaseWeapon}
  */
 function unbox(caseName) {
   const data = caseData.cases[0];
@@ -21,12 +19,15 @@ function unbox(caseName) {
   console.log(`Unboxing: ${data.name}`);
 
   const colour = weaponColour();
-  const caseWeapon = weapon(data[colour]);
+  const weaponData = weapon(data[colour]);
 
-  caseWeapon.colour = colour;
-  caseWeapon.wear = weaponWear();
-  caseWeapon.stattrak = stattrak();
-  caseWeapon.caseName = 'Operation Bravo Case';
+  const caseWeapon = {
+    ...weaponData,
+    colour: colour,
+    wear: weaponWear(),
+    stattrak: stattrak(),
+    caseName: 'Operation Bravo Case',
+  };
 
   return caseWeapon;
 }
@@ -53,8 +54,8 @@ function weaponColour() {
 
 /**
  * Pick a random weapon from the proided weapon list.
- * @param {Object[]} possibleWeapons
- * @returns {Object}
+ * @param {import('../typedefs/case').WeaponData[]} possibleWeapons
+ * @returns {import('../typedefs/case').WeaponData}
  */
 function weapon(possibleWeapons) {
   return _.sample(possibleWeapons);

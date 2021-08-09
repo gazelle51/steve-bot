@@ -1,4 +1,5 @@
 const _ = require('lodash');
+const { emoji } = require('../../config.json');
 const { Message, MessageEmbed, MessageReaction, User, TextChannel } = require('discord.js');
 const embeds = require('../../utils/embeds').queue;
 const queue = require('../../utils/audioQueue');
@@ -111,11 +112,13 @@ async function createAndSendEmbed(nowPlaying, audioQueue, authorId, channel) {
 
   // If there is only 1 page do not set up buttons
   if (pages.length === 1) return;
-  await Promise.all([embedMessage.react('⬅️'), embedMessage.react('➡️')]);
+  await Promise.all([embedMessage.react(emoji.leftArrow), embedMessage.react(emoji.rightArrow)]);
 
   // Reaction filters
-  const backwardFilter = (reaction, user) => reaction.emoji.name === '⬅️' && user.id === authorId;
-  const forwardFilter = (reaction, user) => reaction.emoji.name === '➡️' && user.id === authorId;
+  const backwardFilter = (reaction, user) =>
+    reaction.emoji.name === emoji.leftArrow && user.id === authorId;
+  const forwardFilter = (reaction, user) =>
+    reaction.emoji.name === emoji.rightArrow && user.id === authorId;
 
   // Reaction collectors
   const backwards = embedMessage.createReactionCollector(backwardFilter, {

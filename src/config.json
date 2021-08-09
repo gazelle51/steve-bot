@@ -3,5 +3,12 @@
   "defaultCooldown": 0.1,
   "disabledCommands": [],
   "disabledEvents": [],
-  "embedColour": "#23E5D6"
+  "embedColour": "#23E5D6",
+  "emoji": {
+    "sparkles": "✨",
+    "music": "🎵",
+    "crying": "😭",
+    "leftArrow": "⬅️",
+    "rightArrow": "➡️"
+  }
 }

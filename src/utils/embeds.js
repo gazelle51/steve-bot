@@ -1,5 +1,5 @@
 const { MessageEmbed } = require('discord.js');
-const { embedColour } = require('../config.json');
+const { embedColour, emoji } = require('../config.json');
 
 /**
  * Embed to display when a song is added to the queue.
@@ -14,7 +14,7 @@ function queueSongAdded(audio) {
   return new MessageEmbed()
     .setColor(embedColour)
     .setDescription(
-      `[${audio.title}](${audio.url}) (${audio.length}) was added to the queue ${suffix}`
+      `[${audio.title}](${audio.url}) (${audio.length}) was added to the queue.${suffix}`
     );
 }
 
@@ -23,7 +23,9 @@ function queueSongAdded(audio) {
  * @returns {MessageEmbed}
  */
 function queueBase() {
-  return new MessageEmbed().setColor(embedColour).setTitle('✨🎵 Music Queue 🎵✨');
+  return new MessageEmbed()
+    .setColor(embedColour)
+    .setTitle(`${emoji.sparkles}${emoji.music} Music Queue ${emoji.music}${emoji.sparkles}`);
 }
 
 /**
@@ -34,7 +36,7 @@ function queueEmpty() {
   const embed = queueBase();
   embed.addField(
     "There's nothing here",
-    '​No music is being played 😭! Add some music to the queue using the `play` command.​'
+    `No music is being played ${emoji.crying}! Add some music to the queue using the \`play\` command.`
   );
   return embed;
 }
@@ -51,7 +53,7 @@ function queueNowPlayingOnly(nowPlaying) {
     'Now playing',
     `[${nowPlaying.title}](${nowPlaying.url}) (${nowPlaying.length}), added by \`${nowPlaying.addedBy}\`\n`
   );
-  embed.addField('Up next', `No more songs in the queue`);
+  embed.addField('Up next', `No more songs in the queue.`);
   return embed;
 }
 

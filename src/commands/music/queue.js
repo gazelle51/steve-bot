@@ -1,6 +1,6 @@
 const _ = require('lodash');
 const { Message, MessageEmbed, MessageReaction, User, TextChannel } = require('discord.js');
-const embeds = require('../../utils/embeds');
+const embeds = require('../../utils/embeds').queue;
 const queue = require('../../utils/audioQueue');
 
 /**
@@ -19,7 +19,7 @@ async function execute(message, args, client) {
 
   // Check if the queue is empty
   if (!audioQueue.length) {
-    return message.channel.send(embeds.queue.empty());
+    return message.channel.send(embeds.empty());
   }
 
   // Get audio now playing
@@ -44,7 +44,7 @@ async function createAndSendEmbed(nowPlaying, audioQueue, authorId, channel) {
    * @returns {MessageEmbed}
    */
   function createQueueEmbed(pageData) {
-    const embed = embeds.queue.base();
+    const embed = embeds.base();
 
     // Format data for up next
     const upNextData = pageData.map((audio, i) => {
@@ -95,7 +95,7 @@ async function createAndSendEmbed(nowPlaying, audioQueue, authorId, channel) {
 
   // If no more songs in queue, send a simple embed only
   if (!audioQueue.length) {
-    channel.send(embeds.queue.nowPlayingOnly(nowPlaying));
+    channel.send(embeds.nowPlayingOnly(nowPlaying));
     return;
   }
 

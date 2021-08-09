@@ -1,6 +1,6 @@
 const _ = require('lodash');
 const { Message, MessageEmbed, MessageReaction, User, TextChannel } = require('discord.js');
-const embeds = require('../../utils/embed');
+const embeds = require('../../utils/embeds');
 const queue = require('../../utils/audioQueue');
 
 /**

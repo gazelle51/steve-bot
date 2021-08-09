@@ -1,9 +1,21 @@
 const { MessageEmbed } = require('discord.js');
+const { embedColour } = require('../config.json');
 
-const COLOUR = '#23E5D6';
+/**
+ * Embed to display when a song is added to the queue.
+ * @param {import('../typedefs/audio').Audio} audio - Audio added to queue
+ * @returns {MessageEmbed}
+ */
+function queueSongAdded(audio) {
+  const suffix = audio.url.includes('youtube.com')
+    ? "\n\nThis is the first result I found on YouTube, if it's not what you're looking for you can try the `search` command to select a particular result."
+    : '';
 
-function queueSongAdded() {
-  new MessageEmbed().setColor(COLOUR).setTitle('✨🎵 Music Queue 🎵✨');
+  return new MessageEmbed()
+    .setColor(embedColour)
+    .setDescription(
+      `[${audio.title}](${audio.url}) (${audio.length}) was added to the queue ${suffix}`
+    );
 }
 
 /**
@@ -11,7 +23,7 @@ function queueSongAdded() {
  * @returns {MessageEmbed}
  */
 function queueBase() {
-  return new MessageEmbed().setColor(COLOUR).setTitle('✨🎵 Music Queue 🎵✨');
+  return new MessageEmbed().setColor(embedColour).setTitle('✨🎵 Music Queue 🎵✨');
 }
 
 /**
@@ -44,5 +56,10 @@ function queueNowPlayingOnly(nowPlaying) {
 }
 
 module.exports = {
-  queue: { base: queueBase, empty: queueEmpty, nowPlayingOnly: queueNowPlayingOnly },
+  queue: {
+    base: queueBase,
+    empty: queueEmpty,
+    nowPlayingOnly: queueNowPlayingOnly,
+    songAdded: queueSongAdded,
+  },
 };

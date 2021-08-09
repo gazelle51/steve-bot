@@ -2,5 +2,6 @@
   "prefix": "~",
   "defaultCooldown": 0.1,
   "disabledCommands": [],
-  "disabledEvents": []
+  "disabledEvents": [],
+  "embedColour": "#23E5D6"
 }

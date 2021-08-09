@@ -1,6 +1,15 @@
 const _ = require('lodash');
 const caseData = require('./data.json');
 
+/*
+https://csgostash.com/
+TODO
+- more knives
+- statrak
+- numbers
+- embed with requesting user
+*/
+
 function unbox(caseName) {
   const data = caseData.cases[0];
 

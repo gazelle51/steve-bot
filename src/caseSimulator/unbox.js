@@ -14,7 +14,7 @@ TODO
  * @returns {import('../typedefs/case').CaseWeapon}
  */
 function unbox(caseName) {
-  const data = caseData.cases[0];
+  const data = caseData.cases[caseName];
 
   console.log(`Unboxing: ${data.name}`);
 

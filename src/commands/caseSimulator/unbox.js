@@ -1,4 +1,5 @@
 const { Message } = require('discord.js');
+const cases = require('../../caseSimulator/cases');
 const embeds = require('../../utils/embeds').case;
 const unbox = require('../../caseSimulator/unbox').unbox;
 
@@ -9,8 +10,17 @@ const unbox = require('../../caseSimulator/unbox').unbox;
  * @param {import("../../typedefs/discord").DiscordClient} client - Discord client
  */
 function execute(message, args, client) {
-  const weapon = unbox('operationbravo');
+  let caseKey = '';
 
+  // Determine case to open
+  if (args.length === 0) caseKey = cases.randomCase();
+  else if (!cases.isCaseValid(args.join(' '))) {
+    message.reply(`I am not configured to open ${args.join(' ')} cases`);
+    return;
+  } else caseKey = args.join(' ');
+
+  // Open case
+  const weapon = unbox(caseKey);
   message.channel.send(embeds.weapon(weapon, message.author));
 }
 

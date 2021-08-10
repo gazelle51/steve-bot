@@ -14,10 +14,9 @@
     "factoryNew": 0.1471
   },
   "stattrakThreshold": 0.1,
-  "cases": [
-    {
+  "cases": {
+    "bravo": {
       "name": "Operation Bravo Case",
-      "image": "https://www.csgodatabase.com/images/containers/webp/Operation_Bravo_Case.webp",
       "blue": [
         {
           "name": "G3SG1 | Demeter",
@@ -93,5 +92,5 @@
         }
       ]
     }
-  ]
+  }
 }

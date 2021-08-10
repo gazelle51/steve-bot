@@ -26,7 +26,7 @@ function unbox(caseName) {
     colour: colour,
     wear: weaponWear(),
     stattrak: stattrak(),
-    caseName: 'Operation Bravo Case',
+    caseName: data.name,
   };
 
   return caseWeapon;

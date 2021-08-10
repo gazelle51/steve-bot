@@ -17,6 +17,7 @@
   "cases": {
     "bravo": {
       "name": "Operation Bravo Case",
+      "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsXE1xNwVDv7WrFA5pnabNJGwSuN3gxtnawKOlMO6HzzhQucAm0uvFo4n2iw3h_UM-ZmilJNeLMlhpjfjxEoE/256fx256f",
       "blue": [
         {
           "name": "G3SG1 | Demeter",
@@ -91,6 +92,94 @@
           "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_aq_oiled_light_large.920866e2a1f17fda7702e0b4cb95f45a8a8c0070.png"
         }
       ]
+    },
+    "weapon": {
+      "name": "CS:GO Weapon Case",
+      "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5_T3eAQ3i6DMIW0X7ojiwoHax6egMOKGxj4G68Nz3-jCp4itjFWx-ktqfSmtcwqVx6sT/256fx256f",
+      "blue": [
+        {
+          "name": "SG 553 | Ultraviolet",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sg556_so_purple_light_large.44483356b334466acb6e781057d8f96a73cb376f.png"
+        },
+        {
+          "name": "AUG | Wings",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_aug_hy_feathers_aug_light_large.e1419b52a3ddd4bed5328f438ea5dea07b0ba248.png"
+        },
+        {
+          "name": "MP7 | Skulls",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp7_hy_skulls_light_large.3e38912bdbea8a2b03b149e619f9f141e54facfd.png"
+        }
+      ],
+      "purple": [
+        {
+          "name": "Glock-18 | Dragon Tattoo",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_glock_am_dragon_glock_light_large.e42a72a19a2239c992573b88179897af37c7f849.png"
+        },
+        {
+          "name": "USP-S | Dark Water",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_usp_silencer_am_zebra_dark_light_large.add709b2eb683853f9508ddf9c22503d7efb9925.png"
+        },
+        {
+          "name": "M4A1-S | Dark Water",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m4a1_silencer_am_zebra_dark_light_large.f484368a478f5e02d1b9d5e2816354fe705503f3.png"
+        }
+      ],
+      "pink": [
+        {
+          "name": "AK-47 | Case Hardened",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ak47_aq_oiled_light_large.92c8d125e4e54758d37e946496030e9a18833b58.png"
+        },
+        {
+          "name": "Desert Eagle | Hypnotic",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_deagle_aa_vertigo_light_large.85a16e4bfb8b1cc6393ca5d0c6d3a1e6e6023323.png"
+        }
+      ],
+      "red": [
+        {
+          "name": "AWP | Lightning Strike",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_awp_am_lightning_awp_light_large.3761894103ee0fec90af459928635933ba27e36d.png"
+        }
+      ],
+      "yellow": [
+        {
+          "name": "Bayonet | Case Hardened",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_aq_oiled_light_large.920866e2a1f17fda7702e0b4cb95f45a8a8c0070.png"
+        }
+      ]
     }
+  },
+  "templateCase": {
+    "name": "",
+    "image": "",
+    "blue": [
+      {
+        "name": "",
+        "image": ""
+      }
+    ],
+    "purple": [
+      {
+        "name": "",
+        "image": ""
+      }
+    ],
+    "pink": [
+      {
+        "name": "",
+        "image": ""
+      }
+    ],
+    "red": [
+      {
+        "name": "",
+        "image": ""
+      }
+    ],
+    "yellow": [
+      {
+        "name": "",
+        "image": ""
+      }
+    ]
   }
 }

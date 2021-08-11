@@ -2,6 +2,14 @@ const axios = require('axios').default;
 const cheerio = require('cheerio');
 
 async function scrapeCasePage(url) {
+  const weapons = {
+    blue: [],
+    purple: [],
+    pink: [],
+    red: [],
+    yellow: [],
+  };
+
   // Load page into Cheerio
   const html = (await axios.get(url)).data;
   const $ = cheerio.load(html);
@@ -46,14 +54,17 @@ async function scrapeCasePage(url) {
         .text()
         .trim();
 
-      console.log(name);
-      console.log(rarity);
-      console.log(colour);
-      console.log(imageUrl);
-      console.log(price);
-      console.log(statTrakPrice);
-      console.log();
+      weapons[colour].push({
+        name: name,
+        image: imageUrl,
+        priceLow: +price.match(/[0-9]+.[0-9]+/g)[0],
+        priceHigh: +price.match(/[0-9]+.[0-9]+/g)[1],
+        statTrakPriceLow: +statTrakPrice.match(/[0-9]+.[0-9]+/g)[0],
+        statTrakPriceHigh: +statTrakPrice.match(/[0-9]+.[0-9]+/g)[1],
+      });
     });
+
+  return weapons;
 }
 
 scrapeCasePage('https://csgostash.com/case/4/CS:GO-Weapon-Case-2');

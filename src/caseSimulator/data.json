@@ -220,6 +220,72 @@
           "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_butterfly_hy_webs_light_large.8e3a3668a8678a4ce56b2675c60d7ec6a756827a.png"
         }
       ]
+    },
+    "weapon2": {
+      "name": "CS:GO Weapon Case 2",
+      "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5PT8elUwgKKZJmtEvo_kxITZk6StNe-Fz2pTu8Aj3eqVpIqgjVfjrRI9fSmtc1Nw-Kh3/256fx256f",
+      "blue": [
+        {
+          "name": "SCAR-20 | Crimson Web",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_scar20_hy_webs_darker_light_large.8e06e878c22b82c6bb1045f26e1bbc1926faecf2.png"
+        },
+        {
+          "name": "M4A1-S | Blood Tiger",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m4a1_silencer_hy_redtiger_light_large.0b40a51b0020fa1781ddb7368e3b39c03263b2dd.png"
+        },
+        {
+          "name": "Tec-9 | Blue Titanium",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_tec9_an_titanium30v_light_large.76078065235a996df8184b684159dfee7efcd530.png"
+        },
+        {
+          "name": "FAMAS | Hexane",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_famas_hy_bluehex_light_large.fe87763b33ea8963cf87e9b8fd7b9bfc9014d747.png"
+        },
+        {
+          "name": "P250 | Hive",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p250_hy_redhex_light_large.099092ccf56439b922b51569ce87f2f908abcc19.png"
+        }
+      ],
+      "purple": [
+        {
+          "name": "Five-SeveN | Case Hardened",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_fiveseven_aq_oiled_light_large.fdaa095453965b2be93f8aa90ae469d926fac4e7.png"
+        },
+        {
+          "name": "MP9 | Hypnotic",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp9_aa_vertigo_light_large.41a7195e0a6ba44c2fc64d64bee0635444b0c569.png"
+        },
+        {
+          "name": "Nova | Graphite",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_nova_am_crumple_light_large.e46bab0dc8f8fe10b83c18ed9f9d9945352781af.png"
+        },
+        {
+          "name": "Dual Berettas | Hemoglobin",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_elite_am_ossify_red_light_large.9da21d3dc7b64952d853818075f524a9e4c1dfd3.png"
+        }
+      ],
+      "pink": [
+        {
+          "name": "P90 | Cold Blooded",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p90_am_slither_p90_light_large.583a90c66858cf0cc20253d2f4a0be1168eadbca.png"
+        },
+        {
+          "name": "USP-S | Serum",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_usp_silencer_am_electric_red_light_large.ef8005beba74458fabbe8f664e0b210b2ef3a007.png"
+        }
+      ],
+      "red": [
+        {
+          "name": "SSG 08 | Blood in the Water",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ssg08_cu_shark_light_large.00812c20a896847013b0a2913a166f6ba220a258.png"
+        }
+      ],
+      "yellow": [
+        {
+          "name": "Bayonet | Fade",
+          "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_aa_fade_light_large.5ac4f422043b48b47e4453cc250c79fda3e78855.png"
+        }
+      ]
     }
   },
   "templateCase": {

@@ -1,25 +1,29 @@
 const _ = require('lodash');
 const caseData = require('./data.json');
+const scrapeCasePage = require('./webScraper').scrapeCasePage;
 
 /*
-https://csgostash.com/
 TODO
-- more knives
 - numbers
+- broken cases: fracture, snakebite
+- only scrape for certain colour
 */
 
 /**
  * Unbox a CS-GO case.
  * @param {string} caseName - name of case to unbox
- * @returns {import('../typedefs/case').CaseWeapon}
+ * @returns {Promise<import('../typedefs/case').CaseWeapon>}
  */
-function unbox(caseName) {
+async function unbox(caseName) {
   const data = caseData.cases[caseName];
 
   console.log(`Unboxing: ${data.name}`);
 
   const colour = weaponColour();
-  const weaponData = weapon(data[colour]);
+
+  // TODO: only scrape for certain colour
+  const caseWeaponData = await scrapeCasePage(data.url);
+  const weaponData = weapon(caseWeaponData[colour]);
 
   const caseWeapon = {
     ...weaponData,

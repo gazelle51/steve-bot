@@ -9,7 +9,7 @@ const unbox = require('../../caseSimulator/unbox').unbox;
  * @param {string[]} args
  * @param {import("../../typedefs/discord").DiscordClient} client - Discord client
  */
-function execute(message, args, client) {
+async function execute(message, args, client) {
   let caseKey = '';
 
   // Determine case to open
@@ -20,7 +20,7 @@ function execute(message, args, client) {
   } else caseKey = args.join(' ');
 
   // Open case
-  const weapon = unbox(caseKey);
+  const weapon = await unbox(caseKey);
   message.channel.send(embeds.weapon(weapon, message.author));
 }
 

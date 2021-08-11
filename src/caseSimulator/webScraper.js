@@ -1,6 +1,11 @@
 const axios = require('axios').default;
 const cheerio = require('cheerio');
 
+/**
+ * Extract all weapons from case at the provided URL.
+ * @param {string} url - URL to scrape
+ * @returns {Promise<Object>} weapons in case
+ */
 async function scrapeCasePage(url) {
   const weapons = {
     blue: [],
@@ -14,6 +19,61 @@ async function scrapeCasePage(url) {
   const html = (await axios.get(url)).data;
   const $ = cheerio.load(html);
 
+  await extractWeaponData($, weapons);
+
+  return weapons;
+}
+
+/**
+ * Extract all knives at the provided URL.
+ * @param {string} url - URL to scrape
+ * @returns {Promise<Object>} knives in case
+ */
+async function scrapeKnivesPage(url) {
+  const knives = { yellow: [] };
+
+  // Load page into Cheerio
+  const html = (await axios.get(url)).data;
+  const $ = cheerio.load(html);
+
+  // Get URLs of additional pages
+  const pageUrls = [
+    ...new Set(
+      $('div .pagination-nomargin > ul > li > a')
+        .map((i, result) => $(result).attr('href'))
+        .toArray()
+    ),
+  ];
+
+  // Find element (row) containing result boxes
+  const resultBoxRow = $('div .row').has('div > div .result-box');
+
+  // Get HTML of other pages
+  for (const pageUrl of pageUrls) {
+    const pageHtml = (await axios.get(pageUrl)).data;
+    const page$ = cheerio.load(pageHtml);
+    const pageResultBoxRow = page$('div .row ').has('div > div .result-box');
+
+    // Merge result boxes with original result boxes
+    resultBoxRow.append(pageResultBoxRow.children());
+  }
+
+  // Extract knives data
+  await extractWeaponData($, knives, true);
+
+  return knives;
+}
+
+/**
+ * Extract all knives at the provided URL.
+ * @param {cheerio.Root} $ - Cheerio object of HTML to extract elements from
+ * @param {Object} weapons - existing weapons data to update
+ * @param {boolean} [knivesData=false] - if true, the data to be extracted is knives
+ * @returns {Promise<Object>} weapons in case
+ */
+async function extractWeaponData($, weapons, knivesData = false) {
+  let knivesUrl;
+
   // Find all result boxes with a h3 inside of them
   $('div .result-box ')
     .not((i, result) => !$(result).children('h3').length)
@@ -21,10 +81,9 @@ async function scrapeCasePage(url) {
       // Weapon name
       const name = $(result).find('h3').text();
 
-      // Get knives in case
-      if (name.includes('Knives')) {
-        const knivesUrl = $(result).children('h3').children('a').attr('href');
-        scrapeKnivesPage(knivesUrl);
+      // Skip knives
+      if (!knivesData && name.includes('Knives')) {
+        knivesUrl = $(result).children('h3').children('a').attr('href');
         return;
       }
 
@@ -37,12 +96,13 @@ async function scrapeCasePage(url) {
 
       // Colour (based on rarity)
       const colourMap = {
+        rare: 'yellow',
         covert: 'red',
         classified: 'pink',
         restricted: 'purple',
         milspec: 'blue',
       };
-      const colour = colourMap[rarity];
+      const colour = knivesData ? 'yellow' : colourMap[rarity];
 
       // Image URL
       const imageUrl = $(result).find('a').children('img').attr('src');
@@ -61,52 +121,18 @@ async function scrapeCasePage(url) {
       weapons[colour].push({
         name: name,
         image: imageUrl,
-        priceLow: +price.match(/[0-9]+.[0-9]+/g)[0],
-        priceHigh: +price.match(/[0-9]+.[0-9]+/g)[1],
-        statTrakPriceLow: +statTrakPrice.match(/[0-9]+.[0-9]+/g)[0],
-        statTrakPriceHigh: +statTrakPrice.match(/[0-9]+.[0-9]+/g)[1],
+        priceLow: +price.replace(',', '').match(/[0-9]+.[0-9]+/g)[0],
+        priceHigh: +price.replace(',', '').match(/[0-9]+.[0-9]+/g)[1],
+        statTrakPriceLow: +statTrakPrice.replace(',', '').match(/[0-9]+.[0-9]+/g)[0],
+        statTrakPriceHigh: +statTrakPrice.replace(',', '').match(/[0-9]+.[0-9]+/g)[1],
       });
     });
 
-  return weapons;
-}
-
-async function scrapeKnivesPage(url) {
-  const knives = [];
-
-  // Load page into Cheerio
-  const html = (await axios.get(url)).data;
-  const $ = cheerio.load(html);
-
-  // Get URLs of additional pages
-  const pageUrls = [
-    ...new Set(
-      $('div .pagination-nomargin > ul > li > a')
-        .map((i, result) => $(result).attr('href'))
-        .toArray()
-    ),
-  ];
-
-  // Find element (row) containing result boxes
-  const resultBoxRow = $('div .row').has('div > div .result-box');
-  console.log(resultBoxRow.children().length);
-
-  // Get HTML of other pages
-  for (const pageUrl of pageUrls) {
-    const pageHtml = (await axios.get(pageUrl)).data;
-    const page$ = cheerio.load(pageHtml);
-    const pageResultBoxRow = page$('div .row ').has('div > div .result-box');
-    console.log(pageResultBoxRow.children().length);
-
-    // Merge result boxes with original result boxes
-    resultBoxRow.append(pageResultBoxRow.children());
+  // Get knives data mentioned on page
+  if (!knivesData && knivesUrl) {
+    const knives = await scrapeKnivesPage(knivesUrl);
+    weapons.yellow.push(...knives.yellow);
   }
-
-  console.log(resultBoxRow.children().length);
-
-  return knives;
 }
 
-// scrapeCasePage('https://csgostash.com/case/4/CS:GO-Weapon-Case-2');
-scrapeKnivesPage('https://csgostash.com/case/307/Fracture-Case?Knives=1'); // Multi page
-// scrapeKnivesPage('https://csgostash.com/case/4/CS:GO-Weapon-Case-2'); // Single page
+module.exports = { scrapeCasePage };

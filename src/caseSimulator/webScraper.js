@@ -25,7 +25,7 @@ async function scrapeCasePage(url) {
 }
 
 /**
- * Extract all knives at the provided URL.
+ * Extract all knives at the provided URL. Also works for gloves.
  * @param {string} url - URL to scrape
  * @returns {Promise<Object>} knives in case
  */
@@ -81,8 +81,8 @@ async function extractWeaponData($, weapons, knivesData = false) {
       // Weapon name
       const name = $(result).find('h3').text();
 
-      // Skip knives
-      if (!knivesData && name.includes('Knives')) {
+      // Skip knives and gloves
+      if (!knivesData && (name.includes('Knives') || name.includes('Gloves'))) {
         knivesUrl = $(result).children('h3').children('a').attr('href');
         return;
       }
@@ -128,7 +128,7 @@ async function extractWeaponData($, weapons, knivesData = false) {
       });
     });
 
-  // Get knives data mentioned on page
+  // Get knives/gloves data mentioned on page
   if (!knivesData && knivesUrl) {
     const knives = await scrapeKnivesPage(knivesUrl);
     weapons.yellow.push(...knives.yellow);

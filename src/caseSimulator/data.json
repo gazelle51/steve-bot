@@ -290,6 +290,130 @@
           "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_aa_fade_light_large.5ac4f422043b48b47e4453cc250c79fda3e78855.png"
         }
       ]
+    },
+    "esports2013": {
+      "name": "eSports 2013 Case",
+      "url": "https://csgostash.com/case/2/eSports-2013-Case"
+    },
+    "esports2013Winter": {
+      "name": "eSports 2013 Winter Case",
+      "url": "https://csgostash.com/case/5/eSports-2013-Winter-Case"
+    },
+    "winterOffensive": {
+      "name": "Winter Offensive Weapon Case",
+      "url": "https://csgostash.com/case/7/Winter-Offensive-Weapon-Case"
+    },
+    "weapon3": {
+      "name": "CS:GO Weapon Case 3",
+      "url": "https://csgostash.com/case/10/CS:GO-Weapon-Case-3"
+    },
+    "phoenix": {
+      "name": "Operation Phoenix Weapon Case",
+      "url": "https://csgostash.com/case/11/Operation-Phoenix-Weapon-Case"
+    },
+    "huntsman": {
+      "name": "Huntsman Weapon Case",
+      "url": "https://csgostash.com/case/17/Huntsman-Weapon-Case"
+    },
+    "esports2014Summer": {
+      "name": "eSports 2014 Summer Case",
+      "url": "https://csgostash.com/case/19/eSports-2014-Summer-Case"
+    },
+    "vanguard": {
+      "name": "Operation Vanguard Weapon Case",
+      "url": "eSports 2014 Summer Case"
+    },
+    "chroma": {
+      "name": "Chroma Case",
+      "url": "https://csgostash.com/case/38/Chroma-Case"
+    },
+    "chroma2": {
+      "name": "Chroma 2 Case",
+      "url": "https://csgostash.com/case/48/Chroma-2-Case"
+    },
+    "falchion": {
+      "name": "Falchion Case",
+      "url": "https://csgostash.com/case/50/Falchion-Case"
+    },
+    "shadow": {
+      "name": "Shadow Case",
+      "url": "https://csgostash.com/case/80/Shadow-Case"
+    },
+    "revolver": {
+      "name": "Revolver Case",
+      "url": "https://csgostash.com/case/111/Revolver-Case"
+    },
+    "wildfire": {
+      "name": "Operation Wildfire Case",
+      "url": "https://csgostash.com/case/112/Operation-Wildfire-Case"
+    },
+    "chroma3": {
+      "name": "Chroma 3 Case",
+      "url": "https://csgostash.com/case/141/Chroma-3-Case"
+    },
+    "gamma": {
+      "name": "Gamma Case",
+      "url": "https://csgostash.com/case/144/Gamma-Case"
+    },
+    "gamma2": {
+      "name": "Gamma 2 Case",
+      "url": "https://csgostash.com/case/172/Gamma-2-Case"
+    },
+    "glove": {
+      "name": "Glove Case",
+      "url": "https://csgostash.com/case/179/Glove-Case"
+    },
+    "spectrum": {
+      "name": "Spectrum Case",
+      "url": "https://csgostash.com/case/207/Spectrum-Case"
+    },
+    "hydra": {
+      "name": "Operation Hydra Case",
+      "url": "https://csgostash.com/case/208/Operation-Hydra-Case"
+    },
+    "spectrum2": {
+      "name": "Spectrum 2 Case",
+      "url": "https://csgostash.com/case/220/Spectrum-2-Case"
+    },
+    "clutch": {
+      "name": "Clutch Case",
+      "url": "https://csgostash.com/case/238/Clutch-Case"
+    },
+    "horizon": {
+      "name": "Horizon Case",
+      "url": "https://csgostash.com/case/244/Horizon-Case"
+    },
+    "dangerZone": {
+      "name": "Danger Zone Case",
+      "url": "https://csgostash.com/case/259/Danger-Zone-Case"
+    },
+    "prisma": {
+      "name": "Prisma Case",
+      "url": "https://csgostash.com/case/274/Prisma-Case"
+    },
+    "shatteredWeb": {
+      "name": "Shattered Web Case",
+      "url": "https://csgostash.com/case/277/Shattered-Web-Case"
+    },
+    "cs20": {
+      "name": "CS20 Case",
+      "url": "https://csgostash.com/case/293/CS20-Case"
+    },
+    "prisma2": {
+      "name": "Prisma 2 Case",
+      "url": "https://csgostash.com/case/303/Prisma-2-Case"
+    },
+    "fracture": {
+      "name": "Fracture Case",
+      "url": "https://csgostash.com/case/307/Fracture-Case"
+    },
+    "brokenFang": {
+      "name": "Operation Broken Fang Case",
+      "url": "https://csgostash.com/case/308/Operation-Broken-Fang-Case"
+    },
+    "snakebite": {
+      "name": "Snakebite Case",
+      "url": "https://csgostash.com/case/315/Snakebite-Case"
     }
   },
   "templateCase": {

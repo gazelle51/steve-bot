@@ -22,6 +22,8 @@ async function execute(message, args, client) {
   // Open case
   const weapon = await unbox(caseKey);
   message.channel.send(embeds.weapon(weapon, message.author));
+
+  // TODO: reply if knife
 }
 
 /** @type {import('../../typedefs/discord').Command}} */

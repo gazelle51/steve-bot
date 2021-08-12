@@ -5,7 +5,7 @@ const scrapeCasePage = require('./webScraper').scrapeCasePage;
 /*
 TODO
 - numbers
-- broken cases: fracture, snakebite
+- broken cases: snakebite
 - only scrape for certain colour
 */
 

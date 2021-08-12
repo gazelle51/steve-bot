@@ -15,6 +15,8 @@ async function scrapeCasePage(url) {
     yellow: [],
   };
 
+  console.log(`Scraping case at ${url}`);
+
   // Load page into Cheerio
   const html = (await axios.get(url)).data;
   const $ = cheerio.load(html);
@@ -31,6 +33,8 @@ async function scrapeCasePage(url) {
  */
 async function scrapeKnivesPage(url) {
   const knives = { yellow: [] };
+
+  console.log(`Scraping knives/gloves at ${url}`);
 
   // Load page into Cheerio
   const html = (await axios.get(url)).data;
@@ -107,24 +111,28 @@ async function extractWeaponData($, weapons, knivesData = false) {
       // Image URL
       const imageUrl = $(result).find('a').children('img').attr('src');
 
-      // Price
+      // Prices
       const priceElements = $(result).find('div .price');
-      const price = $(priceElements)
+      const prices = $(priceElements)
         .filter((i, elem) => $(elem).children().find('a[class="price-st"]').length === 0)
-        .text()
-        .trim();
-      const statTrakPrice = $(priceElements)
+        .text();
+      const statTrakPrices = $(priceElements)
         .filter((i, elem) => $(elem).children().find('a[class="price-st"]').length === 1)
-        .text()
-        .trim();
+        .text();
+
+      // Price
+      const [priceLow, priceHigh] = _extractPrices(prices);
+
+      // StatTrak price
+      const [statTrakPriceLow, statTrakPriceHigh] = _extractPrices(statTrakPrices);
 
       weapons[colour].push({
         name: name,
         image: imageUrl,
-        priceLow: +price.replace(',', '').match(/[0-9]+.[0-9]+/g)[0],
-        priceHigh: +price.replace(',', '').match(/[0-9]+.[0-9]+/g)[1],
-        statTrakPriceLow: +statTrakPrice.replace(',', '').match(/[0-9]+.[0-9]+/g)[0],
-        statTrakPriceHigh: +statTrakPrice.replace(',', '').match(/[0-9]+.[0-9]+/g)[1],
+        priceLow: priceLow,
+        priceHigh: priceHigh,
+        statTrakPriceLow: statTrakPriceLow,
+        statTrakPriceHigh: statTrakPriceHigh,
       });
     });
 
@@ -133,6 +141,24 @@ async function extractWeaponData($, weapons, knivesData = false) {
     const knives = await scrapeKnivesPage(knivesUrl);
     weapons.yellow.push(...knives.yellow);
   }
+}
+
+/**
+ * Extract low and high prices from HTML text.
+ * @param {string} pricesRaw - price text from HTML
+ * @returns {[number, number]} [low price, high price]
+ */
+function _extractPrices(pricesRaw) {
+  // Extract prices
+  const prices = pricesRaw
+    .trim()
+    .replace(',', '')
+    .match(/[0-9]+.[0-9]+/g);
+
+  // Return prices based on results
+  if (!prices) return [undefined, undefined];
+  else if (prices.length === 1) return [+prices[0], undefined];
+  else return [+prices[0], +prices[1]];
 }
 
 module.exports = { scrapeCasePage };

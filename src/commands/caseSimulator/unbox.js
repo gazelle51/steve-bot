@@ -24,13 +24,13 @@ async function execute(message, args, client) {
   const weapon = await unbox(caseKey);
   const embedMessage = await message.channel.send(embeds.weapon(weapon, message.author));
 
-  // React and reply if knife was opened
-  // TODO discord-reply https://stackoverflow.com/questions/65114050/discord-js-reply-to-message-actual-reply-with-reply-decoration
+  // React, reply and pin if knife was opened
   if (weapon.colour === 'yellow') {
-    await embedMessage.react(emoji[100]);
-    embedMessage.reply(``, {
+    embedMessage.react(emoji[100]);
+    embedMessage.lineReply(`${message.author} nice case opening!`, {
       files: ['https://media.giphy.com/media/Ls6ahtmYHU760/giphy.gif'],
     });
+    embedMessage.pin();
   }
 }
 

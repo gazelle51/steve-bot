@@ -10,6 +10,7 @@ require('dotenv').config();
 const { disabledCommands, disabledEvents } = require('./config.json');
 const { Client, Collection } = require('discord.js');
 const fs = require('fs');
+require('discord-reply');
 
 // Check blocked users parses correctly
 try {

@@ -1,3 +1,4 @@
+const { emoji } = require('../../config.json');
 const { Message } = require('discord.js');
 const cases = require('../../caseSimulator/cases');
 const embeds = require('../../utils/embeds').case;
@@ -21,9 +22,16 @@ async function execute(message, args, client) {
 
   // Open case
   const weapon = await unbox(caseKey);
-  message.channel.send(embeds.weapon(weapon, message.author));
+  const embedMessage = await message.channel.send(embeds.weapon(weapon, message.author));
 
-  // TODO: reply if knife
+  // React and reply if knife was opened
+  // TODO discord-reply https://stackoverflow.com/questions/65114050/discord-js-reply-to-message-actual-reply-with-reply-decoration
+  if (weapon.colour === 'yellow') {
+    await embedMessage.react(emoji[100]);
+    embedMessage.reply(``, {
+      files: ['https://media.giphy.com/media/Ls6ahtmYHU760/giphy.gif'],
+    });
+  }
 }
 
 /** @type {import('../../typedefs/discord').Command}} */

@@ -66,7 +66,7 @@ async function scrapeKnivesPage(url) {
 
 /**
  * Extract all knives at the provided URL.
- * @param {cheerio.Root} $ - Cheerio object of HTML to extract elements from
+ * @param {import('cheerio').CheerioAPI} $ - Cheerio object of HTML to extract elements from
  * @param {Object} weapons - existing weapons data to update
  * @param {boolean} [knivesData=false] - if true, the data to be extracted is knives
  * @returns {Promise<Object>} weapons in case

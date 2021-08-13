@@ -1,4 +1,5 @@
 const axios = require('axios').default;
+const cache = require('../cache/cache');
 const cheerio = require('cheerio');
 
 /**
@@ -18,7 +19,7 @@ async function scrapeCasePage(url) {
   console.log(`Scraping case at ${url}`);
 
   // Load page into Cheerio
-  const html = (await axios.get(url)).data;
+  const html = await _getHtml(url);
   const $ = cheerio.load(html);
 
   await extractWeaponData($, weapons);
@@ -37,7 +38,7 @@ async function scrapeKnivesPage(url) {
   console.log(`Scraping knives/gloves at ${url}`);
 
   // Load page into Cheerio
-  const html = (await axios.get(url)).data;
+  const html = await _getHtml(url);
   const $ = cheerio.load(html);
 
   // Get URLs of additional pages
@@ -54,7 +55,7 @@ async function scrapeKnivesPage(url) {
 
   // Get HTML of other pages
   for (const pageUrl of pageUrls) {
-    const pageHtml = (await axios.get(pageUrl)).data;
+    const pageHtml = await _getHtml(url);
     const page$ = cheerio.load(pageHtml);
     const pageResultBoxRow = page$('div .row ').has('div > div .result-box');
 
@@ -142,6 +143,22 @@ async function extractWeaponData($, weapons, knivesData = false) {
     const knives = await scrapeKnivesPage(knivesUrl);
     weapons.yellow.push(...knives.yellow);
   }
+}
+
+/**
+ * Get the HTML of the provided URL by first checking the cache. If it does
+ * not exist in the cache, then call the URL and save the HTML in the cache.
+ * @param {string} url - URL of HTML to get
+ * @returns {Promise<string>}
+ */
+async function _getHtml(url) {
+  const htmlCache = cache.get(url);
+  if (htmlCache !== undefined) return htmlCache;
+
+  const html = (await axios.get(url)).data;
+  cache.set(url, html);
+
+  return html;
 }
 
 /**

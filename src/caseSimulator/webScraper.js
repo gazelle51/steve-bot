@@ -5,7 +5,7 @@ const cheerio = require('cheerio');
 /**
  * Extract all weapons from case at the provided URL.
  * @param {string} url - URL to scrape
- * @returns {Promise<Object>} weapons in case
+ * @returns {Promise<import('../typedefs/case').CaseData>} weapons in case
  */
 async function scrapeCasePage(url) {
   const weapons = {
@@ -30,7 +30,7 @@ async function scrapeCasePage(url) {
 /**
  * Extract all knives at the provided URL. Also works for gloves.
  * @param {string} url - URL to scrape
- * @returns {Promise<Object>} knives in case
+ * @returns {Promise<import('../typedefs/case').CaseKnifeData>} knives in case
  */
 async function scrapeKnivesPage(url) {
   const knives = { yellow: [] };
@@ -72,9 +72,9 @@ async function scrapeKnivesPage(url) {
 /**
  * Extract all knives at the provided URL.
  * @param {import('cheerio').CheerioAPI} $ - Cheerio object of HTML to extract elements from
- * @param {Object} weapons - existing weapons data to update
+ * @param {import('../typedefs/case').CaseData|import('../typedefs/case').CaseKnifeData} weapons - existing weapons data to update
  * @param {boolean} [knivesData=false] - if true, the data to be extracted is knives
- * @returns {Promise<Object>} weapons in case
+ * @returns {Promise<void>} weapons in case
  */
 async function extractWeaponData($, weapons, knivesData = false) {
   let knivesUrl;
@@ -131,8 +131,10 @@ async function extractWeaponData($, weapons, knivesData = false) {
       weapons[colour].push({
         name: name,
         image: imageUrl,
+        priceRange: prices,
         priceLow: priceLow,
         priceHigh: priceHigh,
+        statTrakPriceRange: statTrakPrices,
         statTrakPriceLow: statTrakPriceLow,
         statTrakPriceHigh: statTrakPriceHigh,
       });

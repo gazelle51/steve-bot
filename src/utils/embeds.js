@@ -72,9 +72,15 @@ function caseWeapon(weapon, author) {
     yellow: '#ffcc00',
   };
 
-  let description = '';
+  let description = `\`\`\`\n${weapon.wear}\n\`\`\`\n`;
+
+  // StatTrak
   if (weapon.stattrak) description = description + '```arm\nStatTrak™\n```\n';
-  description = description + `\`\`\`\n${weapon.wear}\n\`\`\``;
+
+  // Price
+  description =
+    description +
+    `\`\`\`\n${weapon.stattrak ? weapon.statTrakPriceRange : weapon.priceRange}\n\`\`\`\n`;
 
   return new MessageEmbed()
     .setColor(colours[weapon.colour])

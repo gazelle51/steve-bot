@@ -30,7 +30,11 @@ async function execute(message, args, client) {
     embedMessage.lineReply(`${message.author} nice case opening!`, {
       files: ['https://media.giphy.com/media/Ls6ahtmYHU760/giphy.gif'],
     });
-    embedMessage.pin();
+    try {
+      embedMessage.pin();
+    } catch (err) {
+      console.error(err);
+    }
   }
 }
 

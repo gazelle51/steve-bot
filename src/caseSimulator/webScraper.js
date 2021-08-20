@@ -4,10 +4,12 @@ const cheerio = require('cheerio');
 
 /**
  * Extract all weapons from case at the provided URL.
+ * If the provided colour is not yellow, knives/gloves data will not be returned.
  * @param {string} url - URL to scrape
+ * @param {string} [colour=yellow] - colour of weapon we are interested in
  * @returns {Promise<import('../typedefs/case').CaseData>} weapons in case
  */
-async function scrapeCasePage(url) {
+async function scrapeCasePage(url, colour = 'yellow') {
   const weapons = {
     blue: [],
     purple: [],
@@ -22,7 +24,7 @@ async function scrapeCasePage(url) {
   const html = await _getHtml(url);
   const $ = cheerio.load(html);
 
-  await extractWeaponData($, weapons);
+  await extractWeaponData($, weapons, colour);
 
   return weapons;
 }
@@ -101,29 +103,31 @@ async function scrapeKnivesPage(url) {
   }
 
   // Extract knives data
-  await extractWeaponData($, knives, true);
+  await extractWeaponData($, knives, 'yellow', true);
 
   return knives;
 }
 
 /**
- * Extract all knives at the provided URL.
+ * Extract all weapons at the provided URL.
+ * Knife/glove data will only be fetched if the provided colour is yellow.
  * @param {import('cheerio').CheerioAPI} $ - Cheerio object of HTML to extract elements from
  * @param {import('../typedefs/case').CaseData|import('../typedefs/case').CaseKnifeData} weapons - existing weapons data to update
+ * @param {string} colourOfInterest - colour of weapon we are interested in
  * @param {boolean} [knivesData=false] - if true, the data to be extracted is knives
  * @returns {Promise<void>} weapons in case
  */
-async function extractWeaponData($, weapons, knivesData = false) {
+async function extractWeaponData($, weapons, colourOfInterest, knivesData = false) {
   let knivesUrl;
 
   // Find all result boxes with a h3 inside of them
-  $('div .result-box ')
+  $('div .result-box')
     .not((i, result) => !$(result).children('h3').length)
     .each((i, result) => {
       // Weapon name
       const name = $(result).find('h3').text();
 
-      // Skip knives and gloves
+      // Skip knives and gloves but note the URL if needed
       if (!knivesData && (name.includes('Knives') || name.includes('Gloves'))) {
         knivesUrl = $(result).children('h3').children('a').attr('href');
         return;
@@ -171,8 +175,8 @@ async function extractWeaponData($, weapons, knivesData = false) {
       });
     });
 
-  // Get knives/gloves data mentioned on page
-  if (!knivesData && knivesUrl) {
+  // Get knives/gloves data mentioned on page if needed
+  if (colourOfInterest === 'yellow' && !knivesData && knivesUrl) {
     const knives = await scrapeKnivesPage(knivesUrl);
     weapons.yellow.push(...knives.yellow);
   }

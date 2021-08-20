@@ -3,12 +3,6 @@ const caseData = require('./data.json');
 const scrapeCasePage = require('./webScraper').scrapeCasePage;
 const scrapeWeaponPage = require('./webScraper').scrapeWeaponPage;
 
-/*
-TODO
-- numbers
-- only scrape for certain colour
-*/
-
 /**
  * Unbox a CS-GO case.
  * @param {string} caseName - name of case to unbox
@@ -19,12 +13,13 @@ async function unbox(caseName) {
 
   console.log(`Unboxing: ${data.name}`);
 
+  // Randomised weapon data
   const colour = weaponColour();
   const stStatus = statTrak();
   const wwStatus = weaponWear();
 
-  // TODO: only scrape for certain colour
-  const caseWeaponData = await scrapeCasePage(data.url);
+  // Static weapon data
+  const caseWeaponData = await scrapeCasePage(data.url, colour);
   const weaponData = weapon(caseWeaponData[colour]);
   const weaponDetails = await scrapeWeaponPage(weaponData.url, stStatus, wwStatus);
 

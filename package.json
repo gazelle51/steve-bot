@@ -19,14 +19,14 @@
   },
   "homepage": "https://github.com/gazelle51/discord-bot#readme",
   "engines": {
-    "node": ">=14.x"
+    "node": ">=16.7.x"
   },
   "dependencies": {
     "@discordjs/opus": "^0.5.3",
     "axios": "^0.21.1",
     "cheerio": "^1.0.0-rc.10",
     "discord-reply": "^0.1.2",
-    "discord.js": "^12.5.3",
+    "discord.js": "^13.1.0",
     "dotenv": "^10.0.0",
     "ffmpeg-static": "^4.4.0",
     "lodash": "^4.17.21",

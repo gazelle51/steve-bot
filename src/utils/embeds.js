@@ -87,6 +87,7 @@ function caseWeapon(weapon, author) {
     .setTitle(weapon.name)
     .setDescription(description)
     .setImage(weapon.image)
+    .setURL(weapon.url)
     .setFooter(`${author.tag} | ${weapon.caseName}`, author.avatarURL());
 }
 

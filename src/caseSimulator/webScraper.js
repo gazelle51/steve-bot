@@ -128,6 +128,9 @@ async function extractWeaponData($, weapons, knivesData = false) {
       // StatTrak price
       const [statTrakPriceLow, statTrakPriceHigh] = _extractPrices(statTrakPrices);
 
+      // Weaspon URL
+      const url = $(result).find('a > img').parent().attr('href');
+
       weapons[colour].push({
         name: name,
         image: imageUrl,
@@ -137,6 +140,7 @@ async function extractWeaponData($, weapons, knivesData = false) {
         statTrakPriceRange: statTrakPrices,
         statTrakPriceLow: statTrakPriceLow,
         statTrakPriceHigh: statTrakPriceHigh,
+        url: url,
       });
     });
 

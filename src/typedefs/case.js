@@ -9,19 +9,21 @@
  * @property {string} statTrakPriceRange - StatTrak price range
  * @property {number} statTrakPriceLow - StatTrak lowest price
  * @property {number} statTrakPriceHigh - StatTrak highest price
+ * @property {string} url - weapon URL
  */
 
 /**
- * Weapon opened from a case.
- * @typedef {Object} CaseWeapon
- * @property {string} name - weapon name
- * @property {string} image - weapon image URL
+ * Extra details about weapon opened from a case.
+ * @typedef {Object} CaseWeaponData
  * @property {string} colour - weapon colour
  * @property {string} wear - weapon wear
  * @property {boolean} stattrak - whether the weapon has StatTrak tech or not
  * @property {string} caseName - case the weapon was opened from
- * @property {string} priceRange - normal price range
- * @property {string} statTrakPriceRange - StatTrak price range
+ */
+
+/**
+ * Weapon opened from a case.
+ * @typedef {WeaponData & CaseWeaponData} CaseWeapon
  */
 
 /**
@@ -31,7 +33,7 @@
  */
 
 /**
- * Raw case data.
+ * Raw case non-knife data.
  * @typedef {Object} CaseNonKnifeData
  * @property {WeaponData[]} blue - blue weapons
  * @property {WeaponData[]} purple - purple weapons
@@ -42,10 +44,6 @@
 /**
  * Raw case data.
  * @typedef {CaseNonKnifeData & CaseKnifeData} CaseData
- * @property {WeaponData[]} blue - blue weapons
- * @property {WeaponData[]} purple - purple weapons
- * @property {WeaponData[]} pink - pink weapons
- * @property {WeaponData[]} red - red weapons
  */
 
 module.exports = {};

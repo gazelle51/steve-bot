@@ -3,14 +3,14 @@ require('dotenv').config();
 /**
  * Discord client doco: https://discord.js.org/#/docs/main/stable/class/Client
  *
- * If want to want presence changes need to use `new Discord.Client({ ws: { intents: ['GUILD_PRESENCES'] } });`.
+ * If want to want presence changes need to use `new Discord.Client({ intents: ['GUILD_PRESENCES'] });`.
  * Also need to check that permission is enabled for bot in developer portal.
  */
 
 const { disabledCommands, disabledEvents } = require('./config.json');
-const { Client, Collection } = require('discord.js');
+const { Client, Collection, Intents } = require('discord.js');
 const fs = require('fs');
-require('discord-reply');
+// require('discord-reply');
 
 // Check blocked users parses correctly
 try {
@@ -28,7 +28,7 @@ try {
 
 // Create Discord client
 /** @type {import('./typedefs/discord').DiscordClient}} */
-const client = new Client();
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 client.commands = new Collection();
 client.cooldowns = new Collection();
 client.queue = new Map();

@@ -18,9 +18,9 @@ function execute(message, args, client) {
     data.push(`\nYou can send \`${prefix}help [command name]\` to get info on a specific command.`);
 
     return message.author
-      .send(data, { split: true })
+      .send(data.join('\n'))
       .then(() => {
-        if (message.channel.type === 'dm') return;
+        if (message.channel.type === 'DM') return;
         message.reply("I've sent you a DM with all my commands.");
       })
       .catch((error) => {
@@ -45,7 +45,7 @@ function execute(message, args, client) {
 
   data.push(`**Cooldown:** ${command.cooldown || defaultCooldown} second(s)`);
 
-  message.channel.send(data, { split: true });
+  message.channel.send(data.join('\n'));
 }
 
 /** @type {import('../../typedefs/discord').Command}} */

@@ -9,7 +9,7 @@ const { Message } = require('discord.js');
 function execute(message, args, client) {
   // Send server details
   message.channel.send(
-    `Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}\nCreated on: ${message.guild.createdAt}\nRegion: ${message.guild.region}`
+    `Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}\nCreated on: ${message.guild.createdAt}`
   );
 }
 

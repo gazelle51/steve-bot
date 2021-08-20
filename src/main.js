@@ -28,7 +28,10 @@ try {
 
 // Create Discord client
 /** @type {import('./typedefs/discord').DiscordClient}} */
-const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
+const client = new Client({
+  intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.DIRECT_MESSAGES],
+  partials: ['CHANNEL'],
+});
 client.commands = new Collection();
 client.cooldowns = new Collection();
 client.queue = new Map();

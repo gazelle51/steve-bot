@@ -7,6 +7,8 @@ function execute(interaction, client) {
   interaction.channel.send(
     `${interaction.user.tag} in #${interaction.channel.name} triggered an interaction.`
   );
+
+  if (!interaction.isCommand()) interaction.channel.send(`interaction is not a command`);
 }
 
 /** @type {import('../typedefs/discord').Event}} */

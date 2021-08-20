@@ -1,6 +1,7 @@
 const _ = require('lodash');
 const caseData = require('./data.json');
 const scrapeCasePage = require('./webScraper').scrapeCasePage;
+const scrapeWeaponPage = require('./webScraper').scrapeWeaponPage;
 
 /*
 TODO
@@ -19,16 +20,20 @@ async function unbox(caseName) {
   console.log(`Unboxing: ${data.name}`);
 
   const colour = weaponColour();
+  const stStatus = statTrak();
+  const wwStatus = weaponWear();
 
   // TODO: only scrape for certain colour
   const caseWeaponData = await scrapeCasePage(data.url);
   const weaponData = weapon(caseWeaponData[colour]);
+  const weaponDetails = await scrapeWeaponPage(weaponData.url, stStatus, wwStatus);
 
   const caseWeapon = {
     ...weaponData,
+    ...weaponDetails,
     colour: colour,
-    wear: weaponWear(),
-    statTrak: statTrak(),
+    wear: wwStatus,
+    statTrak: stStatus,
     caseName: data.name,
   };
 
@@ -76,9 +81,9 @@ function weaponWear() {
   const minimalWearThreshold = fieldTestedThreshold + caseData.wearOdds.minimalWear;
 
   let wear = 'Factory New';
-  if (randomNumber <= wellWornThreshold) wear = 'Well Worn';
-  else if (randomNumber <= battleScarredThreshold) wear = 'Battle Scarred';
-  else if (randomNumber <= fieldTestedThreshold) wear = 'Field Tested';
+  if (randomNumber <= wellWornThreshold) wear = 'Well-Worn';
+  else if (randomNumber <= battleScarredThreshold) wear = 'Battle-Scarred';
+  else if (randomNumber <= fieldTestedThreshold) wear = 'Field-Tested';
   else if (randomNumber <= minimalWearThreshold) wear = 'Minimal Wear';
 
   return wear;

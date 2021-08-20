@@ -78,9 +78,7 @@ function caseWeapon(weapon, author) {
   if (weapon.statTrak) description = description + '```arm\nStatTrak™\n```\n';
 
   // Price
-  description =
-    description +
-    `\`\`\`\n${weapon.statTrak ? weapon.statTrakPriceRange : weapon.priceRange}\n\`\`\`\n`;
+  description = description + `\`\`\`\n${weapon.price}\n\`\`\`\n`;
 
   return new MessageEmbed()
     .setColor(colours[weapon.colour])

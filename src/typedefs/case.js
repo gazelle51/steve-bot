@@ -1,15 +1,18 @@
 /**
- * Raw weapon data.
+ * Raw generic weapon data scraped from a case page.
  * @typedef {Object} WeaponData
  * @property {string} name - weapon name
  * @property {string} image - weapon image URL
  * @property {string} priceRange - normal price range
- * @property {number} priceLow - lowest price
- * @property {number} priceHigh - highest price
  * @property {string} statTrakPriceRange - StatTrak price range
- * @property {number} statTrakPriceLow - StatTrak lowest price
- * @property {number} statTrakPriceHigh - StatTrak highest price
  * @property {string} url - weapon URL
+ */
+
+/**
+ * Raw weapon details data scraped from a weapon page.
+ * We know the wear and StatTrak details of these objects.
+ * @typedef {Object} WeaponDetailsData
+ * @property {string} price - weapon price
  */
 
 /**
@@ -23,17 +26,17 @@
 
 /**
  * Weapon opened from a case.
- * @typedef {WeaponData & CaseWeaponData} CaseWeapon
+ * @typedef {WeaponData & WeaponDetailsData & CaseWeaponData} CaseWeapon
  */
 
 /**
- * Raw case knife/glove data.
+ * Raw case knife/glove data scraped from a case page.
  * @typedef {Object} CaseKnifeData
  * @property {WeaponData[]} yellow - yellow weapons
  */
 
 /**
- * Raw case non-knife data.
+ * Raw case non-knife data scraped from a case page.
  * @typedef {Object} CaseNonKnifeData
  * @property {WeaponData[]} blue - blue weapons
  * @property {WeaponData[]} purple - purple weapons
@@ -42,7 +45,7 @@
  */
 
 /**
- * Raw case data.
+ * Raw case data scraped from a case page.
  * @typedef {CaseNonKnifeData & CaseKnifeData} CaseData
  */
 

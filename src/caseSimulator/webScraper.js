@@ -28,6 +28,43 @@ async function scrapeCasePage(url) {
 }
 
 /**
+ * Extract data about the weapon at the provided URL.
+ * @param {string} url - URL to scrape
+ * @param {boolean} statTrak - indicates if the details should be for a StatTrak weapon
+ * @param {string} wear - wear of the weapon
+ * @returns {Promise<import('../typedefs/case').WeaponDetailsData>}
+ */
+async function scrapeWeaponPage(url, statTrak, wear) {
+  console.log(`Scraping weapon at ${url}`);
+
+  // Load page into Cheerio
+  const html = await _getHtml(url);
+  const $ = cheerio.load(html);
+
+  // Find all prices for the weapon
+  const weaponPrices = $('div#prices')
+    .children('div .btn-group-sm.btn-group-justified:not(.price-bottom-space)')
+    .children('a')
+    .toArray()
+    .map((result) => {
+      return $(result)
+        .children('span')
+        .toArray()
+        .map((x) => $(x).text());
+    });
+
+  // Find price of specific weapon
+  const weaponPriceArray = weaponPrices.find(
+    (price) =>
+      (statTrak && price.includes('StatTrak') && price.includes(wear)) ||
+      (!statTrak && !price.includes('StatTrak') && price.includes(wear))
+  );
+  const weaponPrice = weaponPriceArray ? weaponPriceArray.pop() : "Couldn't find price";
+
+  return { price: weaponPrice };
+}
+
+/**
  * Extract all knives at the provided URL. Also works for gloves.
  * @param {string} url - URL to scrape
  * @returns {Promise<import('../typedefs/case').CaseKnifeData>} knives in case
@@ -122,12 +159,6 @@ async function extractWeaponData($, weapons, knivesData = false) {
         .filter((i, elem) => $(elem).children().find('a[class="price-st"]').length === 1)
         .text();
 
-      // Price
-      const [priceLow, priceHigh] = _extractPrices(prices);
-
-      // StatTrak price
-      const [statTrakPriceLow, statTrakPriceHigh] = _extractPrices(statTrakPrices);
-
       // Weaspon URL
       const url = $(result).find('a > img').parent().attr('href');
 
@@ -135,11 +166,7 @@ async function extractWeaponData($, weapons, knivesData = false) {
         name: name,
         image: imageUrl,
         priceRange: prices,
-        priceLow: priceLow,
-        priceHigh: priceHigh,
         statTrakPriceRange: statTrakPrices,
-        statTrakPriceLow: statTrakPriceLow,
-        statTrakPriceHigh: statTrakPriceHigh,
         url: url,
       });
     });
@@ -167,22 +194,4 @@ async function _getHtml(url) {
   return html;
 }
 
-/**
- * Extract low and high prices from HTML text.
- * @param {string} pricesRaw - price text from HTML
- * @returns {[number, number]} [low price, high price]
- */
-function _extractPrices(pricesRaw) {
-  // Extract prices
-  const prices = pricesRaw
-    .trim()
-    .replace(',', '')
-    .match(/[0-9]+.[0-9]+/g);
-
-  // Return prices based on results
-  if (!prices) return [undefined, undefined];
-  else if (prices.length === 1) return [+prices[0], undefined];
-  else return [+prices[0], +prices[1]];
-}
-
-module.exports = { scrapeCasePage };
+module.exports = { scrapeCasePage, scrapeWeaponPage };

@@ -98,7 +98,7 @@ async function execute(message, client) {
 
 /** @type {import('../typedefs/discord').Event}} */
 const handler = {
-  name: 'message',
+  name: 'messageCreate',
   execute,
 };
 

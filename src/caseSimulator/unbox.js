@@ -28,7 +28,7 @@ async function unbox(caseName) {
     ...weaponData,
     colour: colour,
     wear: weaponWear(),
-    stattrak: stattrak(),
+    statTrak: statTrak(),
     caseName: data.name,
   };
 
@@ -88,8 +88,8 @@ function weaponWear() {
  * Generate a StatTrak true or false flag based on the StatTrak threshold.
  * @returns {boolean}
  */
-function stattrak() {
-  return Math.random() <= caseData.stattrakThreshold ? true : false;
+function statTrak() {
+  return Math.random() <= caseData.statTrakThreshold ? true : false;
 }
 
 module.exports = { unbox };

@@ -17,7 +17,7 @@
  * @typedef {Object} CaseWeaponData
  * @property {string} colour - weapon colour
  * @property {string} wear - weapon wear
- * @property {boolean} stattrak - whether the weapon has StatTrak tech or not
+ * @property {boolean} statTrak - whether the weapon has StatTrak tech or not
  * @property {string} caseName - case the weapon was opened from
  */
 

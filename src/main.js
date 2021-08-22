@@ -1,16 +1,8 @@
 require('dotenv').config();
 
-/**
- * Discord client doco: https://discord.js.org/#/docs/main/stable/class/Client
- *
- * If want to want presence changes need to use `new Discord.Client({ intents: ['GUILD_PRESENCES'] });`.
- * Also need to check that permission is enabled for bot in developer portal.
- */
-
 const { disabledCommands, disabledEvents } = require('./config.json');
 const { Client, Collection, Intents } = require('discord.js');
 const fs = require('fs');
-// require('discord-reply');
 
 // Check blocked users parses correctly
 try {

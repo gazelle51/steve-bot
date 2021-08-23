@@ -22,12 +22,15 @@ async function execute(message, args, client) {
 
   // Open case
   const weapon = await unbox(caseKey);
-  const embedMessage = await message.channel.send(embeds.weapon(weapon, message.author));
+  const embedMessage = await message.channel.send({
+    embeds: [embeds.weapon(weapon, message.author)],
+  });
 
   // React, reply and pin if knife was opened
   if (weapon.colour === 'yellow') {
     embedMessage.react(emoji[100]);
-    embedMessage.lineReply(`${message.author} nice case opening!`, {
+    embedMessage.reply({
+      content: `Nice case opening!`,
       files: ['https://media.giphy.com/media/Ls6ahtmYHU760/giphy.gif'],
     });
     try {

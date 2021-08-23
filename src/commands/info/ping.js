@@ -7,7 +7,7 @@ const { Message } = require('discord.js');
  * @param {import("../../typedefs/discord").DiscordClient} client - Discord client
  */
 function execute(message, args, client) {
-  message.channel.send('pong');
+  message.channel.send('Pong');
 }
 
 /** @type {import('../../typedefs/discord').Command}} */

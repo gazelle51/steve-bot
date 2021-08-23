@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const { disabledCommands, disabledEvents } = require('./config.json');
+const { disabledCommands, disabledEvents } = require('./config');
 const { Client, Collection, Intents } = require('discord.js');
 const fs = require('fs');
 

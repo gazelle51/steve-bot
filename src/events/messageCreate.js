@@ -1,5 +1,5 @@
 const { Collection, Message } = require('discord.js');
-const { defaultCooldown, prefix } = require('../config.json');
+const { defaultCooldown, prefix } = require('../config.js');
 
 /**
  * Execute when the message event fires.

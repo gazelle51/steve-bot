@@ -1,5 +1,5 @@
 const { MessageEmbed, User } = require('discord.js');
-const { embedColour, emoji } = require('../config.json');
+const { embedColour, emoji } = require('../config');
 
 /**
  * Embed to display when a song is added to the queue.

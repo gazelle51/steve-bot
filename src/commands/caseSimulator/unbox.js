@@ -1,4 +1,4 @@
-const { emoji } = require('../../config.json');
+const { emoji } = require('../../config.js');
 const { Message } = require('discord.js');
 const cases = require('../../caseSimulator/cases');
 const embeds = require('../../utils/embeds').case;

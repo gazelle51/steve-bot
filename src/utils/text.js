@@ -1,4 +1,4 @@
-const { Guild, TextChannel, GuildChannel } = require('discord.js');
+const { Guild, TextChannel } = require('discord.js');
 
 /**
  * Find the first channel in the guild.

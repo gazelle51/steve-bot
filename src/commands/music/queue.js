@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const { emoji } = require('../../config.json');
+const { emoji } = require('../../config');
 const { Message, MessageEmbed, MessageReaction, User, TextChannel } = require('discord.js');
 const embeds = require('../../utils/embeds').queue;
 const queue = require('../../utils/audioQueue');

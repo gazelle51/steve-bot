@@ -20,7 +20,7 @@ async function execute(message, args, client) {
 
   // Check if the queue is empty
   if (!audioQueue.length) {
-    return message.channel.send(embeds.empty());
+    return message.channel.send({ embeds: [embeds.empty()] });
   }
 
   // Get audio now playing
@@ -96,7 +96,7 @@ async function createAndSendEmbed(nowPlaying, audioQueue, authorId, channel) {
 
   // If no more songs in queue, send a simple embed only
   if (!audioQueue.length) {
-    channel.send(embeds.nowPlayingOnly(nowPlaying));
+    channel.send({ embeds: [embeds.nowPlayingOnly(nowPlaying)] });
     return;
   }
 
@@ -108,7 +108,7 @@ async function createAndSendEmbed(nowPlaying, audioQueue, authorId, channel) {
 
   // Create and send initial embed
   const embed = createQueueEmbed(pages[0]);
-  const embedMessage = await channel.send(embed);
+  const embedMessage = await channel.send({ embeds: [embed] });
 
   // If there is only 1 page do not set up buttons
   if (pages.length === 1) return;

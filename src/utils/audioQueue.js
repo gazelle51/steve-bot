@@ -152,7 +152,7 @@ async function addAudio(client, message, audio) {
     serverQueue.audioQueue.push(audio);
   }
 
-  message.channel.send(embeds.songAdded(audio));
+  message.channel.send({ embeds: [embeds.songAdded(audio)] });
   console.log(`${audio.title} has been added to the queue`);
 }
 

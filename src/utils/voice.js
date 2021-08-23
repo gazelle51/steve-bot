@@ -1,3 +1,4 @@
+const { getVoiceConnection, joinVoiceChannel } = require('@discordjs/voice');
 const { Message } = require('discord.js');
 
 /**
@@ -13,7 +14,11 @@ async function join(message) {
 
   // Only try to join the sender's voice channel if they are in one themselves
   if (message.member.voice.channel) {
-    const connection = await message.member.voice.channel.join();
+    const connection = joinVoiceChannel({
+      channelId: message.member.voice.channel.id,
+      guildId: message.guild.id,
+      adapterCreator: message.guild.voiceAdapterCreator,
+    });
     return connection;
   } else {
     message.reply('You need to join a voice channel first!');
@@ -34,7 +39,8 @@ async function leave(message) {
 
   // Only try to leave the sender's voice channel if they are in one themselves
   if (message.member.voice.channel) {
-    await message.member.voice.channel.leave();
+    const connection = getVoiceConnection(message.guild.id);
+    connection.destroy();
   } else {
     message.reply('You need to join a voice channel first!');
   }

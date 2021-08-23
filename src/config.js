@@ -6,7 +6,7 @@ module.exports = {
   defaultCooldown: 0.1,
   disabledCommands: [],
   disabledEvents: [],
-  embedColour: this.embedColour,
+  embedColour: embedColour,
   emoji: {
     sparkles: '✨',
     music: '🎵',

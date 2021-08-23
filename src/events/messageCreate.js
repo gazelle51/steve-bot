@@ -37,12 +37,12 @@ async function execute(message, client) {
   );
 
   // Check if command can only be used in a guild
-  if (command.guildOnly && message.channel.type === 'dm') {
+  if (command.guildOnly && message.channel.type === 'DM') {
     return message.reply("I can't execute that command inside DMs!");
   }
 
   // Check if user has command permissions
-  if (command.permissions && message.channel.type !== 'dm') {
+  if (command.permissions && message.channel.type !== 'DM') {
     const authorPerms = message.channel.permissionsFor(message.author);
     if (!authorPerms || !authorPerms.has(command.permissions)) {
       return message.reply('You can not do this!');
@@ -77,7 +77,7 @@ async function execute(message, client) {
     if (now < expirationTime) {
       const timeLeft = (expirationTime - now) / 1000;
       return message.reply(
-        `please wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${
+        `Please wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${
           command.name
         }\` command.`
       );
@@ -92,7 +92,7 @@ async function execute(message, client) {
     await command.execute(message, args, client);
   } catch (error) {
     console.error(error);
-    message.reply('there was an error trying to execute that command!');
+    message.reply('There was an error trying to execute that command!');
   }
 }
 

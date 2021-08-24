@@ -29,6 +29,7 @@
     "discord.js": "^13.1.0",
     "dotenv": "^10.0.0",
     "ffmpeg-static": "^4.4.0",
+    "libsodium-wrappers": "^0.7.9",
     "lodash": "^4.17.21",
     "node-cache": "^5.1.2",
     "yt-search": "^2.10.0",

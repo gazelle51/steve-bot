@@ -1,4 +1,6 @@
+const { createAudioPlayer, createAudioResource, AudioPlayerStatus } = require('@discordjs/voice');
 const { Guild, Message } = require('discord.js');
+const { VoiceConnection } = require('@discordjs/voice/dist');
 const embeds = require('./embeds').queue;
 const voice = require('./voice');
 const ytdl = require('ytdl-core');
@@ -11,11 +13,16 @@ const ytdl = require('ytdl-core');
  * @param {import('../typedefs/audio').Audio} audio - Audio to add to queue
  */
 function createServerQueue(client, message, voiceConnection, audio) {
+  // Create and subscribe to audio player
+  const player = createAudioPlayer();
+  voiceConnection.subscribe(player);
+
   const queueConstruct = {
     voiceChannel: message.member.voice.channel,
     voiceConnection: voiceConnection,
     textChannel: message.channel,
     audioQueue: [audio],
+    player: player,
     playing: true,
     leaveInactive: null,
   };
@@ -57,15 +64,17 @@ function play(client, guild, audio) {
 
   // Get audio to play
   const url = audio.url.includes('youtube') ? ytdl(audio.url) : audio.url;
+  const audioResource = createAudioResource(url, { inlineVolume: false });
+  // audioResource.volume.setVolume(audio.volume ? audio.volume : 1);
 
   // Dispatcher
-  serverQueue.voiceConnection
-    .play(url, { volume: audio.volume ? audio.volume : 1 })
-    .on('finish', () => {
+  serverQueue.player.play(audioResource);
+  serverQueue.player
+    .on('error', (error) => console.error(error))
+    .on(AudioPlayerStatus.Idle, () => {
       serverQueue.audioQueue.shift();
       play(client, guild, serverQueue.audioQueue[0]);
-    })
-    .on('error', (error) => console.error(error));
+    });
 }
 
 /**

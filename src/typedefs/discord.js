@@ -1,11 +1,5 @@
-const {
-  Client,
-  Collection,
-  Permissions,
-  TextChannel,
-  VoiceChannel,
-  VoiceConnection,
-} = require('discord.js');
+const { Client, Collection, Permissions, TextChannel, VoiceChannel } = require('discord.js');
+const { AudioPlayer, VoiceConnection } = require('@discordjs/voice/dist');
 
 /**
  * Discord command handler
@@ -36,6 +30,7 @@ const {
  * @property {VoiceConnection} voiceConnection - connection to the voice channel
  * @property {TextChannel} textChannel - text channel to give updates in
  * @property {import('./audio').Audio[]} audioQueue - queue of audio to play
+ * @property {AudioPlayer} player - audio player
  * @property {boolean} playing - whether the queue is currently playing or not
  * @property {NodeJS.Timeout} leaveInactive - inactivity timeout function
  */

@@ -47,7 +47,8 @@ function play(client, guild, audio) {
 
     // Leave after 10 minutes of inactivity
     serverQueue.leaveInactive = setTimeout(function () {
-      serverQueue.voiceChannel.leave();
+      serverQueue.player.stop();
+      serverQueue.voiceConnection.destroy();
       client.queue.delete(guild.id);
     }, 10 * 60 * 1000);
 

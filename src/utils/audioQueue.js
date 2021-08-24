@@ -1,4 +1,4 @@
-const { Guild, Message, VoiceConnection } = require('discord.js');
+const { Guild, Message } = require('discord.js');
 const embeds = require('./embeds').queue;
 const voice = require('./voice');
 const ytdl = require('ytdl-core');

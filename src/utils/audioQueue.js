@@ -15,6 +15,7 @@ const ytdl = require('ytdl-core');
 function createServerQueue(client, message, voiceConnection, audio) {
   // Create and subscribe to audio player
   const player = createAudioPlayer();
+  player.on('error', (error) => console.error(error));
   voiceConnection.subscribe(player);
 
   const queueConstruct = {
@@ -27,6 +28,16 @@ function createServerQueue(client, message, voiceConnection, audio) {
     leaveInactive: null,
   };
   client.queue.set(message.guild.id, queueConstruct);
+
+  // Get server queue
+  const serverQueue = client.queue.get(message.guild.id);
+  serverQueue.player.on('stateChange', (oldState, newState) => {
+    if (newState.status === AudioPlayerStatus.Idle && oldState.status !== AudioPlayerStatus.Idle) {
+      // If the Idle state is entered from a non-Idle state, it means that an audio resource has finished playing.
+      serverQueue.audioQueue.shift();
+      play(client, message.guild, serverQueue.audioQueue[0]);
+    }
+  });
 }
 
 /**
@@ -67,14 +78,8 @@ function play(client, guild, audio) {
   const audioResource = createAudioResource(url, { inlineVolume: false });
   // audioResource.volume.setVolume(audio.volume ? audio.volume : 1);
 
-  // Dispatcher
+  // Play audio
   serverQueue.player.play(audioResource);
-  serverQueue.player
-    .on('error', (error) => console.error(error))
-    .on(AudioPlayerStatus.Idle, () => {
-      serverQueue.audioQueue.shift();
-      play(client, guild, serverQueue.audioQueue[0]);
-    });
 }
 
 /**
@@ -165,4 +170,4 @@ async function addAudio(client, message, audio) {
   console.log(`${audio.title} has been added to the queue`);
 }
 
-module.exports = { createServerQueue, play, skip, stop, getQueue, addAudio };
+module.exports = { play, skip, stop, getQueue, addAudio };

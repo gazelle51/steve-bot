@@ -47,7 +47,6 @@ function play(client, guild, audio) {
 
     // Leave after 10 minutes of inactivity
     serverQueue.leaveInactive = setTimeout(function () {
-      serverQueue.player.stop();
       serverQueue.voiceConnection.destroy();
       client.queue.delete(guild.id);
     }, 10 * 60 * 1000);
@@ -93,7 +92,7 @@ function skip(client, message) {
 
   if (!serverQueue) return message.channel.send('There is no song that I could skip!');
 
-  serverQueue.voiceConnection.dispatcher.end();
+  serverQueue.player.stop();
 }
 
 /**
@@ -112,7 +111,7 @@ function stop(client, message) {
   if (!serverQueue) return message.channel.send('There is no song that I could stop!');
 
   serverQueue.audioQueue = [];
-  serverQueue.voiceConnection.dispatcher.end();
+  serverQueue.player.stop();
 }
 
 /**

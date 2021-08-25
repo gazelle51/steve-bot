@@ -35,7 +35,7 @@ async function execute(message, args, client) {
  * @param {import('../../typedefs/audio').Audio} nowPlaying - Audio now playing
  * @param {import('../../typedefs/audio').Audio[]} audioQueue - Audio in queue
  * @param {string} authorId - ID of user who requested queue
- * @param {TextChannel} channel - Discord channel queue is to be sent to
+ * @param {import('discord.js').TextBasedChannels} channel - Discord channel queue is to be sent to
  * @returns {Promise<void>}
  */
 async function createAndSendEmbed(nowPlaying, audioQueue, authorId, channel) {

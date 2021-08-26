@@ -69,6 +69,24 @@ async function createAndSendEmbed(nowPlaying, audioQueue, authorId, channel) {
   }
 
   /**
+   * Detect if backwards reaction was pressed.
+   * @param {MessageReaction} reaction
+   * @param {User} user
+   * @returns {boolean}
+   */
+  const backwardFilter = (reaction, user) =>
+    reaction.emoji.name === emoji.leftArrow && user.id === authorId;
+
+  /**
+   * Detect if forwards reaction was pressed.
+   * @param {MessageReaction} reaction
+   * @param {User} user
+   * @returns {boolean}
+   */
+  const forwardFilter = (reaction, user) =>
+    reaction.emoji.name === emoji.rightArrow && user.id === authorId;
+
+  /**
    * Backward button reaction handler.
    * Go back a page in the embed if not at the first page.
    * @param {MessageReaction} reaction
@@ -78,7 +96,7 @@ async function createAndSendEmbed(nowPlaying, audioQueue, authorId, channel) {
   const backwardHandler = (reaction, user) => {
     if (page === 0) return;
     page--;
-    embedMessage.edit(createQueueEmbed(pages[page]));
+    embedMessage.edit({ embeds: [createQueueEmbed(pages[page])] });
   };
 
   /**
@@ -91,7 +109,7 @@ async function createAndSendEmbed(nowPlaying, audioQueue, authorId, channel) {
   const forwardHandler = (reaction, user) => {
     if (page === pages.length - 1) return;
     page++;
-    embedMessage.edit(createQueueEmbed(pages[page]));
+    embedMessage.edit({ embeds: [createQueueEmbed(pages[page])] });
   };
 
   // If no more songs in queue, send a simple embed only
@@ -114,18 +132,14 @@ async function createAndSendEmbed(nowPlaying, audioQueue, authorId, channel) {
   if (pages.length === 1) return;
   await Promise.all([embedMessage.react(emoji.leftArrow), embedMessage.react(emoji.rightArrow)]);
 
-  // Reaction filters
-  const backwardFilter = (reaction, user) =>
-    reaction.emoji.name === emoji.leftArrow && user.id === authorId;
-  const forwardFilter = (reaction, user) =>
-    reaction.emoji.name === emoji.rightArrow && user.id === authorId;
-
   // Reaction collectors
-  const backwards = embedMessage.createReactionCollector(backwardFilter, {
+  const backwards = embedMessage.createReactionCollector({
+    filter: backwardFilter,
     time: reactionTime,
     dispose: true,
   });
-  const forwards = embedMessage.createReactionCollector(forwardFilter, {
+  const forwards = embedMessage.createReactionCollector({
+    filter: forwardFilter,
     time: reactionTime,
     dispose: true,
   });

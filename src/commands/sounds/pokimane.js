@@ -10,7 +10,7 @@ const sound = require('../../utils/sound');
  * @param {import('../../typedefs/discord').DiscordClient} client - Discord client
  */
 async function execute(message, args, client) {
-  message.channel.send('', {
+  message.channel.send({
     files: [
       'https://www.theloadout.com/wp-content/uploads/2021/01/rust-twitch-drops-pokimane-900x506.jpg',
     ],

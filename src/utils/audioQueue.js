@@ -15,7 +15,6 @@ const ytdl = require('ytdl-core');
 function createServerQueue(client, message, voiceConnection, audio) {
   // Create and subscribe to audio player
   const player = createAudioPlayer();
-  player.on('error', (error) => console.error(error));
   voiceConnection.subscribe(player);
 
   const queueConstruct = {
@@ -31,13 +30,18 @@ function createServerQueue(client, message, voiceConnection, audio) {
 
   // Get server queue
   const serverQueue = client.queue.get(message.guild.id);
-  serverQueue.player.on('stateChange', (oldState, newState) => {
-    if (newState.status === AudioPlayerStatus.Idle && oldState.status !== AudioPlayerStatus.Idle) {
-      // If the Idle state is entered from a non-Idle state, it means that an audio resource has finished playing.
-      serverQueue.audioQueue.shift();
-      play(client, message.guild, serverQueue.audioQueue[0]);
-    }
-  });
+  serverQueue.player
+    .on('error', (error) => console.error(error))
+    .on('stateChange', (oldState, newState) => {
+      if (
+        newState.status === AudioPlayerStatus.Idle &&
+        oldState.status !== AudioPlayerStatus.Idle
+      ) {
+        // If the Idle state is entered from a non-Idle state, it means that an audio resource has finished playing.
+        serverQueue.audioQueue.shift();
+        play(client, message.guild, serverQueue.audioQueue[0]);
+      }
+    });
 }
 
 /**

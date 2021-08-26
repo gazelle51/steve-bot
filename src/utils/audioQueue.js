@@ -1,12 +1,17 @@
-const { createAudioPlayer, createAudioResource, AudioPlayerStatus } = require('@discordjs/voice');
-const { Guild, Message } = require('discord.js');
+const {
+  createAudioPlayer,
+  createAudioResource,
+  AudioPlayerStatus,
+  getVoiceConnection,
+} = require('@discordjs/voice');
+const { Message } = require('discord.js');
 const { VoiceConnection } = require('@discordjs/voice/dist');
 const embeds = require('./embeds').queue;
 const voice = require('./voice');
 const ytdl = require('ytdl-core');
 
 /**
- * Create an audio queue for the specified server.
+ * Create an audio queue and player for the specified server.
  * @param {import('../typedefs/discord').DiscordClient} client - Discord client
  * @param {Message} message - Received message
  * @param {VoiceConnection} voiceConnection - Voice channel connection
@@ -17,9 +22,9 @@ function createServerQueue(client, message, voiceConnection, audio) {
   const player = createAudioPlayer();
   voiceConnection.subscribe(player);
 
+  // Create queue
   const queueConstruct = {
     voiceChannel: message.member.voice.channel,
-    voiceConnection: voiceConnection,
     textChannel: message.channel,
     audioQueue: [audio],
     player: player,
@@ -28,7 +33,7 @@ function createServerQueue(client, message, voiceConnection, audio) {
   };
   client.queue.set(message.guild.id, queueConstruct);
 
-  // Get server queue
+  // Get server queue and set event handlers
   const serverQueue = client.queue.get(message.guild.id);
   serverQueue.player
     .on('error', (error) => console.error(error))
@@ -39,7 +44,7 @@ function createServerQueue(client, message, voiceConnection, audio) {
       ) {
         // If the Idle state is entered from a non-Idle state, it means that an audio resource has finished playing.
         serverQueue.audioQueue.shift();
-        play(client, message.guild, serverQueue.audioQueue[0]);
+        play(client, message.guild.id, serverQueue.audioQueue[0]);
       }
     });
 }
@@ -48,13 +53,13 @@ function createServerQueue(client, message, voiceConnection, audio) {
  * Play the next audio in the queue.
  * Disconnect if the queue is finished.
  * @param {import('../typedefs/discord').DiscordClient} client - Discord client
- * @param {Guild} guild - Discord guild
+ * @param {string} guildId - Discord guild ID
  * @param {import('../typedefs/audio').Audio} audio - Audio to play
  * @returns
  */
-function play(client, guild, audio) {
+function play(client, guildId, audio) {
   // Get server queue
-  const serverQueue = client.queue.get(guild.id);
+  const serverQueue = client.queue.get(guildId);
 
   // Check if there is audio to play
   if (!audio) {
@@ -62,8 +67,8 @@ function play(client, guild, audio) {
 
     // Leave after 10 minutes of inactivity
     serverQueue.leaveInactive = setTimeout(function () {
-      serverQueue.voiceConnection.destroy();
-      client.queue.delete(guild.id);
+      getVoiceConnection(guildId).destroy();
+      client.queue.delete(guildId);
     }, 10 * 60 * 1000);
 
     return;
@@ -79,8 +84,9 @@ function play(client, guild, audio) {
 
   // Get audio to play
   const url = audio.url.includes('youtube') ? ytdl(audio.url) : audio.url;
-  const audioResource = createAudioResource(url, { inlineVolume: false });
-  // audioResource.volume.setVolume(audio.volume ? audio.volume : 1);
+  const inlineVolume = audio.volume ? true : false;
+  const audioResource = createAudioResource(url, { inlineVolume });
+  if (inlineVolume) audioResource.volume.setVolume(audio.volume ? audio.volume : 1);
 
   // Play audio
   serverQueue.player.play(audioResource);
@@ -160,11 +166,11 @@ async function addAudio(client, message, audio) {
 
     // Create queue and start playing
     createServerQueue(client, message, connection, audio);
-    play(client, message.guild, audio);
+    play(client, message.guild.id, audio);
   } else if (serverQueue && serverQueue.playing === false) {
     // If there is a queue that is not playing, add to it and start again
     serverQueue.audioQueue.push(audio);
-    play(client, message.guild, audio);
+    play(client, message.guild.id, audio);
   } else {
     // If there is a queue that is playing, add to it
     serverQueue.audioQueue.push(audio);

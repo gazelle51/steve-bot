@@ -39,8 +39,7 @@ async function leave(message) {
 
   // Only try to leave the sender's voice channel if they are in one themselves
   if (message.member.voice.channel) {
-    const connection = getVoiceConnection(message.guild.id);
-    connection.destroy();
+    getVoiceConnection(message.guild.id).destroy();
   } else {
     message.reply('You need to join a voice channel first!');
   }

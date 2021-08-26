@@ -26,8 +26,6 @@ const { AudioPlayer, VoiceConnection } = require('@discordjs/voice/dist');
 /**
  * Discord audio queue for a guild
  * @typedef {Object} AudioQueue
- * @property {VoiceChannel} voiceChannel - voice channel to play music in
- * @property {TextChannel} textChannel - text channel to give updates in
  * @property {import('./audio').Audio[]} audioQueue - queue of audio to play
  * @property {AudioPlayer} player - audio player
  * @property {boolean} playing - whether the queue is currently playing or not

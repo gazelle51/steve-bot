@@ -24,8 +24,6 @@ function createServerQueue(client, message, voiceConnection, audio) {
 
   // Create queue
   const queueConstruct = {
-    voiceChannel: message.member.voice.channel,
-    textChannel: message.channel,
     audioQueue: [audio],
     player: player,
     playing: true,
@@ -107,6 +105,7 @@ function skip(client, message) {
 
   if (!serverQueue) return message.channel.send('There is no song that I could skip!');
 
+  // Put player into idle state to trigger next item in queue
   serverQueue.player.stop();
 }
 
@@ -125,6 +124,7 @@ function stop(client, message) {
 
   if (!serverQueue) return message.channel.send('There is no song that I could stop!');
 
+  // Clear queue and put player into idle state
   serverQueue.audioQueue = [];
   serverQueue.player.stop();
 }

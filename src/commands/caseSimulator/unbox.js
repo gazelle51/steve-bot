@@ -15,8 +15,15 @@ async function execute(message, args, client) {
 
   // Determine case to open
   if (args.length === 0) caseKey = cases.randomCase();
-  else if (!cases.isCaseValid(args.join(' '))) {
-    message.reply(`I am not configured to open ${args.join(' ')} cases`);
+  else if (args.join(' ') === '?') {
+    message.reply({
+      content: `The cases I can open are listed below\n${_getCaseListData()}`,
+    });
+    return;
+  } else if (!cases.isCaseValid(args.join(' '))) {
+    message.reply({
+      content: `I am not configured to open ${args.join(' ')} cases`,
+    });
     return;
   } else caseKey = args.join(' ');
 
@@ -39,6 +46,17 @@ async function execute(message, args, client) {
       console.error(err);
     }
   }
+}
+
+/**
+ * Get a list of all cases and the command that must be used with them.
+ * @returns {string} List of cases and their commands
+ */
+function _getCaseListData() {
+  return cases
+    .getCaseNames()
+    .map((caseName) => `${caseName[1]} - ${caseName[0]}`)
+    .join('\n');
 }
 
 /** @type {import('../../typedefs/discord').Command}} */

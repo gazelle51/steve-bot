@@ -18,4 +18,22 @@ function isCaseValid(key) {
   return Object.keys(caseData.cases).includes(key);
 }
 
-module.exports = { randomCase, isCaseValid };
+/**
+ * Return list of all cases and their names.
+ * @returns {string[][]} Array of [case ID, case name]
+ */
+function getCaseNames() {
+  return Object.entries(caseData.cases)
+    .map(([key, value]) => [key, value.name])
+    .sort(function (a, b) {
+      if (a[1] < b[1]) {
+        return -1;
+      }
+      if (a[1] > b[1]) {
+        return 1;
+      }
+      return 0;
+    });
+}
+
+module.exports = { randomCase, isCaseValid, getCaseNames };

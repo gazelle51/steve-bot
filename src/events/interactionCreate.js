@@ -5,7 +5,9 @@
 function execute(interaction, client) {
   console.log(`${interaction.user.tag} in #${interaction.channel.name} triggered an interaction.`);
 
-  if (!interaction.isCommand()) console.log(`interaction is not a command`);
+  if (interaction.isCommand()) {
+    const { commandName } = interaction;
+  }
 }
 
 /** @type {import('../typedefs/discord').Event}} */

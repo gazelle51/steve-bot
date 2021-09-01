@@ -20,6 +20,11 @@ async function execute(message, args, client) {
       content: `The cases I can open are listed below\n${_getCaseListData()}`,
     });
     return;
+  } else if (args.join(' ') === 'cobblestone') {
+    message.reply({
+      content: `Stop asking me to open Cobblestone cases unless you know the drop rates!!!`,
+    });
+    return;
   } else if (!cases.isCaseValid(args.join(' '))) {
     message.reply({
       content: `I am not configured to open ${args.join(' ')} cases`,

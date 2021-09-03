@@ -3,3 +3,9 @@ TOKEN=
 
 # User IDs
 BLOCKED_USERS=[]
+
+# Client ID
+CLIENT_ID=
+
+# Guild ID
+GUILD_ID=

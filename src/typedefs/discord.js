@@ -1,5 +1,6 @@
-const { Client, Collection, Permissions, TextChannel, VoiceChannel } = require('discord.js');
-const { AudioPlayer, VoiceConnection } = require('@discordjs/voice/dist');
+const { Client, Collection, Permissions } = require('discord.js');
+const { AudioPlayer } = require('@discordjs/voice/dist');
+const { SlashCommandBuilder } = require('@discordjs/builders');
 
 /**
  * Discord command handler
@@ -12,6 +13,13 @@ const { AudioPlayer, VoiceConnection } = require('@discordjs/voice/dist');
  * @property {number} [cooldown] - command cooldown, if different from the default
  * @property {string[]} [aliases] - other command names that can be used to execute command
  * @property {Permissions} [permissions] - permission needed to execute the command
+ * @property {Function} execute - function that is called whent the command is executed
+ */
+
+/**
+ * Discord slash command handler
+ * @typedef {Object} SlashCommand
+ * @property {SlashCommandBuilder} data - Discord slash command builder
  * @property {Function} execute - function that is called whent the command is executed
  */
 

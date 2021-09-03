@@ -1,23 +1,16 @@
-const { Message } = require('discord.js');
+const { Interaction } = require('discord.js');
+const { SlashCommandBuilder } = require('@discordjs/builders');
 
 /**
- * Execute _template command.
- * @param {Message} message - Received message
- * @param {string[]} args
+ * Execute command.
+ * @param {Interaction} interaction - Received interaction
  * @param {import("../typedefs/discord").DiscordClient} client - Discord client
  */
-function execute(message, args, client) {}
+async function execute(interaction, client) {}
 
-/** @type {import('../typedefs/discord').Command}} */
+/** @type {import('../typedefs/discord').SlashCommand}} */
 const handler = {
-  name: '',
-  description: '',
-  args: undefined,
-  usage: undefined,
-  guildOnly: undefined,
-  cooldown: undefined,
-  aliases: undefined,
-  permissions: undefined,
+  data: new SlashCommandBuilder().setName('').setDescription(''),
   execute,
 };
 

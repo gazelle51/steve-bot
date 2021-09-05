@@ -12,7 +12,6 @@ async function execute(interaction, client) {
   const commands = client.commands;
 
   const commandName = interaction.options.getString('command_name');
-  console.log(commandName);
 
   // Check if generic help was requested
   if (!commandName) {

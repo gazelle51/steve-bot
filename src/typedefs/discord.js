@@ -1,12 +1,12 @@
 const { Client, Collection, Permissions } = require('discord.js');
 const { AudioPlayer } = require('@discordjs/voice/dist');
-const { SlashCommandBuilder } = require('@discordjs/builders');
 
 /**
  * Discord command handler
  * @typedef {Object} Command
- * @property {string} name - command name used to call the command
- * @property {string} description - command description
+ * @property {Object} data - Discord slash command builder data
+ * @property {string} data.name - command name used to call the command
+ * @property {string} data.description - command description
  * @property {boolean} [args] - if true, arguments are required to run command
  * @property {string} [usage] - example of how the arguments are used
  * @property {boolean} [guildOnly] - if true, command cannot be used in DMs
@@ -19,7 +19,7 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 /**
  * Discord slash command handler
  * @typedef {Object} SlashCommand
- * @property {SlashCommandBuilder} data - Discord slash command builder
+ * @property {Object} data - Discord slash command builder
  * @property {Function} execute - function that is called whent the command is executed
  */
 

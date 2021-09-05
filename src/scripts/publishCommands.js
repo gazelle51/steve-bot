@@ -5,10 +5,6 @@ const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 const fs = require('fs');
 
-// Place your client and guild ids here
-const clientId = process.env.CLIENT_ID;
-const guildId = process.env.GUILD_ID;
-
 const commands = [];
 
 // Load command folders
@@ -34,13 +30,20 @@ const rest = new REST({ version: '9' }).setToken(process.env.TOKEN);
 
 (async () => {
   try {
+    // Script arguments
+    const args = process.argv.slice(2);
+
     console.log('Started refreshing application (/) commands.');
 
-    // Deploy global commands
-    // await rest.put(Routes.applicationCommands(clientId), { body: commands });
-
-    // Deploy guild commands
-    await rest.put(Routes.applicationGuildCommands(clientId, guildId), { body: commands });
+    if (args.length && args[0] === 'global') {
+      // Deploy global commands
+      await rest.put(Routes.applicationCommands(clientId), { body: commands });
+    } else {
+      // Deploy guild commands
+      const clientId = process.env.CLIENT_ID;
+      const guildId = process.env.GUILD_ID;
+      await rest.put(Routes.applicationGuildCommands(clientId, guildId), { body: commands });
+    }
 
     console.log('Successfully reloaded application (/) commands.');
   } catch (error) {

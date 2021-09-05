@@ -1,23 +1,21 @@
-const { Message } = require('discord.js');
+const { CommandInteraction } = require('discord.js');
+const { SlashCommandBuilder } = require('@discordjs/builders');
 
 /**
  * Execute server command.
- * @param {Message} message - Received message
- * @param {string[]} args
+ * @param {CommandInteraction} interaction - Received interaction
  * @param {import("../../typedefs/discord").DiscordClient} client - Discord client
  */
-function execute(message, args, client) {
+async function execute(interaction, client) {
   // Send server details
-  message.channel.send(
-    `Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}\nCreated on: ${message.guild.createdAt}`
+  interaction.reply(
+    `Server name: ${interaction.guild.name}\nTotal members: ${interaction.guild.memberCount}\nCreated on: ${interaction.guild.createdAt}`
   );
 }
 
-/** @type {import('../../typedefs/discord').Command}} */
+/** @type {import('../../typedefs/discord').SlashCommand}} */
 const handler = {
-  name: 'server',
-  description: 'Get server details',
-  guildOnly: true,
+  data: new SlashCommandBuilder().setName('server').setDescription('Get server details'),
   execute,
 };
 

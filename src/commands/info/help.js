@@ -1,59 +1,61 @@
-const { Message } = require('discord.js');
-const { defaultCooldown, prefix } = require('../../config.js');
+const { CommandInteraction } = require('discord.js');
+const { SlashCommandBuilder } = require('@discordjs/builders');
+const { defaultCooldown } = require('../../config.js');
 
 /**
  * Execute help command.
- * @param {Message} message - Received message
- * @param {string[]} args
- * @param {import('../../typedefs/discord').DiscordClient} client - Discord client
+ * @param {CommandInteraction} interaction - Received interaction
+ * @param {import("../../typedefs/discord").DiscordClient} client - Discord client
  */
-function execute(message, args, client) {
+async function execute(interaction, client) {
   const data = [];
   const commands = client.commands;
 
-  // Check if generic help was requested
-  if (!args.length) {
-    data.push("Here's a list of all my commands:");
-    data.push(commands.map((command) => command.name).join(', '));
-    data.push(`\nYou can send \`${prefix}help [command name]\` to get info on a specific command.`);
+  const commandName = interaction.options.getString('command_name');
+  console.log(commandName);
 
-    return message.author
+  // Check if generic help was requested
+  if (!commandName) {
+    data.push("Here's a list of all my commands:");
+    data.push(commands.map((command) => command.data.name).join(', '));
+    data.push(`\nYou can send \`/help [command name]\` to get info on a specific command.`);
+
+    return interaction.user
       .send(data.join('\n'))
       .then(() => {
-        if (message.channel.type === 'DM') return;
-        message.reply("I've sent you a DM with all my commands.");
+        if (interaction.channel.type === 'DM') return;
+        interaction.reply("I've sent you a DM with all my commands.");
       })
       .catch((error) => {
-        console.error(`Could not send help DM to ${message.author.tag}.\n`, error);
-        message.reply("It seems like I can't DM you! Do you have DMs disabled?");
+        console.error(`Could not send help DM to ${interaction.user.tag}.\n`, error);
+        interaction.reply("It seems like I can't DM you! Do you have DMs disabled?");
       });
   }
 
   // Get command details
-  const name = args[0].toLowerCase();
-  const command = commands.get(name) || commands.find((c) => c.aliases && c.aliases.includes(name));
+  const command = commands.get(commandName);
 
   if (!command) {
-    return message.reply("That's not a valid command!");
+    return await interaction.reply("That's not a valid command!");
   }
 
-  data.push(`**Name:** ${command.name}`);
+  data.push(`**Name:** ${commandName}`);
 
-  if (command.aliases) data.push(`**Aliases:** ${command.aliases.join(', ')}`);
-  if (command.description) data.push(`**Description:** ${command.description}`);
-  if (command.usage) data.push(`**Usage:** ${prefix}${command.name} ${command.usage}`);
+  if (command.data.description) data.push(`**Description:** ${command.data.description}`);
 
   data.push(`**Cooldown:** ${command.cooldown || defaultCooldown} second(s)`);
 
-  message.channel.send(data.join('\n'));
+  await interaction.reply(data.join('\n'));
 }
 
-/** @type {import('../../typedefs/discord').Command}} */
+/** @type {import('../../typedefs/discord').SlashCommand}} */
 const handler = {
-  name: 'help',
-  description: 'List all commands or info about a specific command',
-  usage: '<command name>',
-  aliases: ['commands'],
+  data: new SlashCommandBuilder()
+    .setName('help')
+    .setDescription('List all commands or info about a specific command')
+    .addStringOption((option) =>
+      option.setName('command_name').setDescription('Name of specific command to get help for')
+    ),
   execute,
 };
 

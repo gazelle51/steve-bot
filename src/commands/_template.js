@@ -1,9 +1,9 @@
-const { Interaction } = require('discord.js');
+const { CommandInteraction } = require('discord.js');
 const { SlashCommandBuilder } = require('@discordjs/builders');
 
 /**
  * Execute command.
- * @param {Interaction} interaction - Received interaction
+ * @param {CommandInteraction} interaction - Received interaction
  * @param {import("../typedefs/discord").DiscordClient} client - Discord client
  */
 async function execute(interaction, client) {}

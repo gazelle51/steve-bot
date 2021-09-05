@@ -4,8 +4,8 @@ TOKEN=
 # User IDs
 BLOCKED_USERS=[]
 
-# Client ID
+# Client ID (bot application ID)
 CLIENT_ID=
 
-# Guild ID
+# Guild ID (development server)
 GUILD_ID=

@@ -1,5 +1,5 @@
 /**
- * Execute when the _template event fires.
+ * Execute when the interactionCreate event fires.
  * @param {import("../typedefs/discord").DiscordClient} client - Discord client
  */
 async function execute(interaction, client) {
@@ -8,10 +8,17 @@ async function execute(interaction, client) {
   if (interaction.isCommand()) {
     const { commandName } = interaction;
 
-    if (commandName === 'ping') {
-      await interaction.reply('Pong!');
-    } else if (commandName === 'beep') {
-      await interaction.reply('Boop!');
+    const command = client.commands.get(commandName);
+    if (!command) return;
+
+    try {
+      await command.execute(interaction, client);
+    } catch (error) {
+      console.error(error);
+      await interaction.reply({
+        content: 'There was an error while executing this command!',
+        ephemeral: true,
+      });
     }
   }
 }

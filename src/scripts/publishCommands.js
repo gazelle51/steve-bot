@@ -26,9 +26,6 @@ for (const folder of commandFolders) {
   // Add to client command Collection if not disabled
   for (const file of commandFiles) {
     const command = require(`../commands/${folder}/${file}`);
-    // TODO
-    if (!command.data) continue;
-
     if (!disabledCommands.includes(command.name)) commands.push(command.data.toJSON());
   }
 }

@@ -5,7 +5,7 @@ module.exports = {
   prefix: '~',
   defaultCooldown: 0.1,
   disabledCommands: [],
-  disabledEvents: [],
+  disabledEvents: ['messageCreate'],
   embedColour: embedColour,
   emoji: {
     sparkles: '✨',

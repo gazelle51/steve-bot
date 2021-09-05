@@ -1,19 +1,36 @@
 require('dotenv').config();
 
+const { disabledCommands } = require('../config');
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 const fs = require('fs');
-
-const commands = [];
-const commandFiles = fs.readdirSync('./commands').filter((file) => file.endsWith('.js'));
 
 // Place your client and guild ids here
 const clientId = process.env.CLIENT_ID;
 const guildId = process.env.GUILD_ID;
 
-for (const file of commandFiles) {
-  const command = require(`./commands/${file}`);
-  commands.push(command.data.toJSON());
+const commands = [];
+
+// Load command folders
+const commandFolders = fs
+  .readdirSync('./src/commands')
+  .filter((folder) => folder !== '_template.js');
+
+// Load command files
+for (const folder of commandFolders) {
+  // Get command files
+  const commandFiles = fs
+    .readdirSync(`./src/commands/${folder}`)
+    .filter((file) => file.endsWith('.js'));
+
+  // Add to client command Collection if not disabled
+  for (const file of commandFiles) {
+    const command = require(`../commands/${folder}/${file}`);
+    // TODO
+    if (!command.data) continue;
+
+    if (!disabledCommands.includes(command.name)) commands.push(command.data.toJSON());
+  }
 }
 
 const rest = new REST({ version: '9' }).setToken(process.env.TOKEN);

@@ -7,12 +7,7 @@ const { AudioPlayer } = require('@discordjs/voice/dist');
  * @property {Object} data - Discord slash command builder data
  * @property {string} data.name - command name used to call the command
  * @property {string} data.description - command description
- * @property {boolean} [args] - if true, arguments are required to run command
- * @property {string} [usage] - example of how the arguments are used
- * @property {boolean} [guildOnly] - if true, command cannot be used in DMs
- * @property {number} [cooldown] - command cooldown, if different from the default
- * @property {string[]} [aliases] - other command names that can be used to execute command
- * @property {Permissions} [permissions] - permission needed to execute the command
+ * @property {number} [cooldown] - command cooldown in seconds, if different from the default
  * @property {Function} execute - function that is called whent the command is executed
  */
 
@@ -20,6 +15,7 @@ const { AudioPlayer } = require('@discordjs/voice/dist');
  * Discord slash command handler
  * @typedef {Object} SlashCommand
  * @property {Object} data - Discord slash command builder
+ * @property {number} [cooldown] - command cooldown in seconds, if different from the default
  * @property {Function} execute - function that is called whent the command is executed
  */
 

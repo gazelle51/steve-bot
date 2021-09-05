@@ -1,21 +1,21 @@
-const { Message } = require('discord.js');
+const { CommandInteraction } = require('discord.js');
+const { SlashCommandBuilder } = require('@discordjs/builders');
 const queue = require('../../utils/audioQueue');
 
 /**
  * Execute skip command.
- * @param {Message} message - Received message
- * @param {string[]} args
- * @param {import('../../typedefs/discord').DiscordClient} client - Discord client
+ * @param {CommandInteraction} interaction - Received interaction
+ * @param {import("../../typedefs/discord").DiscordClient} client - Discord client
  */
-async function execute(message, args, client) {
-  queue.skip(client, message);
+async function execute(interaction, client) {
+  await queue.skip(client, interaction);
 }
 
-/** @type {import('../../typedefs/discord').Command}} */
+/** @type {import('../../typedefs/discord').SlashCommand}} */
 const handler = {
-  name: 'skip',
-  description: 'Skip the currently playing audio',
-  guildOnly: true,
+  data: new SlashCommandBuilder()
+    .setName('skip')
+    .setDescription('Skip the currently playing audio'),
   execute,
 };
 

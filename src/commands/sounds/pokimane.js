@@ -1,16 +1,16 @@
-const { Message } = require('discord.js');
+const { CommandInteraction } = require('discord.js');
+const { SlashCommandBuilder } = require('@discordjs/builders');
 const pokimane = require('../../sounds/pokimane');
 const queue = require('../../utils/audioQueue');
 const sound = require('../../utils/sound');
 
 /**
  * Execute pokimane command.
- * @param {Message} message - Received message
- * @param {string[]} args
- * @param {import('../../typedefs/discord').DiscordClient} client - Discord client
+ * @param {CommandInteraction} interaction - Received interaction
+ * @param {import("../../typedefs/discord").DiscordClient} client - Discord client
  */
-async function execute(message, args, client) {
-  message.channel.send({
+async function execute(interaction, client) {
+  await interaction.reply({
     files: [
       'https://www.theloadout.com/wp-content/uploads/2021/01/rust-twitch-drops-pokimane-900x506.jpg',
     ],
@@ -21,14 +21,14 @@ async function execute(message, args, client) {
   const audio = pokimane[randomSound];
 
   // Add to queue
-  queue.addAudio(client, message, { ...audio, addedBy: message.author.tag });
+  await queue.addAudio(client, interaction, { ...audio, addedBy: interaction.user.tag });
 }
 
-/** @type {import('../../typedefs/discord').Command}} */
+/** @type {import('../../typedefs/discord').SlashCommand}} */
 const handler = {
-  name: 'pokimane',
-  description: 'Say a random Pokimane sound and show the garage door',
-  guildOnly: true,
+  data: new SlashCommandBuilder()
+    .setName('pokimane')
+    .setDescription('Say a random Pokimane sound and show the garage door'),
   execute,
 };
 

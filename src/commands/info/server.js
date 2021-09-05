@@ -8,7 +8,7 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
  */
 async function execute(interaction, client) {
   // Send server details
-  interaction.reply(
+  await interaction.reply(
     `Server name: ${interaction.guild.name}\nTotal members: ${interaction.guild.memberCount}\nCreated on: ${interaction.guild.createdAt}`
   );
 }

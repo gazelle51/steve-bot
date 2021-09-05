@@ -53,6 +53,8 @@ async function execute(interaction, client) {
       console.error(err);
     }
   }
+
+  await interaction.reply({ content: 'nice', ephemeral: true });
 }
 
 /**

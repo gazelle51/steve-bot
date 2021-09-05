@@ -4,7 +4,7 @@ const {
   AudioPlayerStatus,
   getVoiceConnection,
 } = require('@discordjs/voice');
-const { Message } = require('discord.js');
+const { CommandInteraction } = require('discord.js');
 const { VoiceConnection } = require('@discordjs/voice/dist');
 const embeds = require('./embeds').queue;
 const voice = require('./voice');
@@ -13,11 +13,11 @@ const ytdl = require('ytdl-core');
 /**
  * Create an audio queue and player for the specified server.
  * @param {import('../typedefs/discord').DiscordClient} client - Discord client
- * @param {Message} message - Received message
+ * @param {CommandInteraction} interaction - Received interaction
  * @param {VoiceConnection} voiceConnection - Voice channel connection
  * @param {import('../typedefs/audio').Audio} audio - Audio to add to queue
  */
-function createServerQueue(client, message, voiceConnection, audio) {
+function createServerQueue(client, interaction, voiceConnection, audio) {
   // Create and subscribe to audio player
   const player = createAudioPlayer();
   voiceConnection.subscribe(player);
@@ -29,10 +29,10 @@ function createServerQueue(client, message, voiceConnection, audio) {
     playing: true,
     leaveInactive: null,
   };
-  client.queue.set(message.guild.id, queueConstruct);
+  client.queue.set(interaction.guild.id, queueConstruct);
 
   // Get server queue and set event handlers
-  const serverQueue = client.queue.get(message.guild.id);
+  const serverQueue = client.queue.get(interaction.guild.id);
   serverQueue.player
     .on('error', (error) => console.error(error))
     .on('stateChange', (oldState, newState) => {
@@ -42,7 +42,7 @@ function createServerQueue(client, message, voiceConnection, audio) {
       ) {
         // If the Idle state is entered from a non-Idle state, it means that an audio resource has finished playing.
         serverQueue.audioQueue.shift();
-        play(client, message.guild.id, serverQueue.audioQueue[0]);
+        play(client, interaction.guild.id, serverQueue.audioQueue[0]);
       }
     });
 }
@@ -93,17 +93,17 @@ function play(client, guildId, audio) {
 /**
  * Skip the currently playing song.
  * @param {import('../typedefs/discord').DiscordClient} client - Discord client
- * @param {Message} message - Discord message
+ * @param {CommandInteraction} interaction - Received interaction
  * @returns
  */
-function skip(client, message) {
-  if (!message.member.voice.channel)
-    return message.channel.send('You have to be in a voice channel to stop the music!');
+async function skip(client, interaction) {
+  if (!interaction.member.voice.channel)
+    return await interaction.reply('You have to be in a voice channel to stop the music!');
 
   // Get server queue
-  const serverQueue = client.queue.get(message.guild.id);
+  const serverQueue = client.queue.get(interaction.guild.id);
 
-  if (!serverQueue) return message.channel.send('There is no song that I could skip!');
+  if (!serverQueue) return await interaction.reply('There is no song that I could skip!');
 
   // Put player into idle state to trigger next item in queue
   serverQueue.player.stop();
@@ -112,17 +112,17 @@ function skip(client, message) {
 /**
  * Stop playing music and clear the queue.
  * @param {import('../typedefs/discord').DiscordClient} client - Discord client
- * @param {Message} message - Discord message
+ * @param {CommandInteraction} interaction - Received interaction
  * @returns
  */
-function stop(client, message) {
-  if (!message.member.voice.channel)
-    return message.channel.send('You have to be in a voice channel to stop the music!');
+async function stop(client, interaction) {
+  if (!interaction.member.voice.channel)
+    return await interaction.reply('You have to be in a voice channel to stop the music!');
 
   // Get server queue
-  const serverQueue = client.queue.get(message.guild.id);
+  const serverQueue = client.queue.get(interaction.guild.id);
 
-  if (!serverQueue) return message.channel.send('There is no song that I could stop!');
+  if (!serverQueue) return await interaction.reply('There is no song that I could stop!');
 
   // Clear queue and put player into idle state
   serverQueue.audioQueue = [];
@@ -132,12 +132,12 @@ function stop(client, message) {
 /**
  * Get the current queue.
  * @param {import('../typedefs/discord').DiscordClient} client - Discord client
- * @param {Message} message - Discord message
+ * @param {CommandInteraction} interaction - Received interaction
  * @returns {import('../typedefs/audio').Audio[]} Copy of the queue array
  */
-function getQueue(client, message) {
+function getQueue(client, interaction) {
   // Get server queue
-  const serverQueue = client.queue.get(message.guild.id);
+  const serverQueue = client.queue.get(interaction.guild.id);
 
   if (!serverQueue) return [];
 
@@ -149,34 +149,34 @@ function getQueue(client, message) {
  * If queue is inactive, it will be resumed.
  * If a queue doesn't exist, one will be created.
  * @param {import('../typedefs/discord').DiscordClient} client - Discord client
- * @param {Message} message - Received message
+ * @param {CommandInteraction} interaction - Received interaction
  * @param {import('../typedefs/audio').Audio} audio - Audio to add to queue
  * @returns
  */
-async function addAudio(client, message, audio) {
+async function addAudio(client, interaction, audio) {
   // Get queue for the server
-  const serverQueue = client.queue.get(message.guild.id);
+  const serverQueue = client.queue.get(interaction.guild.id);
 
   if (!serverQueue) {
     // If there is no queue, join voice channel
-    const connection = await voice.join(message);
+    const connection = await voice.join(interaction);
 
     // Check connection was successful before continuing
     if (!connection) return;
 
     // Create queue and start playing
-    createServerQueue(client, message, connection, audio);
-    play(client, message.guild.id, audio);
+    createServerQueue(client, interaction, connection, audio);
+    play(client, interaction.guild.id, audio);
   } else if (serverQueue && serverQueue.playing === false) {
     // If there is a queue that is not playing, add to it and start again
     serverQueue.audioQueue.push(audio);
-    play(client, message.guild.id, audio);
+    play(client, interaction.guild.id, audio);
   } else {
     // If there is a queue that is playing, add to it
     serverQueue.audioQueue.push(audio);
   }
 
-  message.channel.send({ embeds: [embeds.songAdded(audio)] });
+  interaction.reply({ embeds: [embeds.songAdded(audio)] });
   console.log(`${audio.title} has been added to the queue`);
 }
 

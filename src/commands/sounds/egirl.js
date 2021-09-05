@@ -1,19 +1,21 @@
-const { Message } = require('discord.js');
+const { CommandInteraction } = require('discord.js');
+const { SlashCommandBuilder } = require('@discordjs/builders');
 const egirl = require('../../sounds/egirl');
 const queue = require('../../utils/audioQueue');
 const sound = require('../../utils/sound');
 
 /**
- * Execute egirl command.
- * @param {Message} message - Received message
- * @param {string[]} args
- * @param {import('../../typedefs/discord').DiscordClient} client - Discord client
+ * Execute e-girl command.
+ * @param {CommandInteraction} interaction - Received interaction
+ * @param {import("../../typedefs/discord").DiscordClient} client - Discord client
  */
-async function execute(message, args, client) {
+async function execute(interaction, client) {
   let audio;
 
+  const soundArg = interaction.options.getString('sound');
+
   // Get random E-Girl line
-  if (args[0] === 'stepbro') {
+  if (soundArg === 'stepbro') {
     audio = egirl.whatAreYouDoingStepBro;
   } else {
     const randomSound = sound.getNameOfRandomSound(egirl);
@@ -21,14 +23,17 @@ async function execute(message, args, client) {
   }
 
   // Add to queue
-  queue.addAudio(client, message, { ...audio, addedBy: message.author.tag });
+  await queue.addAudio(client, interaction, { ...audio, addedBy: interaction.user.tag });
 }
 
-/** @type {import('../../typedefs/discord').Command}} */
+/** @type {import('../../typedefs/discord').SlashCommand}} */
 const handler = {
-  name: 'egirl',
-  description: 'Say a random E-Girl line',
-  guildOnly: true,
+  data: new SlashCommandBuilder()
+    .setName('egirl')
+    .setDescription('Say a random e-Girl line')
+    .addStringOption((option) =>
+      option.setName('sound').setDescription('Sound to play').addChoice('Step-bro', 'stepbro')
+    ),
   execute,
 };
 

@@ -1,23 +1,21 @@
-const { Message } = require('discord.js');
+const { CommandInteraction } = require('discord.js');
+const { SlashCommandBuilder } = require('@discordjs/builders');
 const csgo = require('../../sounds/csgo');
 const queue = require('../../utils/audioQueue');
 
 /**
  * Execute deathcry command.
- * @param {Message} message - Received message
- * @param {string[]} args
- * @param {import('../../typedefs/discord').DiscordClient} client - Discord client
+ * @param {CommandInteraction} interaction - Received interaction
+ * @param {import("../../typedefs/discord").DiscordClient} client - Discord client
  */
-async function execute(message, args, client) {
+async function execute(interaction, client) {
   // Add to queue
-  queue.addAudio(client, message, { ...csgo.deathcry, addedBy: message.author.tag });
+  await queue.addAudio(client, interaction, { ...csgo.deathcry, addedBy: interaction.user.tag });
 }
 
-/** @type {import('../../typedefs/discord').Command}} */
+/** @type {import('../../typedefs/discord').SlashCommand}} */
 const handler = {
-  name: 'deathcry',
-  description: 'CSGO death cry',
-  guildOnly: true,
+  data: new SlashCommandBuilder().setName('deathcry').setDescription('CS-GO death cry'),
   execute,
 };
 

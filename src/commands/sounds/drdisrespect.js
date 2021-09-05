@@ -1,28 +1,30 @@
-const { Message } = require('discord.js');
+const { CommandInteraction } = require('discord.js');
+const { SlashCommandBuilder } = require('@discordjs/builders');
 const drdisrespect = require('../../sounds/drdisrespect');
 const queue = require('../../utils/audioQueue');
 const sound = require('../../utils/sound');
 
 /**
  * Execute drdisrespect command.
- * @param {Message} message - Received message
- * @param {string[]} args
- * @param {import('../../typedefs/discord').DiscordClient} client - Discord client
+ * @param {CommandInteraction} interaction - Received interaction
+ * @param {import("../../typedefs/discord").DiscordClient} client - Discord client
  */
-async function execute(message, args, client) {
+async function execute(interaction, client) {
   // Get random Dr DisRespect line
   const randomSound = sound.getNameOfRandomSound(drdisrespect);
 
   // Add to queue
-  queue.addAudio(client, message, { ...drdisrespect[randomSound], addedBy: message.author.tag });
+  await queue.addAudio(client, interaction, {
+    ...drdisrespect[randomSound],
+    addedBy: interaction.user.tag,
+  });
 }
 
-/** @type {import('../../typedefs/discord').Command}} */
+/** @type {import('../../typedefs/discord').SlashCommand}} */
 const handler = {
-  name: 'drdisrespect',
-  description: 'Say a random Dr DisRespect line',
-  guildOnly: true,
-  aliases: ['disrespect'],
+  data: new SlashCommandBuilder()
+    .setName('drdisrespect')
+    .setDescription('Say a random Dr DisRespect line'),
   execute,
 };
 

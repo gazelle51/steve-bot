@@ -1,21 +1,19 @@
-const { Message } = require('discord.js');
+const { CommandInteraction } = require('discord.js');
+const { SlashCommandBuilder } = require('@discordjs/builders');
 const voice = require('../../utils/voice');
 
 /**
  * Execute leave command.
- * @param {Message} message - Received message
- * @param {string[]} args
- * @param {import('../../typedefs/discord').DiscordClient} client - Discord client
+ * @param {CommandInteraction} interaction - Received interaction
+ * @param {import("../../typedefs/discord").DiscordClient} client - Discord client
  */
-async function execute(message, args, client) {
-  await voice.leave(message);
+async function execute(interaction, client) {
+  await voice.leave(interaction);
 }
 
-/** @type {import('../../typedefs/discord').Command}} */
+/** @type {import('../../typedefs/discord').SlashCommand}} */
 const handler = {
-  name: 'leave',
-  description: 'Leave voice channel',
-  guildOnly: true,
+  data: new SlashCommandBuilder().setName('leave').setDescription('Leave voice channel'),
   execute,
 };
 

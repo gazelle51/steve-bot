@@ -1,32 +1,32 @@
 const _ = require('lodash');
 const { emoji } = require('../../config');
-const { Message, MessageEmbed, MessageReaction, User, TextChannel } = require('discord.js');
+const { CommandInteraction, MessageEmbed, MessageReaction, User } = require('discord.js');
+const { SlashCommandBuilder } = require('@discordjs/builders');
 const embeds = require('../../utils/embeds').queue;
 const queue = require('../../utils/audioQueue');
 
 /**
- * Execute skip command.
- * @param {Message} message - Received message
- * @param {string[]} args
- * @param {import('../../typedefs/discord').DiscordClient} client - Discord client
+ * Execute queue command.
+ * @param {CommandInteraction} interaction - Received interaction
+ * @param {import("../../typedefs/discord").DiscordClient} client - Discord client
  */
-async function execute(message, args, client) {
+async function execute(interaction, client) {
   // Check user is in a voice channel
-  if (!message.member.voice.channel)
-    return message.channel.send('You have to be in a voice channel to see the music!');
+  if (!interaction.member.voice.channel)
+    return await interaction.reply('You have to be in a voice channel to see the music!');
 
   // Get queue
-  const audioQueue = queue.getQueue(client, message);
+  const audioQueue = queue.getQueue(client, interaction);
 
   // Check if the queue is empty
   if (!audioQueue.length) {
-    return message.channel.send({ embeds: [embeds.empty()] });
+    return await interaction.reply({ embeds: [embeds.empty()] });
   }
 
   // Get audio now playing
   const nowPlaying = audioQueue.shift();
 
-  createAndSendEmbed(nowPlaying, audioQueue, message.author.id, message.channel);
+  await createAndSendEmbed(nowPlaying, audioQueue, interaction.user.id, interaction.channel);
 }
 
 /**
@@ -151,11 +151,11 @@ async function createAndSendEmbed(nowPlaying, audioQueue, authorId, channel) {
   forwards.on('remove', forwardHandler);
 }
 
-/** @type {import('../../typedefs/discord').Command}} */
+/** @type {import('../../typedefs/discord').SlashCommand}} */
 const handler = {
-  name: 'queue',
-  description: 'View of queue and currently playing audio',
-  guildOnly: true,
+  data: new SlashCommandBuilder()
+    .setName('queue')
+    .setDescription('View of queue and currently playing audio'),
   execute,
 };
 

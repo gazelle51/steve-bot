@@ -1,21 +1,21 @@
-const { Message } = require('discord.js');
+const { CommandInteraction } = require('discord.js');
+const { SlashCommandBuilder } = require('@discordjs/builders');
 const queue = require('../../utils/audioQueue');
 
 /**
  * Execute stop command.
- * @param {Message} message - Received message
- * @param {string[]} args
- * @param {import('../../typedefs/discord').DiscordClient} client - Discord client
+ * @param {CommandInteraction} interaction - Received interaction
+ * @param {import("../../typedefs/discord").DiscordClient} client - Discord client
  */
-async function execute(message, args, client) {
-  queue.stop(client, message);
+async function execute(interaction, client) {
+  await queue.stop(client, interaction);
 }
 
-/** @type {import('../../typedefs/discord').Command}} */
+/** @type {import('../../typedefs/discord').SlashCommand}} */
 const handler = {
-  name: 'stop',
-  description: 'Stop the currently playing audio and clear the queue',
-  guildOnly: true,
+  data: new SlashCommandBuilder()
+    .setName('stop')
+    .setDescription('Stop the currently playing audio and clear the queue'),
   execute,
 };
 

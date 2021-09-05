@@ -1,27 +1,26 @@
-const { Message } = require('discord.js');
+const { CommandInteraction } = require('discord.js');
+const { SlashCommandBuilder } = require('@discordjs/builders');
 const redGuardian = require('../../sounds/redGuardian');
 const queue = require('../../utils/audioQueue');
 
 /**
  * Execute redguardian command.
- * @param {Message} message - Received message
- * @param {string[]} args
- * @param {import('../../typedefs/discord').DiscordClient} client - Discord client
+ * @param {CommandInteraction} interaction - Received interaction
+ * @param {import("../../typedefs/discord").DiscordClient} client - Discord client
  */
-async function execute(message, args, client) {
+async function execute(interaction, client) {
   // Add to queue
-  queue.addAudio(client, message, {
+  await queue.addAudio(client, interaction, {
     ...redGuardian.iHaveALotOfEnergy,
-    addedBy: message.author.tag,
+    addedBy: interaction.user.tag,
   });
 }
 
-/** @type {import('../../typedefs/discord').Command}} */
+/** @type {import('../../typedefs/discord').SlashCommand}} */
 const handler = {
-  name: 'redguardian',
-  description: 'Red Guardian has a lot of energy',
-  guildOnly: true,
-  aliases: ['energy', 'alexi'],
+  data: new SlashCommandBuilder()
+    .setName('redguardian')
+    .setDescription('Red Guardian has a lot of energy'),
   execute,
 };
 

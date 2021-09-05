@@ -1,20 +1,21 @@
-const { Message } = require('discord.js');
+const { CommandInteraction } = require('discord.js');
+const { SlashCommandBuilder } = require('@discordjs/builders');
 const queue = require('../../utils/audioQueue');
 const yts = require('yt-search');
 
 /**
  * Execute play command.
- * @param {Message} message - Received message
- * @param {string[]} args
- * @param {import('../../typedefs/discord').DiscordClient} client - Discord client
+ * @param {CommandInteraction} interaction - Received interaction
+ * @param {import("../../typedefs/discord").DiscordClient} client - Discord client
  */
-async function execute(message, args, client) {
+async function execute(interaction, client) {
   // Search Youtube
-  const youtubeResult = await yts(args.join(' '));
+  const song = interaction.options.getString('song');
+  const youtubeResult = await yts(song);
 
   // Stop if there are no search results
   if (!youtubeResult.videos.length) {
-    message.reply(`I couldn't find any search results for "${args.join(' ')}"`);
+    await interaction.reply(`I couldn't find any search results for "${song}"`);
     return;
   }
 
@@ -23,11 +24,11 @@ async function execute(message, args, client) {
     title: youtubeResult.videos[0].title,
     url: youtubeResult.videos[0].url,
     length: secondsToTime(youtubeResult.videos[0].duration.seconds),
-    addedBy: message.author.tag,
+    addedBy: interaction.user.tag,
   };
 
   // Add to queue
-  queue.addAudio(client, message, audio);
+  await queue.addAudio(client, interaction, audio);
 }
 
 /**
@@ -51,13 +52,14 @@ function secondsToTime(e) {
   else return `${h}:${m}:${s}`;
 }
 
-/** @type {import('../../typedefs/discord').Command}} */
+/** @type {import('../../typedefs/discord').SlashCommand}} */
 const handler = {
-  name: 'play',
-  description: 'Play a song from Youtube',
-  args: true,
-  usage: '<Name of audio to play>',
-  guildOnly: true,
+  data: new SlashCommandBuilder()
+    .setName('play')
+    .setDescription('Play a song from Youtube')
+    .addStringOption((option) =>
+      option.setName('song').setDescription('Song name to play').setRequired(true)
+    ),
   execute,
 };
 

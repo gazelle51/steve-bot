@@ -36,6 +36,8 @@ async function execute(interaction, client) {
       `Executing \`/${interaction.commandName} ${options}\`; called by ${interaction.user.username} (${interaction.user.id})`
     );
 
+    // TODO: guild only
+
     // Check cooldowns
     const cdTime = updateCommandCooldown(
       commandName,

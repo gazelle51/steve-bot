@@ -33,15 +33,16 @@ const rest = new REST({ version: '9' }).setToken(process.env.TOKEN);
     // Script arguments
     const args = process.argv.slice(2);
 
+    // Deploy guild commands
+    const clientId = process.env.CLIENT_ID;
+    const guildId = process.env.GUILD_ID;
+
     console.log('Started refreshing application (/) commands.');
 
     if (args.length && args[0] === 'global') {
       // Deploy global commands
       await rest.put(Routes.applicationCommands(clientId), { body: commands });
     } else {
-      // Deploy guild commands
-      const clientId = process.env.CLIENT_ID;
-      const guildId = process.env.GUILD_ID;
       await rest.put(Routes.applicationGuildCommands(clientId, guildId), { body: commands });
     }
 

@@ -1,41 +1,43 @@
 const { emoji } = require('../../config.js');
-const { Message } = require('discord.js');
+const { CommandInteraction } = require('discord.js');
+const { SlashCommandBuilder } = require('@discordjs/builders');
 const cases = require('../../caseSimulator/cases');
 const embeds = require('../../utils/embeds').case;
 const unbox = require('../../caseSimulator/unbox').unbox;
 
 /**
  * Execute unbox command.
- * @param {Message} message - Received message
- * @param {string[]} args
+ * @param {CommandInteraction} interaction - Received interaction
  * @param {import("../../typedefs/discord").DiscordClient} client - Discord client
  */
-async function execute(message, args, client) {
+async function execute(interaction, client) {
   let caseKey = '';
 
+  const caseName = interaction.options.getString('case');
+
   // Determine case to open
-  if (args.length === 0) caseKey = cases.randomCase();
-  else if (args.join(' ') === '?') {
-    message.reply({
+  if (!caseName) caseKey = cases.randomCase();
+  else if (caseName === '?') {
+    await interaction.reply({
       content: `The cases I can open are listed below\n${_getCaseListData()}`,
     });
     return;
-  } else if (args.join(' ') === 'cobblestone') {
-    message.reply({
+  } else if (caseName === 'cobblestone') {
+    await interaction.reply({
       content: `Stop asking me to open Cobblestone cases unless you know the drop rates!!!`,
     });
     return;
-  } else if (!cases.isCaseValid(args.join(' '))) {
-    message.reply({
-      content: `I am not configured to open ${args.join(' ')} cases`,
+  } else if (!cases.isCaseValid(caseName)) {
+    await interaction.reply({
+      content: `I am not configured to open ${caseName} cases`,
     });
     return;
-  } else caseKey = args.join(' ');
+  } else caseKey = caseName;
 
   // Open case
   const weapon = await unbox(caseKey);
-  const embedMessage = await message.channel.send({
-    embeds: [embeds.weapon(weapon, message.author)],
+  const embedMessage = await interaction.channel.send({
+    embeds: [embeds.weapon(weapon, interaction.user)],
   });
 
   // React, reply and pin if knife was opened
@@ -64,13 +66,12 @@ function _getCaseListData() {
     .join('\n');
 }
 
-/** @type {import('../../typedefs/discord').Command}} */
+/** @type {import('../../typedefs/discord').SlashCommand}} */
 const handler = {
-  name: 'unbox',
-  description: 'Unbox a CS-GO case',
-  args: undefined,
-  usage: undefined,
-  aliases: ['case'],
+  data: new SlashCommandBuilder()
+    .setName('unbox')
+    .setDescription('Unbox a CS-GO case')
+    .addStringOption((option) => option.setName('case').setDescription('Name of case to open')),
   execute,
 };
 

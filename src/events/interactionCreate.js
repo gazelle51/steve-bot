@@ -40,6 +40,8 @@ async function execute(interaction, client) {
       return await interaction.reply("I can't execute that command inside DMs");
     }
 
+    // TODO: Check voice channel flag
+
     // Check cooldowns
     const cdTime = updateCommandCooldown(
       commandName,

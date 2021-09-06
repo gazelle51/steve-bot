@@ -12,38 +12,37 @@ const unbox = require('../../caseSimulator/unbox').unbox;
  */
 async function execute(interaction, client) {
   let caseKey = '';
-
   const caseName = interaction.options.getString('case');
 
   // Determine case to open
   if (!caseName) caseKey = cases.randomCase();
   else if (caseName === '?') {
-    await interaction.reply({
+    return await interaction.reply({
       content: `The cases I can open are listed below\n${_getCaseListData()}`,
+      ephemeral: true,
     });
-    return;
   } else if (caseName === 'cobblestone') {
-    await interaction.reply({
+    return await interaction.reply({
       content: `Stop asking me to open Cobblestone cases unless you know the drop rates!!!`,
     });
-    return;
   } else if (!cases.isCaseValid(caseName)) {
-    await interaction.reply({
+    return await interaction.reply({
       content: `I am not configured to open ${caseName} cases`,
+      ephemeral: true,
     });
-    return;
   } else caseKey = caseName;
 
   // Open case
   const weapon = await unbox(caseKey);
-  const embedMessage = await interaction.channel.send({
+  const embedMessage = await interaction.reply({
     embeds: [embeds.weapon(weapon, interaction.user)],
+    fetchReply: true,
   });
 
   // React, reply and pin if knife was opened
   if (weapon.colour === 'yellow') {
     embedMessage.react(emoji[100]);
-    embedMessage.reply({
+    interaction.followUp({
       content: `Nice case opening!`,
       files: ['https://media.giphy.com/media/Ls6ahtmYHU760/giphy.gif'],
     });
@@ -53,8 +52,6 @@ async function execute(interaction, client) {
       console.error(err);
     }
   }
-
-  await interaction.reply({ content: 'nice', ephemeral: true });
 }
 
 /**

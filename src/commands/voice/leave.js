@@ -14,6 +14,7 @@ async function execute(interaction, client) {
 /** @type {import('../../typedefs/discord').SlashCommand}} */
 const handler = {
   data: new SlashCommandBuilder().setName('leave').setDescription('Leave voice channel'),
+  guildOnly: true,
   execute,
 };
 

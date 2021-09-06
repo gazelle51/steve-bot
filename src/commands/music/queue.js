@@ -156,6 +156,7 @@ const handler = {
   data: new SlashCommandBuilder()
     .setName('queue')
     .setDescription('View of queue and currently playing audio'),
+  guildOnly: true,
   execute,
 };
 

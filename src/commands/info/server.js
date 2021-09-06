@@ -16,6 +16,7 @@ async function execute(interaction, client) {
 /** @type {import('../../typedefs/discord').SlashCommand}} */
 const handler = {
   data: new SlashCommandBuilder().setName('server').setDescription('Get server details'),
+  guildOnly: true,
   execute,
 };
 

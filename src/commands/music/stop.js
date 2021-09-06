@@ -16,6 +16,7 @@ const handler = {
   data: new SlashCommandBuilder()
     .setName('stop')
     .setDescription('Stop the currently playing audio and clear the queue'),
+  guildOnly: true,
   execute,
 };
 

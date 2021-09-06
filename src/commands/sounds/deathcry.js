@@ -16,6 +16,7 @@ async function execute(interaction, client) {
 /** @type {import('../../typedefs/discord').SlashCommand}} */
 const handler = {
   data: new SlashCommandBuilder().setName('deathcry').setDescription('CS-GO death cry'),
+  guildOnly: true,
   execute,
 };
 

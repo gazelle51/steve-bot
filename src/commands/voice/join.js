@@ -19,6 +19,7 @@ async function execute(interaction, client) {
 /** @type {import('../../typedefs/discord').SlashCommand}} */
 const handler = {
   data: new SlashCommandBuilder().setName('join').setDescription('Join voice channel'),
+  guildOnly: true,
   execute,
 };
 

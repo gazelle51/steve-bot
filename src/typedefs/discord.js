@@ -8,6 +8,7 @@ const { AudioPlayer } = require('@discordjs/voice/dist');
  * @property {string} data.name - command name used to call the command
  * @property {string} data.description - command description
  * @property {number} [cooldown] - command cooldown in seconds, if different from the default
+ * @property {boolean} [guildOnly] - if true, command can only be used in a guild
  * @property {Function} execute - function that is called whent the command is executed
  */
 
@@ -16,6 +17,7 @@ const { AudioPlayer } = require('@discordjs/voice/dist');
  * @typedef {Object} SlashCommand
  * @property {Object} data - Discord slash command builder
  * @property {number} [cooldown] - command cooldown in seconds, if different from the default
+ * @property {boolean} [guildOnly] - if true, command can only be used in a guild
  * @property {Function} execute - function that is called whent the command is executed
  */
 

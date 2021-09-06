@@ -60,6 +60,7 @@ const handler = {
     .addStringOption((option) =>
       option.setName('song').setDescription('Song name to play').setRequired(true)
     ),
+  guildOnly: true,
   execute,
 };
 

@@ -1,6 +1,5 @@
-const { defaultCooldown } = require('../config.js');
 const { updateCommandCooldown } = require('../utils/cooldown.js');
-const { Collection, CommandInteraction } = require('discord.js');
+const { CommandInteraction } = require('discord.js');
 
 /**
  * Execute when the interactionCreate event fires.
@@ -36,7 +35,10 @@ async function execute(interaction, client) {
       `Executing \`/${interaction.commandName} ${options}\`; called by ${interaction.user.username} (${interaction.user.id})`
     );
 
-    // TODO: guild only
+    // Check guild only flag
+    if (command.guildOnly && interaction.channel.type === 'DM') {
+      return await interaction.reply("I can't execute that command inside DMs");
+    }
 
     // Check cooldowns
     const cdTime = updateCommandCooldown(
@@ -47,7 +49,7 @@ async function execute(interaction, client) {
     );
     if (cdTime)
       return await interaction.reply({
-        content: `Please wait ${cdTime.toFixed(1)} more second(s) before using this command.`,
+        content: `Please wait ${cdTime.toFixed(1)} more second(s) before using this command`,
         ephemeral: true,
       });
 
@@ -57,7 +59,7 @@ async function execute(interaction, client) {
     } catch (error) {
       console.error(error);
       await interaction.reply({
-        content: 'There was an error while executing this command!',
+        content: 'There was an error while executing this command',
         ephemeral: true,
       });
     }

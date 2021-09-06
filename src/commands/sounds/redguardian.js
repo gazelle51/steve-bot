@@ -21,6 +21,7 @@ const handler = {
   data: new SlashCommandBuilder()
     .setName('redguardian')
     .setDescription('Red Guardian has a lot of energy'),
+  guildOnly: true,
   execute,
 };
 

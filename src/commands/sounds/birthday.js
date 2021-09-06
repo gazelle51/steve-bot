@@ -40,6 +40,7 @@ const handler = {
         .addChoice('Birthday song', 'song')
         .addChoice('Birthday boy', 'boy')
     ),
+  guildOnly: true,
   execute,
 };
 

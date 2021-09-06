@@ -29,6 +29,7 @@ const handler = {
   data: new SlashCommandBuilder()
     .setName('pokimane')
     .setDescription('Say a random Pokimane sound and show the garage door'),
+  guildOnly: true,
   execute,
 };
 

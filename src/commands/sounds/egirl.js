@@ -34,6 +34,7 @@ const handler = {
     .addStringOption((option) =>
       option.setName('sound').setDescription('Sound to play').addChoice('Step-bro', 'stepbro')
     ),
+  guildOnly: true,
   execute,
 };
 

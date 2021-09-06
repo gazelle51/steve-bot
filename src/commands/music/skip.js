@@ -16,6 +16,7 @@ const handler = {
   data: new SlashCommandBuilder()
     .setName('skip')
     .setDescription('Skip the currently playing audio'),
+  guildOnly: true,
   execute,
 };
 

@@ -11,6 +11,8 @@ async function execute(interaction, client) {}
 /** @type {import('../typedefs/discord').SlashCommand}} */
 const handler = {
   data: new SlashCommandBuilder().setName('').setDescription(''),
+  cooldown: undefined,
+  guildOnly: undefined,
   execute,
 };
 

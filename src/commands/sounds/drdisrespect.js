@@ -25,6 +25,7 @@ const handler = {
   data: new SlashCommandBuilder()
     .setName('drdisrespect')
     .setDescription('Say a random Dr DisRespect line'),
+  guildOnly: true,
   execute,
 };
 

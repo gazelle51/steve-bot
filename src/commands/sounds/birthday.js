@@ -41,6 +41,7 @@ const handler = {
         .addChoice('Birthday boy', 'boy')
     ),
   guildOnly: true,
+  voiceChannel: true,
   execute,
 };
 

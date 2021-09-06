@@ -13,6 +13,7 @@ const handler = {
   data: new SlashCommandBuilder().setName('').setDescription(''),
   cooldown: undefined,
   guildOnly: undefined,
+  voiceChannel: undefined,
   execute,
 };
 

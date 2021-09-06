@@ -17,6 +17,7 @@ const handler = {
     .setName('skip')
     .setDescription('Skip the currently playing audio'),
   guildOnly: true,
+  voiceChannel: true,
   execute,
 };
 

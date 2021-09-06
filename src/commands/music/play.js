@@ -61,6 +61,7 @@ const handler = {
       option.setName('song').setDescription('Song name to play').setRequired(true)
     ),
   guildOnly: true,
+  voiceChannel: true,
   execute,
 };
 

@@ -30,6 +30,7 @@ const handler = {
     .setName('pokimane')
     .setDescription('Say a random Pokimane sound and show the garage door'),
   guildOnly: true,
+  voiceChannel: true,
   execute,
 };
 

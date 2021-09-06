@@ -22,6 +22,7 @@ const handler = {
     .setName('redguardian')
     .setDescription('Red Guardian has a lot of energy'),
   guildOnly: true,
+  voiceChannel: true,
   execute,
 };
 

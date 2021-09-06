@@ -17,6 +17,7 @@ const handler = {
     .setName('stop')
     .setDescription('Stop the currently playing audio and clear the queue'),
   guildOnly: true,
+  voiceChannel: true,
   execute,
 };
 

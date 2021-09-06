@@ -15,6 +15,7 @@ async function execute(interaction, client) {
 const handler = {
   data: new SlashCommandBuilder().setName('leave').setDescription('Leave voice channel'),
   guildOnly: true,
+  voiceChannel: true,
   execute,
 };
 

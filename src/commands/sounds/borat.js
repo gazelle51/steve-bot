@@ -24,6 +24,7 @@ async function execute(interaction, client) {
 const handler = {
   data: new SlashCommandBuilder().setName('borat').setDescription('Say a random Borat line'),
   guildOnly: true,
+  voiceChannel: true,
   execute,
 };
 

@@ -40,7 +40,13 @@ async function execute(interaction, client) {
       return await interaction.reply("I can't execute that command inside DMs");
     }
 
-    // TODO: Check voice channel flag
+    // Check voice channel flag
+    if (command.voiceChannel && !interaction.member.voice.channel) {
+      return await interaction.reply({
+        content: 'You need to join a voice channel to use that command',
+        ephemeral: true,
+      });
+    }
 
     // Check cooldowns
     const cdTime = updateCommandCooldown(

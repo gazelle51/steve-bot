@@ -154,23 +154,12 @@ async function extractWeaponData($, weapons, colourOfInterest, knivesData = fals
       // Image URL
       const imageUrl = $(result).find('a').children('img').attr('src');
 
-      // Prices
-      const priceElements = $(result).find('div .price');
-      const prices = $(priceElements)
-        .filter((i, elem) => $(elem).children().find('a[class="price-st"]').length === 0)
-        .text();
-      const statTrakPrices = $(priceElements)
-        .filter((i, elem) => $(elem).children().find('a[class="price-st"]').length === 1)
-        .text();
-
       // Weaspon URL
       const url = $(result).find('a > img').parent().attr('href');
 
       weapons[colour].push({
         name: name,
         image: imageUrl,
-        priceRange: prices,
-        statTrakPriceRange: statTrakPrices,
         url: url,
       });
     });

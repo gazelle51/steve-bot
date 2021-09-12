@@ -65,6 +65,8 @@ function queueNowPlayingOnly(nowPlaying) {
  */
 function caseWeapon(weapon, author) {
   const colours = {
+    white: '#b0c3d9',
+    lightBlue: '#5e98d9',
     blue: '#4b69cd',
     purple: '#8847ff',
     pink: '#d32ce6',
@@ -76,6 +78,9 @@ function caseWeapon(weapon, author) {
 
   // StatTrak
   if (weapon.statTrak) description = description + '```arm\nStatTrak™\n```\n';
+
+  // Souviner
+  if (weapon.souviner) description = description + '```fix\nSouviner\n```\n';
 
   // Price
   description = description + `\`\`\`\n${weapon.price}\n\`\`\`\n`;

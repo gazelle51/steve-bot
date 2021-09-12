@@ -4,6 +4,7 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 const cases = require('../../caseSimulator/cases');
 const embeds = require('../../utils/embeds').case;
 const unbox = require('../../caseSimulator/unbox').unbox;
+const unboxCollection = require('../../caseSimulator/unboxCollection').unboxCollection;
 
 /**
  * Execute unbox command.
@@ -21,9 +22,11 @@ async function execute(interaction, client) {
       content: `The cases I can open are listed below\n${_getCaseListData()}`,
       ephemeral: true,
     });
+    return;
   } else if (caseName === 'cobblestone') {
-    return await interaction.reply({
-      content: `Stop asking me to open Cobblestone cases unless you know the drop rates!!!`,
+    const weapon = await unboxCollection(caseName);
+    await interaction.reply({
+      embeds: [embeds.weapon(weapon, interaction.user)],
     });
   } else if (!cases.isCaseValid(caseName)) {
     return await interaction.reply({

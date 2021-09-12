@@ -1,0 +1,197 @@
+{
+  "gradeOdds": {
+    "blue": 0.7992328,
+    "purple": 0.1598465,
+    "pink": 0.0319693,
+    "red": 0.0063939,
+    "yellow": 0.0025575
+  },
+  "wearOdds": {
+    "wellWorn": 0.0792,
+    "battleScarred": 0.0993,
+    "fieldTested": 0.4318,
+    "minimalWear": 0.2468,
+    "factoryNew": 0.1471
+  },
+  "statTrakThreshold": 0.1,
+  "cases": {
+    "bravo": {
+      "name": "Operation Bravo Case",
+      "url": "https://csgostash.com/case/3/Operation-Bravo-Case",
+      "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsXE1xNwVDv7WrFA5pnabNJGwSuN3gxtnawKOlMO6HzzhQucAm0uvFo4n2iw3h_UM-ZmilJNeLMlhpjfjxEoE/256fx256f"
+    },
+    "weapon": {
+      "name": "CS:GO Weapon Case",
+      "url": "https://csgostash.com/case/1/CS:GO-Weapon-Case",
+      "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5_T3eAQ3i6DMIW0X7ojiwoHax6egMOKGxj4G68Nz3-jCp4itjFWx-ktqfSmtcwqVx6sT/256fx256f"
+    },
+    "breakout": {
+      "name": "Operation Breakout Weapon Case",
+      "url": "https://csgostash.com/case/18/Operation-Breakout-Weapon-Case",
+      "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFMu1aPMI24auITjxteJwPXxY72AkGgIvZAniLjHpon2jlbl-kpvNjz3JJjVLFG9rl1YLQ/256fx256f"
+    },
+    "weapon2": {
+      "name": "CS:GO Weapon Case 2",
+      "url": "https://csgostash.com/case/4/CS:GO-Weapon-Case-2",
+      "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5PT8elUwgKKZJmtEvo_kxITZk6StNe-Fz2pTu8Aj3eqVpIqgjVfjrRI9fSmtc1Nw-Kh3/256fx256f"
+    },
+    "esports2013": {
+      "name": "eSports 2013 Case",
+      "url": "https://csgostash.com/case/2/eSports-2013-Case"
+    },
+    "esports2013Winter": {
+      "name": "eSports 2013 Winter Case",
+      "url": "https://csgostash.com/case/5/eSports-2013-Winter-Case"
+    },
+    "winterOffensive": {
+      "name": "Winter Offensive Weapon Case",
+      "url": "https://csgostash.com/case/7/Winter-Offensive-Weapon-Case"
+    },
+    "weapon3": {
+      "name": "CS:GO Weapon Case 3",
+      "url": "https://csgostash.com/case/10/CS:GO-Weapon-Case-3"
+    },
+    "phoenix": {
+      "name": "Operation Phoenix Weapon Case",
+      "url": "https://csgostash.com/case/11/Operation-Phoenix-Weapon-Case"
+    },
+    "huntsman": {
+      "name": "Huntsman Weapon Case",
+      "url": "https://csgostash.com/case/17/Huntsman-Weapon-Case"
+    },
+    "esports2014Summer": {
+      "name": "eSports 2014 Summer Case",
+      "url": "https://csgostash.com/case/19/eSports-2014-Summer-Case"
+    },
+    "vanguard": {
+      "name": "Operation Vanguard Weapon Case",
+      "url": "https://csgostash.com/case/29/Operation-Vanguard-Weapon-Case"
+    },
+    "chroma": {
+      "name": "Chroma Case",
+      "url": "https://csgostash.com/case/38/Chroma-Case"
+    },
+    "chroma2": {
+      "name": "Chroma 2 Case",
+      "url": "https://csgostash.com/case/48/Chroma-2-Case"
+    },
+    "falchion": {
+      "name": "Falchion Case",
+      "url": "https://csgostash.com/case/50/Falchion-Case"
+    },
+    "shadow": {
+      "name": "Shadow Case",
+      "url": "https://csgostash.com/case/80/Shadow-Case"
+    },
+    "revolver": {
+      "name": "Revolver Case",
+      "url": "https://csgostash.com/case/111/Revolver-Case"
+    },
+    "wildfire": {
+      "name": "Operation Wildfire Case",
+      "url": "https://csgostash.com/case/112/Operation-Wildfire-Case"
+    },
+    "chroma3": {
+      "name": "Chroma 3 Case",
+      "url": "https://csgostash.com/case/141/Chroma-3-Case"
+    },
+    "gamma": {
+      "name": "Gamma Case",
+      "url": "https://csgostash.com/case/144/Gamma-Case"
+    },
+    "gamma2": {
+      "name": "Gamma 2 Case",
+      "url": "https://csgostash.com/case/172/Gamma-2-Case"
+    },
+    "glove": {
+      "name": "Glove Case",
+      "url": "https://csgostash.com/case/179/Glove-Case"
+    },
+    "spectrum": {
+      "name": "Spectrum Case",
+      "url": "https://csgostash.com/case/207/Spectrum-Case"
+    },
+    "hydra": {
+      "name": "Operation Hydra Case",
+      "url": "https://csgostash.com/case/208/Operation-Hydra-Case"
+    },
+    "spectrum2": {
+      "name": "Spectrum 2 Case",
+      "url": "https://csgostash.com/case/220/Spectrum-2-Case"
+    },
+    "clutch": {
+      "name": "Clutch Case",
+      "url": "https://csgostash.com/case/238/Clutch-Case"
+    },
+    "horizon": {
+      "name": "Horizon Case",
+      "url": "https://csgostash.com/case/244/Horizon-Case"
+    },
+    "dangerZone": {
+      "name": "Danger Zone Case",
+      "url": "https://csgostash.com/case/259/Danger-Zone-Case"
+    },
+    "prisma": {
+      "name": "Prisma Case",
+      "url": "https://csgostash.com/case/274/Prisma-Case"
+    },
+    "shatteredWeb": {
+      "name": "Shattered Web Case",
+      "url": "https://csgostash.com/case/277/Shattered-Web-Case"
+    },
+    "cs20": {
+      "name": "CS20 Case",
+      "url": "https://csgostash.com/case/293/CS20-Case"
+    },
+    "prisma2": {
+      "name": "Prisma 2 Case",
+      "url": "https://csgostash.com/case/303/Prisma-2-Case"
+    },
+    "fracture": {
+      "name": "Fracture Case",
+      "url": "https://csgostash.com/case/307/Fracture-Case"
+    },
+    "brokenFang": {
+      "name": "Operation Broken Fang Case",
+      "url": "https://csgostash.com/case/308/Operation-Broken-Fang-Case"
+    },
+    "snakebite": {
+      "name": "Snakebite Case",
+      "url": "https://csgostash.com/case/315/Snakebite-Case"
+    }
+  },
+  "templateCase": {
+    "name": "",
+    "image": "",
+    "blue": [
+      {
+        "name": "",
+        "image": ""
+      }
+    ],
+    "purple": [
+      {
+        "name": "",
+        "image": ""
+      }
+    ],
+    "pink": [
+      {
+        "name": "",
+        "image": ""
+      }
+    ],
+    "red": [
+      {
+        "name": "",
+        "image": ""
+      }
+    ],
+    "yellow": [
+      {
+        "name": "",
+        "image": ""
+      }
+    ]
+  }
+}

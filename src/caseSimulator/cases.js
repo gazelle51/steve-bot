@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const caseData = require('./data.json');
+const caseData = require('./caseData.json');
 
 /**
  * Get the `key` of a randomly selected case.

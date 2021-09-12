@@ -3,6 +3,7 @@ const { Message } = require('discord.js');
 const cases = require('../../caseSimulator/cases');
 const embeds = require('../../utils/embeds').case;
 const unbox = require('../../caseSimulator/unbox').unbox;
+const unboxCollection = require('../../caseSimulator/unboxCollection').unboxCollection;
 
 /**
  * Execute unbox command.
@@ -21,8 +22,9 @@ async function execute(message, args, client) {
     });
     return;
   } else if (args.join(' ') === 'cobblestone') {
-    message.reply({
-      content: `Stop asking me to open Cobblestone cases unless you know the drop rates!!!`,
+    const weapon = await unboxCollection('cobblestone');
+    await message.channel.send({
+      embeds: [embeds.weapon(weapon, message.author)],
     });
     return;
   } else if (!cases.isCaseValid(args.join(' '))) {

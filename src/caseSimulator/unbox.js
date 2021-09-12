@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const caseData = require('./data.json');
+const caseData = require('./caseData.json');
 const scrapeCasePage = require('./webScraper').scrapeCasePage;
 const scrapeWeaponPage = require('./webScraper').scrapeWeaponPage;
 

@@ -28,7 +28,13 @@ const client = new Client({
     Intents.FLAGS.GUILD_VOICE_STATES,
     Intents.FLAGS.DIRECT_MESSAGES,
   ],
-  partials: ['CHANNEL'],
+  partials: [
+    // 'USER',
+    'CHANNEL', // Enabled so that bot can receive DMs
+    // 'GUILD_MEMBER',
+    // 'MESSAGE',
+    // 'REACTION',
+  ],
 });
 client.commands = new Collection();
 client.cooldowns = new Collection();

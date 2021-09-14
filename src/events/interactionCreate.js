@@ -7,9 +7,14 @@ const { CommandInteraction } = require('discord.js');
  * @param {import("../typedefs/discord").DiscordClient} client - Discord client
  */
 async function execute(interaction, client) {
-  console.log(
-    `${interaction.user.username} (${interaction.user.id}) triggered '${interaction.type}' interaction in #${interaction.channel.name}`
-  );
+  if (interaction.channel.type === 'DM')
+    console.log(
+      `${interaction.user.username} (${interaction.user.id}) triggered '${interaction.type}' interaction in a DM`
+    );
+  else
+    console.log(
+      `${interaction.user.username} (${interaction.user.id}) triggered '${interaction.type}' interaction in #${interaction.channel.name}`
+    );
 
   // Do nothing if a blocked user tried to interact with bot
   if (JSON.parse(process.env.BLOCKED_USERS).includes(interaction.user.id)) {
@@ -25,8 +30,7 @@ async function execute(interaction, client) {
 
     // Check command exists
     if (!command) {
-      await interaction.reply({ content: "That command doesn't exist", ephemeral: true });
-      return;
+      return await interaction.reply({ content: "That command doesn't exist", ephemeral: true });
     }
 
     // Log command

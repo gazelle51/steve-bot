@@ -1,5 +1,6 @@
 const { CommandInteraction } = require('discord.js');
 const { SlashCommandBuilder } = require('@discordjs/builders');
+const embeds = require('../../utils/embeds').queue;
 const queue = require('../../utils/audioQueue');
 const yts = require('yt-search');
 
@@ -15,8 +16,7 @@ async function execute(interaction, client) {
 
   // Stop if there are no search results
   if (!youtubeResult.videos.length) {
-    await interaction.reply(`I couldn't find any search results for "${song}"`);
-    return;
+    return await interaction.reply(`I couldn't find any search results for "${song}"`);
   }
 
   // Format audio
@@ -28,7 +28,10 @@ async function execute(interaction, client) {
   };
 
   // Add to queue
-  await queue.addAudio(client, interaction, audio);
+  queue.addAudio(client, interaction.member.voice.channel.id, interaction.guild, audio);
+
+  // Reply
+  await interaction.reply({ embeds: [embeds.songAdded(audio)] });
 }
 
 /**

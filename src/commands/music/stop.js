@@ -8,7 +8,10 @@ const queue = require('../../utils/audioQueue');
  * @param {import("../../typedefs/discord").DiscordClient} client - Discord client
  */
 async function execute(interaction, client) {
-  await queue.stop(client, interaction);
+  const result = queue.stop(client, interaction.guildId);
+
+  if (!result) await interaction.reply('There is no music for me to stop');
+  await interaction.reply('Music stopped');
 }
 
 /** @type {import('../../typedefs/discord').SlashCommand}} */

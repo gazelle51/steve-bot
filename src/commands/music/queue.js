@@ -11,12 +11,8 @@ const queue = require('../../utils/audioQueue');
  * @param {import("../../typedefs/discord").DiscordClient} client - Discord client
  */
 async function execute(interaction, client) {
-  // Check user is in a voice channel
-  if (!interaction.member.voice.channel)
-    return await interaction.reply('You have to be in a voice channel to see the music!');
-
   // Get queue
-  const audioQueue = queue.getQueue(client, interaction);
+  const audioQueue = queue.getQueue(client, interaction.guild.id);
 
   // Check if the queue is empty
   if (!audioQueue.length) {
@@ -26,7 +22,8 @@ async function execute(interaction, client) {
   // Get audio now playing
   const nowPlaying = audioQueue.shift();
 
-  await createAndSendEmbed(nowPlaying, audioQueue, interaction.user.id, interaction.channel);
+  // Reply
+  await _createAndSendEmbed(nowPlaying, audioQueue, interaction.user.id, interaction);
 }
 
 /**
@@ -35,10 +32,10 @@ async function execute(interaction, client) {
  * @param {import('../../typedefs/audio').Audio} nowPlaying - Audio now playing
  * @param {import('../../typedefs/audio').Audio[]} audioQueue - Audio in queue
  * @param {string} authorId - ID of user who requested queue
- * @param {import('discord.js').TextBasedChannels} channel - Discord channel queue is to be sent to
+ * @param {CommandInteraction} interaction - interaction to reply to
  * @returns {Promise<void>}
  */
-async function createAndSendEmbed(nowPlaying, audioQueue, authorId, channel) {
+async function _createAndSendEmbed(nowPlaying, audioQueue, authorId, interaction) {
   /**
    * Create a queue message embed.
    * @param {import('../../typedefs/audio').Audio[]} pageData - page data to display (up next)
@@ -114,8 +111,7 @@ async function createAndSendEmbed(nowPlaying, audioQueue, authorId, channel) {
 
   // If no more songs in queue, send a simple embed only
   if (!audioQueue.length) {
-    channel.send({ embeds: [embeds.nowPlayingOnly(nowPlaying)] });
-    return;
+    return await interaction.reply({ embeds: [embeds.nowPlayingOnly(nowPlaying)] });
   }
 
   // Initialise
@@ -126,7 +122,7 @@ async function createAndSendEmbed(nowPlaying, audioQueue, authorId, channel) {
 
   // Create and send initial embed
   const embed = createQueueEmbed(pages[0]);
-  const embedMessage = await channel.send({ embeds: [embed] });
+  const embedMessage = await interaction.reply({ embeds: [embed], fetchReply: true });
 
   // If there is only 1 page do not set up buttons
   if (pages.length === 1) return;

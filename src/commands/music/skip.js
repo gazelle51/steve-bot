@@ -8,7 +8,10 @@ const queue = require('../../utils/audioQueue');
  * @param {import("../../typedefs/discord").DiscordClient} client - Discord client
  */
 async function execute(interaction, client) {
-  await queue.skip(client, interaction);
+  const result = queue.skip(client, interaction.guildId);
+
+  if (!result) await interaction.reply('There is no song to skip');
+  await interaction.reply('Song skipped');
 }
 
 /** @type {import('../../typedefs/discord').SlashCommand}} */

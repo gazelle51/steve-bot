@@ -7,7 +7,7 @@ const ytdl = require('ytdl-core');
 /**
  * Create an audio queue and player for the specified server.
  * @param {import('../typedefs/discord').DiscordClient} client - Discord client
- * @param {string} guildId - ID of guild to create queue foer
+ * @param {string} guildId - ID of guild to create queue for
  * @param {VoiceConnection} voiceConnection - Voice channel connection
  * @param {import('../typedefs/audio').Audio} audio - Audio to add to queue
  */
@@ -88,51 +88,49 @@ function play(client, guildId, audio) {
 /**
  * Skip the currently playing song.
  * @param {import('../typedefs/discord').DiscordClient} client - Discord client
- * @param {CommandInteraction} interaction - Received interaction
- * @returns
+ * @param {string} guildId - ID of guild to stop queue for
+ * @returns {boolean} true if successful, otherwise false
  */
-async function skip(client, interaction) {
-  if (!interaction.member.voice.channel)
-    return await interaction.reply('You have to be in a voice channel to stop the music!');
-
+function skip(client, guildId) {
   // Get server queue
-  const serverQueue = client.queue.get(interaction.guild.id);
+  const serverQueue = client.queue.get(guildId);
 
-  if (!serverQueue) return await interaction.reply('There is no song that I could skip!');
+  if (!serverQueue) return false;
 
   // Put player into idle state to trigger next item in queue
   serverQueue.player.stop();
+
+  return true;
 }
 
 /**
  * Stop playing music and clear the queue.
  * @param {import('../typedefs/discord').DiscordClient} client - Discord client
- * @param {CommandInteraction} interaction - Received interaction
- * @returns
+ * @param {string} guildId - ID of guild to stop queue for
+ * @returns {boolean} true if successful, otherwise false
  */
-async function stop(client, interaction) {
-  if (!interaction.member.voice.channel)
-    return await interaction.reply('You have to be in a voice channel to stop the music!');
-
+function stop(client, guildId) {
   // Get server queue
-  const serverQueue = client.queue.get(interaction.guild.id);
+  const serverQueue = client.queue.get(guildId);
 
-  if (!serverQueue) return await interaction.reply('There is no song that I could stop!');
+  if (!serverQueue) return false;
 
   // Clear queue and put player into idle state
   serverQueue.audioQueue = [];
   serverQueue.player.stop();
+
+  return true;
 }
 
 /**
- * Get the current queue.
+ * Get the current queue in a guild.
  * @param {import('../typedefs/discord').DiscordClient} client - Discord client
- * @param {CommandInteraction} interaction - Received interaction
+ * @param {string} guildId - ID of guild to get queue for
  * @returns {import('../typedefs/audio').Audio[]} Copy of the queue array
  */
-function getQueue(client, interaction) {
+function getQueue(client, guildId) {
   // Get server queue
-  const serverQueue = client.queue.get(interaction.guild.id);
+  const serverQueue = client.queue.get(guildId);
 
   if (!serverQueue) return [];
 

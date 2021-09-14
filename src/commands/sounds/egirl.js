@@ -1,6 +1,7 @@
 const { CommandInteraction } = require('discord.js');
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const egirl = require('../../sounds/egirl');
+const embeds = require('../../utils/embeds').queue;
 const queue = require('../../utils/audioQueue');
 const sound = require('../../utils/sound');
 
@@ -23,7 +24,11 @@ async function execute(interaction, client) {
   }
 
   // Add to queue
-  await queue.addAudio(client, interaction, { ...audio, addedBy: interaction.user.tag });
+  audio = { ...audio, addedBy: interaction.user.tag };
+  queue.addAudio(client, interaction.member.voice.channel.id, interaction.guild, audio);
+
+  // Reply
+  await interaction.reply({ embeds: [embeds.songAdded(audio)] });
 }
 
 /** @type {import('../../typedefs/discord').SlashCommand}} */

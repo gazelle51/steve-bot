@@ -1,5 +1,6 @@
 const { CommandInteraction } = require('discord.js');
 const { SlashCommandBuilder } = require('@discordjs/builders');
+const embeds = require('../../utils/embeds').queue;
 const pokimane = require('../../sounds/pokimane');
 const queue = require('../../utils/audioQueue');
 const sound = require('../../utils/sound');
@@ -10,18 +11,15 @@ const sound = require('../../utils/sound');
  * @param {import("../../typedefs/discord").DiscordClient} client - Discord client
  */
 async function execute(interaction, client) {
-  await interaction.reply({
-    files: [
-      'https://www.theloadout.com/wp-content/uploads/2021/01/rust-twitch-drops-pokimane-900x506.jpg',
-    ],
-  });
-
   // Get random Pokimane line
   const randomSound = sound.getNameOfRandomSound(pokimane);
-  const audio = pokimane[randomSound];
+  const audio = { ...pokimane[randomSound], addedBy: interaction.user.tag };
 
   // Add to queue
-  await queue.addAudio(client, interaction, { ...audio, addedBy: interaction.user.tag });
+  queue.addAudio(client, interaction.member.voice.channel.id, interaction.guild, audio);
+
+  // Reply
+  await interaction.reply({ embeds: [embeds.songAdded(audio)] });
 }
 
 /** @type {import('../../typedefs/discord').SlashCommand}} */

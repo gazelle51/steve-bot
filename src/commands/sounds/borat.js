@@ -1,6 +1,7 @@
 const { CommandInteraction } = require('discord.js');
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const borat = require('../../sounds/borat');
+const embeds = require('../../utils/embeds').queue;
 const queue = require('../../utils/audioQueue');
 const sound = require('../../utils/sound');
 
@@ -10,14 +11,15 @@ const sound = require('../../utils/sound');
  * @param {import("../../typedefs/discord").DiscordClient} client - Discord client
  */
 async function execute(interaction, client) {
-  let audio;
-
   // Get random Borat line
   const randomSound = sound.getNameOfRandomSound(borat);
-  audio = borat[randomSound];
+  const audio = { ...borat[randomSound], addedBy: interaction.user.tag };
 
   // Add to queue
-  await queue.addAudio(client, interaction, { ...audio, addedBy: interaction.user.tag });
+  queue.addAudio(client, interaction.member.voice.channel.id, interaction.guild, audio);
+
+  // Reply
+  await interaction.reply({ embeds: [embeds.songAdded(audio)] });
 }
 
 /** @type {import('../../typedefs/discord').SlashCommand}} */

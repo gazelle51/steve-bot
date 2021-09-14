@@ -9,6 +9,7 @@ const voice = require('../../utils/voice');
  */
 async function execute(interaction, client) {
   voice.leave(interaction.guild.id);
+  await interaction.reply('Bye!');
 }
 
 /** @type {import('../../typedefs/discord').SlashCommand}} */

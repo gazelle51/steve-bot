@@ -1,5 +1,5 @@
 const { createAudioPlayer, createAudioResource, AudioPlayerStatus } = require('@discordjs/voice');
-const { CommandInteraction, Guild } = require('discord.js');
+const { Guild } = require('discord.js');
 const { VoiceConnection } = require('@discordjs/voice/dist');
 const voice = require('./voice');
 const ytdl = require('ytdl-core');

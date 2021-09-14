@@ -1,6 +1,7 @@
 const { CommandInteraction } = require('discord.js');
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const csgo = require('../../sounds/csgo');
+const embeds = require('../../utils/embeds').queue;
 const queue = require('../../utils/audioQueue');
 
 /**
@@ -10,7 +11,11 @@ const queue = require('../../utils/audioQueue');
  */
 async function execute(interaction, client) {
   // Add to queue
-  await queue.addAudio(client, interaction, { ...csgo.deathcry, addedBy: interaction.user.tag });
+  const audio = { ...csgo.deathcry, addedBy: interaction.user.tag };
+  queue.addAudio(client, interaction.member.voice.channel.id, interaction.guild, audio);
+
+  // Reply
+  await interaction.reply({ embeds: [embeds.songAdded(audio)] });
 }
 
 /** @type {import('../../typedefs/discord').SlashCommand}} */

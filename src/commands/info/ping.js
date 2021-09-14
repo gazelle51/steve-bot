@@ -7,7 +7,7 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
  * @param {import("../../typedefs/discord").DiscordClient} client - Discord client
  */
 async function execute(interaction, client) {
-  await interaction.reply('Pong');
+  await interaction.reply({ content: 'Pong', ephemeral: true });
 }
 
 /** @type {import('../../typedefs/discord').SlashCommand}} */

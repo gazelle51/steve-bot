@@ -1,5 +1,5 @@
 const { emoji } = require('../../config.js');
-const { CommandInteraction } = require('discord.js');
+const { CommandInteraction, Message } = require('discord.js');
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const cases = require('../../caseSimulator/cases');
 const embeds = require('../../utils/embeds').case;
@@ -22,7 +22,6 @@ async function execute(interaction, client) {
       content: `The cases I can open are listed below\n${_getCaseListData()}`,
       ephemeral: true,
     });
-    return;
   } else if (caseName === 'cobblestone') {
     const weapon = await unboxCollection(caseName);
     await interaction.reply({
@@ -44,13 +43,13 @@ async function execute(interaction, client) {
 
   // React, reply and pin if knife was opened
   if (weapon.colour === 'yellow') {
-    embedMessage.react(emoji[100]);
-    interaction.followUp({
+    await embedMessage.react(emoji[100]);
+    await interaction.followUp({
       content: `Nice case opening!`,
       files: ['https://media.giphy.com/media/Ls6ahtmYHU760/giphy.gif'],
     });
     try {
-      embedMessage.pin();
+      await embedMessage.pin();
     } catch (err) {
       console.error(err);
     }

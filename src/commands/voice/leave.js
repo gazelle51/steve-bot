@@ -8,7 +8,7 @@ const voice = require('../../utils/voice');
  * @param {import("../../typedefs/discord").DiscordClient} client - Discord client
  */
 async function execute(interaction, client) {
-  await voice.leave(interaction);
+  voice.leave(interaction.guild.id);
 }
 
 /** @type {import('../../typedefs/discord').SlashCommand}} */

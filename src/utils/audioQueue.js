@@ -65,7 +65,7 @@ function play(client, guildId, audio) {
 
     // Leave after 10 minutes of inactivity
     serverQueue.leaveInactive = setTimeout(function () {
-      getVoiceConnection(guildId).destroy();
+      voice.leave(guildId);
       client.queue.delete(guildId);
     }, 10 * 60 * 1000);
 
@@ -159,7 +159,7 @@ async function addAudio(client, interaction, audio) {
 
   if (!serverQueue) {
     // If there is no queue, join voice channel
-    const connection = await voice.join(interaction);
+    const connection = voice.join(interaction.member.voice.channel.uid, interaction.guild);
 
     // Check connection was successful before continuing
     if (!connection) return;

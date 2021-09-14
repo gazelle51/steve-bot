@@ -1,48 +1,43 @@
-const {
-  createAudioPlayer,
-  createAudioResource,
-  AudioPlayerStatus,
-  getVoiceConnection,
-} = require('@discordjs/voice');
-const { CommandInteraction } = require('discord.js');
+const { createAudioPlayer, createAudioResource, AudioPlayerStatus } = require('@discordjs/voice');
+const { CommandInteraction, Guild } = require('discord.js');
 const { VoiceConnection } = require('@discordjs/voice/dist');
-const embeds = require('./embeds').queue;
 const voice = require('./voice');
 const ytdl = require('ytdl-core');
 
 /**
  * Create an audio queue and player for the specified server.
  * @param {import('../typedefs/discord').DiscordClient} client - Discord client
- * @param {CommandInteraction} interaction - Received interaction
+ * @param {string} guildId - ID of guild to create queue foer
  * @param {VoiceConnection} voiceConnection - Voice channel connection
  * @param {import('../typedefs/audio').Audio} audio - Audio to add to queue
  */
-function createServerQueue(client, interaction, voiceConnection, audio) {
+function createServerQueue(client, guildId, voiceConnection, audio) {
   // Create and subscribe to audio player
   const player = createAudioPlayer();
   voiceConnection.subscribe(player);
 
-  // Create queue
+  // Create and set queue
   const queueConstruct = {
     audioQueue: [audio],
     player: player,
     playing: true,
     leaveInactive: null,
   };
-  client.queue.set(interaction.guild.id, queueConstruct);
+  client.queue.set(guildId, queueConstruct);
 
   // Get server queue and set event handlers
-  const serverQueue = client.queue.get(interaction.guild.id);
+  const serverQueue = client.queue.get(guildId);
   serverQueue.player
+    // Error handler
     .on('error', (error) => console.error(error))
+    // Current audio finished handler
     .on('stateChange', (oldState, newState) => {
       if (
         newState.status === AudioPlayerStatus.Idle &&
         oldState.status !== AudioPlayerStatus.Idle
       ) {
-        // If the Idle state is entered from a non-Idle state, it means that an audio resource has finished playing.
         serverQueue.audioQueue.shift();
-        play(client, interaction.guild.id, serverQueue.audioQueue[0]);
+        play(client, guildId, serverQueue.audioQueue[0]);
       }
     });
 }
@@ -149,34 +144,31 @@ function getQueue(client, interaction) {
  * If queue is inactive, it will be resumed.
  * If a queue doesn't exist, one will be created.
  * @param {import('../typedefs/discord').DiscordClient} client - Discord client
- * @param {CommandInteraction} interaction - Received interaction
+ * @param {string} channelId - ID of voice channel to join
+ * @param {Guild} guild - guild the voice channel belongs to
  * @param {import('../typedefs/audio').Audio} audio - Audio to add to queue
- * @returns
+ * @returns {void}
  */
-async function addAudio(client, interaction, audio) {
+function addAudio(client, channelId, guild, audio) {
   // Get queue for the server
-  const serverQueue = client.queue.get(interaction.guild.id);
+  const serverQueue = client.queue.get(guild.id);
 
   if (!serverQueue) {
     // If there is no queue, join voice channel
-    const connection = voice.join(interaction.member.voice.channel.uid, interaction.guild);
-
-    // Check connection was successful before continuing
-    if (!connection) return;
+    const connection = voice.join(channelId, guild);
 
     // Create queue and start playing
-    createServerQueue(client, interaction, connection, audio);
-    play(client, interaction.guild.id, audio);
+    createServerQueue(client, guild.id, connection, audio);
+    play(client, guild.id, audio);
   } else if (serverQueue && serverQueue.playing === false) {
     // If there is a queue that is not playing, add to it and start again
     serverQueue.audioQueue.push(audio);
-    play(client, interaction.guild.id, audio);
+    play(client, guild.id, audio);
   } else {
     // If there is a queue that is playing, add to it
     serverQueue.audioQueue.push(audio);
   }
 
-  interaction.reply({ embeds: [embeds.songAdded(audio)] });
   console.log(`${audio.title} has been added to the queue`);
 }
 

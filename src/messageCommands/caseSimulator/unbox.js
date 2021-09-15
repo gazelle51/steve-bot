@@ -26,6 +26,12 @@ async function execute(message, args, client) {
     return await message.channel.send({
       embeds: [embeds.weapon(weapon, message.author)],
     });
+  } else if (caseName === 'box') {
+    return await message.channel.send({
+      files: [
+        'https://media.giphy.com/media/26his8ERHOSxKuWw8/giphy.gif?cid=ecf05e477mcpzpur95w1wm4t66zkh06t17j8lgc6nwq5f5c3&rid=giphy.gif&ct=g',
+      ],
+    });
   } else if (!cases.isCaseValid(caseName)) {
     return await message.channel.send(`I am not configured to open ${caseName} cases`);
   } else caseKey = caseName;

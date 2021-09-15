@@ -2,8 +2,8 @@ const { Client, Collection, Permissions } = require('discord.js');
 const { AudioPlayer } = require('@discordjs/voice/dist');
 
 /**
- * Discord command handler
- * @typedef {Object} Command
+ * Discord message command handler
+ * @typedef {Object} MessageCommand
  * @property {Object} data - Discord slash command builder data
  * @property {string} data.name - command name used to call the command
  * @property {string} data.description - command description
@@ -43,7 +43,7 @@ const { AudioPlayer } = require('@discordjs/voice/dist');
 /**
  * Discord client
  * @typedef {Object} ClientExtension
- * @property {Collection<string, Command>} [commands] - Commands library, <command name, command object>
+ * @property {Collection<string, SlashCommand>} [slashCommands] - Slash commands library, <command name, command object>
  * @property {Collection<string, Collection<string, number>>} [cooldowns] - Active cooldowns, <command name, <user ID, expiration time>>
  * @property {Map<string, AudioQueue>} [queue] - Audio queue, <guild ID, audio queue object>
  */

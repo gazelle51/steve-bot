@@ -26,7 +26,7 @@ async function execute(interaction, client) {
   if (interaction.isCommand()) {
     // Get command
     const { commandName } = interaction;
-    const command = client.commands.get(commandName);
+    const command = client.slashCommands.get(commandName);
 
     // Check command exists
     if (!command) {

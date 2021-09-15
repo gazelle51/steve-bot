@@ -7,8 +7,8 @@
     "start": "node ./src/main.js",
     "dev": "nodemon ./src/main.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy-guild": "node ./src/scripts/publishCommands.js",
-    "deploy-global": "node ./src/scripts/publishCommands.js global"
+    "deploy-guild": "node ./src/scripts/publishSlashCommands.js",
+    "deploy-global": "node ./src/scripts/publishSlashCommands.js global"
   },
   "repository": {
     "type": "git",

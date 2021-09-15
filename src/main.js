@@ -36,28 +36,33 @@ const client = new Client({
     // 'REACTION',
   ],
 });
-client.commands = new Collection();
+client.slashCommands = new Collection();
 client.cooldowns = new Collection();
 client.queue = new Map();
 
-// Load command folders
-const commandFolders = fs
-  .readdirSync('./src/commands')
+// ----- Load slash commands -----
+
+// Load slash command folders
+const slashCommandFolders = fs
+  .readdirSync('./src/slashCommands')
   .filter((folder) => folder !== '_template.js');
 
-// Load command files
-for (const folder of commandFolders) {
-  // Get command files
-  const commandFiles = fs
-    .readdirSync(`./src/commands/${folder}`)
+// Load slash command files
+for (const folder of slashCommandFolders) {
+  const slashCommandFiles = fs
+    .readdirSync(`./src/slashCommands/${folder}`)
     .filter((file) => file.endsWith('.js'));
 
-  // Add to client command Collection if not disabled
-  for (const file of commandFiles) {
-    const command = require(`./commands/${folder}/${file}`);
-    if (!disabledCommands.includes(command.name)) client.commands.set(command.data.name, command);
+  // Add to client slash command Collection if not disabled
+  for (const file of slashCommandFiles) {
+    const slashCommand = require(`./slashCommands/${folder}/${file}`);
+
+    if (!disabledCommands.includes(slashCommand.name))
+      client.slashCommands.set(slashCommand.data.name, slashCommand);
   }
 }
+
+// ----- Load events -----
 
 // Get event files
 const eventFiles = fs

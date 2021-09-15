@@ -36,7 +36,7 @@ async function execute(interaction, client) {
     // Log command
     const options = interaction.options.data.map((opt) => `${opt.name}:${opt.value}`).join(', ');
     console.log(
-      `Executing \`/${interaction.commandName} ${options}\`; called by ${interaction.user.username} (${interaction.user.id})`
+      `Executing '/${interaction.commandName} ${options}'; called by ${interaction.user.username} (${interaction.user.id})`
     );
 
     // Check guild only flag

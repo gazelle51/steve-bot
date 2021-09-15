@@ -1,5 +1,8 @@
-const { Collection, Message } = require('discord.js');
-const { defaultCooldown, prefix } = require('../config.js');
+const { prefix } = require('../config.js');
+const { updateCommandCooldown } = require('../utils/cooldown.js');
+const { Message } = require('discord.js');
+
+// TODO: create slashCommands and messageCommands
 
 /**
  * Execute when the message event fires.
@@ -22,77 +25,45 @@ async function execute(message, client) {
   const args = message.content.slice(prefix.length).trim().split(/ +/);
   const commandName = args.shift().toLowerCase();
 
-  // Get command, also check aliases
-  const command =
-    client.commands.get(commandName) ||
-    client.commands.find((cmd) => cmd.aliases && cmd.aliases.includes(commandName));
+  // Get command
+  const command = client.commands.get(commandName);
 
-  // Check command is defined
+  // Check command exists
   if (!command) return;
 
+  // Log command
   console.log(
-    `Executing '${message.content}'; command: ${command.name}; args: ${args.join(
-      ', '
-    )}; called by ${message.author.username} (${message.author.id})`
+    `Executing '${message.content}'; called by ${message.author.username} (${message.author.id})`
   );
 
-  // Check if command can only be used in a guild
+  // Check guild only flag
   if (command.guildOnly && message.channel.type === 'DM') {
-    return message.reply("I can't execute that command inside DMs!");
+    return message.reply("I can't execute that command inside DMs");
   }
 
-  // Check if user has command permissions
-  if (command.permissions && message.channel.type !== 'DM') {
-    const authorPerms = message.channel.permissionsFor(message.author);
-    if (!authorPerms || !authorPerms.has(command.permissions)) {
-      return message.reply('You can not do this!');
-    }
-  }
-
-  // Check if arguments are required
-  if (command.args && !args.length) {
-    let reply = `You didn't provide any arguments, ${message.author}!`;
-
-    if (command.usage) {
-      reply += `\nThe proper usage would be: \`${prefix}${command.name} ${command.usage}\``;
-    }
-
-    return message.channel.send(reply);
+  // Check voice channel flag
+  if (command.voiceChannel && !message.member.voice.channel) {
+    return await message.reply('You need to join a voice channel to use that command');
   }
 
   // Check cooldowns
-  const { cooldowns } = client;
+  const cdTime = updateCommandCooldown(
+    commandName,
+    command.cooldown,
+    message.author.id,
+    client.cooldowns
+  );
+  if (cdTime)
+    return await message.reply(
+      `Please wait ${cdTime.toFixed(1)} more second(s) before using this command`
+    );
 
-  if (!cooldowns.has(command.name)) {
-    cooldowns.set(command.name, new Collection());
-  }
-
-  const now = Date.now();
-  const timestamps = cooldowns.get(command.name);
-  const cooldownAmount = (command.cooldown || defaultCooldown) * 1000;
-
-  if (timestamps.has(message.author.id)) {
-    const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
-
-    if (now < expirationTime) {
-      const timeLeft = (expirationTime - now) / 1000;
-      return message.reply(
-        `Please wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${
-          command.name
-        }\` command.`
-      );
-    }
-  }
-
-  timestamps.set(message.author.id, now);
-  setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
-
-  // Execute the command
+  // Execute command
   try {
     await command.execute(message, args, client);
   } catch (error) {
     console.error(error);
-    message.reply('There was an error trying to execute that command!');
+    await message.reply('There was an error while executing this command');
   }
 }
 

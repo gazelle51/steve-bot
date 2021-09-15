@@ -24,7 +24,7 @@ async function unboxCollection(caseName) {
   const weaponWearStatus = weaponWear();
 
   // Static weapon data
-  const collectionWeaponData = data.weapons; // await scrapeCasePage(data.url, colour);
+  const collectionWeaponData = data.weapons;
   const weaponData = weapon(collectionWeaponData[colour]);
   const weaponDetails = await scrapeWeaponPage(weaponData.url, souvinerStatus, weaponWearStatus);
 

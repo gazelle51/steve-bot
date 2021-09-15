@@ -1,6 +1,5 @@
 const _ = require('lodash');
 const caseData = require('./caseData.json');
-const scrapeCasePage = require('./webScraper').scrapeCasePage;
 const scrapeWeaponPage = require('./webScraper').scrapeWeaponPage;
 
 /**
@@ -15,20 +14,20 @@ async function unbox(caseName) {
 
   // Randomised weapon data
   const colour = weaponColour();
-  const stStatus = statTrak();
-  const wwStatus = weaponWear();
+  const statTrakStatus = statTrak();
+  const weaponWearStatus = weaponWear();
 
   // Static weapon data
-  const caseWeaponData = await scrapeCasePage(data.url, colour);
+  const caseWeaponData = data.weapons;
   const weaponData = weapon(caseWeaponData[colour]);
-  const weaponDetails = await scrapeWeaponPage(weaponData.url, stStatus, wwStatus);
+  const weaponDetails = await scrapeWeaponPage(weaponData.url, statTrakStatus, weaponWearStatus);
 
   const caseWeapon = {
     ...weaponData,
     ...weaponDetails,
     colour: colour,
-    wear: wwStatus,
-    statTrak: stStatus,
+    wear: weaponWearStatus,
+    statTrak: statTrakStatus,
     caseName: data.name,
   };
 

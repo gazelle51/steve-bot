@@ -8,7 +8,8 @@
     "dev": "nodemon ./src/main.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy-guild": "node ./src/scripts/publishSlashCommands.js",
-    "deploy-global": "node ./src/scripts/publishSlashCommands.js global"
+    "deploy-global": "node ./src/scripts/publishSlashCommands.js global",
+    "case-data": "node ./src/scripts/getCaseData.js"
   },
   "repository": {
     "type": "git",

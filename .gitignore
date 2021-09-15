@@ -7,3 +7,6 @@ package-lock.json
 
 # Mac files
 .DS_Store
+
+# Script output folder
+scriptOutput/

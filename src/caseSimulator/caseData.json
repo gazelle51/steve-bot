@@ -17,23 +17,19 @@
   "cases": {
     "bravo": {
       "name": "Operation Bravo Case",
-      "url": "https://csgostash.com/case/3/Operation-Bravo-Case",
-      "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsXE1xNwVDv7WrFA5pnabNJGwSuN3gxtnawKOlMO6HzzhQucAm0uvFo4n2iw3h_UM-ZmilJNeLMlhpjfjxEoE/256fx256f"
+      "url": "https://csgostash.com/case/3/Operation-Bravo-Case"
     },
     "weapon": {
       "name": "CS:GO Weapon Case",
-      "url": "https://csgostash.com/case/1/CS:GO-Weapon-Case",
-      "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5_T3eAQ3i6DMIW0X7ojiwoHax6egMOKGxj4G68Nz3-jCp4itjFWx-ktqfSmtcwqVx6sT/256fx256f"
+      "url": "https://csgostash.com/case/1/CS:GO-Weapon-Case"
     },
     "breakout": {
       "name": "Operation Breakout Weapon Case",
-      "url": "https://csgostash.com/case/18/Operation-Breakout-Weapon-Case",
-      "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFMu1aPMI24auITjxteJwPXxY72AkGgIvZAniLjHpon2jlbl-kpvNjz3JJjVLFG9rl1YLQ/256fx256f"
+      "url": "https://csgostash.com/case/18/Operation-Breakout-Weapon-Case"
     },
     "weapon2": {
       "name": "CS:GO Weapon Case 2",
-      "url": "https://csgostash.com/case/4/CS:GO-Weapon-Case-2",
-      "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5PT8elUwgKKZJmtEvo_kxITZk6StNe-Fz2pTu8Aj3eqVpIqgjVfjrRI9fSmtc1Nw-Kh3/256fx256f"
+      "url": "https://csgostash.com/case/4/CS:GO-Weapon-Case-2"
     },
     "esports2013": {
       "name": "eSports 2013 Case",
@@ -159,39 +155,5 @@
       "name": "Snakebite Case",
       "url": "https://csgostash.com/case/315/Snakebite-Case"
     }
-  },
-  "templateCase": {
-    "name": "",
-    "image": "",
-    "blue": [
-      {
-        "name": "",
-        "image": ""
-      }
-    ],
-    "purple": [
-      {
-        "name": "",
-        "image": ""
-      }
-    ],
-    "pink": [
-      {
-        "name": "",
-        "image": ""
-      }
-    ],
-    "red": [
-      {
-        "name": "",
-        "image": ""
-      }
-    ],
-    "yellow": [
-      {
-        "name": "",
-        "image": ""
-      }
-    ]
   }
 }

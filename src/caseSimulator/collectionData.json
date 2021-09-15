@@ -19,7 +19,6 @@
     "cobblestone": {
       "name": "The Cobblestone Collection",
       "url": "https://csgostash.com/collection/The+Cobblestone+Collection",
-      "image": "https://csgostash.com/img/collections/256x198/the_cobblestone_collection.png?id=bd895db9b10b2bf26847",
       "weapons": {
         "white": [
           {
@@ -110,39 +109,5 @@
         ]
       }
     }
-  },
-  "templateCase": {
-    "name": "",
-    "image": "",
-    "blue": [
-      {
-        "name": "",
-        "image": ""
-      }
-    ],
-    "purple": [
-      {
-        "name": "",
-        "image": ""
-      }
-    ],
-    "pink": [
-      {
-        "name": "",
-        "image": ""
-      }
-    ],
-    "red": [
-      {
-        "name": "",
-        "image": ""
-      }
-    ],
-    "yellow": [
-      {
-        "name": "",
-        "image": ""
-      }
-    ]
   }
 }

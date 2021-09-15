@@ -2,8 +2,6 @@ const { prefix } = require('../config.js');
 const { updateCommandCooldown } = require('../utils/cooldown.js');
 const { Message } = require('discord.js');
 
-// TODO: create slashCommands and messageCommands
-
 /**
  * Execute when the message event fires.
  * @param {Message} message - Received message

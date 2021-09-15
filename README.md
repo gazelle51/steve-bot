@@ -1,5 +1,7 @@
 # discord-bot
 
+## Running the code
+
 Install
 ```
 npm install
@@ -18,4 +20,14 @@ npm run dev
 ```
 
 
-url = "https://www.voicy.network/Content/Clips/Sound/eebf53ed-bd6a-479e-b158-39d7ac0b7c4b.mp3"
+## Inviting a bot to your server
+
+To add the bot to you Discord server follow the steps below.
+1. Log in to the Discord developer portal and select your bot.
+2. Go to the OAuth2 menu.
+3. Select the scopes shown below.
+   ![Bot scopes](./images/bot-scopes.png)
+4. Select the permissions shown below.
+   ![Bot permissions](./images/bot-permissions.png)
+5. Copy the URL in the scopes box and navigate to it.
+6. Select the server you want to add your bot to and follow all the prompts.

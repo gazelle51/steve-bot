@@ -34,7 +34,7 @@ for (const folder of slashCommandFolders) {
   for (const file of slashCommandFiles) {
     const slashCommand = require(`../slashCommands/${folder}/${file}`);
 
-    if (!disabledCommands.includes(slashCommand.name))
+    if (!disabledCommands.includes(slashCommand.data.name))
       slashCommands.push(slashCommand.data.toJSON());
   }
 }
@@ -50,7 +50,8 @@ const rest = new REST({ version: '9' }).setToken(process.env.TOKEN);
     const clientId = process.env.CLIENT_ID;
     const guildId = process.env.GUILD_ID;
 
-    console.log('Started refreshing application slash commands.');
+    console.log('Started refreshing application slash commands');
+    console.log(`Disabled commands are: ${disabledCommands.join(', ')}`);
     console.log(`${slashCommands.length} commands to refresh`);
 
     if (args.length && args[0] === 'global') {
@@ -60,7 +61,7 @@ const rest = new REST({ version: '9' }).setToken(process.env.TOKEN);
       await rest.put(Routes.applicationGuildCommands(clientId, guildId), { body: slashCommands });
     }
 
-    console.log('Successfully reloaded application slash commands.');
+    console.log('Successfully reloaded application slash commands');
   } catch (error) {
     console.error(error);
   }

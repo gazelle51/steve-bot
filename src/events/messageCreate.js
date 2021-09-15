@@ -26,7 +26,7 @@ async function execute(message, client) {
   const commandName = args.shift().toLowerCase();
 
   // Get command
-  const command = client.commands.get(commandName);
+  const command = client.messageCommands.get(commandName);
 
   // Check command exists
   if (!command) return;

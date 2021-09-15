@@ -43,6 +43,7 @@ const { AudioPlayer } = require('@discordjs/voice/dist');
 /**
  * Discord client
  * @typedef {Object} ClientExtension
+ * @property {Collection<string, MessageCommand>} [messageCommands] - Message commands library, <command name, command object>
  * @property {Collection<string, SlashCommand>} [slashCommands] - Slash commands library, <command name, command object>
  * @property {Collection<string, Collection<string, number>>} [cooldowns] - Active cooldowns, <command name, <user ID, expiration time>>
  * @property {Map<string, AudioQueue>} [queue] - Audio queue, <guild ID, audio queue object>

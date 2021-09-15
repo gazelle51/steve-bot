@@ -24,7 +24,7 @@ async function execute(interaction, client) {
     });
   } else if (caseName === 'cobblestone') {
     const weapon = await unboxCollection(caseName);
-    await interaction.reply({
+    return await interaction.reply({
       embeds: [embeds.weapon(weapon, interaction.user)],
     });
   } else if (!cases.isCaseValid(caseName)) {

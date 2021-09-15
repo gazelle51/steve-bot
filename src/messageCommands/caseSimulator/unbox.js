@@ -23,7 +23,7 @@ async function execute(message, args, client) {
     );
   } else if (caseName === 'cobblestone') {
     const weapon = await unboxCollection(caseName);
-    await message.channel.send({
+    return await message.channel.send({
       embeds: [embeds.weapon(weapon, message.author)],
     });
   } else if (!cases.isCaseValid(caseName)) {
@@ -41,7 +41,9 @@ async function execute(message, args, client) {
     await embedMessage.react(emoji[100]);
     await message.reply({
       content: `Nice case opening!`,
-      files: ['https://media.giphy.com/media/Ls6ahtmYHU760/giphy.gif'],
+      files: [
+        'https://media.giphy.com/media/l7fdqmHQ1jCg2HzQlx/giphy.gif?cid=ecf05e47183sp00h6sr6g8t7p0sesbgg5uq4pzciqac9puyr&rid=giphy.gif&ct=g',
+      ],
     });
     try {
       await embedMessage.pin();

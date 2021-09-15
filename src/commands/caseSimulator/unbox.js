@@ -1,5 +1,5 @@
 const { emoji } = require('../../config.js');
-const { CommandInteraction, Message } = require('discord.js');
+const { CommandInteraction } = require('discord.js');
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const cases = require('../../caseSimulator/cases');
 const embeds = require('../../utils/embeds').case;

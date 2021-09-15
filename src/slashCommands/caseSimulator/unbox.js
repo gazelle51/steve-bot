@@ -27,6 +27,12 @@ async function execute(interaction, client) {
     return await interaction.reply({
       embeds: [embeds.weapon(weapon, interaction.user)],
     });
+  } else if (caseName === 'box') {
+    return await interaction.reply({
+      files: [
+        'https://media.giphy.com/media/26his8ERHOSxKuWw8/giphy.gif?cid=ecf05e477mcpzpur95w1wm4t66zkh06t17j8lgc6nwq5f5c3&rid=giphy.gif&ct=g',
+      ],
+    });
   } else if (!cases.isCaseValid(caseName)) {
     return await interaction.reply({
       content: `I am not configured to open ${caseName} cases`,

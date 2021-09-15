@@ -62,7 +62,7 @@ for (const folder of messageCommandFolders) {
     const messageCommand = require(`./messageCommands/${folder}/${file}`);
 
     if (!disabledCommands.includes(messageCommand.data.name))
-      client.slashCommands.set(messageCommand.data.name, messageCommand);
+      client.messageCommands.set(messageCommand.data.name, messageCommand);
   }
 }
 

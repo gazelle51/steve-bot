@@ -18,26 +18,28 @@ async function execute(message, args, client) {
   // Determine case to open
   if (!caseName) caseKey = cases.randomCase();
   else if (caseName === '?') {
-    return await message.reply(`The cases I can open are listed below\n${_getCaseListData()}`);
+    return await message.channel.send(
+      `The cases I can open are listed below\n${_getCaseListData()}`
+    );
   } else if (caseName === 'cobblestone') {
     const weapon = await unboxCollection(caseName);
-    await message.reply({
+    await message.channel.send({
       embeds: [embeds.weapon(weapon, message.author)],
     });
   } else if (!cases.isCaseValid(caseName)) {
-    return await message.reply(`I am not configured to open ${caseName} cases`);
+    return await message.channel.send(`I am not configured to open ${caseName} cases`);
   } else caseKey = caseName;
 
   // Open case
   const weapon = await unbox(caseKey);
-  const embedMessage = await message.reply({
+  const embedMessage = await message.channel.send({
     embeds: [embeds.weapon(weapon, message.author)],
   });
 
   // React, reply and pin if knife was opened
   if (weapon.colour === 'yellow') {
     await embedMessage.react(emoji[100]);
-    await message.channel.send({
+    await message.reply({
       content: `Nice case opening!`,
       files: ['https://media.giphy.com/media/Ls6ahtmYHU760/giphy.gif'],
     });

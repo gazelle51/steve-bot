@@ -7,19 +7,19 @@ const scrapeWeaponPage = require('./webScraper').scrapeWeaponPage;
  * @param {string} caseName - name of case to unbox
  * @returns {Promise<import('../typedefs/case').CaseWeapon>}
  */
-async function unbox(caseName) {
+async function unboxCase(caseName) {
   const data = caseData.cases[caseName];
 
   console.log(`Unboxing: ${data.name}`);
 
   // Randomised weapon data
-  const colour = weaponColour();
-  const statTrakStatus = statTrak();
-  const weaponWearStatus = weaponWear();
+  const colour = _weaponColour();
+  const statTrakStatus = _statTrak();
+  const weaponWearStatus = _weaponWear();
 
   // Static weapon data
   const caseWeaponData = data.weapons;
-  const weaponData = weapon(caseWeaponData[colour]);
+  const weaponData = _weapon(caseWeaponData[colour]);
   const weaponDetails = await scrapeWeaponPage(weaponData.url, statTrakStatus, weaponWearStatus);
 
   const caseWeapon = {
@@ -38,7 +38,7 @@ async function unbox(caseName) {
  * Generate a weapon colour based on the grade odds.
  * @returns {string}
  */
-function weaponColour() {
+function _weaponColour() {
   const randomNumber = Math.random();
   const blueThreshold = caseData.gradeOdds.blue;
   const purpleThreshold = blueThreshold + caseData.gradeOdds.purple;
@@ -59,7 +59,7 @@ function weaponColour() {
  * @param {import('../typedefs/case').WeaponData[]} possibleWeapons
  * @returns {import('../typedefs/case').WeaponData}
  */
-function weapon(possibleWeapons) {
+function _weapon(possibleWeapons) {
   return _.sample(possibleWeapons);
 }
 
@@ -67,7 +67,7 @@ function weapon(possibleWeapons) {
  * Generate a weapon wear based on the wear odds.
  * @returns {string}
  */
-function weaponWear() {
+function _weaponWear() {
   const randomNumber = Math.random();
   const wellWornThreshold = caseData.wearOdds.wellWorn;
   const battleScarredThreshold = wellWornThreshold + caseData.wearOdds.battleScarred;
@@ -87,8 +87,8 @@ function weaponWear() {
  * Generate a StatTrak true or false flag based on the StatTrak threshold.
  * @returns {boolean}
  */
-function statTrak() {
+function _statTrak() {
   return Math.random() <= caseData.statTrakThreshold ? true : false;
 }
 
-module.exports = { unbox };
+module.exports = { unboxCase };

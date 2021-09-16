@@ -1,9 +1,7 @@
 const { emoji } = require('../../config.js');
 const { Message } = require('discord.js');
-const cases = require('../../caseSimulator/cases');
-const embeds = require('../../utils/embeds').case;
-const unbox = require('../../caseSimulator/unboxCase').unbox;
-const unboxCollection = require('../../caseSimulator/unboxCollection').unboxCollection;
+const _ = require('lodash');
+const unbox = require('../../caseSimulator/unbox').unbox;
 
 /**
  * Execute unbox command.
@@ -12,47 +10,26 @@ const unboxCollection = require('../../caseSimulator/unboxCollection').unboxColl
  * @param {import("../../typedefs/discord").DiscordClient} client - Discord client
  */
 async function execute(message, args, client) {
-  let caseKey = '';
-  const caseName = args[0];
+  // Unbox container and get response to send
+  const containerName = _.camelCase(args.join(' '));
+  const unboxResult = await unbox(containerName, message.author);
 
-  // Determine case to open
-  if (!caseName) caseKey = cases.randomCase();
-  else if (caseName === '?') {
-    return await message.channel.send(
-      `The cases I can open are listed below\n${cases.getCaseCommands().join('\n')}`
-    );
-  } else if (caseName === 'cobblestone') {
-    const weapon = await unboxCollection(caseName);
-    return await message.channel.send({
-      embeds: [embeds.weapon(weapon, message.author)],
-    });
-  } else if (caseName === 'box') {
-    return await message.channel.send({
-      files: [
-        'https://media.giphy.com/media/26his8ERHOSxKuWw8/giphy.gif?cid=ecf05e477mcpzpur95w1wm4t66zkh06t17j8lgc6nwq5f5c3&rid=giphy.gif&ct=g',
-      ],
-    });
-  } else if (!cases.isCaseValid(caseName)) {
-    return await message.channel.send(`I am not configured to open ${caseName} cases`);
-  } else caseKey = caseName;
-
-  // Open case
-  const weapon = await unbox(caseKey);
-  const embedMessage = await message.channel.send({
-    embeds: [embeds.weapon(weapon, message.author)],
+  // Send reply
+  const reply = await message.reply({
+    content: unboxResult.content,
+    embeds: unboxResult.embeds,
+    files: unboxResult.files,
   });
 
   // React, reply and pin if knife was opened
-  if (weapon.colour === 'yellow') {
-    await embedMessage.react(emoji[100]);
+  if (unboxResult.weaponColour === 'yellow') {
+    await reply.react(emoji[100]);
     await message.reply({
       content: `Nice case opening!`,
-      files: [
-        'https://media.giphy.com/media/l7fdqmHQ1jCg2HzQlx/giphy.gif?cid=ecf05e47183sp00h6sr6g8t7p0sesbgg5uq4pzciqac9puyr&rid=giphy.gif&ct=g',
-      ],
+      files: ['https://media.giphy.com/media/Ls6ahtmYHU760/giphy.gif'],
     });
     try {
-      await embedMessage.pin();
+      await reply.pin();
     } catch (err) {
       console.error(err);
     }
@@ -63,7 +40,7 @@ async function execute(message, args, client) {
 const handler = {
   data: {
     name: 'unbox',
-    description: 'Unbox a CS-GO case',
+    description: 'Unbox a CS-GO container',
     // option: ('case').setDescription('Name of case to open'))
   },
   execute,

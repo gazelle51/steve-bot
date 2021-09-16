@@ -10,12 +10,12 @@ function randomCase() {
 }
 
 /**
- * Return true if the provided case `key` is defined.
- * @param {string} key
+ * Return true if the provided container name is a case.
+ * @param {string} containerName
  * @returns {boolean}
  */
-function isCaseValid(key) {
-  return Object.keys(caseData.cases).includes(key);
+function isCase(containerName) {
+  return Object.keys(caseData.cases).includes(containerName);
 }
 
 /**
@@ -28,4 +28,4 @@ function getCaseCommands() {
     .sort();
 }
 
-module.exports = { randomCase, isCaseValid, getCaseCommands };
+module.exports = { randomCase, isCase, getCaseCommands };

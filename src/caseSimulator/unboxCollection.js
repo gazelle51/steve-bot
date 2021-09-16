@@ -19,13 +19,13 @@ async function unboxCollection(caseName) {
   console.log(`Unboxing: ${data.name}`);
 
   // Randomised weapon data
-  const colour = weaponColour();
-  const souvinerStatus = souviner();
-  const weaponWearStatus = weaponWear();
+  const colour = _weaponColour();
+  const souvinerStatus = _souviner();
+  const weaponWearStatus = _weaponWear();
 
   // Static weapon data
   const collectionWeaponData = data.weapons;
-  const weaponData = weapon(collectionWeaponData[colour]);
+  const weaponData = _weapon(collectionWeaponData[colour]);
   const weaponDetails = await scrapeWeaponPage(weaponData.url, souvinerStatus, weaponWearStatus);
 
   const caseWeapon = {
@@ -44,7 +44,7 @@ async function unboxCollection(caseName) {
  * Generate a weapon colour based on the grade odds.
  * @returns {string}
  */
-function weaponColour() {
+function _weaponColour() {
   const randomNumber = Math.random();
   const whiteThreshold = collectionData.gradeOdds.white;
   const lightBlueThreshold = whiteThreshold + collectionData.gradeOdds.lightBlue;
@@ -67,7 +67,7 @@ function weaponColour() {
  * @param {import('../typedefs/case').WeaponData[]} possibleWeapons
  * @returns {import('../typedefs/case').WeaponData}
  */
-function weapon(possibleWeapons) {
+function _weapon(possibleWeapons) {
   return _.sample(possibleWeapons);
 }
 
@@ -75,7 +75,7 @@ function weapon(possibleWeapons) {
  * Generate a weapon wear based on the wear odds.
  * @returns {string}
  */
-function weaponWear() {
+function _weaponWear() {
   const randomNumber = Math.random();
   const wellWornThreshold = collectionData.wearOdds.wellWorn;
   const battleScarredThreshold = wellWornThreshold + collectionData.wearOdds.battleScarred;
@@ -95,7 +95,7 @@ function weaponWear() {
  * Generate a souviner true or false flag based on the souviner threshold.
  * @returns {boolean}
  */
-function souviner() {
+function _souviner() {
   return Math.random() <= collectionData.souvinerThreshold ? true : false;
 }
 

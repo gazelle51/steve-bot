@@ -1,6 +1,5 @@
 const _ = require('lodash');
 const collectionData = require('./collectionData.json');
-const scrapeCasePage = require('./webScraper').scrapeCasePage;
 const scrapeWeaponPage = require('./webScraper').scrapeWeaponPage;
 
 // https://steamcommunity.com/app/730/discussions/0/1637542851358238466/
@@ -10,11 +9,11 @@ const scrapeWeaponPage = require('./webScraper').scrapeWeaponPage;
 
 /**
  * Unbox a CS-GO collection.
- * @param {string} caseName - name of collection to unbox
- * @returns {Promise<import('../typedefs/case').CaseWeapon>}
+ * @param {string} collectionName - name of collection to unbox
+ * @returns {Promise<import('../typedefs/container').ContainerWeapon>}
  */
-async function unboxCollection(caseName) {
-  const data = collectionData.collections[caseName];
+async function unboxCollection(collectionName) {
+  const data = collectionData.collections[collectionName];
 
   console.log(`Unboxing: ${data.name}`);
 
@@ -34,7 +33,7 @@ async function unboxCollection(caseName) {
     colour: colour,
     wear: weaponWearStatus,
     souviner: souvinerStatus,
-    caseName: data.name,
+    containerName: data.name,
   };
 
   return caseWeapon;
@@ -64,8 +63,8 @@ function _weaponColour() {
 
 /**
  * Pick a random weapon from the proided weapon list.
- * @param {import('../typedefs/case').WeaponData[]} possibleWeapons
- * @returns {import('../typedefs/case').WeaponData}
+ * @param {import('../typedefs/container').WeaponData[]} possibleWeapons
+ * @returns {import('../typedefs/container').WeaponData}
  */
 function _weapon(possibleWeapons) {
   return _.sample(possibleWeapons);

@@ -1,8 +1,7 @@
 const _ = require('lodash');
 const embeds = require('../utils/embeds').case;
 const { User } = require('discord.js');
-const { randomCase, isCase, getCaseCommands } = require('./cases');
-const { randomCollection, isCollection, getCollectionCommands } = require('./collections');
+const { isCase, isCollection, randomCase, randomCollection } = require('./containers');
 const { unboxCase } = require('./unboxCase');
 const { unboxCollection } = require('./unboxCollection');
 
@@ -10,7 +9,7 @@ const { unboxCollection } = require('./unboxCollection');
  * Unbox a container.
  * @param {string} containerName - name of container to open
  * @param {User} user - user who initiated unboxing
- * @returns {Promise{TODO}}
+ * @returns {Promise<import('../typedefs/container').UnboxResult>}
  */
 async function unbox(containerName, user) {
   let containerType;
@@ -77,13 +76,5 @@ async function unbox(containerName, user) {
 
   return { content: `I don't know what to do :(`, ephemeral: true };
 }
-
-// return {
-//   content: `The containers I can open are listed below\n${[
-//     ...getCaseCommands(),
-//     ...getCollectionCommands(),
-//   ].join('\n')}`,
-//   ephemeral: true,
-// };
 
 module.exports = { unbox };

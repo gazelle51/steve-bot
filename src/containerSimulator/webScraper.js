@@ -3,11 +3,11 @@ const cache = require('../cache/cache');
 const cheerio = require('cheerio');
 
 /**
- * Extract all weapons from case at the provided URL.
+ * Extract all weapons from container at the provided URL.
  * If the provided colour is not yellow, knives/gloves data will not be returned.
  * @param {string} url - URL to scrape
  * @param {string} [colour=yellow] - colour of weapon we are interested in
- * @returns {Promise<import('../typedefs/case').CaseData>} weapons in case
+ * @returns {Promise<import('../typedefs/container').ContainerData>} weapons in container
  */
 async function scrapeCasePage(url, colour = 'yellow') {
   const weapons = {
@@ -18,13 +18,13 @@ async function scrapeCasePage(url, colour = 'yellow') {
     yellow: [],
   };
 
-  console.log(`Scraping case at ${url}`);
+  console.log(`Scraping container at ${url}`);
 
   // Load page into Cheerio
   const html = await _getHtml(url);
   const $ = cheerio.load(html);
 
-  await extractWeaponData($, weapons, colour);
+  await _extractWeaponData($, weapons, colour);
 
   return weapons;
 }
@@ -34,7 +34,7 @@ async function scrapeCasePage(url, colour = 'yellow') {
  * @param {string} url - URL to scrape
  * @param {boolean} statTrak - indicates if the details should be for a StatTrak weapon
  * @param {string} wear - wear of the weapon
- * @returns {Promise<import('../typedefs/case').WeaponDetailsData>}
+ * @returns {Promise<import('../typedefs/container').WeaponDetailsData>}
  */
 async function scrapeWeaponPage(url, statTrak, wear) {
   console.log(`Scraping weapon at ${url}`);
@@ -69,9 +69,9 @@ async function scrapeWeaponPage(url, statTrak, wear) {
 /**
  * Extract all knives at the provided URL. Also works for gloves.
  * @param {string} url - URL to scrape
- * @returns {Promise<import('../typedefs/case').CaseKnifeData>} knives in case
+ * @returns {Promise<import('../typedefs/container').ContainerKnifeData>} knives in case
  */
-async function scrapeKnivesPage(url) {
+async function _scrapeKnivesPage(url) {
   const knives = { yellow: [] };
 
   console.log(`Scraping knives/gloves at ${url}`);
@@ -103,7 +103,7 @@ async function scrapeKnivesPage(url) {
   }
 
   // Extract knives data
-  await extractWeaponData($, knives, 'yellow', true);
+  await _extractWeaponData($, knives, 'yellow', true);
 
   return knives;
 }
@@ -112,12 +112,12 @@ async function scrapeKnivesPage(url) {
  * Extract all weapons at the provided URL.
  * Knife/glove data will only be fetched if the provided colour is yellow.
  * @param {import('cheerio').CheerioAPI} $ - Cheerio object of HTML to extract elements from
- * @param {import('../typedefs/case').CaseData|import('../typedefs/case').CaseKnifeData} weapons - existing weapons data to update
+ * @param {import('../typedefs/container').ContainerData|import('../typedefs/container').ContainerKnifeData} weapons - existing weapons data to update
  * @param {string} colourOfInterest - colour of weapon we are interested in
  * @param {boolean} [knivesData=false] - if true, the data to be extracted is knives
  * @returns {Promise<void>} weapons in case
  */
-async function extractWeaponData($, weapons, colourOfInterest, knivesData = false) {
+async function _extractWeaponData($, weapons, colourOfInterest, knivesData = false) {
   let knivesUrl;
 
   // Find all result boxes with a h3 inside of them
@@ -166,7 +166,7 @@ async function extractWeaponData($, weapons, colourOfInterest, knivesData = fals
 
   // Get knives/gloves data mentioned on page if needed
   if (colourOfInterest === 'yellow' && !knivesData && knivesUrl) {
-    const knives = await scrapeKnivesPage(knivesUrl);
+    const knives = await _scrapeKnivesPage(knivesUrl);
     weapons.yellow.push(...knives.yellow);
   }
 }

@@ -1,4 +1,4 @@
-const { Client, Collection, Permissions } = require('discord.js');
+const { Client, Collection } = require('discord.js');
 const { AudioPlayer } = require('@discordjs/voice/dist');
 
 /**

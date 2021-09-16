@@ -59,7 +59,7 @@ function queueNowPlayingOnly(nowPlaying) {
 
 /**
  * Display the result of a case unboxing.
- * @param {import('../typedefs/case').CaseWeapon} weapon - case weapon object
+ * @param {import('../typedefs/container').ContainerWeapon} weapon - case weapon object
  * @param {User} author - user who opened case
  * @returns {MessageEmbed}
  */
@@ -91,7 +91,7 @@ function caseWeapon(weapon, author) {
     .setDescription(description)
     .setImage(weapon.image)
     .setURL(weapon.url)
-    .setFooter(`${author.tag} | ${weapon.caseName}`, author.avatarURL());
+    .setFooter(`${author.tag} | ${weapon.containerName}`, author.avatarURL());
 }
 
 module.exports = {

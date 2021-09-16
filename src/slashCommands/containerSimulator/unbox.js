@@ -14,13 +14,17 @@ async function execute(interaction, client) {
   const containerName = _.camelCase(interaction.options.getString('container'));
   const unboxResult = await unbox(containerName, interaction.user);
 
-  // Send reply
-  const reply = await interaction.reply({
-    content: unboxResult.content,
+  // Defer reply (giphy responses take a long time)
+  await interaction.deferReply({
     ephemeral: unboxResult.ephemeral,
+    fetchReply: unboxResult.fetchReply,
+  });
+
+  // Send reply
+  const reply = await interaction.editReply({
+    content: unboxResult.content,
     embeds: unboxResult.embeds,
     files: unboxResult.files,
-    fetchReply: unboxResult.fetchReply,
   });
 
   // React, reply and pin if knife was opened

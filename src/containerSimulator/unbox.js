@@ -77,10 +77,9 @@ async function unbox(containerName, user) {
     // Laura
     case 'laura':
       return {
-        content: 'coming soon',
-        // files: [
-        //   'https://media.giphy.com/media/xTiTngxCg9CQfe1lfi/giphy.gif?cid=ecf05e470c34hd6qgfsc775871j0uvnvt78sxm4oqst947yh&rid=giphy.gif&ct=g',
-        // ],
+        files: [
+          'https://media.giphy.com/media/xTiTngxCg9CQfe1lfi/giphy.gif?cid=ecf05e470c34hd6qgfsc775871j0uvnvt78sxm4oqst947yh&rid=giphy.gif&ct=g',
+        ],
       };
   }
 

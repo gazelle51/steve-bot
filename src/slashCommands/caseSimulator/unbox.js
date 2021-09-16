@@ -3,7 +3,7 @@ const { CommandInteraction } = require('discord.js');
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const cases = require('../../caseSimulator/cases');
 const embeds = require('../../utils/embeds').case;
-const unbox = require('../../caseSimulator/unbox').unbox;
+const unbox = require('../../caseSimulator/unboxCase').unbox;
 const unboxCollection = require('../../caseSimulator/unboxCollection').unboxCollection;
 
 /**
@@ -19,7 +19,7 @@ async function execute(interaction, client) {
   if (!caseName) caseKey = cases.randomCase();
   else if (caseName === '?') {
     return await interaction.reply({
-      content: `The cases I can open are listed below\n${_getCaseListData()}`,
+      content: `The cases I can open are listed below\n${cases.getCaseCommands().join('\n')}`,
       ephemeral: true,
     });
   } else if (caseName === 'cobblestone') {
@@ -60,17 +60,6 @@ async function execute(interaction, client) {
       console.error(err);
     }
   }
-}
-
-/**
- * Get a list of all cases and the command that must be used with them.
- * @returns {string} List of cases and their commands
- */
-function _getCaseListData() {
-  return cases
-    .getCaseNames()
-    .map((caseName) => `${caseName[1]} - ${caseName[0]}`)
-    .join('\n');
 }
 
 /** @type {import('../../typedefs/discord').SlashCommand}} */

@@ -19,21 +19,13 @@ function isCaseValid(key) {
 }
 
 /**
- * Return list of all cases and their names.
- * @returns {string[][]} Array of [case ID, case name]
+ * Return list of all case names and their commands.
+ * @returns {string[]} Array of `case name - case ID`
  */
-function getCaseNames() {
+function getCaseCommands() {
   return Object.entries(caseData.cases)
-    .map(([key, value]) => [key, value.name])
-    .sort(function (a, b) {
-      if (a[1] < b[1]) {
-        return -1;
-      }
-      if (a[1] > b[1]) {
-        return 1;
-      }
-      return 0;
-    });
+    .map(([key, value]) => `${value.name} - ${key}`)
+    .sort();
 }
 
-module.exports = { randomCase, isCaseValid, getCaseNames };
+module.exports = { randomCase, isCaseValid, getCaseCommands };

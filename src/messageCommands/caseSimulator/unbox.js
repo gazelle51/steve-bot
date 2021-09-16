@@ -2,7 +2,7 @@ const { emoji } = require('../../config.js');
 const { Message } = require('discord.js');
 const cases = require('../../caseSimulator/cases');
 const embeds = require('../../utils/embeds').case;
-const unbox = require('../../caseSimulator/unbox').unbox;
+const unbox = require('../../caseSimulator/unboxCase').unbox;
 const unboxCollection = require('../../caseSimulator/unboxCollection').unboxCollection;
 
 /**
@@ -19,7 +19,7 @@ async function execute(message, args, client) {
   if (!caseName) caseKey = cases.randomCase();
   else if (caseName === '?') {
     return await message.channel.send(
-      `The cases I can open are listed below\n${_getCaseListData()}`
+      `The cases I can open are listed below\n${cases.getCaseCommands().join('\n')}`
     );
   } else if (caseName === 'cobblestone') {
     const weapon = await unboxCollection(caseName);
@@ -57,17 +57,6 @@ async function execute(message, args, client) {
       console.error(err);
     }
   }
-}
-
-/**
- * Get a list of all cases and the command that must be used with them.
- * @returns {string} List of cases and their commands
- */
-function _getCaseListData() {
-  return cases
-    .getCaseNames()
-    .map((caseName) => `${caseName[1]} - ${caseName[0]}`)
-    .join('\n');
 }
 
 /** @type {import('../../typedefs/discord').MessageCommand}} */

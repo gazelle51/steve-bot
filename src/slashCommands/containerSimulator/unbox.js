@@ -43,7 +43,9 @@ const handler = {
   data: new SlashCommandBuilder()
     .setName('unbox')
     .setDescription('Unbox a CS-GO container')
-    .addStringOption((option) => option.setName('case').setDescription('Name of case to open')),
+    .addStringOption((option) =>
+      option.setName('container').setDescription('Name of container to open')
+    ),
   execute,
 };
 

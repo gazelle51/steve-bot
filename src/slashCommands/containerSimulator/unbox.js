@@ -11,7 +11,7 @@ const unbox = require('../../containerSimulator/unbox').unbox;
  */
 async function execute(interaction, client) {
   // Unbox container and get response to send
-  const containerName = _.camelCase(interaction.options.getString('case'));
+  const containerName = _.camelCase(interaction.options.getString('container'));
   const unboxResult = await unbox(containerName, interaction.user);
 
   // Send reply

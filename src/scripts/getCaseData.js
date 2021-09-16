@@ -1,21 +1,21 @@
 /**
  * Run this script to get data on weapons inside cases.
  *
- * Weapons are collected for each case mentioned in ./caseSimulator/caseData.json
+ * Weapons are collected for each case mentioned in ./containerSimulator/caseData.json
  * and results are saved in ./scriptOutput/caseData.json
  *
  * To run use the `case-data` script defined in the package.json.
  */
 
-const caseData = require('../caseSimulator/caseData.json');
+const caseData = require('../containerSimulator/caseData.json');
 const fs = require('fs');
-const scrapeCasePage = require('../caseSimulator/webScraper').scrapeCasePage;
+const scrapeContainerPage = require('../containerSimulator/webScraper').scrapeContainerPage;
 
 (async () => {
   // Loop through cases
   for (const caseObj of Object.values(caseData.cases)) {
     // Get weapon data
-    const weapons = await scrapeCasePage(caseObj.url);
+    const weapons = await scrapeContainerPage(caseObj.url);
     caseObj.weapons = weapons;
   }
 

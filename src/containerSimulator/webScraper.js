@@ -9,8 +9,10 @@ const cheerio = require('cheerio');
  * @param {string} [colour=yellow] - colour of weapon we are interested in
  * @returns {Promise<import('../typedefs/container').ContainerData>} weapons in container
  */
-async function scrapeCasePage(url, colour = 'yellow') {
+async function scrapeContainerPage(url, colour = 'yellow') {
   const weapons = {
+    white: [],
+    lightBlue: [],
     blue: [],
     purple: [],
     pink: [],
@@ -148,6 +150,8 @@ async function _extractWeaponData($, weapons, colourOfInterest, knivesData = fal
         classified: 'pink',
         restricted: 'purple',
         milspec: 'blue',
+        industrial: 'lightBlue',
+        consumer: 'white',
       };
       const colour = knivesData ? 'yellow' : colourMap[rarity];
 
@@ -187,4 +191,4 @@ async function _getHtml(url) {
   return html;
 }
 
-module.exports = { scrapeCasePage, scrapeWeaponPage };
+module.exports = { scrapeContainerPage, scrapeWeaponPage };

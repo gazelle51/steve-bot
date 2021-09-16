@@ -39,6 +39,8 @@ const { MessageEmbed } = require('discord.js');
 /**
  * Raw container non-knife data scraped from a container page.
  * @typedef {Object} ContainerNonKnifeData
+ * @property {WeaponData[]} white - white weapons
+ * @property {WeaponData[]} lightBlue - light blue weapons
  * @property {WeaponData[]} blue - blue weapons
  * @property {WeaponData[]} purple - purple weapons
  * @property {WeaponData[]} pink - pink weapons

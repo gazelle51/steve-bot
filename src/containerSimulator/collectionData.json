@@ -22,14 +22,14 @@
       "weapons": {
         "white": [
           {
-            "name": "Dual Berettas | Briar",
-            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_elite_hy_vines_light_large.bb506f02418403c8a48f7829bdc065a71c3a77d0.png",
-            "url": "https://csgostash.com/skin/428/Dual-Berettas-Briar"
+            "name": "MAC-10 | Indigo",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mac10_so_indigo_and_grey_light_large.9900a7e2bc4fc67df08d3aff103526f666f1ef70.png",
+            "url": "https://csgostash.com/skin/425/MAC-10-Indigo"
           },
           {
-            "name": "SCAR-20 | Storm",
-            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_scar20_so_stormfront_light_large.3bebdbcd4ea2ae851cdd2a06d0663121d01ebd79.png",
-            "url": "https://csgostash.com/skin/426/SCAR-20-Storm"
+            "name": "UMP-45 | Indigo",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ump45_so_indigo_and_grey_light_large.7a4685c334bf103f25ba1865dc0492315bf0ca5c.png",
+            "url": "https://csgostash.com/skin/424/UMP-45-Indigo"
           },
           {
             "name": "P90 | Storm",
@@ -37,17 +37,27 @@
             "url": "https://csgostash.com/skin/423/P90-Storm"
           },
           {
-            "name": "UMP-45 | Indigo",
-            "image": "https://csgostash.com/storage/img/skin_sideview/s424.png?id=966b74fb5e2fa23ebca9",
-            "url": "https://csgostash.com/skin/424/UMP-45-Indigo"
+            "name": "SCAR-20 | Storm",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_scar20_so_stormfront_light_large.3bebdbcd4ea2ae851cdd2a06d0663121d01ebd79.png",
+            "url": "https://csgostash.com/skin/426/SCAR-20-Storm"
           },
           {
-            "name": "MAC-10 | Indigo",
-            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mac10_so_indigo_and_grey_light_large.9900a7e2bc4fc67df08d3aff103526f666f1ef70.png",
-            "url": "https://csgostash.com/skin/425/MAC-10-Indigo"
+            "name": "Dual Berettas | Briar",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_elite_hy_vines_light_large.bb506f02418403c8a48f7829bdc065a71c3a77d0.png",
+            "url": "https://csgostash.com/skin/428/Dual-Berettas-Briar"
           }
         ],
         "lightBlue": [
+          {
+            "name": "USP-S | Royal Blue",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_usp_silencer_hy_indigo_usp_light_large.aa460050dc0fd2d87522a869cefbf5d5ab442f27.png",
+            "url": "https://csgostash.com/skin/427/USP-S-Royal-Blue"
+          },
+          {
+            "name": "MAG-7 | Silver",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mag7_an_silver_light_large.ffb14b93d930ff95920974edd78cf6b31b48fe43.png",
+            "url": "https://csgostash.com/skin/430/MAG-7-Silver"
+          },
           {
             "name": "Sawed-Off | Rust Coat",
             "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sawedoff_aq_steel_light_large.b363c0f1eef83ac7291f8b64d338dcdd82183502.png",
@@ -57,40 +67,30 @@
             "name": "Nova | Green Apple",
             "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_nova_so_green_light_large.f6b21316c800bb19022612e4b965f7d312e8e4f5.png",
             "url": "https://csgostash.com/skin/429/Nova-Green-Apple"
-          },
-          {
-            "name": "MAG-7 | Silver",
-            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mag7_an_silver_light_large.ffb14b93d930ff95920974edd78cf6b31b48fe43.png",
-            "url": "https://csgostash.com/skin/430/MAG-7-Silver"
-          },
-          {
-            "name": "USP-S | Royal Blue",
-            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_usp_silencer_hy_indigo_usp_light_large.aa460050dc0fd2d87522a869cefbf5d5ab442f27.png",
-            "url": "https://csgostash.com/skin/427/USP-S-Royal-Blue"
           }
         ],
         "blue": [
           {
-            "name": "P2000 | Chainmail",
-            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_hkp2000_am_chainmail_light_large.26e8d5e01b6af8dc85be34cf16830ef6280166fd.png",
-            "url": "https://csgostash.com/skin/433/P2000-Chainmail"
-          },
-          {
             "name": "MP9 | Dark Age",
             "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp9_am_metal_inlay_light_large.a49681fb3a39bd378051dd22ff9f988fd831d41f.png",
             "url": "https://csgostash.com/skin/431/MP9-Dark-Age"
+          },
+          {
+            "name": "P2000 | Chainmail",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_hkp2000_am_chainmail_light_large.26e8d5e01b6af8dc85be34cf16830ef6280166fd.png",
+            "url": "https://csgostash.com/skin/433/P2000-Chainmail"
           }
         ],
         "purple": [
           {
-            "name": "Desert Eagle | Hand Cannon",
-            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_deagle_aq_handcannon_light_large.e6e87ceb2337a423d225dc177342af3df4069585.png",
-            "url": "https://csgostash.com/skin/432/Desert-Eagle-Hand-Cannon"
-          },
-          {
             "name": "CZ75-Auto | Chalice",
             "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_cz75a_am_royal_light_large.f9f7bd8e5321fa0572adc2b77050608e5570cdaf.png",
             "url": "https://csgostash.com/skin/436/CZ75-Auto-Chalice"
+          },
+          {
+            "name": "Desert Eagle | Hand Cannon",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_deagle_aq_handcannon_light_large.e6e87ceb2337a423d225dc177342af3df4069585.png",
+            "url": "https://csgostash.com/skin/432/Desert-Eagle-Hand-Cannon"
           }
         ],
         "pink": [
@@ -106,7 +106,8 @@
             "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_awp_cu_medieval_dragon_awp_light_large.cb3b8168e59e96fd33efa9578206a2aaed036fc0.png",
             "url": "https://csgostash.com/skin/422/AWP-Dragon-Lore"
           }
-        ]
+        ],
+        "yellow": []
       }
     }
   }

@@ -9,7 +9,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy-guild": "node ./src/scripts/publishSlashCommands.js",
     "deploy-global": "node ./src/scripts/publishSlashCommands.js global",
-    "case-data": "node ./src/scripts/getCaseData.js"
+    "case-data": "node ./src/scripts/getCaseData.js",
+    "collection-data": "node ./src/scripts/getCollectionData.js"
   },
   "repository": {
     "type": "git",

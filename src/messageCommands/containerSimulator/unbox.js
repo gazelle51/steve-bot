@@ -1,7 +1,7 @@
 const { emoji } = require('../../config.js');
 const { Message } = require('discord.js');
 const _ = require('lodash');
-const unbox = require('../../caseSimulator/unbox').unbox;
+const unbox = require('../../containerSimulator/unbox').unbox;
 
 /**
  * Execute unbox command.

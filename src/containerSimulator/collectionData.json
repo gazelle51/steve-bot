@@ -1,11 +1,31 @@
 {
   "gradeOdds": {
-    "white": 0.7647,
-    "lightBlue": 0.1808,
-    "blue": 0.0421,
-    "purple": 0.0098,
-    "pink": 0.0021,
-    "red": 0.0005
+    "sixTier": {
+      "white": 0.7647,
+      "lightBlue": 0.1808,
+      "blue": 0.0421,
+      "purple": 0.0098,
+      "pink": 0.0021,
+      "red": 0.0005
+    },
+    "fiveTier": {
+      "white": 0.80026,
+      "lightBlue": 0.16005,
+      "blue": 0.03201,
+      "purple": 0.0064,
+      "pink": 0.00128
+    },
+    "fourTier": {
+      "white": 0.80128,
+      "lightBlue": 0.16026,
+      "blue": 0.03205,
+      "purple": 0.00641
+    },
+    "threeTier": {
+      "white": 0.80645,
+      "lightBlue": 0.16129,
+      "blue": 0.03226
+    }
   },
   "wearOdds": {
     "wellWorn": 0.0792,
@@ -107,6 +127,2649 @@
             "url": "https://csgostash.com/skin/422/AWP-Dragon-Lore"
           }
         ],
+        "yellow": []
+      }
+    },
+    "control": {
+      "name": "The Control Collection",
+      "url": "https://csgostash.com/collection/The+Control+Collection",
+      "weapons": {
+        "white": [
+          {
+            "name": "CZ75-Auto | Jungle Dashed",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_cz75a_sp_tape_short_jungle_light_large.501137d165eddaa23fc4d2a5eedf51fbcfe1bcb2.png",
+            "url": "https://csgostash.com/skin/1307/CZ75-Auto-Jungle-Dashed"
+          },
+          {
+            "name": "P250 | Forest Night",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p250_hy_forest_night_light_large.f2ebb923126bf523ac2052755207d8c9d4dfa668.png",
+            "url": "https://csgostash.com/skin/1306/P250-Forest-Night"
+          },
+          {
+            "name": "MP9 | Army Sheen",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp9_am_army_shine_light_large.59520d9221e58bdc6b6946943cca0823b7460509.png",
+            "url": "https://csgostash.com/skin/1305/MP9-Army-Sheen"
+          },
+          {
+            "name": "XM1014 | Charter",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_xm1014_am_authority_brown_light_large.37101767e4d0abbd0248f9ee6d6b73d8c2f0dbd6.png",
+            "url": "https://csgostash.com/skin/1303/XM1014-Charter"
+          },
+          {
+            "name": "AUG | Surveillance",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_aug_am_intelligence_grey_light_large.0da9eda4a07271263ffc58d032d52b8f0edeb78e.png",
+            "url": "https://csgostash.com/skin/1304/AUG-Surveillance"
+          }
+        ],
+        "lightBlue": [
+          {
+            "name": "MP5-SD | Nitro",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp5sd_so_orange_accents3_light_large.0a75359a9c3fb4cd3084067358141b875f285724.png",
+            "url": "https://csgostash.com/skin/1310/MP5-SD-Nitro"
+          },
+          {
+            "name": "Desert Eagle | The Bronze",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_deagle_am_numbers_bronze_light_large.9860461c5a6ef52868d2dadd2b9dbd5c842b7bb0.png",
+            "url": "https://csgostash.com/skin/1308/Desert-Eagle-The-Bronze"
+          },
+          {
+            "name": "MAG-7 | Carbon Fiber",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mag7_am_carbon_fiber_light_large.226aab440e6e6041b5b4b09f907695aa854bcce0.png",
+            "url": "https://csgostash.com/skin/1311/MAG-7-Carbon-Fiber"
+          },
+          {
+            "name": "Dual Berettas | Switch Board",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_elite_hy_numbers_green_light_large.e970f5a91033a85fc8a380b1c621ea633afb258b.png",
+            "url": "https://csgostash.com/skin/1309/Dual-Berettas-Switch-Board"
+          }
+        ],
+        "blue": [
+          {
+            "name": "M4A4 | Global Offensive",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m4a1_cu_csgo_camo_light_large.9e1a644f88ce7ab73f63d5b90070b9993fcb14ac.png",
+            "url": "https://csgostash.com/skin/1312/M4A4-Global-Offensive"
+          },
+          {
+            "name": "SSG 08 | Threat Detected",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ssg08_am_intelligence_orange_light_large.7a1af716b99e1ed517adfd53eddcf90bd4417632.png",
+            "url": "https://csgostash.com/skin/1313/SSG-08-Threat-Detected"
+          },
+          {
+            "name": "SCAR-20 | Magna Carta",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_scar20_hy_authority_purple_light_large.6754afba66bb91862fb6fef583e1b1e399061518.png",
+            "url": "https://csgostash.com/skin/1315/SCAR-20-Magna-Carta"
+          },
+          {
+            "name": "P2000 | Dispatch",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_hkp2000_am_numbers_red_blue_light_large.03b8794b01dd0aa5e28f1f52b1a8a2bc0ecf179c.png",
+            "url": "https://csgostash.com/skin/1314/P2000-Dispatch"
+          }
+        ],
+        "purple": [
+          {
+            "name": "Five-SeveN | Berries And Cherries",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_fiveseven_aa_fade_red_blue_light_large.ad6d70f142cc5c31e577880088475e9f079a97a1.png",
+            "url": "https://csgostash.com/skin/1317/Five-SeveN-Berries-And-Cherries"
+          },
+          {
+            "name": "FAMAS | Prime Conspiracy",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_famas_am_numbers_magenta_light_large.c3b086e3407aeb1bca1fb497bc2aee6dc7602a4f.png",
+            "url": "https://csgostash.com/skin/1316/FAMAS-Prime-Conspiracy"
+          },
+          {
+            "name": "UMP-45 | Crime Scene",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ump45_cu_ump_crime_scene_light_large.db37d99efad4621d4b3232bfc0fa8d04b8a6b8e9.png",
+            "url": "https://csgostash.com/skin/1318/UMP-45-Crime-Scene"
+          }
+        ],
+        "pink": [
+          {
+            "name": "M4A1-S | Blue Phosphor",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m4a1_silencer_am_m4a1s_bluesmoke_light_large.20c39cd69587cfed699f1e1ebb05f4dc735e06d6.png",
+            "url": "https://csgostash.com/skin/1320/M4A1-S-Blue-Phosphor"
+          },
+          {
+            "name": "USP-S | Target Acquired",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_usp_silencer_am_intelligence_magenta_light_large.5d8fbbd462701928467530e6c7ff81b8c7be65a1.png",
+            "url": "https://csgostash.com/skin/1319/USP-S-Target-Acquired"
+          }
+        ],
+        "red": [
+          {
+            "name": "AWP | Fade",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_awp_aa_awp_fade_light_large.4e978e13c3396c1b1e32e993afb462ccac55d783.png",
+            "url": "https://csgostash.com/skin/1321/AWP-Fade"
+          }
+        ],
+        "yellow": []
+      }
+    },
+    "havoc": {
+      "name": "The Havoc Collection",
+      "url": "https://csgostash.com/collection/The+Havoc+Collection",
+      "weapons": {
+        "white": [
+          {
+            "name": "M249 | Predator",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m249_sp_zebracam_light_large.d0d25a58f276d6a538eab874f1f4aa5724f37b6e.png",
+            "url": "https://csgostash.com/skin/1326/M249-Predator"
+          },
+          {
+            "name": "Tec-9 | Phoenix Chalk",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_tec9_hy_phoenix_tags_lilac_light_large.aea02b337e17a45482f1122047c756b9c8166249.png",
+            "url": "https://csgostash.com/skin/1323/Tec-9-Phoenix-Chalk"
+          },
+          {
+            "name": "Sawed-Off | Clay Ambush",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sawedoff_hy_tigers_tan_light_large.6e52ecbb72de6bd0786141efefc3e7040989b6d7.png",
+            "url": "https://csgostash.com/skin/1324/Sawed-Off-Clay-Ambush"
+          },
+          {
+            "name": "Dual Berettas | Heist",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_elite_am_heist_plans_green_light_large.a4c7acda57bfceac6b4e25708bfd4881e9bed5e2.png",
+            "url": "https://csgostash.com/skin/1322/Dual-Berettas-Heist"
+          },
+          {
+            "name": "PP-Bizon | Death Rattle",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bizon_hy_nerodia_light_large.6bef659d5403a53618b7bf7f5448d537395114f9.png",
+            "url": "https://csgostash.com/skin/1325/PP-Bizon-Death-Rattle"
+          }
+        ],
+        "lightBlue": [
+          {
+            "name": "Nova | Rust Coat",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_nova_aq_steel_light_large.01de004c646bf108c25c61e88af29720164da476.png",
+            "url": "https://csgostash.com/skin/1330/Nova-Rust-Coat"
+          },
+          {
+            "name": "UMP-45 | Houndstooth",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ump45_hy_houndstooth_brown_light_large.f90a2f46ceb0de3a2de44d92004b3a42cfa95e75.png",
+            "url": "https://csgostash.com/skin/1328/UMP-45-Houndstooth"
+          },
+          {
+            "name": "MP7 | Vault Heist",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp7_am_heist_plans_yellow_light_large.5d416001244a233cd2e9feabc4046b5788c3b051.png",
+            "url": "https://csgostash.com/skin/1327/MP7-Vault-Heist"
+          },
+          {
+            "name": "R8 Revolver | Phoenix Marker",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_revolver_am_phoenix_tags_blue_light_large.c98c31a965c8c89fe1c7ee5c5774daebef5a5c27.png",
+            "url": "https://csgostash.com/skin/1329/R8-Revolver-Phoenix-Marker"
+          }
+        ],
+        "blue": [
+          {
+            "name": "P250 | Bengal Tiger",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p250_hy_p250_tiger_light_large.c9afe189e84a6df33578138afddab06252e2621b.png",
+            "url": "https://csgostash.com/skin/1334/P250-Bengal-Tiger"
+          },
+          {
+            "name": "Desert Eagle | Night Heist",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_deagle_am_heist_plans_purple_light_large.737fb624218d14185e259e9f0af20ae1626a0e0b.png",
+            "url": "https://csgostash.com/skin/1331/Desert-Eagle-Night-Heist"
+          },
+          {
+            "name": "Negev | Phoenix Stencil",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_negev_hy_phoenix_tags_red_light_large.6d8ee0ad8e74ea1a6c6af60824445bd1450e34ac.png",
+            "url": "https://csgostash.com/skin/1332/Negev-Phoenix-Stencil"
+          },
+          {
+            "name": "P90 | Tiger Pit",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p90_am_tigers_brown_light_large.853f8f5151285d07fa9e03527bf14dc40347c25e.png",
+            "url": "https://csgostash.com/skin/1333/P90-Tiger-Pit"
+          }
+        ],
+        "purple": [
+          {
+            "name": "SG 553 | Hypnotic",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sg556_aa_vertigo_light_large.56c7e1c30b3239dbaab4ffef7905c48d77a35a50.png",
+            "url": "https://csgostash.com/skin/1336/SG-553-Hypnotic"
+          },
+          {
+            "name": "Galil AR | Phoenix Blacklight",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_galilar_sp_phoenix_tags_purple_light_large.6b71292ab21580860b1dd716c5ce956bc99132ec.png",
+            "url": "https://csgostash.com/skin/1335/Galil-AR-Phoenix-Blacklight"
+          },
+          {
+            "name": "Glock-18 | Franklin",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_glock_cu_money_glock_light_large.9866d8ea7d9b5c569377aef5fb19bbc74ea4058d.png",
+            "url": "https://csgostash.com/skin/1337/Glock-18-Franklin"
+          }
+        ],
+        "pink": [
+          {
+            "name": "AWP | Silk Tiger",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_awp_am_tigers_blue_light_large.4346995a5382cb8e6ba636335f3f4e94998a447f.png",
+            "url": "https://csgostash.com/skin/1338/AWP-Silk-Tiger"
+          },
+          {
+            "name": "MAC-10 | Hot Snakes",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mac10_gs_mac10_snake_light_large.0b91f21def06a39df43e93f6cd25cf13e4edfd19.png",
+            "url": "https://csgostash.com/skin/1339/MAC-10-Hot-Snakes"
+          }
+        ],
+        "red": [
+          {
+            "name": "AK-47 | X-Ray",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ak47_cu_ak_xray_light_large.a16215bb471dac8cc257c13dbc03e24514a7f018.png",
+            "url": "https://csgostash.com/skin/1340/AK-47-X-Ray"
+          }
+        ],
+        "yellow": []
+      }
+    },
+    "ancient": {
+      "name": "The Ancient Collection",
+      "url": "https://csgostash.com/collection/The+Ancient+Collection",
+      "weapons": {
+        "white": [
+          {
+            "name": "R8 Revolver | Night",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_revolver_so_night_light_large.02c1852bc16e1c3bcdb2daa681fdfe043d31293b.png",
+            "url": "https://csgostash.com/skin/1345/R8-Revolver-Night"
+          },
+          {
+            "name": "SSG 08 | Jungle Dashed",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ssg08_sp_tape_short_jungle_light_large.4623c92c91eaa0ef45e9c09d828bbeb926dcb1c6.png",
+            "url": "https://csgostash.com/skin/1344/SSG-08-Jungle-Dashed"
+          },
+          {
+            "name": "SG 553 | Lush Ruins",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sg556_aa_ruins_green_light_large.47e5a2fdd296f5dbdcf3e14ec2a09be699bab8b8.png",
+            "url": "https://csgostash.com/skin/1342/SG-553-Lush-Ruins"
+          },
+          {
+            "name": "P90 | Ancient Earth",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p90_aa_ancient_brown_light_large.69bcf9d19ae3f5b22e3382dbf07da0900f017967.png",
+            "url": "https://csgostash.com/skin/1341/P90-Ancient-Earth"
+          },
+          {
+            "name": "Nova | Army Sheen",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_nova_am_army_shine_light_large.cbdf89414f6dd35c2de30d0cda9a6d84fbd32289.png",
+            "url": "https://csgostash.com/skin/1343/Nova-Army-Sheen"
+          }
+        ],
+        "lightBlue": [
+          {
+            "name": "CZ75-Auto | Silver",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_cz75a_an_silver_light_large.d966656a4fc5b18b33ad34bcd8a5f8cc50b1f88e.png",
+            "url": "https://csgostash.com/skin/1349/CZ75-Auto-Silver"
+          },
+          {
+            "name": "P2000 | Panther Camo",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_hkp2000_am_black_panther_light_large.6b1ddf6071adab6685bff33fb5b586267ee0f907.png",
+            "url": "https://csgostash.com/skin/1346/P2000-Panther-Camo"
+          },
+          {
+            "name": "G3SG1 | Ancient Ritual",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_g3sg1_am_ancient_wine_light_large.dfea71dc9fa6d9ee7aa528f0086e216336057c7e.png",
+            "url": "https://csgostash.com/skin/1348/G3SG1-Ancient-Ritual"
+          },
+          {
+            "name": "MP7 | Tall Grass",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp7_hy_drywood_green_light_large.a2a57b124a5e8a3ad61912649f472f2b477bdad9.png",
+            "url": "https://csgostash.com/skin/1347/MP7-Tall-Grass"
+          }
+        ],
+        "blue": [
+          {
+            "name": "Tec-9 | Blast From the Past",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_tec9_hy_ancient_tiles_peach_light_large.9ad93bd41f7436005b4fd4d4bbf6815e4dae39c9.png",
+            "url": "https://csgostash.com/skin/1350/Tec-9-Blast-From-the-Past"
+          },
+          {
+            "name": "AUG | Carved Jade",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_aug_am_jade_light_large.e7c37922ef1bc669b9bd16d5bee5d309d97aa0e2.png",
+            "url": "https://csgostash.com/skin/1351/AUG-Carved-Jade"
+          },
+          {
+            "name": "Galil AR | Dusk Ruins",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_galilar_hy_ruins_red_light_large.560982e001f4ba6ec42ad09f913e33c1fda8108f.png",
+            "url": "https://csgostash.com/skin/1352/Galil-AR-Dusk-Ruins"
+          },
+          {
+            "name": "FAMAS | Dark Water",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_famas_am_zebra_dark_light_large.52703268beafba0b11ccfe86f32a332cdf69f9ef.png",
+            "url": "https://csgostash.com/skin/1353/FAMAS-Dark-Water"
+          }
+        ],
+        "purple": [
+          {
+            "name": "XM1014 | Ancient Lore",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_xm1014_am_ancient_warm_light_large.9a53c1b2db897b005c56b8f5e4a5b9f40730c85b.png",
+            "url": "https://csgostash.com/skin/1354/XM1014-Ancient-Lore"
+          },
+          {
+            "name": "MAC-10 | Gold Brick",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mac10_am_gold_brick_light_large.3583c29af715c4700176149b3866c35dcc78d61e.png",
+            "url": "https://csgostash.com/skin/1355/MAC-10-Gold-Brick"
+          },
+          {
+            "name": "USP-S | Ancient Visions",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_usp_silencer_sp_ancient_bright_light_large.794efdc565345a758d9a6fd673db4a42e01d59c8.png",
+            "url": "https://csgostash.com/skin/1356/USP-S-Ancient-Visions"
+          }
+        ],
+        "pink": [
+          {
+            "name": "AK-47 | Panthera onca",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ak47_cu_ak_jaguar_light_large.92dd85d59d2615eab90bf86d7e4df6ee9e095132.png",
+            "url": "https://csgostash.com/skin/1358/AK-47-Panthera-onca"
+          },
+          {
+            "name": "P90 | Run and Hide",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p90_cu_jaguar_p90_light_large.7d9fe21106b83cbf10ea8cc7f8b4f6aea72af268.png",
+            "url": "https://csgostash.com/skin/1357/P90-Run-and-Hide"
+          }
+        ],
+        "red": [
+          {
+            "name": "M4A1-S | Welcome to the Jungle",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m4a1_silencer_cu_m4a1_snake_light_large.fcdef378938398a506d3e173e766322579867e74.png",
+            "url": "https://csgostash.com/skin/1359/M4A1-S-Welcome-to-the-Jungle"
+          }
+        ],
+        "yellow": []
+      }
+    },
+    "inferno2018": {
+      "name": "The 2018 Inferno Collection",
+      "url": "https://csgostash.com/collection/The+2018+Inferno+Collection",
+      "weapons": {
+        "white": [
+          {
+            "name": "MP9 | Slide",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp9_hy_splatter3_light_large.e87822a5caeb6a7181e0e866612c755f78f66be1.png",
+            "url": "https://csgostash.com/skin/1020/MP9-Slide"
+          },
+          {
+            "name": "MP5-SD | Dirt Drop",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp5sd_sp_tape_short_rally_light_large.2fdb10eba1dbf17030a2c0867fc385fe0449b974.png",
+            "url": "https://csgostash.com/skin/1019/MP5-SD-Dirt-Drop"
+          },
+          {
+            "name": "AUG | Sweeper",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_aug_sp_mesh_safetyblack_light_large.41766cdb86c7b662a4c6316b2864751c54940faf.png",
+            "url": "https://csgostash.com/skin/1021/AUG-Sweeper"
+          },
+          {
+            "name": "UMP-45 | Mudder",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ump45_hy_mottled_sand_light_large.14c5d59d597a00bdccaefe47a99de0e5b1f884d6.png",
+            "url": "https://csgostash.com/skin/1018/UMP-45-Mudder"
+          },
+          {
+            "name": "MAG-7 | Rust Coat",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mag7_aq_steel_inferno_light_large.4313699bf1fb212a490703f11b20dab3479ebe9c.png",
+            "url": "https://csgostash.com/skin/1022/MAG-7-Rust-Coat"
+          }
+        ],
+        "lightBlue": [
+          {
+            "name": "Glock-18 | High Beam",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_glock_aa_vertigo_blue_light_large.0f4a3ec87faf17bb8557aa3b57a99606ac24c44e.png",
+            "url": "https://csgostash.com/skin/1026/Glock-18-High-Beam"
+          },
+          {
+            "name": "R8 Revolver | Nitro",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_revolver_so_orange_accents3_light_large.00867f70c109a7934345f92aae1be055b6a98abb.png",
+            "url": "https://csgostash.com/skin/1025/R8-Revolver-Nitro"
+          },
+          {
+            "name": "MAC-10 | Calf Skin",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mac10_gs_mac10_checker_light_large.15e4936899fbfca7c5980be83993e57aca446422.png",
+            "url": "https://csgostash.com/skin/1024/MAC-10-Calf-Skin"
+          },
+          {
+            "name": "PP-Bizon | Candy Apple",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bizon_so_red_light_large.0ee9cada135b87096b447521a05c0a2d437bf9ff.png",
+            "url": "https://csgostash.com/skin/1023/PP-Bizon-Candy-Apple"
+          }
+        ],
+        "blue": [
+          {
+            "name": "SSG 08 | Hand Brake",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ssg08_gs_ssg08_checker_light_large.26b2d6ca1e703c0427c31fa43bb1bf9fca58690e.png",
+            "url": "https://csgostash.com/skin/1027/SSG-08-Hand-Brake"
+          },
+          {
+            "name": "USP-S | Check Engine",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_usp_silencer_sp_mesh_safetyred_light_large.2236c5b787e251c103ddf44209b4b7731b3d9a43.png",
+            "url": "https://csgostash.com/skin/1029/USP-S-Check-Engine"
+          },
+          {
+            "name": "M4A4 | Converter",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m4a1_hy_red_hex_light_large.cd2153af94a302c0293620289716a29d9fbfbeca.png",
+            "url": "https://csgostash.com/skin/1028/M4A4-Converter"
+          },
+          {
+            "name": "Sawed-Off | Brake Light",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sawedoff_aa_vertigo_red_light_large.999797e68b2d5df290b2e5771b6c4bfb0de1ec8c.png",
+            "url": "https://csgostash.com/skin/1030/Sawed-Off-Brake-Light"
+          }
+        ],
+        "purple": [
+          {
+            "name": "AK-47 | Safety Net",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ak47_hy_mesh_safetyorange_light_large.f4ee68bc3bbd972ded65ec36b66259199b7fafb7.png",
+            "url": "https://csgostash.com/skin/1033/AK-47-Safety-Net"
+          },
+          {
+            "name": "MP7 | Fade",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp7_aa_fade_mp7_light_large.ed53795666c445f3b00a4968062514b3bb5dd166.png",
+            "url": "https://csgostash.com/skin/1032/MP7-Fade"
+          },
+          {
+            "name": "P250 | Vino Primo",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p250_gs_p250_checker_light_large.ed544cb647f7bf4e4ccc103a0b687b562d2fb297.png",
+            "url": "https://csgostash.com/skin/1031/P250-Vino-Primo"
+          }
+        ],
+        "pink": [
+          {
+            "name": "SG 553 | Integrale",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sg556_cu_sg553_rally_light_large.904b6f70dc7c8fe107d2cdb5acbdd0be6f686a3f.png",
+            "url": "https://csgostash.com/skin/1035/SG-553-Integrale"
+          },
+          {
+            "name": "Dual Berettas | Twin Turbo",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_elite_cu_dual_elites_rally_light_large.5b3cf9c54a4e7927724560a210955a77887ecb2e.png",
+            "url": "https://csgostash.com/skin/1034/Dual-Berettas-Twin-Turbo"
+          }
+        ],
+        "red": [],
+        "yellow": []
+      }
+    },
+    "nuke2018": {
+      "name": "The 2018 Nuke Collection",
+      "url": "https://csgostash.com/collection/The+2018+Nuke+Collection",
+      "weapons": {
+        "white": [
+          {
+            "name": "Five-SeveN | Coolant",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_fiveseven_hy_ducts_green_light_large.687c4ada7a094872eeb5b48cbff3ebac68a8d7ed.png",
+            "url": "https://csgostash.com/skin/1003/Five-SeveN-Coolant"
+          },
+          {
+            "name": "PP-Bizon | Facility Sketch",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bizon_hy_blueprint_white_light_large.5a8bb5711fec1758844f92beab8a1ecb054f91bd.png",
+            "url": "https://csgostash.com/skin/1000/PP-Bizon-Facility-Sketch"
+          },
+          {
+            "name": "P250 | Facility Draft",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p250_hy_blueprint_red_light_large.aff5f9b0847413a1749e8636dfc9a92d1ed77f3e.png",
+            "url": "https://csgostash.com/skin/1001/P250-Facility-Draft"
+          },
+          {
+            "name": "Nova | Mandrel",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_nova_hy_ducts_grey_light_large.5da9a312aedae8885ff2e4dec4387fe614ce4ee3.png",
+            "url": "https://csgostash.com/skin/1004/Nova-Mandrel"
+          },
+          {
+            "name": "UMP-45 | Facility Dark",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ump45_hy_blueprint_bluered_light_large.1f2e4c38f9f9e7e1d815aeb5af99c499c5ff4951.png",
+            "url": "https://csgostash.com/skin/1002/UMP-45-Facility-Dark"
+          }
+        ],
+        "lightBlue": [
+          {
+            "name": "Galil AR | Cold Fusion",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_galilar_hy_nuclear_skulls_aqua_light_large.7a9f8497a5e17485c2dcd09ec23da307bc3c06c3.png",
+            "url": "https://csgostash.com/skin/1008/Galil-AR-Cold-Fusion"
+          },
+          {
+            "name": "M4A4 | Mainframe",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m4a1_am_circuitboard_silver_light_large.7a3b860966a77bcb8124a2c38cf4b0449fd542ba.png",
+            "url": "https://csgostash.com/skin/1005/M4A4-Mainframe"
+          },
+          {
+            "name": "Negev | Bulkhead",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_negev_hy_ducts_yellow_light_large.9d9335325a4a696ec6c2ef704ec1d4b3112c8c87.png",
+            "url": "https://csgostash.com/skin/1007/Negev-Bulkhead"
+          },
+          {
+            "name": "MP7 | Motherboard",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp7_am_circuitboard_green_light_large.0df678715d2256928d817c2e89575879f03ad68e.png",
+            "url": "https://csgostash.com/skin/1006/MP7-Motherboard"
+          }
+        ],
+        "blue": [
+          {
+            "name": "AWP | Acheron",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_awp_hy_nuclear_skulls_redblue_light_large.601aa23f996c480640f439e05f204c5bd7fafa49.png",
+            "url": "https://csgostash.com/skin/1012/AWP-Acheron"
+          },
+          {
+            "name": "MP5-SD | Co-Processor",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp5sd_am_circuitboard_aqua_light_large.205e1ac1b5bfbbfa8f0449cc08b42daf3e4addd2.png",
+            "url": "https://csgostash.com/skin/1010/MP5-SD-Co-Processor"
+          },
+          {
+            "name": "P90 | Facility Negative",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p90_hy_blueprint_aqua_light_large.35f86b3da01a31539d5a592958c96356f63d1675.png",
+            "url": "https://csgostash.com/skin/1009/P90-Facility-Negative"
+          },
+          {
+            "name": "P250 | Exchanger",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p250_hy_ducts_blue_light_large.7e3036d2c146970842cfdd1e4b4529ee5480787c.png",
+            "url": "https://csgostash.com/skin/1011/P250-Exchanger"
+          }
+        ],
+        "purple": [
+          {
+            "name": "Glock-18 | Nuclear Garden",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_glock_am_nuclear_skulls_green_light_large.37c3765f928a0a002d283c0fa7f4f409f4fa9e82.png",
+            "url": "https://csgostash.com/skin/1015/Glock-18-Nuclear-Garden"
+          },
+          {
+            "name": "AUG | Random Access",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_aug_am_circuitboard_orange_light_large.da9f7304f48f9f02cdc452bf7761452f8fec6bc2.png",
+            "url": "https://csgostash.com/skin/1013/AUG-Random-Access"
+          },
+          {
+            "name": "MAG-7 | Core Breach",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mag7_hy_nuclear_hotorange_light_large.35367773b8501fa045ad8c58387c6f48fc848045.png",
+            "url": "https://csgostash.com/skin/1014/MAG-7-Core-Breach"
+          }
+        ],
+        "pink": [
+          {
+            "name": "Tec-9 | Remote Control",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_tec9_gs_tec9_envoy_light_large.068b8cb4ed0f4064624820bf2cf34ecc4c38d8b2.png",
+            "url": "https://csgostash.com/skin/1016/Tec-9-Remote-Control"
+          },
+          {
+            "name": "M4A1-S | Control Panel",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m4a1_silencer_gs_m4a1s_operator_light_large.1e257113e58841ad0613b4e268d51d239df69a0e.png",
+            "url": "https://csgostash.com/skin/1017/M4A1-S-Control-Panel"
+          }
+        ],
+        "red": [],
+        "yellow": []
+      }
+    },
+    "alpha": {
+      "name": "The Alpha Collection",
+      "url": "https://csgostash.com/collection/The+Alpha+Collection",
+      "weapons": {
+        "white": [
+          {
+            "name": "Five-SeveN | Anodized Gunmetal",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_fiveseven_an_gunmetal_bravo_light_large.6aaf03603a7ef748f5395af2a738f899f423522b.png",
+            "url": "https://csgostash.com/skin/99/Five-SeveN-Anodized-Gunmetal"
+          },
+          {
+            "name": "XM1014 | Jungle",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_xm1014_so_jungle_bravo_light_large.0b0998c1c247ffc870bbdbc4c53696cd8a974f30.png",
+            "url": "https://csgostash.com/skin/98/XM1014-Jungle"
+          },
+          {
+            "name": "MP7 | Groundwater",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp7_so_olive_bravo_light_large.fd49ae0c11fa44fb6110f4ec9d34651d4e6f9185.png",
+            "url": "https://csgostash.com/skin/94/MP7-Groundwater"
+          },
+          {
+            "name": "M249 | Jungle DDPAT",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m249_hy_ddpat_jungle_bravo_light_large.d93812236444afc67a0d994cd3f6faa421a57114.png",
+            "url": "https://csgostash.com/skin/106/M249-Jungle-DDPAT"
+          },
+          {
+            "name": "MP9 | Dry Season",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp9_sp_tape_dots_bravo_light_large.e6624212c506215295ff5bf1b4c9bd7523db3ab5.png",
+            "url": "https://csgostash.com/skin/101/MP9-Dry-Season"
+          },
+          {
+            "name": "Tec-9 | Tornado",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_tec9_so_tornado_bravo_light_large.b9bcae80fa19a0a2a147484427733172c2189cb9.png",
+            "url": "https://csgostash.com/skin/105/Tec-9-Tornado"
+          }
+        ],
+        "lightBlue": [
+          {
+            "name": "Glock-18 | Sand Dune",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_glock_so_sand_bravo_light_large.b505115b9e7a3e6480697f0262d76c9518c65e50.png",
+            "url": "https://csgostash.com/skin/108/Glock-18-Sand-Dune"
+          },
+          {
+            "name": "P250 | Facets",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p250_hy_crumple_dark_bravo_light_large.159ee3e3e5c507d869c9089978a8ed82897fcfa4.png",
+            "url": "https://csgostash.com/skin/100/P250-Facets"
+          },
+          {
+            "name": "SSG 08 | Mayan Dreams",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ssg08_hy_mayan_dreams_bravo_light_large.647a85eff07e6565e9e284968d9c11a1ec42da68.png",
+            "url": "https://csgostash.com/skin/107/SSG-08-Mayan-Dreams"
+          },
+          {
+            "name": "Negev | Palm",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_negev_sp_palm_bravo_light_large.3271a8edfb42d163f18a957bc162ddf01f29d30a.png",
+            "url": "https://csgostash.com/skin/104/Negev-Palm"
+          },
+          {
+            "name": "Sawed-Off | Mosaico",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sawedoff_hy_ali_tile_bravo_light_large.979b575c05b90ab9ae836ff28396737323818e1b.png",
+            "url": "https://csgostash.com/skin/102/Sawed-Off-Mosaico"
+          }
+        ],
+        "blue": [
+          {
+            "name": "AUG | Anodized Navy",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_aug_an_navy_bravo_light_large.8057388b1d777096c036f1b2d8ba9ce15103678d.png",
+            "url": "https://csgostash.com/skin/95/AUG-Anodized-Navy"
+          },
+          {
+            "name": "MAG-7 | Hazard",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mag7_sp_hazard_bravo_light_large.51f8430aea46a8f93e504fb9ea950cd772930d6d.png",
+            "url": "https://csgostash.com/skin/103/MAG-7-Hazard"
+          },
+          {
+            "name": "PP-Bizon | Rust Coat",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bizon_aq_steel_bravo_light_large.ace529ee6d0eefe9159eaf040b364ad853ccf893.png",
+            "url": "https://csgostash.com/skin/97/PP-Bizon-Rust-Coat"
+          }
+        ],
+        "purple": [
+          {
+            "name": "FAMAS | Spitfire",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_famas_sp_spitfire_famas_bravo_light_large.ac455b0749733b0bdce019c0e0c74270d689eb95.png",
+            "url": "https://csgostash.com/skin/96/FAMAS-Spitfire"
+          },
+          {
+            "name": "SCAR-20 | Emerald",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_scar20_an_emerald_bravo_light_large.1fddac26d628445bdc9856e04b5e9c69f526120b.png",
+            "url": "https://csgostash.com/skin/93/SCAR-20-Emerald"
+          }
+        ],
+        "pink": [],
+        "red": [],
+        "yellow": []
+      }
+    },
+    "assault": {
+      "name": "The Assault Collection",
+      "url": "https://csgostash.com/collection/The+Assault+Collection",
+      "weapons": {
+        "white": [
+          {
+            "name": "UMP-45 | Caramel",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ump45_so_caramel_light_large.4883dbae989e9c61805aa53ca5a02983f74657b9.png",
+            "url": "https://csgostash.com/skin/7/UMP-45-Caramel"
+          },
+          {
+            "name": "SG 553 | Tornado",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sg556_so_tornado_light_large.32d15282560b205fb387cf876fc19da381951986.png",
+            "url": "https://csgostash.com/skin/14/SG-553-Tornado"
+          }
+        ],
+        "lightBlue": [
+          {
+            "name": "Five-SeveN | Candy Apple",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_fiveseven_so_red_light_large.29ae7b2264bd2a390ecf51a51293d2c2202fdea9.png",
+            "url": "https://csgostash.com/skin/16/Five-SeveN-Candy-Apple"
+          }
+        ],
+        "blue": [
+          {
+            "name": "AUG | Hot Rod",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_aug_an_red_light_large.9adb894f02aff778fff9188a24eea1f0c8b66685.png",
+            "url": "https://csgostash.com/skin/8/AUG-Hot-Rod"
+          },
+          {
+            "name": "Negev | Anodized Navy",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_negev_an_navy_light_large.5dafc320a35bc04e03bbe0c4e4b1b293398d1bda.png",
+            "url": "https://csgostash.com/skin/15/Negev-Anodized-Navy"
+          }
+        ],
+        "purple": [
+          {
+            "name": "Glock-18 | Fade",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_glock_aa_fade_light_large.61edcc69ff252d537a4dd14b016cbe826c26ae5b.png",
+            "url": "https://csgostash.com/skin/9/Glock-18-Fade"
+          },
+          {
+            "name": "MP9 | Bulldozer",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp9_so_yellow_light_large.dfa50bdf02bccb9002d09c891d41ba65b1ce2d9c.png",
+            "url": "https://csgostash.com/skin/13/MP9-Bulldozer"
+          }
+        ],
+        "pink": [],
+        "red": [],
+        "yellow": []
+      }
+    },
+    "aztec": {
+      "name": "The Aztec Collection",
+      "url": "https://csgostash.com/collection/The+Aztec+Collection",
+      "weapons": {
+        "white": [
+          {
+            "name": "Nova | Forest Leaves",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_nova_sp_leaves_light_large.b75cb0c1b82c4c1a559f0b1de3113cf967029176.png",
+            "url": "https://csgostash.com/skin/59/Nova-Forest-Leaves"
+          },
+          {
+            "name": "Five-SeveN | Jungle",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_fiveseven_so_jungle_light_large.d98e255283a8cfd09aacb25405a26e580e3d129f.png",
+            "url": "https://csgostash.com/skin/57/Five-SeveN-Jungle"
+          },
+          {
+            "name": "SSG 08 | Lichen Dashed",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ssg08_sp_short_tape_light_large.f2f54766f72c881bc020b924be5ae026dcf065da.png",
+            "url": "https://csgostash.com/skin/56/SSG-08-Lichen-Dashed"
+          }
+        ],
+        "lightBlue": [
+          {
+            "name": "M4A4 | Jungle Tiger",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m4a1_hy_v_tiger_light_large.cdf3f8e434ea36842fa520cabec812eaba3f2fa5.png",
+            "url": "https://csgostash.com/skin/55/M4A4-Jungle-Tiger"
+          },
+          {
+            "name": "AK-47 | Jungle Spray",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ak47_sp_spray_jungle_light_large.af524ea61be29ab81dfb321277b98a211338de37.png",
+            "url": "https://csgostash.com/skin/60/AK-47-Jungle-Spray"
+          }
+        ],
+        "blue": [
+          {
+            "name": "Tec-9 | Ossified",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_tec9_am_ossify_light_large.29b1e40ecb5781ee6f47b460d3372b5c6601d768.png",
+            "url": "https://csgostash.com/skin/58/Tec-9-Ossified"
+          }
+        ],
+        "purple": [],
+        "pink": [],
+        "red": [],
+        "yellow": []
+      }
+    },
+    "baggage": {
+      "name": "The Baggage Collection",
+      "url": "https://csgostash.com/collection/The+Baggage+Collection",
+      "weapons": {
+        "white": [
+          {
+            "name": "SSG 08 | Sand Dune",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ssg08_so_sand_light_large.71cb57b99ee95a92310b4f55d7709bc5f5cc255e.png",
+            "url": "https://csgostash.com/skin/416/SSG-08-Sand-Dune"
+          },
+          {
+            "name": "G3SG1 | Contractor",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_g3sg1_so_pmc_light_large.563d94315a5a6f57039ccdf5b672bf65d608c819.png",
+            "url": "https://csgostash.com/skin/412/G3SG1-Contractor"
+          },
+          {
+            "name": "MP9 | Green Plaid",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp9_hy_plaid2_light_large.05b87c77e5f3c91c317f92fad7078891f44a4538.png",
+            "url": "https://csgostash.com/skin/415/MP9-Green-Plaid"
+          },
+          {
+            "name": "MP7 | Olive Plaid",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp7_hy_plaid1_light_large.56b2f9cbc6d9a7aae3c1eca41151a2067a1427e8.png",
+            "url": "https://csgostash.com/skin/413/MP7-Olive-Plaid"
+          },
+          {
+            "name": "CZ75-Auto | Green Plaid",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_cz75a_hy_plaid2_light_large.82e391ba61c092ece265e3bde16237ab5a510130.png",
+            "url": "https://csgostash.com/skin/414/CZ75-Auto-Green-Plaid"
+          }
+        ],
+        "lightBlue": [
+          {
+            "name": "MAC-10 | Commuter",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mac10_cu_luggage_mac10_light_large.d05e658d3d11de252d21a82f6c26a7b6c47ac1df.png",
+            "url": "https://csgostash.com/skin/408/MAC-10-Commuter"
+          },
+          {
+            "name": "P90 | Leather",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p90_cu_brown_leather_p90_light_large.6943b782f1c00dd933ca3ee3c19749ea2494899c.png",
+            "url": "https://csgostash.com/skin/407/P90-Leather"
+          },
+          {
+            "name": "P2000 | Coach Class",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_hkp2000_cu_luggage_p2000_light_large.6dfcea73af8a3cf42042fb75be69345cf5525347.png",
+            "url": "https://csgostash.com/skin/410/P2000-Coach-Class"
+          },
+          {
+            "name": "SG 553 | Traveler",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sg556_cu_luggage_sg553_light_large.374b9493843853afc913a1735b154fcbbdbb6f89.png",
+            "url": "https://csgostash.com/skin/417/SG-553-Traveler"
+          }
+        ],
+        "blue": [
+          {
+            "name": "Sawed-Off | First Class",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sawedoff_cu_green_leather_sawedoff_light_large.16c853410a5696858a4dc383f04c3d5e42b08631.png",
+            "url": "https://csgostash.com/skin/409/Sawed-Off-First-Class"
+          },
+          {
+            "name": "USP-S | Business Class",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_usp_silencer_cu_luggage_usp-s_light_large.3adca3c85f5ae2b083489a1059e1254417ff73c8.png",
+            "url": "https://csgostash.com/skin/411/USP-S-Business-Class"
+          },
+          {
+            "name": "XM1014 | Red Leather",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_xm1014_cu_leather_xm1014_light_large.4b2f6f7df7d03f0bfb271d1d06c948bb8cdcb0c0.png",
+            "url": "https://csgostash.com/skin/418/XM1014-Red-Leather"
+          }
+        ],
+        "purple": [
+          {
+            "name": "Desert Eagle | Pilot",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_deagle_aq_pilot_deagle_light_large.60b0e755ef14311a82f5f35928ad18dbb6ae2a86.png",
+            "url": "https://csgostash.com/skin/419/Desert-Eagle-Pilot"
+          },
+          {
+            "name": "AK-47 | First Class",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ak47_cu_green_leather_ak47_light_large.9622f0d289d98aa50238c0c956631b73bc3171ed.png",
+            "url": "https://csgostash.com/skin/421/AK-47-First-Class"
+          }
+        ],
+        "pink": [
+          {
+            "name": "AK-47 | Jet Set",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ak47_cu_well_traveled_ak47_light_large.708a53ac473d7cd02037876a82b6b4c004bf9a31.png",
+            "url": "https://csgostash.com/skin/420/AK-47-Jet-Set"
+          }
+        ],
+        "red": [],
+        "yellow": []
+      }
+    },
+    "bank": {
+      "name": "The Bank Collection",
+      "url": "https://csgostash.com/collection/The+Bank+Collection",
+      "weapons": {
+        "white": [
+          {
+            "name": "R8 Revolver | Bone Mask",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_revolver_sp_tape_light_large.c8f9124ff70ca2a6e8867920cd39e4fb7308ac87.png",
+            "url": "https://csgostash.com/skin/690/R8-Revolver-Bone-Mask"
+          },
+          {
+            "name": "Tec-9 | Urban DDPAT",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_tec9_hy_ddpat_urb_light_large.bd44491d7de854c08e2951e14f9066afdb340dd6.png",
+            "url": "https://csgostash.com/skin/369/Tec-9-Urban-DDPAT"
+          },
+          {
+            "name": "MP7 | Forest DDPAT",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp7_hy_ddpat_light_large.0207fb5fe0a1e21cdda28e005f7960f2dc4728b9.png",
+            "url": "https://csgostash.com/skin/364/MP7-Forest-DDPAT"
+          },
+          {
+            "name": "Sawed-Off | Forest DDPAT",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sawedoff_hy_ddpat_light_large.e3f476b768693a046994a90e2aca045d329e6957.png",
+            "url": "https://csgostash.com/skin/367/Sawed-Off-Forest-DDPAT"
+          },
+          {
+            "name": "SG 553 | Army Sheen",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sg556_am_army_shine_light_large.a07a97d5fba73aeecfc5cc9364e0d43d47892373.png",
+            "url": "https://csgostash.com/skin/368/SG-553-Army-Sheen"
+          },
+          {
+            "name": "Negev | Army Sheen",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_negev_am_army_shine_light_large.884085f4a13b786f0ac7234d616ff01a848f28d5.png",
+            "url": "https://csgostash.com/skin/365/Negev-Army-Sheen"
+          }
+        ],
+        "lightBlue": [
+          {
+            "name": "MAC-10 | Silver",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mac10_an_silver_light_large.3082e91b9fddbddc9b72da44382fe1def00fa5fa.png",
+            "url": "https://csgostash.com/skin/363/MAC-10-Silver"
+          },
+          {
+            "name": "UMP-45 | Carbon Fiber",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ump45_am_carbon_fiber_light_large.b250b860bbe6f7a689448cc47b6ac25427e3d848.png",
+            "url": "https://csgostash.com/skin/370/UMP-45-Carbon-Fiber"
+          },
+          {
+            "name": "Nova | Caged Steel",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_nova_am_oval_hex_light_large.766118990b3726617ed6203e95abc71417dbd057.png",
+            "url": "https://csgostash.com/skin/366/Nova-Caged-Steel"
+          },
+          {
+            "name": "G3SG1 | Green Apple",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_g3sg1_so_green_light_large.28c4e72757be64775c1111ac0e7142a147cacb9c.png",
+            "url": "https://csgostash.com/skin/360/G3SG1-Green-Apple"
+          },
+          {
+            "name": "Glock-18 | Death Rattle",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_glock_hy_nerodia_light_large.540067f703bf7b020d8fedfcc6322523ab449d68.png",
+            "url": "https://csgostash.com/skin/362/Glock-18-Death-Rattle"
+          }
+        ],
+        "blue": [
+          {
+            "name": "Desert Eagle | Meteorite",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_deagle_am_crystallized_dark_light_large.2d7d753a893ec3f0a470af9690aa64dcecd7146f.png",
+            "url": "https://csgostash.com/skin/359/Desert-Eagle-Meteorite"
+          },
+          {
+            "name": "Galil AR | Tuxedo",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_galilar_so_orca_light_large.5db78708464e031c686ae2e730e997e01526a7ea.png",
+            "url": "https://csgostash.com/skin/361/Galil-AR-Tuxedo"
+          },
+          {
+            "name": "CZ75-Auto | Tuxedo",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_cz75a_so_orca_light_large.8490865eba36c09ccd75a9b1f93445ff2e9f2b8f.png",
+            "url": "https://csgostash.com/skin/358/CZ75-Auto-Tuxedo"
+          }
+        ],
+        "purple": [
+          {
+            "name": "AK-47 | Emerald Pinstripe",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ak47_cu_pinstripe_ak47_light_large.2123421a26fbe673eea7c0238c7441a83b97aa17.png",
+            "url": "https://csgostash.com/skin/357/AK-47-Emerald-Pinstripe"
+          }
+        ],
+        "pink": [
+          {
+            "name": "P250 | Franklin",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p250_cu_money_light_large.a8632edd5846b8c9de09c711ada47f7decc739b7.png",
+            "url": "https://csgostash.com/skin/356/P250-Franklin"
+          }
+        ],
+        "red": [],
+        "yellow": []
+      }
+    },
+    "blacksite": {
+      "name": "The Blacksite Collection",
+      "url": "https://csgostash.com/collection/The+Blacksite+Collection",
+      "weapons": {
+        "white": [],
+        "lightBlue": [],
+        "blue": [],
+        "purple": [
+          {
+            "name": "MP5-SD | Lab Rats",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp5sd_hy_labrat_mp5_light_large.bbdd9b7e1445618106b9709261787f8d800f7391.png",
+            "url": "https://csgostash.com/skin/1036/MP5-SD-Lab-Rats"
+          }
+        ],
+        "pink": [],
+        "red": [],
+        "yellow": []
+      }
+    },
+    "cache": {
+      "name": "The Cache Collection",
+      "url": "https://csgostash.com/collection/The+Cache+Collection",
+      "weapons": {
+        "white": [],
+        "lightBlue": [
+          {
+            "name": "AUG | Radiation Hazard",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_aug_sp_nukestripe_orange_aug_light_large.4309138bd5b9e518628d517a275747ec9c2207d3.png",
+            "url": "https://csgostash.com/skin/487/AUG-Radiation-Hazard"
+          },
+          {
+            "name": "Five-SeveN | Hot Shot",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_fiveseven_so_grey_nuclear_orange_five_seven_light_large.1f99a49ba11741a36385ef0934d8066624d4d257.png",
+            "url": "https://csgostash.com/skin/493/Five-SeveN-Hot-Shot"
+          },
+          {
+            "name": "SG 553 | Fallout Warning",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sg556_sp_nukestripe_maroon_sg553_light_large.95996aebdd6d4308d577f481e0c73250d2c82c74.png",
+            "url": "https://csgostash.com/skin/494/SG-553-Fallout-Warning"
+          },
+          {
+            "name": "PP-Bizon | Chemical Green",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bizon_so_grey_nuclear_green_bizon_light_large.072e25b1fa34f50da3850310424b8b96983cf684.png",
+            "url": "https://csgostash.com/skin/489/PP-Bizon-Chemical-Green"
+          },
+          {
+            "name": "P250 | Contamination",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p250_hy_nuclear_skulls4_p250_light_large.83b7c2eeff0d6fd0e6d780be0815111d199a46d6.png",
+            "url": "https://csgostash.com/skin/492/P250-Contamination"
+          },
+          {
+            "name": "Negev | Nuclear Waste",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_negev_sp_nuclear_pattern3_negev_light_large.2d4cd96f9a94367d4c22991250eb9350437d8be6.png",
+            "url": "https://csgostash.com/skin/490/Negev-Nuclear-Waste"
+          }
+        ],
+        "blue": [
+          {
+            "name": "Glock-18 | Reactor",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_glock_am_nuclear_pattern1_glock_light_large.01e91d2930e04d43215becb90447b2ebec1cb8d9.png",
+            "url": "https://csgostash.com/skin/484/Glock-18-Reactor"
+          },
+          {
+            "name": "MP9 | Setting Sun",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp9_hy_nuclear_pattern2_mp9_light_large.d5f2b29c15286ea4c63cd60061d1073ec7e84087.png",
+            "url": "https://csgostash.com/skin/488/MP9-Setting-Sun"
+          },
+          {
+            "name": "Tec-9 | Toxic",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_tec9_hy_nuclear_skulls5_tec9_light_large.d83d7de4c10dbc5fae925a4cb531ca7a8deef3d1.png",
+            "url": "https://csgostash.com/skin/483/Tec-9-Toxic"
+          },
+          {
+            "name": "MAC-10 | Nuclear Garden",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mac10_am_nuclear_skulls3_mac10_light_large.467b325065522e5248247cf125bec257cdb66902.png",
+            "url": "https://csgostash.com/skin/486/MAC-10-Nuclear-Garden"
+          },
+          {
+            "name": "XM1014 | Bone Machine",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_xm1014_am_nuclear_skulls1_xm1014_light_large.716e8296c07d3e6d5c9f5f20605c9608bbb78ca1.png",
+            "url": "https://csgostash.com/skin/485/XM1014-Bone-Machine"
+          }
+        ],
+        "purple": [
+          {
+            "name": "Galil AR | Cerberus",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_galilar_cu_cerbrus_galil_light_large.761250f955c66cbb100400e2fc1459ce74320282.png",
+            "url": "https://csgostash.com/skin/482/Galil-AR-Cerberus"
+          },
+          {
+            "name": "FAMAS | Styx",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_famas_am_nuclear_skulls2_famas_light_large.ec9774f3b2a03f5411321dba792b05f19096547c.png",
+            "url": "https://csgostash.com/skin/491/FAMAS-Styx"
+          }
+        ],
+        "pink": [],
+        "red": [],
+        "yellow": []
+      }
+    },
+    "canals": {
+      "name": "The Canals Collection",
+      "url": "https://csgostash.com/collection/The+Canals+Collection",
+      "weapons": {
+        "white": [
+          {
+            "name": "R8 Revolver | Canal Spray",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_revolver_sp_spray_water_light_large.0f7d074b7c53419d9475b0eb68e7215d7f9dcc66.png",
+            "url": "https://csgostash.com/skin/1148/R8-Revolver-Canal-Spray"
+          },
+          {
+            "name": "CZ75-Auto | Indigo",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_cz75a_so_indigo_and_grey_light_large.2d4d90e760b199522064e9635d1efdb11cdab34f.png",
+            "url": "https://csgostash.com/skin/1150/CZ75-Auto-Indigo"
+          },
+          {
+            "name": "AUG | Navy Murano",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_aug_hy_murano_blue_light_large.b294cab668b3229243676838e2542b893b5dcbfa.png",
+            "url": "https://csgostash.com/skin/1146/AUG-Navy-Murano"
+          },
+          {
+            "name": "SCAR-20 | Stone Mosaico",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_scar20_hy_canals_tile_light_large.75a40e82efbdfa0691e32eb98301f1b441a00f46.png",
+            "url": "https://csgostash.com/skin/1147/SCAR-20-Stone-Mosaico"
+          },
+          {
+            "name": "Negev | Boroque Sand",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_negev_hy_veneto_tan_light_large.f8a6e484f7ebc5dbf1f52e0ef9b0c4d7c5054a0d.png",
+            "url": "https://csgostash.com/skin/1149/Negev-Boroque-Sand"
+          }
+        ],
+        "lightBlue": [
+          {
+            "name": "AK-47 | Baroque Purple",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ak47_hy_veneto_purple_light_large.4d9f7f4ed3034ce7d712c68640eb33f9f66f5daf.png",
+            "url": "https://csgostash.com/skin/1151/AK-47-Baroque-Purple"
+          },
+          {
+            "name": "P250 | Dark Filigree",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p250_am_ren_dark_light_large.ce4d6a4807c1a3c78ed3853f0fb7900b181db0d3.png",
+            "url": "https://csgostash.com/skin/1153/P250-Dark-Filigree"
+          },
+          {
+            "name": "SG 553 | Candy Apple",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sg556_so_red_sg553_light_large.aa8a1ed5302193cf02c2814a772517ec2aec8115.png",
+            "url": "https://csgostash.com/skin/1152/SG-553-Candy-Apple"
+          },
+          {
+            "name": "Tec-9 | Orange Murano",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_tec9_hy_murano_orange_light_large.cc6ae2c1c3aca79fe0f65be7f0f40f493eba55cf.png",
+            "url": "https://csgostash.com/skin/1154/Tec-9-Orange-Murano"
+          }
+        ],
+        "blue": [
+          {
+            "name": "P90 | Baroque Red",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p90_am_veneto_red_light_large.3bfb2641e0b8e40c0c797a44bb448ec06eabe6b8.png",
+            "url": "https://csgostash.com/skin/1155/P90-Baroque-Red"
+          },
+          {
+            "name": "G3SG1 | Violet Murano",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_g3sg1_am_murano_violet_light_large.7a4ee0fb0e265881283e9282f5d79e8cea2635c8.png",
+            "url": "https://csgostash.com/skin/1156/G3SG1-Violet-Murano"
+          },
+          {
+            "name": "SSG 08 | Orange Filigree",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ssg08_hy_ren_orange_light_large.0de8202f23f893173f722278aca762d294371ad8.png",
+            "url": "https://csgostash.com/skin/1158/SSG-08-Orange-Filigree"
+          },
+          {
+            "name": "Dual Berettas | Emerald",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_elite_an_emerald_light_large.242c719bcbe22fa3eb64b7ba15f48989cc9200d8.png",
+            "url": "https://csgostash.com/skin/1157/Dual-Berettas-Emerald"
+          }
+        ],
+        "purple": [
+          {
+            "name": "Nova | Baroque Orange",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_nova_am_veneto2_light_large.51bfad5db3f49f28c0802f4696f6282e4781f4db.png",
+            "url": "https://csgostash.com/skin/1161/Nova-Baroque-Orange"
+          },
+          {
+            "name": "MAC-10 | Red Filigree",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mac10_am_ren_red_light_large.985e0a9b70dc43f90bfb6e9ce28398565396d633.png",
+            "url": "https://csgostash.com/skin/1160/MAC-10-Red-Filigree"
+          },
+          {
+            "name": "MP9 | Stained Glass",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp9_am_stained_glass_light_large.24d1cb9e7a99e9b0e5663a245d65b56c42f36a0b.png",
+            "url": "https://csgostash.com/skin/1159/MP9-Stained-Glass"
+          }
+        ],
+        "pink": [
+          {
+            "name": "MAG-7 | Cinquedea",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mag7_gs_mag7_glass_light_large.beadef0a6bd24e7ba3ed051b2b092c27119ce075.png",
+            "url": "https://csgostash.com/skin/1162/MAG-7-Cinquedea"
+          }
+        ],
+        "red": [
+          {
+            "name": "AWP | The Prince",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_awp_gs_awp_enamel_light_large.00ae78bca507d3358c7b821dc666e21123162069.png",
+            "url": "https://csgostash.com/skin/1163/AWP-The-Prince"
+          }
+        ],
+        "yellow": []
+      }
+    },
+    "chopShop": {
+      "name": "The Chop Shop Collection",
+      "url": "https://csgostash.com/collection/The+Chop+Shop+Collection",
+      "weapons": {
+        "white": [
+          {
+            "name": "CZ75-Auto | Army Sheen",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_cz75a_am_army_shine_light_large.26736d48ea09a5284aeb1cf11292bc3e87a56251.png",
+            "url": "https://csgostash.com/skin/585/CZ75-Auto-Army-Sheen"
+          },
+          {
+            "name": "M249 | Impact Drill",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m249_so_keycolors_light_large.bf0fe2b5d5b5c65358519ebaeeed6da72032bf4b.png",
+            "url": "https://csgostash.com/skin/586/M249-Impact-Drill"
+          },
+          {
+            "name": "SCAR-20 | Army Sheen",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_scar20_am_army_shine_light_large.2d2f8b7c0d1a6f9541956d1bef018261ddd80542.png",
+            "url": "https://csgostash.com/skin/584/SCAR-20-Army-Sheen"
+          },
+          {
+            "name": "MAG-7 | Seabird",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mag7_so_aqua_light_large.fee69dfe94d0158d2e7d8d049accdb967b8a924a.png",
+            "url": "https://csgostash.com/skin/587/MAG-7-Seabird"
+          }
+        ],
+        "lightBlue": [
+          {
+            "name": "Desert Eagle | Night",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_deagle_so_night_light_large.64e315553578f3c8bd08c96622fc2c34d5a789ba.png",
+            "url": "https://csgostash.com/skin/588/Desert-Eagle-Night"
+          },
+          {
+            "name": "USP-S | Para Green",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_usp_silencer_so_khaki_green_light_large.546b3eb856bbf2aeece29e2852688ddae13531b7.png",
+            "url": "https://csgostash.com/skin/590/USP-S-Para-Green"
+          },
+          {
+            "name": "Galil AR | Urban Rubble",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_galilar_hy_varicamo_urban_light_large.04b4d709f1a3de109c7173d5ef55181138b247e0.png",
+            "url": "https://csgostash.com/skin/589/Galil-AR-Urban-Rubble"
+          }
+        ],
+        "blue": [
+          {
+            "name": "P250 | Whiteout",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p250_so_whiteout_light_large.ffd6e614b63d3af24a04a9f7710b55210a7d0296.png",
+            "url": "https://csgostash.com/skin/592/P250-Whiteout"
+          },
+          {
+            "name": "MAC-10 | Fade",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mac10_aa_fade_light_large.69bd70b0bb129a5c671945090f56322c37b6bcf2.png",
+            "url": "https://csgostash.com/skin/591/MAC-10-Fade"
+          },
+          {
+            "name": "CZ75-Auto | Emerald",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_cz75a_an_emerald_light_large.5c4734111477a884851cae6998871cbf7c870cc6.png",
+            "url": "https://csgostash.com/skin/595/CZ75-Auto-Emerald"
+          },
+          {
+            "name": "Five-SeveN | Nitro",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_fiveseven_so_orange_accents_light_large.b5ab3af11de68b90ca8b18e359ac0338d1a2d7f4.png",
+            "url": "https://csgostash.com/skin/594/Five-SeveN-Nitro"
+          },
+          {
+            "name": "MP7 | Full Stop",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp7_hy_varicamo_red_light_large.7110895d0ad1626929f361598b7f201a5ef3701a.png",
+            "url": "https://csgostash.com/skin/593/MP7-Full-Stop"
+          }
+        ],
+        "purple": [
+          {
+            "name": "SG 553 | Bulldozer",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sg556_so_yellow_light_large.afbe04152bdb3090623992005c23d3a997ae0ca3.png",
+            "url": "https://csgostash.com/skin/596/SG-553-Bulldozer"
+          },
+          {
+            "name": "Dual Berettas | Duelist",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_elite_gs_mother_of_pearl_elite_light_large.2023e44b16f064c32962b691bcdb5d45051744bc.png",
+            "url": "https://csgostash.com/skin/597/Dual-Berettas-Duelist"
+          }
+        ],
+        "pink": [
+          {
+            "name": "M4A1-S | Hot Rod",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m4a1_silencer_an_red_m4a1s_light_large.ec59e9b09e1e9f46af18dea65ee90e5bdfe9ebb1.png",
+            "url": "https://csgostash.com/skin/599/M4A1-S-Hot-Rod"
+          },
+          {
+            "name": "Glock-18 | Twilight Galaxy",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_glock_am_aqua_flecks_light_large.e7d41ce4dbf0cd29f1eb3daa5ce0bb753abd1903.png",
+            "url": "https://csgostash.com/skin/598/Glock-18-Twilight-Galaxy"
+          }
+        ],
+        "red": [],
+        "yellow": []
+      }
+    },
+    "dust": {
+      "name": "The Dust Collection",
+      "url": "https://csgostash.com/collection/The+Dust+Collection",
+      "weapons": {
+        "white": [],
+        "lightBlue": [
+          {
+            "name": "M4A4 | Desert Storm",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m4a1_hy_desert_light_large.30d1e3dcc03baca8d4a3f222b3b851ad12c77799.png",
+            "url": "https://csgostash.com/skin/64/M4A4-Desert-Storm"
+          },
+          {
+            "name": "AK-47 | Predator",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ak47_sp_zebracam_light_large.5f15c9e41b9ac135b87cdadb407c9872e31c1f29.png",
+            "url": "https://csgostash.com/skin/61/AK-47-Predator"
+          },
+          {
+            "name": "SCAR-20 | Palm",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_scar20_sp_palm_light_large.ed935d932711961605c3b03b896560f4ebfe8861.png",
+            "url": "https://csgostash.com/skin/62/SCAR-20-Palm"
+          }
+        ],
+        "blue": [
+          {
+            "name": "AWP | Snake Camo",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_awp_sp_snake_light_large.c0b327d960af85c987bed944287935fb4b6a780a.png",
+            "url": "https://csgostash.com/skin/69/AWP-Snake-Camo"
+          },
+          {
+            "name": "Sawed-Off | Copper",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sawedoff_aq_copper_light_large.a2d3d9236120109adf8df1bc53b7d02250f6a50a.png",
+            "url": "https://csgostash.com/skin/63/Sawed-Off-Copper"
+          },
+          {
+            "name": "AUG | Copperhead",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_aug_hy_copperhead_light_large.166fd555b0075feb698783999d906c4529d2d631.png",
+            "url": "https://csgostash.com/skin/65/AUG-Copperhead"
+          }
+        ],
+        "purple": [
+          {
+            "name": "Desert Eagle | Blaze",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_deagle_aa_flames_light_large.dd140c3b359c16ccd8e918ca6ad0b2628151fe1c.png",
+            "url": "https://csgostash.com/skin/68/Desert-Eagle-Blaze"
+          },
+          {
+            "name": "Glock-18 | Brass",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_glock_aq_brass_light_large.c9fbb8483ca7b5859fafc3c8fe495b3d396205dd.png",
+            "url": "https://csgostash.com/skin/66/Glock-18-Brass"
+          },
+          {
+            "name": "P2000 | Scorpion",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_hkp2000_am_scorpion_p2000_light_large.86333a595bc6c6139a4e84734e6eb88cd33d3e14.png",
+            "url": "https://csgostash.com/skin/67/P2000-Scorpion"
+          }
+        ],
+        "pink": [],
+        "red": [],
+        "yellow": []
+      }
+    },
+    "dust2": {
+      "name": "The Dust Collection 2",
+      "url": "https://csgostash.com/collection/The+Dust+2+Collection",
+      "weapons": {
+        "white": [
+          {
+            "name": "P250 | Sand Dune",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p250_so_sand_light_large.c77b762093b4786e0c070317e6a2121c2e7b4c86.png",
+            "url": "https://csgostash.com/skin/137/P250-Sand-Dune"
+          },
+          {
+            "name": "MP9 | Sand Dashed",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp9_sp_tape_short_sand_light_large.893d0bacf03750448cef4be1f649591b9622907e.png",
+            "url": "https://csgostash.com/skin/145/MP9-Sand-Dashed"
+          },
+          {
+            "name": "G3SG1 | Desert Storm",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_g3sg1_hy_desert_light_large.4e5561884f1cd7f8d6965b9c7991f89a702b72b4.png",
+            "url": "https://csgostash.com/skin/136/G3SG1-Desert-Storm"
+          },
+          {
+            "name": "Nova | Predator",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_nova_sp_zebracam_light_large.4a13bdc4fa3b5cd7d89c8cc83700d3a13326a6c3.png",
+            "url": "https://csgostash.com/skin/149/Nova-Predator"
+          },
+          {
+            "name": "P90 | Sand Spray",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p90_sp_spray_sand_light_large.18ac7e644639b8756fa3984055a493c5d7fc8249.png",
+            "url": "https://csgostash.com/skin/144/P90-Sand-Spray"
+          },
+          {
+            "name": "SCAR-20 | Sand Mesh",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_scar20_sp_mesh_sand_light_large.880aed82e5ba9c8c9d4a7ebb88e5a51491ce2d59.png",
+            "url": "https://csgostash.com/skin/141/SCAR-20-Sand-Mesh"
+          }
+        ],
+        "lightBlue": [
+          {
+            "name": "AK-47 | Safari Mesh",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ak47_sp_mesh_tan_light_large.0372a5d37f473b9cf5e2ee32d2f5d36247f24a3a.png",
+            "url": "https://csgostash.com/skin/140/AK-47-Safari-Mesh"
+          },
+          {
+            "name": "MAC-10 | Palm",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mac10_sp_palm_light_large.22a3296d079e27cb7bb291e15eff10c29aa89b3e.png",
+            "url": "https://csgostash.com/skin/147/MAC-10-Palm"
+          },
+          {
+            "name": "Five-SeveN | Orange Peel",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_fiveseven_sp_tape_orange_light_large.d784ec0c92136e9f3f33ca09444ff4fe6a1f5300.png",
+            "url": "https://csgostash.com/skin/142/Five-SeveN-Orange-Peel"
+          },
+          {
+            "name": "Sawed-Off | Snake Camo",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sawedoff_sp_snake_light_large.5e65a350f30aa592de234f631d5d2cd98838fb4e.png",
+            "url": "https://csgostash.com/skin/138/Sawed-Off-Snake-Camo"
+          },
+          {
+            "name": "Tec-9 | VariCamo",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_tec9_hy_varicamo_light_large.8a863390cd0fc243c3697c3d551139d3553fde03.png",
+            "url": "https://csgostash.com/skin/148/Tec-9-VariCamo"
+          }
+        ],
+        "blue": [
+          {
+            "name": "SG 553 | Damascus Steel",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sg556_aq_damascus_sg553_light_large.543355687f0396ad10ed2f2705bc242ce5fdfbc5.png",
+            "url": "https://csgostash.com/skin/139/SG-553-Damascus-Steel"
+          },
+          {
+            "name": "M4A1-S | VariCamo",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m4a1_silencer_hy_varicamo_light_large.794803daec1d6d6cd2c47d8e8520d9f5f0b1fc1b.png",
+            "url": "https://csgostash.com/skin/150/M4A1-S-VariCamo"
+          },
+          {
+            "name": "PP-Bizon | Brass",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bizon_aq_brass_light_large.afcbbd3e31fd3600ddb45b4a0c48b6350ab761f9.png",
+            "url": "https://csgostash.com/skin/146/PP-Bizon-Brass"
+          }
+        ],
+        "purple": [
+          {
+            "name": "P2000 | Amber Fade",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_hkp2000_aa_fade_metallic_light_large.8efd81c9cf483adb6bdf58508800f62d3fc72310.png",
+            "url": "https://csgostash.com/skin/143/P2000-Amber-Fade"
+          }
+        ],
+        "pink": [
+          {
+            "name": "R8 Revolver | Amber Fade",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_revolver_aa_fade_metallic_revolver_light_large.d56e81f58bb716ac6ca130bd41802bb8962dd0cf.png",
+            "url": "https://csgostash.com/skin/689/R8-Revolver-Amber-Fade"
+          }
+        ],
+        "red": [],
+        "yellow": []
+      }
+    },
+    "godsAndMonsters": {
+      "name": "The Gods and Monsters Collection",
+      "url": "https://csgostash.com/collection/The+Gods+and+Monsters+Collection",
+      "weapons": {
+        "white": [
+          {
+            "name": "Dual Berettas | Moon in Libra",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_elite_hy_zodiac1_light_large.cedfe5166a361ccc3c32a28847addcdc66ad25d7.png",
+            "url": "https://csgostash.com/skin/602/Dual-Berettas-Moon-in-Libra"
+          },
+          {
+            "name": "AUG | Daedalus",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_aug_sp_labyrinth3_light_large.86c4c77bbc59793e1bf632e1ef49101829a14773.png",
+            "url": "https://csgostash.com/skin/601/AUG-Daedalus"
+          },
+          {
+            "name": "Nova | Moon in Libra",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_nova_hy_zodiac1_light_large.b06536b160c1807d7aa4c8e906771d3c5c2f7c59.png",
+            "url": "https://csgostash.com/skin/603/Nova-Moon-in-Libra"
+          },
+          {
+            "name": "MP7 | Asterion",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp7_sp_labyrinth_light_large.05382e4a98099c6747e1a3d636b47bd617b8866a.png",
+            "url": "https://csgostash.com/skin/600/MP7-Asterion"
+          }
+        ],
+        "lightBlue": [
+          {
+            "name": "AWP | Sun in Leo",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_awp_hy_zodiac2_light_large.67da534322361569bd9637688b704b57232529fa.png",
+            "url": "https://csgostash.com/skin/606/AWP-Sun-in-Leo"
+          },
+          {
+            "name": "M249 | Shipping Forecast",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m249_hy_zodiac3_light_large.299cb04c12c20280930562504161309fbb9c1e45.png",
+            "url": "https://csgostash.com/skin/607/M249-Shipping-Forecast"
+          },
+          {
+            "name": "Tec-9 | Hades",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_tec9_hy_hades_light_large.9b5757d9034889f93b907b45dffe0a3802b2e4bc.png",
+            "url": "https://csgostash.com/skin/604/Tec-9-Hades"
+          },
+          {
+            "name": "P2000 | Pathfinder",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_hkp2000_sp_labyrinth2_light_large.240b91eab5dc2e0f6806dfbd2fc5d33bdebe53bb.png",
+            "url": "https://csgostash.com/skin/605/P2000-Pathfinder"
+          }
+        ],
+        "blue": [
+          {
+            "name": "UMP-45 | Minotaur's Labyrinth",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ump45_cu_labyrinth_light_large.62c8aa10ca8ad146809a21031194e450190f8485.png",
+            "url": "https://csgostash.com/skin/608/UMP-45-Minotaurs-Labyrinth"
+          },
+          {
+            "name": "MP9 | Pandora's Box",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp9_aa_pandora_light_large.837ea28260252a1f654c272289007ae3c4c3e7ec.png",
+            "url": "https://csgostash.com/skin/609/MP9-Pandoras-Box"
+          }
+        ],
+        "purple": [
+          {
+            "name": "G3SG1 | Chronos",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_g3sg1_cu_chronos_g3sg1_light_large.5db791048981cda0babe949ac443f09ba8aa9eb3.png",
+            "url": "https://csgostash.com/skin/610/G3SG1-Chronos"
+          },
+          {
+            "name": "M4A1-S | Icarus Fell",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m4a1_silencer_hy_icarus_light_large.4af0a9b1122471816242601013d478ade6a0697b.png",
+            "url": "https://csgostash.com/skin/611/M4A1-S-Icarus-Fell"
+          }
+        ],
+        "pink": [
+          {
+            "name": "M4A4 | Poseidon",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m4a1_cu_poseidon_light_large.3db5688a5b47bd5720e7384abf13c45231a3cc03.png",
+            "url": "https://csgostash.com/skin/612/M4A4-Poseidon"
+          }
+        ],
+        "red": [
+          {
+            "name": "AWP | Medusa",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_awp_cu_medusa_awp_light_large.05c6f5c67a2fbf7d042637568ba2ab25e44bb08c.png",
+            "url": "https://csgostash.com/skin/613/AWP-Medusa"
+          }
+        ],
+        "yellow": []
+      }
+    },
+    "inferno": {
+      "name": "The Inferno Collection",
+      "url": "https://csgostash.com/collection/The+Inferno+Collection",
+      "weapons": {
+        "white": [
+          {
+            "name": "Nova | Walnut",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_nova_cu_walnut_nova_light_large.38cd0f88162ed88eb81df71f5fb18139c3a36c77.png",
+            "url": "https://csgostash.com/skin/43/Nova-Walnut"
+          },
+          {
+            "name": "MAG-7 | Sand Dune",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mag7_so_sand_light_large.9dfc46fd60aa92768b02d39371d5aac04b892ff8.png",
+            "url": "https://csgostash.com/skin/48/MAG-7-Sand-Dune"
+          }
+        ],
+        "lightBlue": [
+          {
+            "name": "M4A4 | Tornado",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m4a1_so_tornado_light_large.5e852b0952af47cde9b8c60edf137f34b81fe812.png",
+            "url": "https://csgostash.com/skin/44/M4A4-Tornado"
+          },
+          {
+            "name": "P250 | Gunsmoke",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p250_hy_gelpen_light_large.214a92b3bec9ab81ad0c13276fa4ac552530f31f.png",
+            "url": "https://csgostash.com/skin/46/P250-Gunsmoke"
+          }
+        ],
+        "blue": [
+          {
+            "name": "Tec-9 | Brass",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_tec9_aq_brass_light_large.0e78665f494e390a064c8a838030b4458536d9ae.png",
+            "url": "https://csgostash.com/skin/45/Tec-9-Brass"
+          },
+          {
+            "name": "Dual Berettas | Anodized Navy",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_elite_an_navy_light_large.87999cce45a03f8e83c28db98874810a5c990c10.png",
+            "url": "https://csgostash.com/skin/47/Dual-Berettas-Anodized-Navy"
+          }
+        ],
+        "purple": [],
+        "pink": [],
+        "red": [],
+        "yellow": []
+      }
+    },
+    "italy": {
+      "name": "The Italy Collection",
+      "url": "https://csgostash.com/collection/The+Italy+Collection",
+      "weapons": {
+        "white": [
+          {
+            "name": "AUG | Contractor",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_aug_so_pmc_light_large.e2a06ba5d6c412408d2447e162572817ee052bd3.png",
+            "url": "https://csgostash.com/skin/154/AUG-Contractor"
+          },
+          {
+            "name": "FAMAS | Colony",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_famas_so_space_marine_light_large.bc0a11080c9b3b50c13ddbe4afa3f6f96311fec4.png",
+            "url": "https://csgostash.com/skin/156/FAMAS-Colony"
+          },
+          {
+            "name": "Tec-9 | Groundwater",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_tec9_so_olive_light_large.6c35f2cb6ef0f893f02d70759c528fe4958adebc.png",
+            "url": "https://csgostash.com/skin/152/Tec-9-Groundwater"
+          },
+          {
+            "name": "Nova | Sand Dune",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_nova_so_sand_light_large.33854508338eb4801380c7d7d328f2285ad3a746.png",
+            "url": "https://csgostash.com/skin/159/Nova-Sand-Dune"
+          },
+          {
+            "name": "PP-Bizon | Sand Dashed",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bizon_sp_tape_short_sand_light_large.dcf913a3a4fcd421012482e8c1cb55d05d9828f9.png",
+            "url": "https://csgostash.com/skin/164/PP-Bizon-Sand-Dashed"
+          }
+        ],
+        "lightBlue": [
+          {
+            "name": "M4A1-S | Boreal Forest",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m4a1_silencer_hy_forest_boreal_light_large.1a7f334b65d1ff1a4ca0bb4a1b164d643169f982.png",
+            "url": "https://csgostash.com/skin/155/M4A1-S-Boreal-Forest"
+          },
+          {
+            "name": "Nova | Candy Apple",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_nova_so_red_light_large.f19886d0d01e730fc1e050416a6642488526a94c.png",
+            "url": "https://csgostash.com/skin/165/Nova-Candy-Apple"
+          },
+          {
+            "name": "XM1014 | CaliCamo",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_xm1014_hy_varicamo_desert_light_large.8931cbff2aa329928977420d05616b306eb0a91f.png",
+            "url": "https://csgostash.com/skin/151/XM1014-CaliCamo"
+          },
+          {
+            "name": "P2000 | Granite Marbleized",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_hkp2000_hy_granite_light_large.30d6a68c522ae5dd0cf7a67e07eccb66cf50b04c.png",
+            "url": "https://csgostash.com/skin/161/P2000-Granite-Marbleized"
+          },
+          {
+            "name": "Dual Berettas | Stained",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_elite_aq_forced_light_large.c654256613e0893b16be27a7621ec469a63a9955.png",
+            "url": "https://csgostash.com/skin/162/Dual-Berettas-Stained"
+          },
+          {
+            "name": "UMP-45 | Gunsmoke",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ump45_hy_gelpen_light_large.79d22fa00d44408a719b7a840aa4497eebca68fb.png",
+            "url": "https://csgostash.com/skin/157/UMP-45-Gunsmoke"
+          }
+        ],
+        "blue": [
+          {
+            "name": "Glock-18 | Candy Apple",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_glock_so_red_light_large.17b18a34a4d840905587e918a8500576e91b0cb9.png",
+            "url": "https://csgostash.com/skin/160/Glock-18-Candy-Apple"
+          },
+          {
+            "name": "Sawed-Off | Full Stop",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sawedoff_hy_varicamo_red_light_large.8db408c4317e19bfdf8adc6c3183327866423445.png",
+            "url": "https://csgostash.com/skin/153/Sawed-Off-Full-Stop"
+          },
+          {
+            "name": "MP7 | Anodized Navy",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp7_an_navy_light_large.7b705336c3ee472db933931597f0ab191217b3dc.png",
+            "url": "https://csgostash.com/skin/163/MP7-Anodized-Navy"
+          }
+        ],
+        "purple": [
+          {
+            "name": "AWP | Pit Viper",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_awp_hy_snakeskin_light_large.e6addbb49a7024f800a35c9e081402a2c8631028.png",
+            "url": "https://csgostash.com/skin/158/AWP-Pit-Viper"
+          }
+        ],
+        "pink": [],
+        "red": [],
+        "yellow": []
+      }
+    },
+    "lake": {
+      "name": "The Lake Collection",
+      "url": "https://csgostash.com/collection/The+Lake+Collection",
+      "weapons": {
+        "white": [
+          {
+            "name": "G3SG1 | Jungle Dashed",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_g3sg1_sp_tape_short_jungle_light_large.02fd06db8f950789b6c4bff265df06439382c585.png",
+            "url": "https://csgostash.com/skin/177/G3SG1-Jungle-Dashed"
+          },
+          {
+            "name": "P250 | Boreal Forest",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p250_hy_forest_boreal_light_large.d805b3c56f74420ea25e14db86e7cf8181d98134.png",
+            "url": "https://csgostash.com/skin/166/P250-Boreal-Forest"
+          },
+          {
+            "name": "SG 553 | Waves Perforated",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sg556_sp_tape_dots_waves_light_large.6225b7ae003cefaab7deca7ea517576991055bbd.png",
+            "url": "https://csgostash.com/skin/176/SG-553-Waves-Perforated"
+          },
+          {
+            "name": "AUG | Storm",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_aug_so_stormfront_light_large.84dee43e41ff0fe95173b635e369b486848fe92f.png",
+            "url": "https://csgostash.com/skin/170/AUG-Storm"
+          },
+          {
+            "name": "Galil AR | Sage Spray",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_galilar_sp_spray_desert_sage_light_large.34f1268c2cf12e7794538b7140456d3716d81142.png",
+            "url": "https://csgostash.com/skin/173/Galil-AR-Sage-Spray"
+          },
+          {
+            "name": "XM1014 | Blue Spruce",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_xm1014_so_moss_light_large.5308796fa6ef2edaa45a6c6e73c59452fc265781.png",
+            "url": "https://csgostash.com/skin/169/XM1014-Blue-Spruce"
+          }
+        ],
+        "lightBlue": [
+          {
+            "name": "AWP | Safari Mesh",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_awp_sp_mesh_tan_light_large.3608cbeb9bb163bfd2becb4ebcce2576b9ca78d9.png",
+            "url": "https://csgostash.com/skin/171/AWP-Safari-Mesh"
+          },
+          {
+            "name": "XM1014 | Blue Steel",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_xm1014_aq_blued_light_large.322850eb06df5352f302b6d4dffb1d2472dac596.png",
+            "url": "https://csgostash.com/skin/179/XM1014-Blue-Steel"
+          },
+          {
+            "name": "PP-Bizon | Night Ops",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bizon_hy_varicamo_night_light_large.f0593c24d14333e68c7eb0e916385270d5612b46.png",
+            "url": "https://csgostash.com/skin/174/PP-Bizon-Night-Ops"
+          },
+          {
+            "name": "Desert Eagle | Mudder",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_deagle_hy_mottled_sand_light_large.615be084d4bc9db8c98451f13351cae1fa0ec69c.png",
+            "url": "https://csgostash.com/skin/168/Desert-Eagle-Mudder"
+          },
+          {
+            "name": "FAMAS | Cyanospatter",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_famas_hy_reef_light_large.d3138f4491b5413241bf64a82e0545ddc4c9e80d.png",
+            "url": "https://csgostash.com/skin/178/FAMAS-Cyanospatter"
+          }
+        ],
+        "blue": [
+          {
+            "name": "P90 | Teardown",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p90_sp_mesh_hot_and_cold_light_large.b1e759ec76815883bf3e293215e3858eaa0763b1.png",
+            "url": "https://csgostash.com/skin/175/P90-Teardown"
+          },
+          {
+            "name": "SG 553 | Anodized Navy",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sg556_an_navy_light_large.5c45c1c33100694fc010a39ba92e3afab1d7c5e7.png",
+            "url": "https://csgostash.com/skin/180/SG-553-Anodized-Navy"
+          },
+          {
+            "name": "USP-S | Night Ops",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_usp_silencer_hy_varicamo_night_light_large.df1cac3f27ea81237acbc9d56137f5e3ddf072d5.png",
+            "url": "https://csgostash.com/skin/167/USP-S-Night-Ops"
+          }
+        ],
+        "purple": [
+          {
+            "name": "Dual Berettas | Cobalt Quartz",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_elite_am_crystallized_blue_light_large.5756d02f9908e1c4d70e6f1d9dae53b3731fc0fd.png",
+            "url": "https://csgostash.com/skin/172/Dual-Berettas-Cobalt-Quartz"
+          }
+        ],
+        "pink": [],
+        "red": [],
+        "yellow": []
+      }
+    },
+    "militia": {
+      "name": "The Militia Collection",
+      "url": "https://csgostash.com/collection/The+Militia+Collection",
+      "weapons": {
+        "white": [
+          {
+            "name": "XM1014 | Grassland",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_xm1014_so_grassland_light_large.412e08f5f190db15e6118e19c6ea0752bbaed180.png",
+            "url": "https://csgostash.com/skin/40/XM1014-Grassland"
+          },
+          {
+            "name": "PP-Bizon | Forest Leaves",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bizon_sp_leaves_light_large.ce2a773d74c050c18f99daaa39d4b670878abd99.png",
+            "url": "https://csgostash.com/skin/34/PP-Bizon-Forest-Leaves"
+          },
+          {
+            "name": "MAC-10 | Tornado",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mac10_so_tornado_light_large.38973a9ca86e017389bed34a6b1c86a2b6585891.png",
+            "url": "https://csgostash.com/skin/38/MAC-10-Tornado"
+          }
+        ],
+        "lightBlue": [
+          {
+            "name": "P2000 | Grassland Leaves",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_hkp2000_sp_leaves_grassland_light_large.a7885e449e09718b530a5f8e4b79a30931f104cb.png",
+            "url": "https://csgostash.com/skin/41/P2000-Grassland-Leaves"
+          }
+        ],
+        "blue": [
+          {
+            "name": "PP-Bizon | Modern Hunter",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bizon_hy_hunter_modern_light_large.04891176bf0284ba4f8002c2c32445cbde50a8c6.png",
+            "url": "https://csgostash.com/skin/35/PP-Bizon-Modern-Hunter"
+          },
+          {
+            "name": "P250 | Modern Hunter",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p250_hy_hunter_modern_light_large.01e6755d9b42d1594837f60bad79e0f6295df8db.png",
+            "url": "https://csgostash.com/skin/37/P250-Modern-Hunter"
+          },
+          {
+            "name": "Nova | Modern Hunter",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_nova_hy_hunter_modern_light_large.47b91ea74e82f6e041bcf2d03c117be62ae25909.png",
+            "url": "https://csgostash.com/skin/33/Nova-Modern-Hunter"
+          },
+          {
+            "name": "Nova | Blaze Orange",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_nova_hy_hunter_blaze_orange_light_large.3aa81203583739ae361787f625976dee6b7a1f25.png",
+            "url": "https://csgostash.com/skin/39/Nova-Blaze-Orange"
+          },
+          {
+            "name": "XM1014 | Blaze Orange",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_xm1014_hy_hunter_blaze_orange_light_large.def31710e14b573829a2138ffc7c3eadb3f49e5c.png",
+            "url": "https://csgostash.com/skin/36/XM1014-Blaze-Orange"
+          }
+        ],
+        "purple": [
+          {
+            "name": "M4A4 | Modern Hunter",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m4a1_hy_hunter_modern_light_large.9753bebcd2ed4bba8a432283f35c5d197912db9d.png",
+            "url": "https://csgostash.com/skin/42/M4A4-Modern-Hunter"
+          }
+        ],
+        "pink": [
+          {
+            "name": "SCAR-20 | Splash Jam",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_scar20_hy_hunter_blaze_pink_light_large.b7af5eed6be0c7d95ec01e2ed916841da005ccfc.png",
+            "url": "https://csgostash.com/skin/32/SCAR-20-Splash-Jam"
+          }
+        ],
+        "red": [],
+        "yellow": []
+      }
+    },
+    "mirage": {
+      "name": "The Mirage Collection",
+      "url": "https://csgostash.com/collection/The+Mirage+Collection",
+      "weapons": {
+        "white": [
+          {
+            "name": "AUG | Colony",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_aug_so_space_marine_light_large.ee525f5aaf19c6d97af3b0378d3d3cac26476d80.png",
+            "url": "https://csgostash.com/skin/184/AUG-Colony"
+          },
+          {
+            "name": "Five-SeveN | Contractor",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_fiveseven_so_pmc_light_large.eb6a08d487f3423d956898bae7b84433b1f46d25.png",
+            "url": "https://csgostash.com/skin/183/Five-SeveN-Contractor"
+          },
+          {
+            "name": "G3SG1 | Safari Mesh",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_g3sg1_sp_mesh_tan_light_large.19acce2a10000a2c03f8f89dc39ff1af3e8ca195.png",
+            "url": "https://csgostash.com/skin/187/G3SG1-Safari-Mesh"
+          },
+          {
+            "name": "P90 | Scorched",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p90_sp_dapple_light_large.6a715fc8b63ae569c2facb1607b5243c21a7280a.png",
+            "url": "https://csgostash.com/skin/189/P90-Scorched"
+          },
+          {
+            "name": "P250 | Bone Mask",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p250_sp_tape_light_large.8ece2047279c054325b0d2632559de145cef524a.png",
+            "url": "https://csgostash.com/skin/181/P250-Bone-Mask"
+          },
+          {
+            "name": "Galil AR | Hunting Blind",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_galilar_sp_mesh_slashes_light_large.f3c1ef94e52aa6cfe3c3ba2890e0d5ac0764900a.png",
+            "url": "https://csgostash.com/skin/191/Galil-AR-Hunting-Blind"
+          }
+        ],
+        "lightBlue": [
+          {
+            "name": "Glock-18 | Groundwater",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_glock_so_olive_light_large.1af3a84683b1f123d0bc17319d14979bf7a12115.png",
+            "url": "https://csgostash.com/skin/192/Glock-18-Groundwater"
+          },
+          {
+            "name": "SSG 08 | Tropical Storm",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ssg08_sp_palm_shadow_light_large.fb24b5ed2a03a35a12f5ee7166bc458ab4ae77e7.png",
+            "url": "https://csgostash.com/skin/188/SSG-08-Tropical-Storm"
+          },
+          {
+            "name": "MP7 | Orange Peel",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp7_sp_tape_orange_light_large.5870d3d214c5b4cd923d68c4a016b72596808db1.png",
+            "url": "https://csgostash.com/skin/194/MP7-Orange-Peel"
+          },
+          {
+            "name": "SG 553 | Gator Mesh",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sg556_sp_mesh_python_light_large.ee7a2353f499fc228f88aaa99bd7ac4d9fac1257.png",
+            "url": "https://csgostash.com/skin/190/SG-553-Gator-Mesh"
+          },
+          {
+            "name": "Negev | CaliCamo",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_negev_hy_varicamo_desert_light_large.169bd7cc986fe8b3411c2f8dc484dad4ee9fff71.png",
+            "url": "https://csgostash.com/skin/182/Negev-CaliCamo"
+          }
+        ],
+        "blue": [
+          {
+            "name": "UMP-45 | Blaze",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ump45_aa_flames_light_large.03387f4a0a4ac6fe60437ec998e93de0b39e9b8b.png",
+            "url": "https://csgostash.com/skin/193/UMP-45-Blaze"
+          },
+          {
+            "name": "MP9 | Hot Rod",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp9_an_red_light_large.051bb03c037d5218c15c2b9f9797b21b5d0744a8.png",
+            "url": "https://csgostash.com/skin/195/MP9-Hot-Rod"
+          },
+          {
+            "name": "MAC-10 | Amber Fade",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mac10_aa_fade_metallic_light_large.1af4a93ef5fee1f1510d364f54d1a730474860ef.png",
+            "url": "https://csgostash.com/skin/186/MAC-10-Amber-Fade"
+          }
+        ],
+        "purple": [
+          {
+            "name": "MAG-7 | Bulldozer",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mag7_so_yellow_light_large.bb2e6280c1d92a574c93123d79d5724276db69f3.png",
+            "url": "https://csgostash.com/skin/185/MAG-7-Bulldozer"
+          }
+        ],
+        "pink": [],
+        "red": [],
+        "yellow": []
+      }
+    },
+    "norse": {
+      "name": "The Norse Collection",
+      "url": "https://csgostash.com/collection/The+Norse+Collection",
+      "weapons": {
+        "white": [
+          {
+            "name": "Galil AR | Tornado",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_galilar_so_tornado_light_large.afda126687661b7907d69932f66a45d3e7c85573.png",
+            "url": "https://csgostash.com/skin/1165/Galil-AR-Tornado"
+          },
+          {
+            "name": "MP7 | Scorched",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp7_sp_dapple_light_large.d78eb500eb366b42a585762582f34009835dd946.png",
+            "url": "https://csgostash.com/skin/1166/MP7-Scorched"
+          },
+          {
+            "name": "SSG 08 | Red Stone",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ssg08_so_rune_stone_light_large.008cb3ddaf106a019bc45143d61bb2e520ca50f4.png",
+            "url": "https://csgostash.com/skin/1167/SSG-08-Red-Stone"
+          },
+          {
+            "name": "FAMAS | Night Borre",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_famas_sp_knots_blue_light_large.1a6a2c6fe90198a053410d364dd48441b51fb1a7.png",
+            "url": "https://csgostash.com/skin/1168/FAMAS-Night-Borre"
+          },
+          {
+            "name": "SG 553 | Barricade",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sg556_sp_asgard_wall_light_large.4b11684f29f2153a5eaa7b3c162e7ed6665a045a.png",
+            "url": "https://csgostash.com/skin/1164/SG-553-Barricade"
+          }
+        ],
+        "lightBlue": [
+          {
+            "name": "Dual Berettas | Pyre",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_elite_hy_gelpen_dark_light_large.064bcecab3cc87140e4a6e6f0f34cc3e00675d77.png",
+            "url": "https://csgostash.com/skin/1172/Dual-Berettas-Pyre"
+          },
+          {
+            "name": "MAG-7 | Chainmail",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mag7_am_chainmail_light_large.e6d6e648f7b590f64af2805f59271a364f1b2283.png",
+            "url": "https://csgostash.com/skin/1171/MAG-7-Chainmail"
+          },
+          {
+            "name": "USP-S | Pathfinder",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_usp_silencer_sp_labyrinth2_light_large.62697e5210fe32fc1b5bc3d525b197d53508950d.png",
+            "url": "https://csgostash.com/skin/1170/USP-S-Pathfinder"
+          },
+          {
+            "name": "M4A1-S | Moss Quartz",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m4a1_silencer_am_crystallized_dark_green_light_large.d9fbf93df4fb38d302a7dd8b2783ce738035a916.png",
+            "url": "https://csgostash.com/skin/1169/M4A1-S-Moss-Quartz"
+          }
+        ],
+        "blue": [
+          {
+            "name": "MAC-10 | Copper Borre",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mac10_am_knots_brown_light_large.c968468f0f9fc526f7a12dd8a7f5ebd7fcc24819.png",
+            "url": "https://csgostash.com/skin/1176/MAC-10-Copper-Borre"
+          },
+          {
+            "name": "CZ75-Auto | Emerald Quartz",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_cz75a_am_crystallized_green_light_large.6ae192cbf47b2cb11ec47fcdcbad07a6a78fb3f7.png",
+            "url": "https://csgostash.com/skin/1174/CZ75-Auto-Emerald-Quartz"
+          },
+          {
+            "name": "XM1014 | Frost Borre",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_xm1014_am_knots_silver_light_large.73c743e4867ffc0525bc79c488dc90cc12ee53ac.png",
+            "url": "https://csgostash.com/skin/1175/XM1014-Frost-Borre"
+          },
+          {
+            "name": "SCAR-20 | Brass",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_scar20_aq_brass_light_large.4b497f1e4a42a5c645181a1534cc28320e3f6842.png",
+            "url": "https://csgostash.com/skin/1173/SCAR-20-Brass"
+          }
+        ],
+        "purple": [
+          {
+            "name": "Desert Eagle | Emerald Jörmungandr",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_deagle_am_jorm_green_light_large.db1045fee0af23f28bb4affd164d07e3aadd42ec.png",
+            "url": "https://csgostash.com/skin/1178/Desert-Eagle-Emerald-J%C3%B6rmungandr"
+          },
+          {
+            "name": "AUG | Flame Jörmungandr",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_aug_am_jorm_orange_light_large.1df28085a1bc10ff726b8a54f5c94cca1880fd19.png",
+            "url": "https://csgostash.com/skin/1177/AUG-Flame-J%C3%B6rmungandr"
+          },
+          {
+            "name": "P90 | Astral Jörmungandr",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p90_am_jorm_blue_light_large.4d15121e1a295202b46b7452b0a927c009cebb37.png",
+            "url": "https://csgostash.com/skin/1179/P90-Astral-J%C3%B6rmungandr"
+          }
+        ],
+        "pink": [
+          {
+            "name": "Negev | Mjölnir",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_negev_gs_negev_thor_light_large.5060a7a913b1716faf7e81e145d65e0b4081b20f.png",
+            "url": "https://csgostash.com/skin/1180/Negev-Mj%C3%B6lnir"
+          }
+        ],
+        "red": [
+          {
+            "name": "AWP | Gungnir",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_awp_gs_awp_gungnir_light_large.f80c285940f75cca58731d8ead6bd8be1c18e38b.png",
+            "url": "https://csgostash.com/skin/1181/AWP-Gungnir"
+          }
+        ],
+        "yellow": []
+      }
+    },
+    "nuke": {
+      "name": "The Nuke Collection",
+      "url": "https://csgostash.com/collection/The+Nuke+Collection",
+      "weapons": {
+        "white": [
+          {
+            "name": "PP-Bizon | Irradiated Alert",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bizon_sp_nukestripe_brown_light_large.993c1c6ed6bf4a239268651e4150bc4a615f2632.png",
+            "url": "https://csgostash.com/skin/26/PP-Bizon-Irradiated-Alert"
+          },
+          {
+            "name": "Sawed-Off | Irradiated Alert",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sawedoff_sp_nukestripe_brown_light_large.6a39be9be23998f45a37a5f71c6467dacb728a03.png",
+            "url": "https://csgostash.com/skin/30/Sawed-Off-Irradiated-Alert"
+          },
+          {
+            "name": "MAG-7 | Irradiated Alert",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mag7_sp_nukestripe_brown_light_large.e1d7540ba5131a2e2cf36a8f7c6edc98d0cd431a.png",
+            "url": "https://csgostash.com/skin/31/MAG-7-Irradiated-Alert"
+          }
+        ],
+        "lightBlue": [
+          {
+            "name": "XM1014 | Fallout Warning",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_xm1014_sp_nukestripe_maroon_light_large.8b6facf30ed6057509fcaf2c8a75a04c2629203a.png",
+            "url": "https://csgostash.com/skin/23/XM1014-Fallout-Warning"
+          },
+          {
+            "name": "P90 | Fallout Warning",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p90_sp_nukestripe_maroon_light_large.c3915e723b821c0d03fcaf506129b23f16bdff0f.png",
+            "url": "https://csgostash.com/skin/27/P90-Fallout-Warning"
+          },
+          {
+            "name": "UMP-45 | Fallout Warning",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ump45_sp_nukestripe_maroon_light_large.929675f44f0303f77fdd556348294178ecf23db1.png",
+            "url": "https://csgostash.com/skin/25/UMP-45-Fallout-Warning"
+          }
+        ],
+        "blue": [
+          {
+            "name": "M4A4 | Radiation Hazard",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m4a1_sp_nukestripe_orange_light_large.deb3995ec0bd7021cf33ca089f1d889fb92aba94.png",
+            "url": "https://csgostash.com/skin/24/M4A4-Radiation-Hazard"
+          }
+        ],
+        "purple": [
+          {
+            "name": "Tec-9 | Nuclear Threat",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_tec9_sp_nukestripe_green_tec9_light_large.0067333625bf11ffa93d705dde553b4b2bf6f82c.png",
+            "url": "https://csgostash.com/skin/28/Tec-9-Nuclear-Threat"
+          },
+          {
+            "name": "P250 | Nuclear Threat",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p250_sp_nukestripe_green_light_large.099ce352cdcf83040aad712968d066f260439c22.png",
+            "url": "https://csgostash.com/skin/29/P250-Nuclear-Threat"
+          }
+        ],
+        "pink": [],
+        "red": [],
+        "yellow": []
+      }
+    },
+    "office": {
+      "name": "The Office Collection",
+      "url": "https://csgostash.com/collection/The+Office+Collection",
+      "weapons": {
+        "white": [
+          {
+            "name": "FAMAS | Contrast Spray",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_famas_sp_spray_light_large.fe886d820746c0f4333c0e0ea6d308473e241c4b.png",
+            "url": "https://csgostash.com/skin/17/FAMAS-Contrast-Spray"
+          }
+        ],
+        "lightBlue": [
+          {
+            "name": "G3SG1 | Arctic Camo",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_g3sg1_hy_arctic_light_large.0eb54eebce1517513ecdb3788459c09358971f77.png",
+            "url": "https://csgostash.com/skin/21/G3SG1-Arctic-Camo"
+          },
+          {
+            "name": "M249 | Blizzard Marbleized",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m249_hy_blizzard_light_large.d247530ad94ee2a0c164116b89fd3f38a43dbf30.png",
+            "url": "https://csgostash.com/skin/18/M249-Blizzard-Marbleized"
+          },
+          {
+            "name": "Galil AR | Winter Forest",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_galilar_hy_forest_winter_light_large.2a0bc5c784fc6782304eb3ef68e4f07c6c92d3bf.png",
+            "url": "https://csgostash.com/skin/22/Galil-AR-Winter-Forest"
+          }
+        ],
+        "blue": [
+          {
+            "name": "MP7 | Whiteout",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp7_so_whiteout_light_large.1f27273c189c19b42567bdd44ffc3e5be70ea3a4.png",
+            "url": "https://csgostash.com/skin/19/MP7-Whiteout"
+          },
+          {
+            "name": "P2000 | Silver",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_hkp2000_an_silver_light_large.84bfd2f0bdc7ab614d9cd7103b7d071606118166.png",
+            "url": "https://csgostash.com/skin/20/P2000-Silver"
+          }
+        ],
+        "purple": [],
+        "pink": [],
+        "red": [],
+        "yellow": []
+      }
+    },
+    "overpass": {
+      "name": "The Overpass Collection",
+      "url": "https://csgostash.com/collection/The+Overpass+Collection",
+      "weapons": {
+        "white": [
+          {
+            "name": "MP9 | Storm",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp9_so_stormfront_light_large.7ba67d4546c43cb6dfb9e46eb68d23d5b57471ae.png",
+            "url": "https://csgostash.com/skin/447/MP9-Storm"
+          },
+          {
+            "name": "UMP-45 | Scorched",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ump45_sp_dapple_light_large.a25c92df26ac1c70c65741a07d9da8b0d0785022.png",
+            "url": "https://csgostash.com/skin/444/UMP-45-Scorched"
+          },
+          {
+            "name": "M249 | Contrast Spray",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m249_sp_spray_light_large.1954bdc0dc1e10eebeece7f34e2b9f8e51596d55.png",
+            "url": "https://csgostash.com/skin/445/M249-Contrast-Spray"
+          },
+          {
+            "name": "Sawed-Off | Sage Spray",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sawedoff_sp_spray_desert_sage_light_large.e944ddb90e97199d1f274c481462a3a660b9fc5a.png",
+            "url": "https://csgostash.com/skin/443/Sawed-Off-Sage-Spray"
+          },
+          {
+            "name": "MAG-7 | Storm",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mag7_so_stormfront_light_large.40f72ef6782f32f64bd883923fedfe0d1512d582.png",
+            "url": "https://csgostash.com/skin/446/MAG-7-Storm"
+          }
+        ],
+        "lightBlue": [
+          {
+            "name": "Glock-18 | Night",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_glock_so_night_light_large.e56ea92b4b8c1914a7f5f4e789483313845a0b4a.png",
+            "url": "https://csgostash.com/skin/440/Glock-18-Night"
+          },
+          {
+            "name": "Desert Eagle | Urban DDPAT",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_deagle_hy_ddpat_urb_light_large.06af0cb0e08490f1fba17acd1b9c98978745c213.png",
+            "url": "https://csgostash.com/skin/438/Desert-Eagle-Urban-DDPAT"
+          },
+          {
+            "name": "P2000 | Grassland",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_hkp2000_so_grassland_light_large.c2c8cd99960f57e1e4eeb1261dfaf3006e672577.png",
+            "url": "https://csgostash.com/skin/441/P2000-Grassland"
+          },
+          {
+            "name": "MP7 | Gunsmoke",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp7_hy_gelpen_light_large.e19dd688c21ae094ffc3649e80ee1c1f0959125a.png",
+            "url": "https://csgostash.com/skin/439/MP7-Gunsmoke"
+          }
+        ],
+        "blue": [
+          {
+            "name": "XM1014 | VariCamo Blue",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_xm1014_hy_varicamo_blue_light_large.6b99e2f4d5092295c86b872e2a08d7ea698fe5b6.png",
+            "url": "https://csgostash.com/skin/448/XM1014-VariCamo-Blue"
+          },
+          {
+            "name": "CZ75-Auto | Nitro",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_cz75a_so_orange_accents2_light_large.844bd6d01ce7c69486327ceb44b65b8c7cc49f2d.png",
+            "url": "https://csgostash.com/skin/442/CZ75-Auto-Nitro"
+          },
+          {
+            "name": "SSG 08 | Detour",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ssg08_hy_ssg08_marker_light_large.318454c8676dc6d72ad1b6e343e661d9831645fb.png",
+            "url": "https://csgostash.com/skin/451/SSG-08-Detour"
+          }
+        ],
+        "purple": [
+          {
+            "name": "USP-S | Road Rash",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_usp_silencer_cu_usp_sandpapered_light_large.8de907fed2d0036e0c6c1f326c20915e846227a7.png",
+            "url": "https://csgostash.com/skin/450/USP-S-Road-Rash"
+          },
+          {
+            "name": "AWP | Pink DDPAT",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_awp_hy_ddpat_pink_light_large.a00bebead467a7106062058982a1f8651cf663bc.png",
+            "url": "https://csgostash.com/skin/449/AWP-Pink-DDPAT"
+          }
+        ],
+        "pink": [
+          {
+            "name": "M4A1-S | Master Piece",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m4a1_silencer_cu_m4a1-s_silence_light_large.e48d06783e5c6c99b2f65d6c82891ce9739f0181.png",
+            "url": "https://csgostash.com/skin/437/M4A1-S-Master-Piece"
+          }
+        ],
+        "red": [],
+        "yellow": []
+      }
+    },
+    "risingSun": {
+      "name": "The Rising Sun Collection",
+      "url": "https://csgostash.com/collection/The+Rising+Sun+Collection",
+      "weapons": {
+        "white": [
+          {
+            "name": "Tec-9 | Bamboo Forest",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_tec9_hy_bamboo_jungle_light_large.31268450fbb5b5c2221e6eaadbe7124cf85f3e1d.png",
+            "url": "https://csgostash.com/skin/616/Tec-9-Bamboo-Forest"
+          },
+          {
+            "name": "PP-Bizon | Bamboo Print",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bizon_hy_bamboo_jungle_ink_light_large.0f9ee611e9b667e90923e9fc0da89430881ae7ae.png",
+            "url": "https://csgostash.com/skin/614/PP-Bizon-Bamboo-Print"
+          },
+          {
+            "name": "P250 | Mint Kimono",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p250_sp_kimono_diamonds_light_large.f8b2d66cdc64e8860b36ac2d08060d04e5ec6ae4.png",
+            "url": "https://csgostash.com/skin/618/P250-Mint-Kimono"
+          },
+          {
+            "name": "G3SG1 | Orange Kimono",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_g3sg1_hy_kimono_diamonds_orange_light_large.bdab5d4f92f5733ed056bbe276761c377b5c3401.png",
+            "url": "https://csgostash.com/skin/617/G3SG1-Orange-Kimono"
+          },
+          {
+            "name": "Sawed-Off | Bamboo Shadow",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sawedoff_hy_bamboo_jungle_black_light_large.8c345668f9d6ba961f72fd67c405a8ed2cfffd4c.png",
+            "url": "https://csgostash.com/skin/615/Sawed-Off-Bamboo-Shadow"
+          }
+        ],
+        "lightBlue": [
+          {
+            "name": "P250 | Crimson Kimono",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p250_hy_kimono_diamonds_red_light_large.99ecb66f68d6bba4e17bc30cd72d5041e838371c.png",
+            "url": "https://csgostash.com/skin/619/P250-Crimson-Kimono"
+          },
+          {
+            "name": "Desert Eagle | Midnight Storm",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_deagle_am_seastorm_light_large.aef21efecda37237d24debe3f409f42954dadddd.png",
+            "url": "https://csgostash.com/skin/620/Desert-Eagle-Midnight-Storm"
+          }
+        ],
+        "blue": [
+          {
+            "name": "Galil AR | Aqua Terrace",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_galilar_am_geometric_steps_light_large.fd64d3b26b97da3c03ab009e91d3f53c95e86cc0.png",
+            "url": "https://csgostash.com/skin/621/Galil-AR-Aqua-Terrace"
+          },
+          {
+            "name": "MAG-7 | Counter Terrace",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mag7_hy_geometric_steps_green_light_large.542348e3effe63aae75b070cb1ca7d193e8356cf.png",
+            "url": "https://csgostash.com/skin/622/MAG-7-Counter-Terrace"
+          },
+          {
+            "name": "Tec-9 | Terrace",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_tec9_hy_geometric_steps_yellow_light_large.4d50c678bf9eeb9f063a432aa9d5aec68e863f7d.png",
+            "url": "https://csgostash.com/skin/623/Tec-9-Terrace"
+          }
+        ],
+        "purple": [
+          {
+            "name": "Five-SeveN | Neon Kimono",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_fiveseven_hy_kimono_diamonds_light_large.c82060a31b7e4b17c73eb76fd87c09037a3eba42.png",
+            "url": "https://csgostash.com/skin/624/Five-SeveN-Neon-Kimono"
+          },
+          {
+            "name": "Desert Eagle | Sunset Storm 壱",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_deagle_am_seastorm_blood_light_large.1e92a7e19fde014e5a70832a93b440e0c036d596.png",
+            "url": "https://csgostash.com/skin/625/Desert-Eagle-Sunset-Storm-%E5%A3%B1"
+          },
+          {
+            "name": "M4A4 | Daybreak",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m4a1_am_kimono_sunrise_light_large.f4c4233632fed7004ab4666aeaceab53233cddd6.png",
+            "url": "https://csgostash.com/skin/627/M4A4-Daybreak"
+          },
+          {
+            "name": "Desert Eagle | Sunset Storm 弐",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_deagle_am_seastorm_shojo_light_large.7df4fe386dac18ae2a8c3e50df7dfb9165dece83.png",
+            "url": "https://csgostash.com/skin/626/Desert-Eagle-Sunset-Storm-%E5%BC%90"
+          }
+        ],
+        "pink": [
+          {
+            "name": "AK-47 | Hydroponic",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ak47_am_bamboo_jungle_light_large.98cd023e9d2207ad765b600b281352cbc5009051.png",
+            "url": "https://csgostash.com/skin/628/AK-47-Hydroponic"
+          }
+        ],
+        "red": [
+          {
+            "name": "AUG | Akihabara Accept",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_aug_cu_anime_aug_light_large.f049075c645871ee67b0b47253f59c26143efc49.png",
+            "url": "https://csgostash.com/skin/629/AUG-Akihabara-Accept"
+          }
+        ],
+        "yellow": []
+      }
+    },
+    "safehouse": {
+      "name": "The Safehouse Collection",
+      "url": "https://csgostash.com/collection/The+Safehouse+Collection",
+      "weapons": {
+        "white": [
+          {
+            "name": "Dual Berettas | Contractor",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_elite_so_pmc_light_large.eb0b65f961c27f233d8846c80301666925712e93.png",
+            "url": "https://csgostash.com/skin/196/Dual-Berettas-Contractor"
+          },
+          {
+            "name": "SSG 08 | Blue Spruce",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ssg08_so_moss_light_large.74753da395e67d490101269838df28e1b6313a25.png",
+            "url": "https://csgostash.com/skin/199/SSG-08-Blue-Spruce"
+          },
+          {
+            "name": "Tec-9 | Army Mesh",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_tec9_sp_mesh_army_light_large.b2404b6aa0c7e1584fe2691cfeba70d823aff562.png",
+            "url": "https://csgostash.com/skin/204/Tec-9-Army-Mesh"
+          },
+          {
+            "name": "SCAR-20 | Contractor",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_scar20_so_pmc_light_large.c3e05baecc15229a989ddd093964e9c4e9fbe68a.png",
+            "url": "https://csgostash.com/skin/197/SCAR-20-Contractor"
+          },
+          {
+            "name": "MP7 | Army Recon",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp7_sp_spray_army_light_large.e879b8808f8c967e4f08fde194d6d58f64dfdb2d.png",
+            "url": "https://csgostash.com/skin/206/MP7-Army-Recon"
+          }
+        ],
+        "lightBlue": [
+          {
+            "name": "Galil AR | VariCamo",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_galilar_hy_varicamo_light_large.4893edef6838528fadcc0a790a0ed132cdf2f1b9.png",
+            "url": "https://csgostash.com/skin/202/Galil-AR-VariCamo"
+          },
+          {
+            "name": "M249 | Gator Mesh",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m249_sp_mesh_python_light_large.39f20f5499a7d68e8b90a9e064c993e9a803d721.png",
+            "url": "https://csgostash.com/skin/201/M249-Gator-Mesh"
+          },
+          {
+            "name": "USP-S | Forest Leaves",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_usp_silencer_sp_leaves_light_large.a71c8dc482fea4aaa1c6b5c115e370a7e134ddfd.png",
+            "url": "https://csgostash.com/skin/207/USP-S-Forest-Leaves"
+          },
+          {
+            "name": "AUG | Condemned",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_aug_sp_mesh_forest_fire_light_large.eabf7b69ca1447bee596cdbaf21b48cd7537dbce.png",
+            "url": "https://csgostash.com/skin/208/AUG-Condemned"
+          },
+          {
+            "name": "MP9 | Orange Peel",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp9_sp_tape_orange_light_large.77854282ffc131b7bbe878c140b3c41bfb735242.png",
+            "url": "https://csgostash.com/skin/210/MP9-Orange-Peel"
+          },
+          {
+            "name": "G3SG1 | VariCamo",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_g3sg1_hy_varicamo_light_large.6c944e82080f68d87881cdab86852e9375af9bb9.png",
+            "url": "https://csgostash.com/skin/198/G3SG1-VariCamo"
+          }
+        ],
+        "blue": [
+          {
+            "name": "SSG 08 | Acid Fade",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ssg08_aa_fade_grassland_light_large.82950af31c177d14983665459ddee77f63379f4d.png",
+            "url": "https://csgostash.com/skin/200/SSG-08-Acid-Fade"
+          },
+          {
+            "name": "FAMAS | Teardown",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_famas_sp_mesh_hot_and_cold_light_large.c93a700bb3cf4d14241d3c837569b571685b0b29.png",
+            "url": "https://csgostash.com/skin/209/FAMAS-Teardown"
+          },
+          {
+            "name": "Five-SeveN | Silver Quartz",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_fiveseven_am_crystallized_silver_light_large.1c5e2fb5a3541523f1ff3a28f4138d83eed3a67f.png",
+            "url": "https://csgostash.com/skin/205/Five-SeveN-Silver-Quartz"
+          }
+        ],
+        "purple": [
+          {
+            "name": "M4A1-S | Nitro",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m4a1_silencer_so_orange_accents_light_large.625f58cdc5641f440ccf2fe866c3152b5803d1f2.png",
+            "url": "https://csgostash.com/skin/203/M4A1-S-Nitro"
+          }
+        ],
+        "pink": [],
+        "red": [],
+        "yellow": []
+      }
+    },
+    "stMarc": {
+      "name": "The St. Marc Collection",
+      "url": "https://csgostash.com/collection/The+St.+Marc+Collection",
+      "weapons": {
+        "white": [
+          {
+            "name": "M249 | Jungle",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m249_so_jungle_light_large.1e5297273a0d6f70737aec6bf8ce370de6b87fad.png",
+            "url": "https://csgostash.com/skin/1132/M249-Jungle"
+          },
+          {
+            "name": "MAC-10 | Surfwood",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mac10_sp_twigs_beach_light_large.82c99f7aa915b87043e167b42e25a5fbe2e8c1e2.png",
+            "url": "https://csgostash.com/skin/1129/MAC-10-Surfwood"
+          },
+          {
+            "name": "MP5-SD | Bamboo Garden",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp5sd_hy_bamboo_stmarc_light_large.1d07511b139360d0e973f8c7e316dc1792a2b812.png",
+            "url": "https://csgostash.com/skin/1128/MP5-SD-Bamboo-Garden"
+          },
+          {
+            "name": "Sawed-Off | Jungle Thicket",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sawedoff_sp_palm_green_light_large.f8f95ff757a290d96692f78c0cc80c9cbcd7a0fe.png",
+            "url": "https://csgostash.com/skin/1131/Sawed-Off-Jungle-Thicket"
+          },
+          {
+            "name": "PP-Bizon | Seabird",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bizon_so_aqua_stmarc_light_large.19036e4aeafdaeaa9c22cd0b86af514562c1761c.png",
+            "url": "https://csgostash.com/skin/1130/PP-Bizon-Seabird"
+          }
+        ],
+        "lightBlue": [
+          {
+            "name": "Tec-9 | Rust Leaf",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_tec9_sp_leaf_orange_light_large.9dea950fd04f689507adcb2acb3ff2540f19dffe.png",
+            "url": "https://csgostash.com/skin/1136/Tec-9-Rust-Leaf"
+          },
+          {
+            "name": "XM1014 | Banana Leaf",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_xm1014_hy_leaf_green_light_large.347a54ae0c8292ff6dc506dcf1702de2040a7459.png",
+            "url": "https://csgostash.com/skin/1135/XM1014-Banana-Leaf"
+          },
+          {
+            "name": "P90 | Sunset Lily",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p90_sp_bloom_orange_light_large.e3e14184d5d31c9484b7697d7f38aafa3a479e20.png",
+            "url": "https://csgostash.com/skin/1133/P90-Sunset-Lily"
+          },
+          {
+            "name": "M4A4 | Dark Blossom",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m4a1_sp_bud_blue_light_large.f31b88226c77480548a0c1e62581bea8f3946906.png",
+            "url": "https://csgostash.com/skin/1134/M4A4-Dark-Blossom"
+          }
+        ],
+        "blue": [
+          {
+            "name": "Five-SeveN | Crimson Blossom",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_fiveseven_hy_bud_red_light_large.d149fac98ea236499e2fa159b82420a8eedefad4.png",
+            "url": "https://csgostash.com/skin/1138/Five-SeveN-Crimson-Blossom"
+          },
+          {
+            "name": "UMP-45 | Day Lily",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ump45_hy_bloom_red_light_large.c2f9856966873a344ab366cbf13a6fc6bf0081fc.png",
+            "url": "https://csgostash.com/skin/1137/UMP-45-Day-Lily"
+          },
+          {
+            "name": "FAMAS | Sundown",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_famas_sp_palm_sunset_light_large.924bca1ce6c9034d6963c81c59fa72a2a4b45a07.png",
+            "url": "https://csgostash.com/skin/1140/FAMAS-Sundown"
+          },
+          {
+            "name": "MP7 | Teal Blossom",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp7_sp_bud_green_light_large.9b06527d579a047b676e49001fa16b39208f9149.png",
+            "url": "https://csgostash.com/skin/1139/MP7-Teal-Blossom"
+          }
+        ],
+        "purple": [
+          {
+            "name": "AUG | Midnight Lily",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_aug_am_bloom_blue_light_large.02cb11a89ee5a7f3d39fbec15757eba34691e526.png",
+            "url": "https://csgostash.com/skin/1143/AUG-Midnight-Lily"
+          },
+          {
+            "name": "SSG 08 | Sea Calico",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ssg08_hy_flowers_stmarc_light_large.482eabb4a21633695ffaab7d63a77aee8b18a1ff.png",
+            "url": "https://csgostash.com/skin/1141/SSG-08-Sea-Calico"
+          },
+          {
+            "name": "Glock-18 | Synth Leaf",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_glock_hy_leaf_blue_light_large.1b017cc8d4594d924537f9928db4253ff628284c.png",
+            "url": "https://csgostash.com/skin/1142/Glock-18-Synth-Leaf"
+          }
+        ],
+        "pink": [
+          {
+            "name": "MP9 | Wild Lily",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp9_cu_mp9_island_floral_light_large.d8f6334a2905b146dd2107e592068bdb333f49cd.png",
+            "url": "https://csgostash.com/skin/1144/MP9-Wild-Lily"
+          }
+        ],
+        "red": [
+          {
+            "name": "AK-47 | Wild Lotus",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ak47_cu_ak_island_floral_light_large.1303e76d0a77ab164a46a7aba5ab1dcaf1acee6b.png",
+            "url": "https://csgostash.com/skin/1145/AK-47-Wild-Lotus"
+          }
+        ],
+        "yellow": []
+      }
+    },
+    "train": {
+      "name": "The Train Collection",
+      "url": "https://csgostash.com/collection/The+Train+Collection",
+      "weapons": {
+        "white": [
+          {
+            "name": "G3SG1 | Polar Camo",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_g3sg1_hy_arctic_contrast_light_large.d1444467ee9975d1b4d5287a280e8684e7338493.png",
+            "url": "https://csgostash.com/skin/214/G3SG1-Polar-Camo"
+          },
+          {
+            "name": "UMP-45 | Urban DDPAT",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ump45_hy_ddpat_urb_light_large.2a86a32be1865ab7757d80bfbee44c80662ee4d9.png",
+            "url": "https://csgostash.com/skin/211/UMP-45-Urban-DDPAT"
+          },
+          {
+            "name": "Nova | Polar Mesh",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_nova_sp_mesh_arctic_contrast_light_large.b85fc46665b05c2a0eea955a7946e644a7618944.png",
+            "url": "https://csgostash.com/skin/221/Nova-Polar-Mesh"
+          },
+          {
+            "name": "Five-SeveN | Forest Night",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_fiveseven_hy_forest_night_light_large.fc245886bed9e789350127f844afe63f34f64936.png",
+            "url": "https://csgostash.com/skin/217/Five-SeveN-Forest-Night"
+          },
+          {
+            "name": "PP-Bizon | Urban Dashed",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bizon_sp_tape_short_urban_light_large.141f3b1f24bc6c964a78ca58b38c01ad773fbc12.png",
+            "url": "https://csgostash.com/skin/223/PP-Bizon-Urban-Dashed"
+          },
+          {
+            "name": "Dual Berettas | Colony",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_elite_so_space_marine_light_large.101c6b29315d37db050a4c7817a4c11517baa167.png",
+            "url": "https://csgostash.com/skin/213/Dual-Berettas-Colony"
+          }
+        ],
+        "lightBlue": [
+          {
+            "name": "M4A4 | Urban DDPAT",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m4a1_hy_ddpat_urb_light_large.7ced16120d54bcdc2faa66d215ae81041ab23bc4.png",
+            "url": "https://csgostash.com/skin/225/M4A4-Urban-DDPAT"
+          },
+          {
+            "name": "P250 | Metallic DDPAT",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p250_am_urban_light_large.2f6ef478d97cb2887fc4106cf89768f6cccd8ed6.png",
+            "url": "https://csgostash.com/skin/212/P250-Metallic-DDPAT"
+          },
+          {
+            "name": "MAC-10 | Candy Apple",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mac10_so_red_light_large.00ffdb3b77314dae95b0683242cba794dbe5dd03.png",
+            "url": "https://csgostash.com/skin/224/MAC-10-Candy-Apple"
+          },
+          {
+            "name": "MAG-7 | Metallic DDPAT",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mag7_am_urban_light_large.49c3b842a021265e8dd66f05ebe20fc76a6dfdba.png",
+            "url": "https://csgostash.com/skin/218/MAG-7-Metallic-DDPAT"
+          },
+          {
+            "name": "SCAR-20 | Carbon Fiber",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_scar20_am_carbon_fiber_light_large.1e2b9188a7cffb26c7a912995de329bd70d0d1d9.png",
+            "url": "https://csgostash.com/skin/219/SCAR-20-Carbon-Fiber"
+          },
+          {
+            "name": "P90 | Ash Wood",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p90_sp_twigs_light_large.32f929b66cdf34997897a48260a53946e786a531.png",
+            "url": "https://csgostash.com/skin/222/P90-Ash-Wood"
+          }
+        ],
+        "blue": [
+          {
+            "name": "Desert Eagle | Urban Rubble",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_deagle_hy_varicamo_urban_light_large.a9791d0046206f88085f2d0850ec577c6f535a47.png",
+            "url": "https://csgostash.com/skin/215/Desert-Eagle-Urban-Rubble"
+          },
+          {
+            "name": "Sawed-Off | Amber Fade",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sawedoff_aa_fade_metallic_light_large.aa7418206953ed4b7707ddbc859bb1eb7bf6c9ab.png",
+            "url": "https://csgostash.com/skin/220/Sawed-Off-Amber-Fade"
+          }
+        ],
+        "purple": [
+          {
+            "name": "Tec-9 | Red Quartz",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_tec9_am_crystallized_light_large.787b7ae299c33a003515537d5335b38d589e2e9f.png",
+            "url": "https://csgostash.com/skin/216/Tec-9-Red-Quartz"
+          }
+        ],
+        "pink": [],
+        "red": [],
+        "yellow": []
+      }
+    },
+    "vertigo": {
+      "name": "The Vertigo Collection",
+      "url": "https://csgostash.com/collection/The+Vertigo+Collection",
+      "weapons": {
+        "white": [
+          {
+            "name": "MAC-10 | Urban DDPAT",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mac10_hy_ddpat_urb_light_large.0c29c0fcd256ee141fac956e954179504dfe0c74.png",
+            "url": "https://csgostash.com/skin/51/MAC-10-Urban-DDPAT"
+          },
+          {
+            "name": "XM1014 | Urban Perforated",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_xm1014_sp_tape_dots_urban_light_large.751c1e2059e1b9b8ef64b4cd94b22e35cccd0477.png",
+            "url": "https://csgostash.com/skin/54/XM1014-Urban-Perforated"
+          }
+        ],
+        "lightBlue": [
+          {
+            "name": "PP-Bizon | Carbon Fiber",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bizon_am_carbon_fiber_light_large.bc4fbdedf71b3b922a2596dac8df3c50306ecf51.png",
+            "url": "https://csgostash.com/skin/50/PP-Bizon-Carbon-Fiber"
+          }
+        ],
+        "blue": [
+          {
+            "name": "AK-47 | Black Laminate",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ak47_hy_ak47lam_bw_light_large.c504cab278a4955e92255ee2022340be2d0982a4.png",
+            "url": "https://csgostash.com/skin/49/AK-47-Black-Laminate"
+          },
+          {
+            "name": "P90 | Glacier Mesh",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p90_sp_mesh_glacier_light_large.742539900d5186f68defb5fac7e6a82771c302dd.png",
+            "url": "https://csgostash.com/skin/52/P90-Glacier-Mesh"
+          }
+        ],
+        "purple": [
+          {
+            "name": "Dual Berettas | Demolition",
+            "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_elite_so_tangerine_light_large.3fd8ec1b63079a11e24d78228ad989b51a30b0ca.png",
+            "url": "https://csgostash.com/skin/53/Dual-Berettas-Demolition"
+          }
+        ],
+        "pink": [],
+        "red": [],
         "yellow": []
       }
     }

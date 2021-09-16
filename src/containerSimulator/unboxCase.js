@@ -9,6 +9,7 @@ const scrapeWeaponPage = require('./webScraper').scrapeWeaponPage;
  */
 async function unboxCase(caseName) {
   const data = caseData.cases[caseName];
+  const caseWeaponData = data.weapons;
 
   console.log(`Unboxing: ${data.name}`);
 
@@ -18,7 +19,6 @@ async function unboxCase(caseName) {
   const weaponWearStatus = _weaponWear();
 
   // Static weapon data
-  const caseWeaponData = data.weapons;
   const weaponData = _weapon(caseWeaponData[colour]);
   const weaponDetails = await scrapeWeaponPage(weaponData.url, statTrakStatus, weaponWearStatus);
 

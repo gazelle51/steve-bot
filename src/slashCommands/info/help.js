@@ -9,35 +9,46 @@ const { defaultCooldown } = require('../../config.js');
  */
 async function execute(interaction, client) {
   const data = [];
-  const commands = client.commands;
+  const slashCommands = client.slashCommands;
   const commandName = interaction.options.getString('command_name');
 
   // Check if generic help was requested or a single command
   if (!commandName) {
     // Format data
     data.push("Here's a list of all my commands:");
-    data.push(commands.map((command) => command.data.name).join(', '));
     data.push(
-      `\nYou can send \`/help command_name:[command_name]\` to get info on a specific command.`
+      slashCommands
+        .map((command) => command.data.name)
+        .sort()
+        .join(', ')
+    );
+    data.push(
+      `\nYou can send \`/help command_name:[command_name]\` to get more information on a specific command.`
     );
   } else {
     // Get command details
-    const command = commands.get(commandName);
+    const slashCommand = slashCommands.get(commandName);
 
     // Check command exists
-    if (!command) {
+    if (!slashCommand) {
       return await interaction.reply({ content: "That's not a valid command", ephemeral: true });
     }
 
     // Format data
     data.push(`**Name:** ${commandName}`);
-    if (command.data.description) data.push(`**Description:** ${command.data.description}`);
-    data.push(`**Cooldown:** ${command.cooldown || defaultCooldown} second(s)`);
-    data.push(`**Guild only?** ${command.guildOnly ? 'Yes' : 'No'}`);
+    if (slashCommand.data.description)
+      data.push(`**Description:** ${slashCommand.data.description}`);
+    data.push(`**Cooldown:** ${slashCommand.cooldown || defaultCooldown} second(s)`);
+    data.push(
+      `**Can the command only be used in a server?** ${slashCommand.guildOnly ? 'Yes' : 'No'}`
+    );
+    data.push(
+      `**Does the user need to be in a voice channel?** ${slashCommand.voiceChannel ? 'Yes' : 'No'}`
+    );
   }
 
   // Send help message
-  await interaction.reply(data.join('\n'));
+  await interaction.reply({ content: data.join('\n'), ephemeral: true });
 }
 
 /** @type {import('../../typedefs/discord').SlashCommand}} */

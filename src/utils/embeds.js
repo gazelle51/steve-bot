@@ -111,6 +111,14 @@ function containerImage(title, url, author, containerName) {
     .setFooter(`${author.tag} | ${containerName}`, author.avatarURL());
 }
 
+/**
+ *
+ * @returns {MessageEmbed}
+ */
+function helpAllCommands() {
+  return new MessageEmbed().setColor(embedColour).setTitle('title');
+}
+
 module.exports = {
   queue: {
     base: queueBase,
@@ -119,4 +127,5 @@ module.exports = {
     songAdded: queueSongAdded,
   },
   container: { weapon: containerWeapon, image: containerImage },
+  help: { allCommands: helpAllCommands },
 };

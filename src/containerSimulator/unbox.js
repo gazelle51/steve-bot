@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const embeds = require('../utils/embeds').case;
+const embeds = require('../utils/embeds').container;
 const { User } = require('discord.js');
 const { isCase, isCollection, randomCase, randomCollection } = require('./containers');
 const { unboxCase } = require('./unboxCase');
@@ -69,16 +69,26 @@ async function unbox(containerName, user) {
     // Box
     case 'box':
       return {
-        files: [
-          'https://media.giphy.com/media/26his8ERHOSxKuWw8/giphy.gif?cid=ecf05e477mcpzpur95w1wm4t66zkh06t17j8lgc6nwq5f5c3&rid=giphy.gif&ct=g',
+        embeds: [
+          embeds.image(
+            'Ducky',
+            'https://media.giphy.com/media/26his8ERHOSxKuWw8/giphy.gif?cid=ecf05e477mcpzpur95w1wm4t66zkh06t17j8lgc6nwq5f5c3&rid=giphy.gif&ct=g',
+            user,
+            'Box'
+          ),
         ],
       };
 
     // Laura
     case 'laura':
       return {
-        files: [
-          'https://media.giphy.com/media/xTiTngxCg9CQfe1lfi/giphy.gif?cid=ecf05e470c34hd6qgfsc775871j0uvnvt78sxm4oqst947yh&rid=giphy.gif&ct=g',
+        embeds: [
+          embeds.image(
+            'Laura Chan ローラ',
+            'https://media.giphy.com/media/xTiTngxCg9CQfe1lfi/giphy.gif?cid=ecf05e470c34hd6qgfsc775871j0uvnvt78sxm4oqst947yh&rid=giphy.gif&ct=g',
+            user,
+            'Laura'
+          ),
         ],
       };
   }

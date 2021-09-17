@@ -58,12 +58,12 @@ function queueNowPlayingOnly(nowPlaying) {
 }
 
 /**
- * Display the result of a case unboxing.
+ * Display the result of a container unboxing.
  * @param {import('../typedefs/container').ContainerWeapon} weapon - case weapon object
- * @param {User} author - user who opened case
+ * @param {User} author - user who opened container
  * @returns {MessageEmbed}
  */
-function caseWeapon(weapon, author) {
+function containerWeapon(weapon, author) {
   const colours = {
     white: '#b0c3d9',
     lightBlue: '#5e98d9',
@@ -94,6 +94,23 @@ function caseWeapon(weapon, author) {
     .setFooter(`${author.tag} | ${weapon.containerName}`, author.avatarURL());
 }
 
+/**
+ * Display an image as the result of a container unboxing.
+ * Usually used for joke purposes.
+ * @param {string} title - image title
+ * @param {string} url - image URL
+ * @param {User} author - user who opened container
+ * @param {string} containerName - name of container opened
+ * @returns {MessageEmbed}
+ */
+function containerImage(title, url, author, containerName) {
+  return new MessageEmbed()
+    .setColor(embedColour)
+    .setTitle(title)
+    .setImage(url)
+    .setFooter(`${author.tag} | ${containerName}`, author.avatarURL());
+}
+
 module.exports = {
   queue: {
     base: queueBase,
@@ -101,5 +118,5 @@ module.exports = {
     nowPlayingOnly: queueNowPlayingOnly,
     songAdded: queueSongAdded,
   },
-  case: { weapon: caseWeapon },
+  container: { weapon: containerWeapon, image: containerImage },
 };

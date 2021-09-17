@@ -1,7 +1,7 @@
 /**
  * Run this script to get data on weapons inside collections.
  *
- * Weapons are collected for each case mentioned in ./containerSimulator/collectionData.json
+ * Weapons are collected for each collection mentioned in ./containerSimulator/collectionData.json
  * and results are saved in ./scriptOutput/collectionData.json
  *
  * To run use the `collection-data` script defined in the package.json.
@@ -12,7 +12,7 @@ const fs = require('fs');
 const scrapeContainerPage = require('../containerSimulator/webScraper').scrapeContainerPage;
 
 (async () => {
-  // Loop through cases
+  // Loop through collections
   for (const collectionObj of Object.values(collectionData.collections)) {
     // Get weapon data
     const weapons = await scrapeContainerPage(collectionObj.url);

@@ -25,7 +25,7 @@ async function unboxCollection(collectionName) {
     souvenir: souvenirStatus,
   });
 
-  const caseWeapon = {
+  const collectionWeapon = {
     ...weaponData,
     ...weaponDetails,
     colour: colour,
@@ -34,7 +34,7 @@ async function unboxCollection(collectionName) {
     containerName: data.name,
   };
 
-  return caseWeapon;
+  return collectionWeapon;
 }
 
 /**

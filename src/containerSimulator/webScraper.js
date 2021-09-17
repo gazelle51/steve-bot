@@ -78,7 +78,7 @@ async function scrapeWeaponPage(url, wear, type) {
 /**
  * Extract all knives at the provided URL. Also works for gloves.
  * @param {string} url - URL to scrape
- * @returns {Promise<import('../typedefs/container').ContainerKnifeData>} knives in case
+ * @returns {Promise<import('../typedefs/container').ContainerKnifeData>} knives in container
  */
 async function _scrapeKnivesPage(url) {
   const knives = { yellow: [] };
@@ -124,7 +124,7 @@ async function _scrapeKnivesPage(url) {
  * @param {import('../typedefs/container').ContainerData|import('../typedefs/container').ContainerKnifeData} weapons - existing weapons data to update
  * @param {string} colourOfInterest - colour of weapon we are interested in
  * @param {boolean} [knivesData=false] - if true, the data to be extracted is knives
- * @returns {Promise<void>} weapons in case
+ * @returns {Promise<void>} weapons in container
  */
 async function _extractWeaponData($, weapons, colourOfInterest, knivesData = false) {
   let knivesUrl;

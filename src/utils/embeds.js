@@ -59,7 +59,7 @@ function queueNowPlayingOnly(nowPlaying) {
 
 /**
  * Display the result of a container unboxing.
- * @param {import('../typedefs/container').ContainerWeapon} weapon - case weapon object
+ * @param {import('../typedefs/container').ContainerWeapon} weapon - container weapon object
  * @param {User} author - user who opened container
  * @returns {MessageEmbed}
  */

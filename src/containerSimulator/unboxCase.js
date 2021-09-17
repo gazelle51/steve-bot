@@ -20,7 +20,9 @@ async function unboxCase(caseName) {
 
   // Static weapon data
   const weaponData = _weapon(caseWeaponData[colour]);
-  const weaponDetails = await scrapeWeaponPage(weaponData.url, statTrakStatus, weaponWearStatus);
+  const weaponDetails = await scrapeWeaponPage(weaponData.url, weaponWearStatus, {
+    statTrak: statTrakStatus,
+  });
 
   const caseWeapon = {
     ...weaponData,

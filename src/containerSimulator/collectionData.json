@@ -34,7 +34,7 @@
     "minimalWear": 0.2468,
     "factoryNew": 0.1471
   },
-  "souvinerThreshold": 0.04,
+  "souvenirThreshold": 0.04,
   "collections": {
     "cobblestone": {
       "name": "The Cobblestone Collection",

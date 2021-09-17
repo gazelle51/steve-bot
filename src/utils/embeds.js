@@ -79,8 +79,8 @@ function containerWeapon(weapon, author) {
   // StatTrak
   if (weapon.statTrak) description = description + '```arm\nStatTrak™\n```\n';
 
-  // Souviner
-  if (weapon.souviner) description = description + '```fix\nSouviner\n```\n';
+  // Souvenir
+  if (weapon.souvenir) description = description + '```fix\nSouvenir\n```\n';
 
   // Price
   description = description + `\`\`\`\n${weapon.price}\n\`\`\`\n`;

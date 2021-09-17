@@ -10,7 +10,7 @@ const { MessageEmbed } = require('discord.js');
 
 /**
  * Raw weapon details data scraped from a weapon page.
- * We know the wear and StatTrak/souviner details of these objects.
+ * We know the wear and StatTrak/souvenir details of these objects.
  * @typedef {Object} WeaponDetailsData
  * @property {string} price - weapon price
  */
@@ -21,7 +21,7 @@ const { MessageEmbed } = require('discord.js');
  * @property {string} colour - weapon colour
  * @property {string} wear - weapon wear
  * @property {boolean} [statTrak] - whether the weapon has StatTrak tech or not
- * @property {boolean} [souviner] - whether the weapon is a souviner or not
+ * @property {boolean} [souvenir] - whether the weapon is a souvenir or not
  * @property {string} containerName - container the weapon was opened from
  */
 

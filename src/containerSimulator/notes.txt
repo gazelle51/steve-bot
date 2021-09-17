@@ -1,9 +1,0 @@
-1 in 5 chance of getting a drop at the next tier, excluding yellow
-(1)*0.8 = 0.80
-(1-0.8)*0.8 = 0.16
-(1-0.8-0.16)*0.8 = 0.032
-(1-0.8-0.16-0.032)*0.8 = 0.0064
-(1-0.8-0.16-0.032-0.0064)*0.8 = 0.00128
-
-Collection drop rates
-https://www.csgodatabase.com/collections/

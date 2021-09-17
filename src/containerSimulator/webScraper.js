@@ -34,11 +34,13 @@ async function scrapeContainerPage(url, colour = 'yellow') {
 /**
  * Extract data about the weapon at the provided URL.
  * @param {string} url - URL to scrape
- * @param {boolean} statTrak - indicates if the details should be for a StatTrak weapon
  * @param {string} wear - wear of the weapon
+ * @param {Object} type - object type
+ * @param {boolean} [type.statTrak] - indicates if the details should be for a StatTrak weapon
+ * @param {boolean} [type.souvenir] - indicates if the details should be for a souvenir weapon
  * @returns {Promise<import('../typedefs/container').WeaponDetailsData>}
  */
-async function scrapeWeaponPage(url, statTrak, wear) {
+async function scrapeWeaponPage(url, wear, type) {
   console.log(`Scraping weapon at ${url}`);
 
   // Load page into Cheerio
@@ -60,8 +62,13 @@ async function scrapeWeaponPage(url, statTrak, wear) {
   // Find price of specific weapon
   const weaponPriceArray = weaponPrices.find(
     (price) =>
-      (statTrak && price.includes('StatTrak') && price.includes(wear)) ||
-      (!statTrak && !price.includes('StatTrak') && price.includes(wear))
+      (type.statTrak && price.includes('StatTrak') && price.includes(wear)) ||
+      (type.souvenir && price.includes('Souvenir') && price.includes(wear)) ||
+      (!type.statTrak &&
+        !type.souvenir &&
+        !price.includes('StatTrak') &&
+        !price.includes('Souvenir') &&
+        price.includes(wear))
   );
   const weaponPrice = weaponPriceArray ? weaponPriceArray.pop() : "Couldn't find price";
 

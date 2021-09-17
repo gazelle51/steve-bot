@@ -16,19 +16,21 @@ async function unboxCollection(collectionName) {
 
   // Randomised weapon data
   const colour = _weaponColour(tier, collectionName);
-  const souvinerStatus = _souviner();
+  const souvenirStatus = _souvenir();
   const weaponWearStatus = _weaponWear();
 
   // Static weapon data
   const weaponData = _weapon(collectionWeaponData[colour]);
-  const weaponDetails = await scrapeWeaponPage(weaponData.url, souvinerStatus, weaponWearStatus);
+  const weaponDetails = await scrapeWeaponPage(weaponData.url, weaponWearStatus, {
+    souvenir: souvenirStatus,
+  });
 
   const caseWeapon = {
     ...weaponData,
     ...weaponDetails,
     colour: colour,
     wear: weaponWearStatus,
-    souviner: souvinerStatus,
+    souvenir: souvenirStatus,
     containerName: data.name,
   };
 
@@ -163,11 +165,11 @@ function _weaponWear() {
 }
 
 /**
- * Generate a souviner true or false flag based on the souviner threshold.
+ * Generate a souvenir true or false flag based on the souvenir threshold.
  * @returns {boolean}
  */
-function _souviner() {
-  return Math.random() <= collectionData.souvinerThreshold ? true : false;
+function _souvenir() {
+  return Math.random() <= collectionData.souvenirThreshold ? true : false;
 }
 
 module.exports = { unboxCollection };

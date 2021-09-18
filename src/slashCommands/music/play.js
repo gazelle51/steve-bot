@@ -2,6 +2,7 @@ const { CommandInteraction } = require('discord.js');
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const embeds = require('../../utils/embeds').queue;
 const queue = require('../../utils/audioQueue');
+const ytdl = require('ytdl-core');
 const yts = require('yt-search');
 
 /**
@@ -20,9 +21,12 @@ async function execute(interaction, client) {
   };
 
   if (song.includes('www.youtube.com')) {
-    audio.title = song;
-    audio.url = song;
-    audio.length = '?';
+    // Song details from Youtube
+    const songDetails = await ytdl.getBasicInfo(song);
+
+    audio.title = songDetails.videoDetails.title;
+    audio.url = songDetails.videoDetails.video_url;
+    audio.length = _secondsToTime(+songDetails.videoDetails.lengthSeconds);
   } else {
     // Search Youtube
     const youtubeResult = await yts(song);

@@ -14,6 +14,8 @@ const handler = {
   cooldown: undefined,
   guildOnly: undefined,
   voiceChannel: undefined,
+  usage: undefined,
+  examples: undefined,
   execute,
 };
 

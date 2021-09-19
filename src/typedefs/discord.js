@@ -10,6 +10,8 @@ const { AudioPlayer } = require('@discordjs/voice/dist');
  * @property {number} [cooldown] - command cooldown in seconds, if different from the default
  * @property {boolean} [guildOnly] - if true, command can only be used in a guild
  * @property {boolean} [voiceChannel] - if true, the user must be connected to a voice channel
+ * @property {string} [usage] - generic description of how command is used
+ * @property {string[]} [examples] - examples of how to us command
  * @property {Function} execute - function that is called whent the command is executed
  */
 

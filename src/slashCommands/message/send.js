@@ -27,6 +27,7 @@ const handler = {
     .addStringOption((option) =>
       option.setName('message').setDescription('Message to send').setRequired(true)
     ),
+  guildOnly: true,
   execute,
 };
 

@@ -1,5 +1,5 @@
 const { Collection, MessageEmbed, User } = require('discord.js');
-const { embedColour, emoji } = require('../config');
+const { defaultCooldown, embedColour, emoji, prefix } = require('../config');
 
 /**
  * Embed to display when a song is added to the queue.
@@ -133,6 +133,61 @@ function helpAllCommands(commands) {
     ]);
 }
 
+/**
+ * Create an embed for help on a specific bot command.
+ * @param {import('../typedefs/discord').SlashCommand} slashCommand - slash command
+ * @param {import('../typedefs/discord').MessageCommand} [messageCommand=undefined] - message command
+ * @returns {MessageEmbed}
+ */
+function helpSingleCommand(slashCommand, messageCommand = undefined) {
+  // Get options data
+  const options = slashCommand.data.options.map(
+    (option, i) =>
+      `**${i + 1}.** Name: \`${option.name}\`; Description: ${option.description}\; Required? ${
+        option.required ? 'Yes' : 'No'
+      }`
+  );
+
+  // Create base embed
+  const embed = new MessageEmbed()
+    .setColor(embedColour)
+    .setTitle(`Help for \`${slashCommand.data.name}\``)
+    .addFields([
+      { name: 'Command name', value: '`' + slashCommand.data.name + '`' },
+      { name: 'Description', value: slashCommand.data.description },
+      { name: 'Options', value: slashCommand.data.options.length ? options.join('\n') : 'None' },
+      { name: 'Cooldown', value: `${slashCommand.cooldown || defaultCooldown} second(s)` },
+      {
+        name: 'Can the command only be used in a server?',
+        value: slashCommand.guildOnly ? 'Yes' : 'No',
+      },
+      {
+        name: 'Does the user need to be in a voice channel?',
+        value: slashCommand.voiceChannel ? 'Yes' : 'No',
+      },
+    ]);
+
+  // Add message command data if it's defined
+  if (messageCommand) {
+    // Generic use
+    const genericExample = messageCommand.usage
+      ? `${prefix}${messageCommand.data.name} ${messageCommand.usage}`
+      : `${prefix}${messageCommand.data.name} `;
+
+    let text = `This command can also be activated from a message, send \`${genericExample}\` to use it.`;
+
+    // Examples of use
+    if (messageCommand.examples) {
+      const specificExamples = messageCommand.examples.map((example) => `${prefix}${example}`);
+      text = text + `\nHere's some examples: \`` + specificExamples.join('`, `') + '`.';
+    }
+
+    embed.addField('Message command', text);
+  }
+
+  return embed;
+}
+
 module.exports = {
   queue: {
     base: queueBase,
@@ -141,5 +196,5 @@ module.exports = {
     songAdded: queueSongAdded,
   },
   container: { weapon: containerWeapon, image: containerImage },
-  help: { allCommands: helpAllCommands },
+  help: { allCommands: helpAllCommands, singleCommand: helpSingleCommand },
 };

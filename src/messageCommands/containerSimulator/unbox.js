@@ -41,8 +41,9 @@ const handler = {
   data: {
     name: 'unbox',
     description: 'Unbox a CS-GO container',
-    // option: ('container').setDescription('Name of container to open'))
   },
+  usage: '<container>',
+  examples: ['unbox', 'unbox bravo'],
   execute,
 };
 

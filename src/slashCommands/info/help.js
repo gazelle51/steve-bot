@@ -1,6 +1,7 @@
 const { CommandInteraction } = require('discord.js');
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { defaultCooldown } = require('../../config.js');
+const embeds = require('../../utils/embeds').help;
 
 /**
  * Execute help command.
@@ -9,22 +10,13 @@ const { defaultCooldown } = require('../../config.js');
  */
 async function execute(interaction, client) {
   const data = [];
+  let embed;
   const slashCommands = client.slashCommands;
   const commandName = interaction.options.getString('command_name');
 
   // Check if generic help was requested or a single command
   if (!commandName) {
-    // Format data
-    data.push("Here's a list of all my commands:");
-    data.push(
-      slashCommands
-        .map((command) => command.data.name)
-        .sort()
-        .join(', ')
-    );
-    data.push(
-      `\nYou can send \`/help command_name:[command_name]\` to get more information on a specific command.`
-    );
+    embed = embeds.allCommands(slashCommands);
   } else {
     // Get command details
     const slashCommand = slashCommands.get(commandName);
@@ -48,7 +40,7 @@ async function execute(interaction, client) {
   }
 
   // Send help message
-  await interaction.reply({ content: data.join('\n'), ephemeral: true });
+  await interaction.reply({ embeds: [embed], ephemeral: true });
 }
 
 /** @type {import('../../typedefs/discord').SlashCommand}} */

@@ -1,5 +1,4 @@
 const { Message } = require('discord.js');
-const { SlashCommandBuilder } = require('@discordjs/builders');
 
 /**
  * Execute command.

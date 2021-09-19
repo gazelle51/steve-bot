@@ -1,4 +1,4 @@
-const { MessageEmbed, User } = require('discord.js');
+const { Collection, MessageEmbed, User } = require('discord.js');
 const { embedColour, emoji } = require('../config');
 
 /**
@@ -112,11 +112,25 @@ function containerImage(title, url, author, containerName) {
 }
 
 /**
- *
+ * Create an embed for help on all bot commands.
+ * @param {Collection<string, import('../typedefs/discord').SlashCommand>} commands - list of all slash commands for bot
  * @returns {MessageEmbed}
  */
-function helpAllCommands() {
-  return new MessageEmbed().setColor(embedColour).setTitle('title');
+function helpAllCommands(commands) {
+  // Get all command names and halfway index
+  const commandNames = commands.map((command) => command.data.name).sort();
+  const halfway = Math.ceil(commandNames.length / 2);
+
+  return new MessageEmbed()
+    .setColor(embedColour)
+    .setTitle('Help')
+    .setDescription(
+      "Here's a list of all my commands. You can send `/help command_name:[command_name]` to get more information on a specific command."
+    )
+    .addFields([
+      { name: '\u200b', inline: true, value: commandNames.slice(0, halfway).join('\n') },
+      { name: '\u200b', inline: true, value: commandNames.slice(-halfway).join('\n') },
+    ]);
 }
 
 module.exports = {

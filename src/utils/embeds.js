@@ -140,6 +140,11 @@ function helpAllCommands(commands) {
  * @returns {MessageEmbed}
  */
 function helpSingleCommand(slashCommand, messageCommand = undefined) {
+  // Get description data
+  const description = slashCommand.extraHelp
+    ? slashCommand.data.description + '\n' + slashCommand.extraHelp
+    : slashCommand.data.description;
+
   // Get options data
   const options = slashCommand.data.options.map(
     (option, i) =>
@@ -154,7 +159,7 @@ function helpSingleCommand(slashCommand, messageCommand = undefined) {
     .setTitle(`Help for \`${slashCommand.data.name}\``)
     .addFields([
       { name: 'Command name', value: '`' + slashCommand.data.name + '`' },
-      { name: 'Description', value: slashCommand.data.description },
+      { name: 'Description', value: description },
       { name: 'Options', value: slashCommand.data.options.length ? options.join('\n') : 'None' },
       { name: 'Cooldown', value: `${slashCommand.cooldown || defaultCooldown} second(s)` },
       {

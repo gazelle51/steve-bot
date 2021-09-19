@@ -3,23 +3,19 @@ const caseData = require('./caseData.json');
 const collectionData = require('./collectionData.json');
 
 /**
- * Return list of all case names and their commands.
- * @returns {string[]} Array of `case name - case ID`
+ * Return list of all case commands.
+ * @returns {string[]} Array of case IDs
  */
 function getCaseCommands() {
-  return Object.entries(caseData.cases)
-    .map(([key, value]) => `${value.name} - ${key}`)
-    .sort();
+  return Object.keys(caseData.cases).sort();
 }
 
 /**
- * Return list of all collection names and their commands.
- * @returns {string[]} Array of `collection name - collection ID`
+ * Return list of all collection commands.
+ * @returns {string[]} Array of collection IDs
  */
 function getCollectionCommands() {
-  return Object.entries(collectionData.collections)
-    .map(([key, value]) => `${value.name} - ${key}`)
-    .sort();
+  return Object.keys(collectionData.collections).sort();
 }
 
 /**

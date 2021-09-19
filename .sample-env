@@ -1,11 +1,18 @@
-# Discord bot token
+# Your bot's application token and ID can both be found in the Discord
+# developer portal (https://discord.com/developers/applications).
+#
+# To get user IDs and guild IDs you will need to enable Developer mode in your
+# Discord client. To do this follow the instructions here
+# https://www.howtogeek.com/714348/how-to-enable-or-disable-developer-mode-on-discord
+
+# Discord bot application token
 TOKEN=
 
-# User IDs
+# JSON string of any user IDs you do not want to interact with your bot
 BLOCKED_USERS=[]
 
-# Client ID (bot application ID)
+# Client ID (Discord bot application ID)
 CLIENT_ID=
 
-# Guild ID (development server)
+# Guild ID (Discord server ID)
 GUILD_ID=

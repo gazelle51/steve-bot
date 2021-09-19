@@ -93,7 +93,7 @@ for (const folder of slashCommandFolders) {
 
 // ----- Load events -----
 
-console.log('Loading events commands');
+console.log('Loading events');
 console.log(`Disabled events are: ${disabledEvents.join(', ')}`);
 
 // Get event files

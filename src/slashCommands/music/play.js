@@ -2,6 +2,7 @@ const { CommandInteraction } = require('discord.js');
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const embeds = require('../../utils/embeds').queue;
 const queue = require('../../utils/audioQueue');
+const ytdl = require('ytdl-core');
 const yts = require('yt-search');
 
 /**
@@ -10,22 +11,35 @@ const yts = require('yt-search');
  * @param {import("../../typedefs/discord").DiscordClient} client - Discord client
  */
 async function execute(interaction, client) {
-  // Search Youtube
   const song = interaction.options.getString('song');
-  const youtubeResult = await yts(song);
 
-  // Stop if there are no search results
-  if (!youtubeResult.videos.length) {
-    return await interaction.reply(`I couldn't find any search results for "${song}"`);
-  }
-
-  // Format audio
   const audio = {
-    title: youtubeResult.videos[0].title,
-    url: youtubeResult.videos[0].url,
-    length: secondsToTime(youtubeResult.videos[0].duration.seconds),
+    title: '',
+    url: '',
+    length: '',
     addedBy: interaction.user.tag,
   };
+
+  if (song.includes('www.youtube.com')) {
+    // Song details from Youtube
+    const songDetails = await ytdl.getBasicInfo(song);
+
+    audio.title = songDetails.videoDetails.title;
+    audio.url = songDetails.videoDetails.video_url;
+    audio.length = _secondsToTime(+songDetails.videoDetails.lengthSeconds);
+  } else {
+    // Search Youtube
+    const youtubeResult = await yts(song);
+
+    // Stop if there are no search results
+    if (!youtubeResult.videos.length) {
+      return await interaction.reply(`I couldn't find any search results for "${song}"`);
+    }
+
+    audio.title = youtubeResult.videos[0].title;
+    audio.url = youtubeResult.videos[0].url;
+    audio.length = _secondsToTime(youtubeResult.videos[0].duration.seconds);
+  }
 
   // Add to queue
   queue.addAudio(client, interaction.member.voice.channel.id, interaction.guild, audio);
@@ -39,7 +53,7 @@ async function execute(interaction, client) {
  * @param {number} e - total seconds
  * @returns {string} Seconds represented as HH:MM:SS
  */
-function secondsToTime(e) {
+function _secondsToTime(e) {
   var h = Math.floor(e / 3600)
       .toString()
       .padStart(2, '0'),

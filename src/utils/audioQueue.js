@@ -76,7 +76,7 @@ function play(client, guildId, audio) {
   }
 
   // Get audio to play
-  const url = audio.url.includes('youtube') ? ytdl(audio.url) : audio.url;
+  const url = audio.url.includes('youtube') ? ytdl(audio.url, { filter: 'audioonly' }) : audio.url;
   const inlineVolume = audio.volume ? true : false;
   const audioResource = createAudioResource(url, { inlineVolume });
   if (inlineVolume) audioResource.volume.setVolume(audio.volume ? audio.volume : 1);

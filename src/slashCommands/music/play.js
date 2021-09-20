@@ -1,5 +1,6 @@
 const { CommandInteraction } = require('discord.js');
 const { SlashCommandBuilder } = require('@discordjs/builders');
+const { secondsToHMS } = require('../../utils/timestamps');
 const embeds = require('../../utils/embeds').queue;
 const queue = require('../../utils/audioQueue');
 const ytdl = require('ytdl-core');
@@ -27,7 +28,7 @@ async function execute(interaction, client) {
 
     audio.title = songDetails.videoDetails.title;
     audio.url = songDetails.videoDetails.video_url;
-    audio.length = _secondsToTime(+songDetails.videoDetails.lengthSeconds);
+    audio.length = secondsToHMS(+songDetails.videoDetails.lengthSeconds);
   } else {
     // Search Youtube
     const youtubeResult = await yts(song);
@@ -47,27 +48,6 @@ async function execute(interaction, client) {
 
   // Reply
   await interaction.reply({ embeds: [embeds.songAdded(audio, !youtubeUrl)] });
-}
-
-/**
- * Convert seconds into hours, minutes and seconds.
- * @param {number} e - total seconds
- * @returns {string} Seconds represented as HH:MM:SS
- */
-function _secondsToTime(e) {
-  var h = Math.floor(e / 3600)
-      .toString()
-      .padStart(2, '0'),
-    m = Math.floor((e % 3600) / 60)
-      .toString()
-      .padStart(2, '0'),
-    s = Math.floor(e % 60)
-      .toString()
-      .padStart(2, '0');
-
-  if (h == '00' && m == '00') return `0:${s}`;
-  else if (h == '00') return `${m}:${s}`;
-  else return `${h}:${m}:${s}`;
 }
 
 /** @type {import('../../typedefs/discord').SlashCommand}} */

@@ -1,4 +1,5 @@
 const { SelectMenuInteraction } = require('discord.js');
+const { secondsToHMS } = require('../../utils/timestamps');
 const embeds = require('../../utils/embeds').queue;
 const queue = require('../../utils/audioQueue');
 const ytdl = require('ytdl-core');
@@ -16,7 +17,7 @@ async function execute(interaction, client) {
   const audio = {
     title: songDetails.videoDetails.title,
     url: songDetails.videoDetails.video_url,
-    length: '?', //_secondsToTime(+songDetails.videoDetails.lengthSeconds),
+    length: secondsToHMS(+songDetails.videoDetails.lengthSeconds),
     addedBy: interaction.user.tag,
   };
 

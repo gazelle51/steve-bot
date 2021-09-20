@@ -40,7 +40,7 @@ async function execute(interaction, client) {
 
     audio.title = youtubeResult.videos[0].title;
     audio.url = youtubeResult.videos[0].url;
-    audio.length = _secondsToTime(youtubeResult.videos[0].duration.seconds);
+    audio.length = secondsToHMS(youtubeResult.videos[0].duration.seconds);
   }
 
   // Add to queue

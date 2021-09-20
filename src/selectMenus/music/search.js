@@ -26,7 +26,6 @@ async function execute(interaction, client) {
 
   // Reply
   await interaction.update({
-    content: null,
     embeds: [embeds.songAdded(audio)],
     components: [],
   });

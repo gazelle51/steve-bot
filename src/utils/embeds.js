@@ -20,6 +20,35 @@ function queueSongAdded(audio, searchResult = false) {
 }
 
 /**
+ * Embed to display when music is skipped.
+ * @returns {MessageEmbed}
+ */
+function queueSkip() {
+  return new MessageEmbed().setColor(embedColour).setDescription('Music skipped');
+}
+
+/**
+ * Embed to display when music is stopped.
+ * @returns {MessageEmbed}
+ */
+function queueStop() {
+  return new MessageEmbed().setColor(embedColour).setDescription('Music stopped');
+}
+
+/**
+ * Embed to display search results and add to the queue.
+ * @returns {MessageEmbed}
+ */
+function queueSearch() {
+  return new MessageEmbed()
+    .setColor(embedColour)
+    .setTitle('Search results')
+    .setDescription(
+      "Here's the first 10 results I found on YouTube. Select the song you want to play."
+    );
+}
+
+/**
  * Create a base embed for displaying a queue.
  * @returns {MessageEmbed}
  */
@@ -200,6 +229,9 @@ module.exports = {
     empty: queueEmpty,
     nowPlayingOnly: queueNowPlayingOnly,
     songAdded: queueSongAdded,
+    skip: queueSkip,
+    stop: queueStop,
+    search: queueSearch,
   },
   container: { weapon: containerWeapon, image: containerImage },
   help: { allCommands: helpAllCommands, singleCommand: helpSingleCommand },

@@ -1,5 +1,6 @@
 const { CommandInteraction } = require('discord.js');
 const { SlashCommandBuilder } = require('@discordjs/builders');
+const embeds = require('../../utils/embeds').queue;
 const queue = require('../../utils/audioQueue');
 
 /**
@@ -10,8 +11,8 @@ const queue = require('../../utils/audioQueue');
 async function execute(interaction, client) {
   const result = queue.skip(client, interaction.guildId);
 
-  if (!result) await interaction.reply('There is no song to skip');
-  await interaction.reply('Song skipped');
+  if (!result) await interaction.reply({ content: 'There is no song to skip', ephemeral: true });
+  await interaction.reply({ embeds: [embeds.skip()] });
 }
 
 /** @type {import('../../typedefs/discord').SlashCommand}} */

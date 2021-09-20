@@ -1,5 +1,6 @@
 const { CommandInteraction } = require('discord.js');
 const { SlashCommandBuilder } = require('@discordjs/builders');
+const embeds = require('../../utils/embeds').queue;
 const queue = require('../../utils/audioQueue');
 
 /**
@@ -10,8 +11,9 @@ const queue = require('../../utils/audioQueue');
 async function execute(interaction, client) {
   const result = queue.stop(client, interaction.guildId);
 
-  if (!result) await interaction.reply('There is no music for me to stop');
-  await interaction.reply('Music stopped');
+  if (!result)
+    await interaction.reply({ content: 'There is no music for me to stop', ephemeral: true });
+  await interaction.reply({ embeds: [embeds.stop()] });
 }
 
 /** @type {import('../../typedefs/discord').SlashCommand}} */

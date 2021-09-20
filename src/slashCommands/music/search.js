@@ -32,7 +32,7 @@ async function execute(interaction, client) {
 
   // Reply
   await interaction.reply({
-    content: "Here's the first 10 results I found on YouTube. Select the song you want to play.",
+    embeds: [embeds.search()],
     components: [row],
   });
 }

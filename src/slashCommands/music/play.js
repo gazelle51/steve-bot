@@ -12,6 +12,7 @@ const yts = require('yt-search');
  */
 async function execute(interaction, client) {
   const song = interaction.options.getString('song');
+  const youtubeUrl = song.includes('www.youtube.com');
 
   const audio = {
     title: '',
@@ -20,7 +21,7 @@ async function execute(interaction, client) {
     addedBy: interaction.user.tag,
   };
 
-  if (song.includes('www.youtube.com')) {
+  if (youtubeUrl) {
     // Song details from Youtube
     const songDetails = await ytdl.getBasicInfo(song);
 
@@ -45,7 +46,7 @@ async function execute(interaction, client) {
   queue.addAudio(client, interaction.member.voice.channel.id, interaction.guild, audio);
 
   // Reply
-  await interaction.reply({ embeds: [embeds.songAdded(audio)] });
+  await interaction.reply({ embeds: [embeds.songAdded(audio, !youtubeUrl)] });
 }
 
 /**

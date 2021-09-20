@@ -4,10 +4,11 @@ const { defaultCooldown, embedColour, emoji, prefix } = require('../config');
 /**
  * Embed to display when a song is added to the queue.
  * @param {import('../typedefs/audio').Audio} audio - Audio added to queue
+ * @param {boolean} [searchResult=false] - If true, this audio was found from a search result
  * @returns {MessageEmbed}
  */
-function queueSongAdded(audio) {
-  const suffix = audio.url.includes('youtube.com')
+function queueSongAdded(audio, searchResult = false) {
+  const suffix = searchResult
     ? "\n\nThis is the first result I found on YouTube, if it's not what you're looking for you can try the `search` command to select a particular result."
     : '';
 

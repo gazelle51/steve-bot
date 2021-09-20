@@ -23,7 +23,7 @@ const { AudioPlayer } = require('@discordjs/voice/dist');
  * @property {boolean} [guildOnly] - if true, command can only be used in a guild
  * @property {boolean} [voiceChannel] - if true, the user must be connected to a voice channel
  * @property {string} [extraHelp] - extra help information for the command
- * @property {Function} execute - function that is called whent the command is executed
+ * @property {Function} execute - function that is called when the command is executed
  */
 
 /**
@@ -32,6 +32,14 @@ const { AudioPlayer } = require('@discordjs/voice/dist');
  * @property {string} name - event name
  * @property {boolean} [once] - if true, this event will only be handled once
  * @property {Function} execute - function that is called when the event occurs
+ */
+
+/**
+ * Discord select menu interaction handler
+ * @typedef {Object} SelectMenuHandler
+ * @property {string} name - select menu name
+ * @property {string} description - select menu description
+ * @property {Function} execute - function that is called when a select menu interaction occurs
  */
 
 /**
@@ -48,6 +56,7 @@ const { AudioPlayer } = require('@discordjs/voice/dist');
  * @typedef {Object} ClientExtension
  * @property {Collection<string, MessageCommand>} [messageCommands] - Message commands library, <command name, command object>
  * @property {Collection<string, SlashCommand>} [slashCommands] - Slash commands library, <command name, command object>
+ * @property {Collection<string, SelectMenuHandler>} [selectMenus] - Select menus library, <select menu name, handler object>
  * @property {Collection<string, Collection<string, number>>} [cooldowns] - Active cooldowns, <command name, <user ID, expiration time>>
  * @property {Map<string, AudioQueue>} [queue] - Audio queue, <guild ID, audio queue object>
  */

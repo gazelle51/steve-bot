@@ -38,6 +38,7 @@ const client = new Client({
 });
 client.messageCommands = new Collection();
 client.slashCommands = new Collection();
+client.selectMenus = new Collection();
 client.cooldowns = new Collection();
 client.queue = new Map();
 
@@ -88,6 +89,28 @@ for (const folder of slashCommandFolders) {
 
     if (!disabledCommands.includes(slashCommand.data.name))
       client.slashCommands.set(slashCommand.data.name, slashCommand);
+  }
+}
+
+// ----- Load select menus -----
+
+console.log('Loading select menus');
+
+// Load select menu folders
+const selectMenuFolders = fs
+  .readdirSync('./src/selectMenus')
+  .filter((folder) => folder !== '_template.js');
+
+// Load select menu files
+for (const folder of selectMenuFolders) {
+  const selectMenuFiles = fs
+    .readdirSync(`./src/selectMenus/${folder}`)
+    .filter((file) => file.endsWith('.js'));
+
+  // Add to client select menu Collection
+  for (const file of selectMenuFiles) {
+    const selectMenu = require(`./selectMenus/${folder}/${file}`);
+    client.selectMenus.set(selectMenu.name, selectMenu);
   }
 }
 

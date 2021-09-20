@@ -1,9 +1,9 @@
 const { updateCommandCooldown } = require('../utils/cooldown.js');
-const { CommandInteraction } = require('discord.js');
+const { CommandInteraction, SelectMenuInteraction } = require('discord.js');
 
 /**
  * Execute when the interactionCreate event fires.
- * @param {CommandInteraction} interaction - Received interaction
+ * @param {CommandInteraction|SelectMenuInteraction} interaction - Received interaction
  * @param {import("../typedefs/discord").DiscordClient} client - Discord client
  */
 async function execute(interaction, client) {
@@ -37,7 +37,7 @@ async function execute(interaction, client) {
     const options =
       ' ' + interaction.options.data.map((opt) => `${opt.name}:${opt.value}`).join(', ');
     console.log(
-      `Executing '/${interaction.commandName}${options}'; called by ${interaction.user.username} (${interaction.user.id})`
+      `Executing '/${commandName}${options}'; called by ${interaction.user.username} (${interaction.user.id})`
     );
 
     // Check guild only flag
@@ -73,6 +73,37 @@ async function execute(interaction, client) {
       console.error(error);
       await interaction.reply({
         content: 'There was an error while executing this command',
+        ephemeral: true,
+      });
+    }
+  }
+
+  // Select menu
+  else if (interaction.isSelectMenu()) {
+    // Get select menu
+    const selectMenu = interaction.customId;
+    const selectMenuHandler = client.selectMenus.get(selectMenu);
+
+    // Check select menu handler exists
+    if (!selectMenuHandler) {
+      return await interaction.reply({
+        content: "I don't know what to do with this dropdown",
+        ephemeral: true,
+      });
+    }
+
+    // Log select menu
+    console.log(
+      `Executing select menu '${selectMenu} values: ${interaction.values}'; called by ${interaction.user.username} (${interaction.user.id})`
+    );
+
+    // Execute select menu handler
+    try {
+      await selectMenuHandler.execute(interaction, client);
+    } catch (error) {
+      console.error(error);
+      await interaction.reply({
+        content: 'There was an error while processing this dropdown',
         ephemeral: true,
       });
     }

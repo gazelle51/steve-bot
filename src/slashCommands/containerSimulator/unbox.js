@@ -47,7 +47,7 @@ async function execute(interaction, client) {
 const handler = {
   data: new SlashCommandBuilder()
     .setName('unbox')
-    .setDescription('Unbox a CS-GO container')
+    .setDescription('Unbox a CS: GO container')
     .addStringOption((option) =>
       option.setName('container').setDescription('Name of container to open')
     ),

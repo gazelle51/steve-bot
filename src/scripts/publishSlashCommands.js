@@ -4,7 +4,7 @@
  * To deploy to a guild use the `deploy-guild` script defined in the package.json.
  * To deploy globally use the `deploy-global` script defined in the package.json.
  *
- * The following encironment variables must be defined in a .env file:
+ * The following environment variables must be defined in a .env file:
  * - TOKEN - Discord bot token
  * - CLIENT_ID - Discord bot application ID
  * - GUILD_ID (only for guild deployment) - Server/guild ID

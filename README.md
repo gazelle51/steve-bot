@@ -1,6 +1,6 @@
 # steve-bot
 
-Steve is a multipurpose Discord bot. He is able to play music, act as a soundboard, send messages in a channel and simulate opening CS-GO containers.
+Steve is a multipurpose Discord bot. He is able to play music, act as a soundboard, send messages in a channel and simulate opening CS: GO containers.
 
 This document describes how you can get edit Steve and get him up and running in your own Discord server. I have assumed that you may want to edit some of his code base so we're going to cover how to run him locally on your computer as well as running him in the Cloud.
 
@@ -15,6 +15,11 @@ This document describes how you can get edit Steve and get him up and running in
    2. [Deployment of slash commands](#deployment-of-slash-commands)
    3. [Running Steve locally](#running-steve-locally)
    4. [Running Steve on the Cloud](#running-steve-on-the-cloud)
+6. [What does Steve do?](#what-does-steve-do)
+   1. [Playing music and sounds](#playing-music-and-sounds)
+   2. [Sending messages](#sending-messages)
+   3. [Simulating CS: GO container openings](#container-openings)
+
 
 <a name="prerequisites"></a>
 ## Prerequisites
@@ -107,7 +112,7 @@ To deploy the slash commands globally use the command below. It could take up to
 npm run deploy-global
 ```
 
-It is recommened to only deploy to a single Discord server while you are developing. Otherwise deploy the slash commands globally as this will ensure all servers using your bot are up to date. 
+It is recommended to only deploy to a single Discord server while you are developing. Otherwise deploy the slash commands globally as this will ensure all servers using your bot are up to date. 
 
 
 <a name="running-steve-locally"></a>
@@ -135,3 +140,38 @@ If you want Steve to work 24/7 and you don't want to leave your computer on you 
 You need to pay for most servers however there are also some free options out there. The service I usually use is [Heroku](https://dashboard.heroku.com/login) which gives you a free server for a certain amount of Dyno hours. This means that Steve will run until your free credits expire for the month. Once the month ends, Steve will start up again.
 
 Follow [these instructions](https://www.studytonight.com/post/how-to-deploy-a-discord-bot-to-heroku) if you want to deploy to Heroku. A Procfile has been included in this repository if you decide to go down that path.
+
+
+<a name="what-does-steve-do"></a>
+## What does Steve do?
+
+Steve's main features are:
+* Playing music and sounds
+* Sending messages
+* Simulating CS: GO container openings
+
+These features are described in more detail below. Alternatively you can use the command `/help` to get a description of every command defined for Steve.
+
+
+<a name="playing-music-and-sounds"></a>
+### Playing music and sounds
+
+Steve can be used as a music and soundboard bot in your Discord server. 
+
+Steve already has some preconfigured sounds from [Voicy](https://www.voicy.network/) such as Borat, Dr DisRespect and E-Girl. You can add more sounds by updating or creating new files in `src/sounds` and `src/slashCommands/sounds`. Voicy also allows you to create sounds based on YouTube videos so you have flexibility to play whatever sound you want.
+
+As a music bot Steve can play songs from YouTube by either searching for keywords or playing from a provided YouTube link. The functionality for this can be found in `src/slashCommands/music`. Steve keeps a queue of all requested music and will play them one by one.
+
+
+<a name="sending-messages"></a>
+### Sending messages
+
+Steve can send messages to any channel that he has access to using the slash commands defined in `src/slashCommands/message`. When telling Steve to send a message, make sure that you use the command from within the server the channel exists in.
+
+
+<a name="container-openings"></a>
+### Simulating CS: GO container openings
+
+Steve can simulate opening of containers (cases and collections to be precise) from the game CS: GO. If you don't know much about unboxing in CS: GO check out [this](https://counterstrike.fandom.com/wiki/Container) link. The code and data for this feature is contained in `src/containerSimulator`. 
+
+The metadata for each container and the weapons within them are scraped from [CS: GO Stash](https://csgostash.com/) using a predefined script. The data is collected for each container mentioned in `src/containerSimulator/caseData.json` and `src/containerSimulator/collectionData.json`. A weapon, grade, rarity and other information is selected based on the known odds and then the price for that weapon is collected in real time from the same website.

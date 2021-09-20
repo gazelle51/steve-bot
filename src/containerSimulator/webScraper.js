@@ -165,7 +165,7 @@ async function _extractWeaponData($, weapons, colourOfInterest, knivesData = fal
       // Image URL
       const imageUrl = $(result).find('a').children('img').attr('src');
 
-      // Weaspon URL
+      // Weapon URL
       const url = $(result).find('a > img').parent().attr('href');
 
       weapons[colour].push({

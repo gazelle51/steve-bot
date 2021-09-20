@@ -4,5 +4,15 @@
       "# steve-bot"
     ]
   },
-  "markdown.extension.toc.orderedList": true
+  "markdown.extension.toc.orderedList": true,
+  "cSpell.words": [
+    "csgo",
+    "deathcry",
+    "discordjs",
+    "drdisrespect",
+    "egirl",
+    "pokimane",
+    "redguardian",
+    "trak"
+  ]
 }

@@ -40,7 +40,7 @@ async function execute(message, args, client) {
 const handler = {
   data: {
     name: 'unbox',
-    description: 'Unbox a CS-GO container',
+    description: 'Unbox a CS: GO container',
   },
   usage: '<container>',
   examples: ['unbox', 'unbox bravo'],

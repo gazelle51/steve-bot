@@ -3,7 +3,7 @@ const caseData = require('./caseData.json');
 const scrapeWeaponPage = require('./webScraper').scrapeWeaponPage;
 
 /**
- * Unbox a CS-GO case.
+ * Unbox a CS: GO case.
  * @param {string} caseName - name of case to unbox
  * @returns {Promise<import('../typedefs/container').ContainerWeapon>}
  */
@@ -57,7 +57,7 @@ function _weaponColour() {
 }
 
 /**
- * Pick a random weapon from the proided weapon list.
+ * Pick a random weapon from the provided weapon list.
  * @param {import('../typedefs/container').WeaponData[]} possibleWeapons
  * @returns {import('../typedefs/container').WeaponData}
  */

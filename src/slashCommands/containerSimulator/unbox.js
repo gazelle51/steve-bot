@@ -1,7 +1,7 @@
 const { emoji } = require('../../config.js');
 const { CommandInteraction } = require('discord.js');
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { getCollectionCommands } = require('../../containerSimulator/containers.js');
+const { getContainerCommands } = require('../../containerSimulator/containers.js');
 const _ = require('lodash');
 const unbox = require('../../containerSimulator/unbox').unbox;
 
@@ -51,7 +51,7 @@ const handler = {
     .addStringOption((option) =>
       option.setName('container').setDescription('Name of container to open')
     ),
-  extraHelp: `The containers I can open are ${getCollectionCommands().join(', ')}`,
+  extraHelp: `The containers I can open are ${getContainerCommands().join(', ')}`,
   execute,
 };
 

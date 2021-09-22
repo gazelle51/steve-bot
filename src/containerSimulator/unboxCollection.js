@@ -60,15 +60,31 @@ function _weaponColour(tier, collectionName) {
   const randomNumber = Math.random();
 
   // Edge cases
+  // Single tier - purple
   if (collectionName === 'blacksite') {
     return 'purple';
-  } else if (['dust', 'cache'].includes(collectionName)) {
+  }
+  // Three tier - light blue, blue, purple
+  else if (['dust', 'cache'].includes(collectionName)) {
     const lightBlueThresholdEdge = collectionData.gradeOdds.threeTier.white;
     const blueThresholdEdge = lightBlueThresholdEdge + collectionData.gradeOdds.threeTier.lightBlue;
 
     if (randomNumber <= lightBlueThresholdEdge) colour = 'lightBlue';
     else if (randomNumber <= blueThresholdEdge) colour = 'blue';
     else colour = 'purple';
+
+    return colour;
+  }
+  // Four tier - blue, purple, pink, red
+  else if (['train2021'].includes(collectionName)) {
+    const blueThresholdEdge = collectionData.gradeOdds.fourTier.white;
+    const purpleThresholdEdge = blueThresholdEdge + collectionData.gradeOdds.fourTier.lightBlue;
+    const pinkThresholdEdge = purpleThresholdEdge + collectionData.gradeOdds.fourTier.blue;
+
+    if (randomNumber <= blueThresholdEdge) colour = 'blue';
+    else if (randomNumber <= purpleThresholdEdge) colour = 'purple';
+    else if (randomNumber <= pinkThresholdEdge) colour = 'pink';
+    else colour = 'red';
 
     return colour;
   }

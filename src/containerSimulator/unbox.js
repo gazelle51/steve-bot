@@ -27,6 +27,7 @@ async function unbox(containerName, user) {
     // Special containers
     case 'box':
     case 'laura':
+    case 'bella':
       containerType = containerName;
       break;
 
@@ -90,6 +91,20 @@ async function unbox(containerName, user) {
             'Laura'
           ),
         ],
+      };
+
+    // Bella Poarch
+    case 'bella':
+      const image = _.sample([
+        'https://c.tenor.com/arG5K2c3qNEAAAAC/bellapoarch.gif',
+        'https://c.tenor.com/-JVTHLlHG5cAAAAd/alyanessa-bella-poarch.gif',
+        'https://c.tenor.com/pPcu9o8zANsAAAAd/bella-poarch-bella-poarch-reface.gif',
+        'https://c.tenor.com/WqGSp6QuYqoAAAAd/alyanessa.gif',
+        'https://c.tenor.com/hngl-1gpKwYAAAAC/utku-bella.gif',
+        'https://c.tenor.com/N_prfhod85YAAAAd/bella-bellisima.gif',
+      ]);
+      return {
+        embeds: [embeds.image('Bella Poarch', image, user, 'Bella Poarch')],
       };
   }
 

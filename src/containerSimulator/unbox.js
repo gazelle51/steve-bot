@@ -33,6 +33,9 @@ async function unbox(containerName, user) {
     case 'margotRobbie':
     case 'megan':
     case 'meganFox':
+    case 'ander':
+    case 'aron':
+    case 'aronPiper':
       containerType = containerName;
       break;
 
@@ -162,6 +165,28 @@ async function unbox(containerName, user) {
       ]);
       return {
         embeds: [embeds.image('Megan Fox', imageMF, user, 'Megan Fox')],
+      };
+
+    // Aron Piper
+    case 'ander':
+    case 'aron':
+    case 'aronPiper':
+      const imageAP = _.sample([
+        'https://c.tenor.com/ejQcfYvNPUEAAAAd/refrescarse-ander-munoz.gif',
+        'https://c.tenor.com/sWrgpl-WFUMAAAAC/ni-idea-ander-munoz.gif',
+        'https://c.tenor.com/8udJ9QeAiJUAAAAC/a-mira-ander-munoz.gif',
+        'https://c.tenor.com/2KTKxkc3FYIAAAAd/ander.gif',
+        'https://c.tenor.com/dkg7RRKspq0AAAAC/ar%C3%B3n-piper-handsome.gif',
+        'https://c.tenor.com/LITSq7WsojkAAAAC/aron-piper.gif',
+        'https://c.tenor.com/OM0J3Dq9rbMAAAAd/aron-piper.gif',
+        'https://c.tenor.com/eOAQD_r33cAAAAAC/ar%C3%B3n-piper-handsome.gif',
+        'https://media4.giphy.com/media/pKo9kWWbjJY1YZmv7M/giphy.gif?cid=790b761149c1de54a84b80aa043c40a669ab33e2b1da8960&rid=giphy.gif&ct=g',
+        'https://media1.giphy.com/media/2ytQGuauENGZHwRCkU/giphy.gif?cid=790b761188344e084f03633fea4d92f3414b26bca64b58ed&rid=giphy.gif&ct=g',
+        'https://media2.giphy.com/media/VIc7xNLuy6ntw4pmeR/giphy.gif?cid=790b7611bede67fa992cc72d244a6d19896cdbcec3fdeee9&rid=giphy.gif&ct=g',
+        'https://media4.giphy.com/media/eKPYEme2PFJ0AOIkPI/giphy.gif?cid=790b7611f4c2bc63fb3d4b1c976b588bd104d794bfc0eb4a&rid=giphy.gif&ct=g',
+      ]);
+      return {
+        embeds: [embeds.image('Aron Piper', imageAP, user, 'Aron Piper')],
       };
   }
 

@@ -28,6 +28,11 @@ async function unbox(containerName, user) {
     case 'box':
     case 'laura':
     case 'bella':
+    case 'bellaPoarch':
+    case 'margot':
+    case 'margotRobbie':
+    case 'megan':
+    case 'meganFox':
       containerType = containerName;
       break;
 
@@ -95,16 +100,68 @@ async function unbox(containerName, user) {
 
     // Bella Poarch
     case 'bella':
-      const image = _.sample([
+    case 'bellaPoarch':
+      const imageBP = _.sample([
         'https://c.tenor.com/arG5K2c3qNEAAAAC/bellapoarch.gif',
         'https://c.tenor.com/-JVTHLlHG5cAAAAd/alyanessa-bella-poarch.gif',
         'https://c.tenor.com/pPcu9o8zANsAAAAd/bella-poarch-bella-poarch-reface.gif',
         'https://c.tenor.com/WqGSp6QuYqoAAAAd/alyanessa.gif',
         'https://c.tenor.com/hngl-1gpKwYAAAAC/utku-bella.gif',
         'https://c.tenor.com/N_prfhod85YAAAAd/bella-bellisima.gif',
+        'https://c.tenor.com/YFk8yS0T5nYAAAAC/bella-poarch.gif',
+        'https://c.tenor.com/LDti-9NG0MUAAAAd/girl-cute.gif',
+        'https://c.tenor.com/bkGvJ9Bdx9AAAAAC/stay-tiktok.gif',
+        'https://c.tenor.com/c9447NJxpgAAAAAd/bella.gif',
+        'https://c.tenor.com/qUfLe8Z-6aYAAAAd/bella-poarch-tik-tok.gif',
+        'https://c.tenor.com/-bqu5U4z1OQAAAAd/abell46s-reface.gif',
+        'https://c.tenor.com/uGEmIhJousYAAAAd/bella-poarch-sexy.gif',
+        'https://c.tenor.com/JygljlcLws0AAAAd/regalcelestia-bella-poarch.gif',
       ]);
       return {
-        embeds: [embeds.image('Bella Poarch', image, user, 'Bella Poarch')],
+        embeds: [embeds.image('Bella Poarch', imageBP, user, 'Bella Poarch')],
+      };
+
+    // Margot Robbie
+    case 'margot':
+    case 'margotRobbie':
+      const imageMR = _.sample([
+        'https://c.tenor.com/yHD9BHuzyEAAAAAC/margot-robbie-focus.gif',
+        'https://c.tenor.com/7BDC8-g9cOgAAAAd/darthmall75-margot-robbie.gif',
+        'https://c.tenor.com/AUbVd435RM0AAAAC/margot-robbie.gif',
+        'https://c.tenor.com/YDeHrwIF2j0AAAAd/margot-robbie.gif',
+        'https://c.tenor.com/P7HXEGtH-awAAAAC/linda-margot-robbie.gif',
+        'https://c.tenor.com/E4Tvl_cXoI4AAAAC/margot-robbie-flirty.gif',
+        'https://c.tenor.com/2F0flShs6XgAAAAd/harley-adam.gif',
+        'https://c.tenor.com/7fUYRfVxdjUAAAAC/margot-robbie-smile.gif',
+        'https://c.tenor.com/WdZuesT813kAAAAd/linda-margot-robbie.gif',
+        'https://c.tenor.com/CZlZqx55taAAAAAd/margot-robbie.gif',
+        'https://c.tenor.com/L9mSel9iOVsAAAAd/margot-robbie-chewing-gum.gif',
+      ]);
+      return {
+        embeds: [embeds.image('Margot Robbie', imageMR, user, 'Margot Robbie')],
+      };
+
+    // Megan Fox
+    case 'megan':
+    case 'meganFox':
+      const imageMF = _.sample([
+        'https://c.tenor.com/ASjQCLz-rNwAAAAC/megan-fox-kiss.gif',
+        'https://c.tenor.com/NEeNq8JzqfkAAAAC/megan-fox-kiss.gif',
+        'https://c.tenor.com/32QBMToQ6zkAAAAC/checkdemon-megan-fox.gif',
+        'https://c.tenor.com/s1M6rHFyppcAAAAC/megan-meganfox.gif',
+        'https://c.tenor.com/g1qoOkmZodgAAAAC/megan-megan-fox.gif',
+        'https://c.tenor.com/kLGP3-9ng8MAAAAd/meganfox.gif',
+        'https://c.tenor.com/AarxVnRlaDUAAAAC/megan-fox-jennifers-body.gif',
+        'https://c.tenor.com/dkNJOdDo9SQAAAAC/megan-fox-jennifers-body.gif',
+        'https://c.tenor.com/WkAEcHR0DxUAAAAC/megan-fox-staring.gif',
+        'https://c.tenor.com/tIx8P7b1DooAAAAC/megan-fox.gif',
+        'https://c.tenor.com/3XfUwzT1du4AAAAC/linda-morena.gif',
+        'https://c.tenor.com/MaNZ8E8vKS8AAAAd/megan-fox-hot.gif',
+        'https://c.tenor.com/bnIuhzTi5iQAAAAC/megan-megan-fox.gif',
+        'https://c.tenor.com/bzNPuThY8HAAAAAC/megan-fox-bikini.gif',
+      ]);
+      return {
+        embeds: [embeds.image('Megan Fox', imageMF, user, 'Megan Fox')],
       };
   }
 

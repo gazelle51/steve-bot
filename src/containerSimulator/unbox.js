@@ -36,6 +36,8 @@ async function unbox(containerName, user) {
     case 'ander':
     case 'aron':
     case 'aronPiper':
+    case 'ester':
+    case 'esterExposito':
       containerType = containerName;
       break;
 
@@ -187,6 +189,30 @@ async function unbox(containerName, user) {
       ]);
       return {
         embeds: [embeds.image('Aron Piper', imageAP, user, 'Aron Piper')],
+      };
+
+    // Ester Exposito
+    case 'ester':
+    case 'esterExposito':
+      const imageEP = _.sample([
+        'https://c.tenor.com/-42kEF-2WgwAAAAd/ester-exp%C3%B3sito-carla.gif',
+        'https://c.tenor.com/iGzIy_IqVsEAAAAC/carla-roson-elite.gif',
+        'https://c.tenor.com/KPJmxDxzVhMAAAAC/carla-elite.gif',
+        'https://c.tenor.com/mm7LggU7ussAAAAC/ester-exp%C3%B3sito-carla.gif',
+        'https://c.tenor.com/zNQLc_cV5AYAAAAd/%C3%A9lite-ester-exp%C3%B3sito.gif',
+        'https://c.tenor.com/W3-3yTOJk3UAAAAd/ester-exp%C3%B3sito-carla-ros%C3%B3n-caleruega.gif',
+        'https://c.tenor.com/MxsWEFfJBZMAAAAd/ester-exp%C3%B3sito-carla.gif',
+        'https://c.tenor.com/72wuGTZtTm8AAAAC/ester-exposito-ester.gif',
+        'https://c.tenor.com/eHlH8LHWxiAAAAAd/ester-exposito-elite.gif',
+        'https://c.tenor.com/UHQ2HR9d4WYAAAAd/excited-bemyvalentine.gif',
+        'https://c.tenor.com/GZlFxnlFi8gAAAAd/elite-carla.gif',
+        'https://c.tenor.com/cBzXNH0Yu5EAAAAd/ester-exp%C3%B3sito-pout.gif',
+        'https://c.tenor.com/KY0KMBl40zoAAAAd/%C3%A9lite-ester-exp%C3%B3sito.gif',
+        'https://c.tenor.com/W9X_CZiKuCUAAAAd/ester-exp%C3%B3sito-pretty.gif',
+        'https://c.tenor.com/nmNxl4N4sC0AAAAd/carla-elite.gif',
+      ]);
+      return {
+        embeds: [embeds.image('Ester Exposito', imageEP, user, 'Ester Exposito')],
       };
   }
 

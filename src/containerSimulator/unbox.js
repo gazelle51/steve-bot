@@ -40,6 +40,8 @@ async function unbox(containerName, user) {
     case 'esterExposito':
     case 'mimi':
     case 'ruby':
+    case 'johnny':
+    case 'johnnySins':
       containerType = containerName;
       break;
 
@@ -238,6 +240,33 @@ async function unbox(containerName, user) {
       ]);
       return {
         embeds: [embeds.image('Mimi Keene', imageMK, user, 'Mimi Keene')],
+      };
+
+    // Johnny Sins
+    case 'johnny':
+    case 'johnnySins':
+      const imageJS = _.sample([
+        'https://c.tenor.com/CBOjsCUCFOUAAAAC/jhonny-sins-reyiz-wink.gif',
+        'https://c.tenor.com/q1DWp0dkpB8AAAAC/johnny-sins-friday.gif',
+        'https://c.tenor.com/6D7KmYWYvhAAAAAC/johnny-sins-doctor.gif',
+        'https://c.tenor.com/bKY8WtSsDaYAAAAd/johnny-sins-erik-dal%C4%B1-sins.gif',
+        'https://c.tenor.com/mh5JI0xUbcUAAAAd/johnny-sins-brazzers.gif',
+        'https://c.tenor.com/r7w27fbnRC4AAAAC/johnny-sins-shookt.gif',
+        'https://c.tenor.com/V5lrrtPSNbcAAAAd/johnny-sins-sins.gif',
+        'https://c.tenor.com/1Lz6z39MpE0AAAAd/johnny-sins-hungry.gif',
+        'https://c.tenor.com/_fuG3xxBPXcAAAAC/johnny-sins-what.gif',
+        'https://c.tenor.com/Y2fDljMXoH8AAAAd/john-fross-johnny-sins.gif',
+        'https://media.giphy.com/media/XDaLiUu8VyreM/giphy.gif',
+        'https://media.giphy.com/media/1I43BTfDMV1qo/giphy.gif',
+        'https://media.giphy.com/media/PrvuQdqyO3kNa/giphy.gif',
+        'https://media.giphy.com/media/bGv2OuHzkOMxO/giphy.gif',
+        'https://i.pinimg.com/originals/74/7c/4f/747c4f29e2a113589636b1a8b10f9521.jpg',
+        'https://pbs.twimg.com/profile_images/1353588121796038656/nJWN_2eD.jpg',
+        'https://www.earlygame.com/uploads/images/_headerImage/johnny-sins-aidan-birthday-wish.jpg',
+        'https://img-9gag-fun.9cache.com/photo/aZ0vdBp_460s.jpg',
+      ]);
+      return {
+        embeds: [embeds.image('Johnny Sins', imageJS, user, 'Johnny Sins')],
       };
   }
 

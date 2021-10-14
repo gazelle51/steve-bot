@@ -38,6 +38,8 @@ async function unbox(containerName, user) {
     case 'aronPiper':
     case 'ester':
     case 'esterExposito':
+    case 'mimi':
+    case 'ruby':
       containerType = containerName;
       break;
 
@@ -213,6 +215,29 @@ async function unbox(containerName, user) {
       ]);
       return {
         embeds: [embeds.image('Ester Exposito', imageEP, user, 'Ester Exposito')],
+      };
+
+    // Mimi Keene
+    case 'mimi':
+    case 'ruby':
+      const imageMK = _.sample([
+        'https://c.tenor.com/uI6OtH9Fj5MAAAAd/mimi-keene.gif',
+        'https://c.tenor.com/UBeobHGKHjIAAAAC/ruby-matthews-sex-education.gif',
+        'https://c.tenor.com/u-743qFHzKcAAAAC/ruby-matthews-mimi-keene.gif',
+        'https://i2-prod.dailystar.co.uk/incoming/article19287441.ece/ALTERNATES/s615b/0_Cindy-Williams-in-EastEnders-1553369',
+        'https://c.tenor.com/NFoxeRkZJJ4AAAAC/he-will-be-my-boyfriend-hes-mine.gif',
+        'https://c.tenor.com/Oxnm45kLCEcAAAAd/sex-ed-sex-education.gif',
+        'https://c.tenor.com/OzZFIsTr6UgAAAAC/sex-ed-sex-education.gif',
+        'https://c.tenor.com/Teg0Mr_up2EAAAAC/sex-ed-sex-education.gif',
+        'https://c.tenor.com/XdTPPvLpqkoAAAAC/rena-mimikeene.gif',
+        'https://c.tenor.com/av25JR8EsqkAAAAC/sex-ed-sex-education.gif',
+        'https://c.tenor.com/hLshMPCuJTMAAAAC/sex-education-patrick-pao.gif',
+        'https://i.pinimg.com/736x/cb/b5/e6/cbb5e61eb3ce4a3aa9fa0dd52238c805.jpg',
+        'https://www.thefamouspeople.com/profiles/images/mimi-keene-4.jpg',
+        'https://media.glamourmagazine.co.uk/photos/614db62c3de8ee7a81e658ed/3:2/w_1920,h_1280,c_limit/Mimi%20Keene_240921_SE_303_Unit_00509_RT_SQ.jpg',
+      ]);
+      return {
+        embeds: [embeds.image('Mimi Keene', imageMK, user, 'Mimi Keene')],
       };
   }
 

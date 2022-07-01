@@ -4,8 +4,12 @@ const { disabledCommands, disabledEvents } = require('./config');
 const { Client, Collection, Intents } = require('discord.js');
 const fs = require('fs');
 
+console.log('Starting up...');
+
 // Check blocked users parses correctly
 try {
+  if (!process.env.BLOCKED_USERS) throw new Error('BLOCKED_USERS env variable is not defined');
+
   const blockedUsers = JSON.parse(process.env.BLOCKED_USERS);
 
   if (typeof blockedUsers !== 'object') throw new Error('BLOCKED_USERS is not an object/array');
@@ -17,6 +21,8 @@ try {
   console.error(err);
   process.env.BLOCKED_USERS = '[]';
 }
+
+console.log(`Total blocked users: ${JSON.parse(process.env.BLOCKED_USERS).length}`);
 
 // Create Discord client
 /** @type {import('./typedefs/discord').DiscordClient}} */
@@ -44,8 +50,10 @@ client.queue = new Map();
 
 // ----- Load message commands -----
 
+console.log(`Loading commands - total disabled commands: ${disabledCommands.length}`);
+if (disabledCommands.length) console.log(`Disabled commands are: ${disabledCommands.join(', ')}`);
+
 console.log('Loading message commands');
-console.log(`Disabled commands are: ${disabledCommands.join(', ')}`);
 
 // Load message command folders
 const messageCommandFolders = fs
@@ -70,7 +78,6 @@ for (const folder of messageCommandFolders) {
 // ----- Load slash commands -----
 
 console.log('Loading slash commands');
-console.log(`Disabled commands are: ${disabledCommands.join(', ')}`);
 
 // Load slash command folders
 const slashCommandFolders = fs
@@ -116,8 +123,8 @@ for (const folder of selectMenuFolders) {
 
 // ----- Load events -----
 
-console.log('Loading events');
-console.log(`Disabled events are: ${disabledEvents.join(', ')}`);
+console.log(`Loading events - total disabled events: ${disabledEvents.length}`);
+if (disabledEvents.length) console.log(`Disabled events are: ${disabledEvents.join(', ')}`);
 
 // Get event files
 const eventFiles = fs
@@ -136,5 +143,9 @@ for (const file of eventFiles) {
     client.on(event.name, (...args) => event.execute(...args, client));
   }
 }
+
+// ----- Log in -----
+
+console.log('Start up complete');
 
 client.login(process.env.TOKEN);

@@ -27,12 +27,12 @@
   },
   "dependencies": {
     "@discordjs/builders": "^0.15.0",
-    "@discordjs/opus": "^0.7.0",
+    "@discordjs/opus": "^0.8.0",
     "@discordjs/rest": "^0.5.0",
     "@discordjs/voice": "^0.10.0",
     "axios": "^0.27.2",
     "cheerio": "^1.0.0-rc.10",
-    "discord-api-types": "^0.36.0",
+    "discord-api-types": "^0.36.1",
     "discord.js": "^13.8.1",
     "dotenv": "^16.0.1",
     "ffmpeg-static": "^5.0.2",
@@ -43,6 +43,6 @@
     "ytdl-core": "^4.11.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.18"
+    "nodemon": "^2.0.19"
   }
 }

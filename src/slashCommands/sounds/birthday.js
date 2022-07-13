@@ -42,8 +42,10 @@ const handler = {
       option
         .setName('sound')
         .setDescription('Sound to play')
-        .addChoice('Birthday song', 'song')
-        .addChoice('Birthday boy', 'boy')
+        .addChoices(
+          { name: 'Birthday song', value: 'song' },
+          { name: 'Birthday boy', value: 'boy' }
+        )
     ),
   guildOnly: true,
   voiceChannel: true,

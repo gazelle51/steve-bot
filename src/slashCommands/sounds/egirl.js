@@ -37,7 +37,10 @@ const handler = {
     .setName('egirl')
     .setDescription('Say a random e-Girl line')
     .addStringOption((option) =>
-      option.setName('sound').setDescription('Sound to play').addChoice('Step-bro', 'stepbro')
+      option
+        .setName('sound')
+        .setDescription('Sound to play')
+        .addChoices({ name: 'Step-bro', value: 'stepbro' })
     ),
   guildOnly: true,
   voiceChannel: true,

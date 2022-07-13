@@ -192,40 +192,40 @@ The metadata for each container and the weapons within them are scraped from [CS
 
 ## Configuration
 
-TODO
+Some features of Steve can be easily configured to your own setting. Most of these configurations are done in the `src/config.js` file. The sections below highlight which options can be configured and how to configure them.
 
 <a name="command-prefix"></a>
 
 ### Command prefix
 
-TODO
+The default prefix for commands used in a message is `~`. To change this, update the `prefix` variable in `src/config.js`.
 
 <a name="default-command-cooldown"></a>
 
 ### Default command cooldown
 
-TODO
+The default command cooldown is 0.1 seconds. To change this, update the `defaultCooldown` variable in `src/config.js` (the unit of this variable is in seconds). A lower cooldown means a user can send a command more often. A higher cooldown can prevent spam.
 
 <a name="disabling-commands-and-events"></a>
 
 ### Disabling commands and events
 
-TODO
+By default all commands and events are enabled. Commands and events can be disabled by updating the `disabledCommands` and `disabledEvents` variables in `src/config.js`. These variables expect an array of command/event names. For example, to disable the "skip" command you would set `disabledCommands = ['skip']`.
 
 <a name="embed-colour"></a>
 
 ### Embed colour
 
-TODO
+The default embed colour is a bright turquoise. To change this, update the `embedColour` variable in `src/config.js` (this variable expects a hex colour code).
 
 <a name="emojis"></a>
 
 ### Emojis
 
-TODO
+A number of emojis are used by Steve and are defined in the `emoji` variable in `src/config.js`. You can update the values in this variable to change the emojis.
 
 <a name="blocking users"></a>
 
 ### Blocking users
 
-TODO
+If you want to block a user from using Steve, this needs to be configured in an environment variable. The `BLOCKED_USERS` environment variable is used to hold a stringified JSON array of blocked user IDs. For example, to block a user with ID `123` set the environment variable to `BLOCKED_USERS=["123"]`. Remember when an environment variable is changed the bot must be restarted for the changed to take effect.

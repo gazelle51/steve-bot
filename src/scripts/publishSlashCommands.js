@@ -17,7 +17,33 @@ const { Routes } = require('discord-api-types/v9');
 const { disabledCommands } = require('../config');
 const fs = require('fs');
 
+/**
+ * Check if this script should deploy slash commands globally.
+ * @param {string[]} args - script arguments
+ * @returns {boolean} True if commands are to be deployed globally.
+ */
+function isGlobal(args) {
+  return args.length > 0 && args[0] === 'global';
+}
+
 const slashCommands = [];
+
+// Check for required environment variables
+if (process.env.TOKEN === undefined) throw new Error('TOKEN environment variable must be defined');
+if (process.env.CLIENT_ID === undefined)
+  throw new Error('CLIENT_ID environment variable must be defined');
+
+// Script arguments
+const args = process.argv.slice(2);
+
+// Check if guild or global deployment
+if (isGlobal(args) && process.env.GUILD_ID === undefined)
+  throw new Error('GUILD_ID environment variable must be defined when deploying globally');
+
+// Read environment variables
+const TOKEN = process.env.TOKEN;
+const CLIENT_ID = process.env.CLIENT_ID;
+const GUILD_ID = process.env.GUILD_ID || '';
 
 // Load slash command folders
 const slashCommandFolders = fs
@@ -39,30 +65,23 @@ for (const folder of slashCommandFolders) {
   }
 }
 
-const rest = new REST({ version: '9' }).setToken(process.env.TOKEN);
+const rest = new REST({ version: '9' }).setToken(TOKEN);
 
-(async () => {
+(async (GUILD_ID) => {
   try {
-    // Script arguments
-    const args = process.argv.slice(2);
-
-    // Deploy guild commands
-    const clientId = process.env.CLIENT_ID;
-    const guildId = process.env.GUILD_ID;
-
     console.log('Started refreshing application slash commands');
     console.log(`Disabled commands are: ${disabledCommands.join(', ')}`);
     console.log(`${slashCommands.length} commands to refresh`);
 
     if (args.length && args[0] === 'global') {
       // Deploy global commands
-      await rest.put(Routes.applicationCommands(clientId), { body: slashCommands });
+      await rest.put(Routes.applicationCommands(CLIENT_ID), { body: slashCommands });
     } else {
-      await rest.put(Routes.applicationGuildCommands(clientId, guildId), { body: slashCommands });
+      await rest.put(Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID), { body: slashCommands });
     }
 
     console.log('Successfully reloaded application slash commands');
   } catch (error) {
     console.error(error);
   }
-})();
+})(GUILD_ID);

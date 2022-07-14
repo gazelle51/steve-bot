@@ -1,4 +1,4 @@
-const _ = require('lodash');
+const _ = require('../utils/lodash');
 const caseData = require('./caseData.json');
 const collectionData = require('./collectionData.json');
 

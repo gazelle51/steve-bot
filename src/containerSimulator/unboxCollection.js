@@ -1,4 +1,4 @@
-const _ = require('lodash');
+const _ = require('../utils/lodash');
 const collectionData = require('./collectionData.json');
 const scrapeWeaponPage = require('./webScraper').scrapeWeaponPage;
 
@@ -146,6 +146,10 @@ function _weaponColour(tier, collectionName) {
       else colour = 'blue';
 
       break;
+  }
+
+  if (colour === undefined) {
+    throw new Error(`Could not assign a colour to tier=${tier} and collection=${collectionName}`);
   }
 
   return colour;

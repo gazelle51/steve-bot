@@ -41,6 +41,7 @@ async function scrapeContainerPage(url, colour = 'yellow') {
  * @returns {Promise<import('../typedefs/container').WeaponDetailsData>}
  */
 async function scrapeWeaponPage(url, wear, type) {
+  const defaultPrice = "Couldn't find price";
   console.log(`Scraping weapon at ${url}`);
 
   // Load page into Cheerio
@@ -70,9 +71,9 @@ async function scrapeWeaponPage(url, wear, type) {
         !price.includes('Souvenir') &&
         price.includes(wear))
   );
-  const weaponPrice = weaponPriceArray ? weaponPriceArray.pop() : "Couldn't find price";
+  const weaponPrice = weaponPriceArray ? weaponPriceArray.pop() : defaultPrice;
 
-  return { price: weaponPrice };
+  return { price: weaponPrice || defaultPrice };
 }
 
 /**

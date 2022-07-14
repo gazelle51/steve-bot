@@ -1,4 +1,4 @@
-const _ = require('lodash');
+const _ = require('../utils/lodash');
 const embeds = require('../utils/embeds').container;
 const { User } = require('discord.js');
 const { isCase, isCollection, randomCase, randomCollection } = require('./containers');

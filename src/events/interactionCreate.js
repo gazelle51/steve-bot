@@ -7,17 +7,24 @@ const { CommandInteraction, SelectMenuInteraction } = require('discord.js');
  * @param {import("../typedefs/discord").DiscordClient} client - Discord client
  */
 async function execute(interaction, client) {
-  if (interaction.channel.type === 'DM')
+  if (interaction.channel?.type === 'DM')
     console.log(
       `${interaction.user.username} (${interaction.user.id}) triggered '${interaction.type}' interaction in a DM`
     );
-  else
+  else if (interaction.channel)
     console.log(
       `${interaction.user.username} (${interaction.user.id}) triggered '${interaction.type}' interaction in #${interaction.channel.name}`
     );
+  else
+    console.log(
+      `${interaction.user.username} (${interaction.user.id}) triggered '${interaction.type}' interaction from an unknown source`
+    );
 
   // Do nothing if a blocked user tried to interact with bot
-  if (JSON.parse(process.env.BLOCKED_USERS).includes(interaction.user.id)) {
+  if (
+    process.env.BLOCKED_USERS &&
+    JSON.parse(process.env.BLOCKED_USERS).includes(interaction.user.id)
+  ) {
     console.log(`${interaction.user.username} (${interaction.user.id}) is blocked`);
     return await interaction.reply({ content: 'You are not allowed to do that', ephemeral: true });
   }
@@ -41,12 +48,12 @@ async function execute(interaction, client) {
     );
 
     // Check guild only flag
-    if (command.guildOnly && interaction.channel.type === 'DM') {
+    if (command.guildOnly && interaction.channel?.type === 'DM') {
       return await interaction.reply("I can't execute that command inside DMs");
     }
 
-    // Check voice channel flag
-    if (command.voiceChannel && !interaction.member.voice.channel) {
+    // @ts-ignore Check voice channel flag
+    if (command.voiceChannel && !interaction.member?.voice.channel) {
       return await interaction.reply({
         content: 'You need to join a voice channel to use that command',
         ephemeral: true,

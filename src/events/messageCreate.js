@@ -12,7 +12,10 @@ async function execute(message, client) {
   if (!message.content.startsWith(prefix) || message.author.bot) return;
 
   // Do nothing if a blocked user tried to interact with bot
-  if (JSON.parse(process.env.BLOCKED_USERS).includes(message.author.id)) {
+  if (
+    process.env.BLOCKED_USERS &&
+    JSON.parse(process.env.BLOCKED_USERS).includes(message.author.id)
+  ) {
     console.log(
       `${message.author.username} (${message.author.id}) tried to execute '${message.content}' but is blocked`
     );
@@ -21,7 +24,10 @@ async function execute(message, client) {
 
   // Extract command and arguments
   const args = message.content.slice(prefix.length).trim().split(/ +/);
-  const commandName = args.shift().toLowerCase();
+  const commandName = args.shift()?.toLowerCase();
+
+  if (commandName === undefined)
+    throw new Error(`Could not extract command name from ${message.content}`);
 
   // Get command
   const command = client.messageCommands.get(commandName);
@@ -40,7 +46,7 @@ async function execute(message, client) {
   }
 
   // Check voice channel flag
-  if (command.voiceChannel && !message.member.voice.channel) {
+  if (command.voiceChannel && !message.member?.voice.channel) {
     return await message.reply('You need to join a voice channel to use that command');
   }
 

@@ -146,6 +146,7 @@ async function _extractWeaponData($, weapons, colourOfInterest, knivesData = fal
       // Rarity
       const rarityLinks = $(result).find('a[class=nounderline]');
       const rarityParent = rarityLinks.length ? rarityLinks : result;
+      // @ts-ignore
       const rarity = $(rarityParent)
         .children('div .quality')
         .attr('class')

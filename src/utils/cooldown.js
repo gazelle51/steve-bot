@@ -5,7 +5,7 @@ const { Collection } = require('discord.js');
  * Check if the command is on cooldown for the specified user.
  * Update cooldowns if command can be used.
  * @param {string} commandName - name of command
- * @param {number} commandCooldown - command cooldown in seconds
+ * @param {number|undefined} commandCooldown - command cooldown in seconds
  * @param {string} userId - Discord user ID
  * @param {Collection<string, Collection<string, number>>} cooldowns - client command cooldowns
  * @returns {number} number of cooldown seconds remaining
@@ -21,10 +21,19 @@ function updateCommandCooldown(commandName, commandCooldown, userId, cooldowns) 
   const timestamps = cooldowns.get(commandName);
   const cooldownAmount = (commandCooldown || defaultCooldown) * 1000;
 
-  // If a cooldown exists for this user
+  if (timestamps === undefined)
+    throw new Error(`Could not get cooldowns for command ${commandName}`);
+
+  // If a cooldown exists for this user on this command
   if (timestamps.has(userId)) {
-    // Get command+user cooldown expiration time
-    const expirationTime = timestamps.get(userId) + cooldownAmount;
+    // Get user cooldown time for this command
+    const userCooldownTimestamp = timestamps.get(userId);
+
+    if (userCooldownTimestamp === undefined)
+      throw new Error(`Could not get cooldowns for user ${userId}`);
+
+    // Get cooldown expiration time
+    const expirationTime = userCooldownTimestamp + cooldownAmount;
 
     // Check if cooldown expired
     if (now < expirationTime) {

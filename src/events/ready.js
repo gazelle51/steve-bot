@@ -3,7 +3,9 @@
  * @param {import("../typedefs/discord").DiscordClient} client - Discord client
  */
 async function execute(client) {
-  console.log(`Logged in as ${client.user.tag}!`);
+  if (client.user === null) {
+    console.log('A user is not logged in yet');
+  } else console.log(`Logged in as ${client.user.tag}!`);
 }
 
 /** @type {import('../typedefs/discord').Event}} */

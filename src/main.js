@@ -1,7 +1,8 @@
 require('dotenv').config();
 
 const { disabledCommands, disabledEvents } = require('./config');
-const { Client, Collection, Intents } = require('discord.js');
+const DiscordClient = require('./client/DiscordClient');
+const { Intents } = require('discord.js');
 const fs = require('fs');
 
 console.log('Starting up...');
@@ -25,8 +26,7 @@ try {
 console.log(`Total blocked users: ${JSON.parse(process.env.BLOCKED_USERS).length}`);
 
 // Create Discord client
-/** @type {import('./typedefs/discord').DiscordClient}} */
-const client = new Client({
+const client = new DiscordClient({
   intents: [
     Intents.FLAGS.GUILDS,
     Intents.FLAGS.GUILD_MESSAGES,
@@ -42,11 +42,6 @@ const client = new Client({
     // 'REACTION',
   ],
 });
-client.messageCommands = new Collection();
-client.slashCommands = new Collection();
-client.selectMenus = new Collection();
-client.cooldowns = new Collection();
-client.queue = new Map();
 
 // ----- Load message commands -----
 

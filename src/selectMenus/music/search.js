@@ -22,7 +22,7 @@ async function execute(interaction, client) {
   };
 
   // Add to queue
-  queue.addAudio(client, interaction.member.voice.channel.id, interaction.guild, audio);
+  queue.addAudio(client, interaction.member?.voice.channel.id, interaction.guild, audio);
 
   // Reply
   await interaction.update({
